@@ -1,0 +1,98 @@
+<div class="tiles">
+  <a href="{{ section.settings.full-width-link }}" class="tile-container tile--full-width" style="background-image: url({{'hoc-hallway.png' | asset_url }});">
+    <div class="tile--heading">
+      <h3>{{ section.settings.full-width-heading }}</h3>
+      <span class="tile--underline" role="presentation"></span>
+    </div>
+  </a>
+  <a href="{{ section.settings.left-one-half-link }}" class="tile-container tile--half-width" style="background-image: url({{'hoc-products.png' | asset_url }});">
+    <div class="tile--heading">{{ section.settings.left-one-half-heading }} <span class="tile--underline" role="presentation"></span>
+    </div>
+  </a>
+  <a href="{{ section.settings.right-one-half-link }}" class="tile-container tile--half-width" style="background-image: url({{'hol-products.png' | asset_url }});">
+    <div class="tile--heading">{{ section.settings.right-one-half-heading }} <span class="tile--underline" role="presentation"></span></div>
+  </a>
+  <a href="{{ section.settings.left-one-third-link }}" class="tile-container tile--one-third" style="background-image: url({{'vfw-products.png' | asset_url }});">
+    <div class="tile--heading">{{ section.settings.left-one-third-heading }}</div>
+  </a>
+  <a href="{{ section.settings.middle-one-third-link }}" class="tile-container tile--one-third" style="background-image: url({{'bb-products.png' | asset_url }});">
+    <div class="tile--heading">{{ section.settings.middle-one-third-heading }}</div>
+  </a>
+  <a href="{{ section.settings.right-one-third-link }}" class="tile-container tile--one-third" style="background-image: url({{'tiles-products.png' | asset_url }});">
+    <div class="tile--heading">{{ section.settings.right-one-third-heading }}</div>
+  </a>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage tiles",
+    "settings": [
+      {
+        "type": "text",
+        "id": "full-width-heading",
+        "label": "Full-Width Heading",
+        "default": "All products"
+      },
+      {
+        "type": "text",
+        "id": "left-one-half-heading",
+        "label": "Left One-Half Heading",
+        "default": "House of Commons"
+      },
+      {
+        "type": "text",
+        "id": "right-one-half-heading",
+        "label": "Right One-Half Heading",
+        "default": "House of Lords"
+      },
+      {
+        "type": "text",
+        "id": "left-one-third-heading",
+        "label": "Left One-Third Heading",
+        "default": "Votes for Women"
+      },
+      {
+        "type": "text",
+        "id": "middle-one-third-heading",
+        "label": "Middle One-Third Heading",
+        "default": "Big Ben"
+      },
+      {
+        "type": "text",
+        "id": "right-one-third-heading",
+        "label": "Right One-Third Heading",
+        "default": "Tiles"
+      },
+      {
+        "type": "url",
+        "id": "full-width-link",
+        "label": "Full-Width Link"
+      },
+      {
+        "type": "url",
+        "id": "left-one-half-link",
+        "label": "Left One-Half Link"
+      },
+      {
+        "type": "url",
+        "id": "right-one-half-link",
+        "label": "Right One-Half Link"
+      },
+      {
+        "type": "url",
+        "id": "left-one-third-link",
+        "label": "Left One-Third Link"
+      },
+      {
+        "type": "url",
+        "id": "middle-one-third-link",
+        "label": "Middle One-Third Link"
+      },
+      {
+        "type": "url",
+        "id": "right-one-third-link",
+        "label": "Right One-Third Link"
+      }
+    ]
+  }
+{% endschema %}
