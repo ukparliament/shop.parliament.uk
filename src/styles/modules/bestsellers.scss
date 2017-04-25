@@ -1,14 +1,28 @@
 .bestsellers {
     max-width: 1020px;
-    margin: 0 auto;
+    margin: 0 auto $base-spacing-unit-extra-large;
     h3 {
         width: 100%;
+        margin-bottom: $base-spacing-unit-medium;
     }
 }
 
 .bestsellers--items {
     display: flex;
     justify-content: space-between;
+    a {
+        display: block;
+        color: $stTropaz;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+    a:hover {
+        color: $stTropazHover;
+    }
+    img {
+        border: 1px solid $frenchGray;
+        background: $white;
+    }
 }
 
 .bestsellers--items__single {
