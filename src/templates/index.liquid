@@ -1,1 +1,29 @@
-{{ content_for_index }}
+<div class="noflex-container">
+  <h2 class="shop-heading">{{ shop.name }}</h2>
+</div>
+<div class="tiles">
+  <div class="tile-container tile--full-width" style="background-image: url({{'hoc-hallway.png' | asset_url }});">
+    <div class="tile--heading">
+      <h3>All products</h3>
+      <span class="tile--underline" role="presentation"></span>
+    </div>
+  </div>
+  <div class="tile-container tile--half-width" style="background-image: url({{'hoc-products.png' | asset_url }});">
+    <div class="tile--heading">House of Commons <span class="tile--underline" role="presentation"></span>
+    </div>
+  </div>
+  <div class="tile-container tile--half-width" style="background-image: url({{'hol-products.png' | asset_url }});">
+    <div class="tile--heading">House of Lords <span class="tile--underline" role="presentation"></span></div>
+  </div>
+  <div class="tile-container tile--one-third" style="background-image: url({{'vfw-products.png' | asset_url }});">
+    <div class="tile--heading">Votes for Women</div>
+  </div>
+  <div class="tile-container tile--one-third" style="background-image: url({{'bb-products.png' | asset_url }});">
+    <div class="tile--heading">Big Ben</div>
+  </div>
+  <div class="tile-container tile--one-third" style="background-image: url({{'tiles-products.png' | asset_url }});">
+    <div class="tile--heading">Tiles</div>
+  </div>
+</div>
+
+{% comment %}{{ content_for_index }}{% endcomment %}
