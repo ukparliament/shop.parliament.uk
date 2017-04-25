@@ -1,0 +1,16 @@
+.bestsellers {
+    max-width: 1020px;
+    margin: 0 auto;
+    h3 {
+        width: 100%;
+    }
+}
+
+.bestsellers--items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bestsellers--items__single {
+    width: 24%;
+}
