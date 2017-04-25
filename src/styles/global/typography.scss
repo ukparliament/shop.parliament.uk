@@ -1,0 +1,16 @@
+body {
+    font-family: $base-font-stack;
+    color: $tundora;
+    font-size: 16px;
+    line-height: 1.5;
+
+    // font-smoothing - anti aliasing
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // font-feature-settings - vertically aligned typeface
+    // https://developer.mozilla.org/en/docs/Web/CSS/font-feature-settings
+    font-feature-settings: 'pnum';
+    // Experimental text decoration declaration (webkit only)
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
+    -webkit-text-decoration-skip: ink;
+}
