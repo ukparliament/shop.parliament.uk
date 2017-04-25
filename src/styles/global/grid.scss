@@ -211,12 +211,23 @@
 }
 
 /*================ Flexbox grid ================*/
-.flex-container {
-    display: flex;
+.noflex-container, .flex-container {
+    display: block;
     max-width: 1020px;
     margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.flex-container--two-thirds {
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: 66.6%;
+    }
 }
 
 .flex-container--one-third {
@@ -224,4 +235,10 @@
     @media screen and (min-width: 768px) {
         width: 33.3%;
     }
+}
+
+.flex-container__vertical-center > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

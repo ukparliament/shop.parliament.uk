@@ -14,3 +14,82 @@ body {
     // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
     -webkit-text-decoration-skip: ink;
 }
+
+// Base Heading Settings
+h1, .h1, h2, h3, h4, h5, h6 {
+  margin-top: $base-spacing-unit-medium;
+  margin-bottom: $base-spacing-unit;
+  padding: 0;
+  color: $martinique;
+  @media screen and (min-width: 768px) {
+    margin-top: $base-spacing-unit-large;
+  }
+}
+
+// Brand Heading Settings - Mobile (pixels)
+h1, .h1 {
+  font-size: 32px;
+  line-height: 1.125; // 36px;
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit-tiny;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.286; // 36px;
+  margin-top: $base-spacing-unit-extra-large;
+  margin-bottom: $base-spacing-unit-tiny;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.250; // 30px;
+}
+
+h4 {
+  font-size: 21px;
+  line-height: 1.143; // 24px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 1.334; // 24px;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 1.5; // 24px;
+}
+
+// Brand Heading Settings - Desktop (pixels)
+
+@media screen and (min-width: 768px) {
+  h1, .h1 {
+    font-size: 36px;
+    line-height: 1.167; // 42px
+    margin-top: 0;
+    margin-bottom: $base-spacing-unit-small;
+  }
+  h2 {
+    font-size: 32px;
+    line-height: 1.125; // 36px
+    margin-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
+    margin-bottom: $base-spacing-unit-small;
+  }
+  h3 {
+    font-size: 26px;
+    line-height: 1.154; // 30px
+  }
+  h4 {
+    font-size: 22px;
+    line-height: 1.364; // 30px
+  }
+  h5 {
+    font-size: 20px;
+    line-height: 1.2; // 24px
+  }
+  h6 {
+    font-size: 18px;
+    line-height: 1.334; // 24px;
+  }
+}
