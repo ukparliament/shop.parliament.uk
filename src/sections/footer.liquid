@@ -1,0 +1,58 @@
+<footer class="site-footer">
+
+  {%- assign footer_linklist = section.settings.footer_linklist -%}
+  {% if linklists[footer_linklist].links.size > 0 %}
+    <ul>
+      {% for link in linklists[footer_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {%- assign footer_linklist = section.settings.footer_linklist -%}
+  {% if linklists[footer_linklist].links.size > 0 %}
+    <ul>
+      {% for link in linklists[footer_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {%- assign footer_linklist = section.settings.footer_linklist -%}
+  {% if linklists[footer_linklist].links.size > 0 %}
+    <ul>
+      {% for link in linklists[footer_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <div>&copy; {{ 'layout.footer.copyright' | t }} {{ 'now' | date: "%Y" }}</div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "footer_top_menu",
+        "label": "Footer top menu",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_bottom_menu",
+        "label": "Footer bottom menu",
+        "default": "footer-bottom-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_right_menu",
+        "label": "Footer right menu",
+        "default": "footer-right-menu"
+      }
+    ]
+  }
+
+{% endschema %}
