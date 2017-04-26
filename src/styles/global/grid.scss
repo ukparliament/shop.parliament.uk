@@ -17,6 +17,14 @@
     flex-direction: column;
 }
 
+// Halves
+.flex-container--half {
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: 50%;
+    }
+}
+
 // Thirds
 .flex-container--one-third {
     width: 100%;
