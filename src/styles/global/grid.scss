@@ -223,6 +223,13 @@
     flex-wrap: wrap;
 }
 
+.flex-container--half {
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: 50%;
+    }
+}
+
 .flex-container--two-thirds {
     width: 100%;
     @media screen and (min-width: 768px) {
