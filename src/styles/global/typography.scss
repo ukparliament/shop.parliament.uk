@@ -21,6 +21,10 @@ body {
     color: $tundora;
 }
 
+.shop-heading__no-margin {
+    margin-bottom: 0;
+}
+
 // Base Heading Settings
 h1, .h1, h2, h3, h4, h5, h6 {
   margin-top: $base-spacing-unit-medium;

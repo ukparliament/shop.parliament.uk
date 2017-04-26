@@ -237,6 +237,20 @@
     }
 }
 
+.flex-container--one-quarter {
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: 25%;
+    }
+}
+
+.flex-container--three-quarters {
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: 75%;
+    }
+}
+
 .flex-container__vertical-center > div {
     display: flex;
     justify-content: center;

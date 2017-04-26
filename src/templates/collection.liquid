@@ -1,7 +1,7 @@
 {% paginate collection.products by 12 %}
   <div class="collection flex-container">
 
-    <div class="flex-container--one-third">
+    <div class="flex-container--one-quarter">
       {% if collection.all_tags.size > 0 %}
         <ul class="collection__filters">
           {% for tag in collection.all_tags %}
@@ -19,9 +19,9 @@
       {% endif %}
     </div>
 
-    <div class="flex-container--two-thirds">
+    <div class="flex-container--three-quarters">
 
-      <h2 class="shop-heading">{{ shop.name }}</h2>
+      <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} Shop</h2>
 
       {% if collection.image %}
         <header role="banner" class="collection__banner collection__banner--image" style="background-image: url({{ collection.image | img_url: 'x300' }});">
@@ -36,15 +36,25 @@
         {% endif %}
       </header>
 
-      <div class="product-list">
+      <div class="collection__view-sort">
+        <div class="collection__view-sort__options">
+          <span>List view</span>
+          <div class="collection__view-sort__options--group">
+            <a href="#">{% include 'icon-grid-view' %}</a>
+            <a href="#">{% include 'icon-list-view' %}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-grid">
         {% for product in collection.products %}
 
-          <div class="product-list__single">
-            <a href="{{ product.url | within: collection }}">
+          <div class="product-grid__single">
+            <a href="{{ product.url | within: collection }}" class="product-grid__image">
               <img src="{{ product.featured_image.src | img_url: '300x300' }}" alt="{{ product.featured_image.alt | escape }}">
             </a>
-            <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-            <span>
+            <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
+            <p class="product-grid__price">
               {% if product.compare_at_price > product.price %}
 
                 {% if product.price_varies %}
@@ -74,7 +84,7 @@
               {% unless product.available %}
                 {{ 'products.product.sold_out' | t }}
               {% endunless %}
-            </span>
+            </p>
           </div>
 
         {% else %}
