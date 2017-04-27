@@ -1,6 +1,6 @@
 .site-footer {
     background: $martinique;
-    margin-top: $base-spacing-unit-extra-extra-large;
+    margin: $base-spacing-unit-extra-extra-large 0 0 0;
     padding: $base-spacing-unit $base-spacing-unit-medium;
     @include breakpoint(medium) {
         padding: $base-spacing-unit-medium;
