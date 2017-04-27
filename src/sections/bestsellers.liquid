@@ -1,31 +1,14 @@
-<div class="bestsellers">
-  <h3>Bestsellers</h3>
-  <div class="bestsellers--items">
-    <div class="bestsellers--items__single">
-      <a href="#"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97350&w=350&h=350"></a>
-      <a href="#">Product name</a>
-      <span>£0.00</span>
-    </div>
-    <div class="bestsellers--items__single">
-      <a href="#"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97350&w=350&h=350"></a>
-      <a href="#">Product name</a>
-      <span>£0.00</span>
-    </div>
-    <div class="bestsellers--items__single">
-      <a href="#"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97350&w=350&h=350"></a>
-      <a href="#">Product name</a>
-      <span>£0.00</span>
-    </div>
-    <div class="bestsellers--items__single">
-      <a href="#"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97350&w=350&h=350"></a>
-      <a href="#">Product name</a>
-      <span>£0.00</span>
-    </div>
+<div class="product-grid noflex-container">
+  <h3 class="product-grid__heading">{{ collections.bestsellers.title }}</h3>
+  <div class="product-grid__products">
+    {% for product in collections.bestsellers.products limit: 4 %}
+      <div class="product-grid__single">
+        <a href="{{ product.url }}" class="product-grid__image">
+          <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
+        </a>
+        <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
+        <p class="product-grid__price">{{ product.price | money }}</p>
+      </div>
+    {% endfor %}
   </div>
 </div>
-
-{% schema %}
-  {
-    "name": "Homepage tiles"
-  }
-{% endschema %}
