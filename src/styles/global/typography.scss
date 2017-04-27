@@ -3,7 +3,6 @@ body {
     color: $tundora;
     font-size: 16px;
     line-height: 1.5;
-
     // font-smoothing - anti aliasing
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -92,4 +91,17 @@ h6 {
     font-size: 18px;
     line-height: 1.334; // 24px;
   }
+}
+
+.site-footer {
+    color: $ebb;
+    a {
+        color: $ebb;
+    }
+    .site-footer__address {
+        font-style: normal;
+    }
+    .site-footer__telephone {
+        text-decoration: none;
+    }
 }
