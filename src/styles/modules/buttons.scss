@@ -14,6 +14,18 @@
     // button colours
     background: $stTropaz;
     color: $white;
+
+    span {
+        line-height: 1;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: $base-spacing-unit;
+    }
+}
+
+.button--small {
+    padding: ($base-spacing-unit / 2) $base-spacing-unit-small;
+    font-size: 14px;
 }
 
 .button:hover {
@@ -36,4 +48,14 @@
 
 .button--alternative:hover {
     background: $algaeGreenHover;
+}
+
+.button--grey {
+    background: $frenchGray;
+    color: $tundora;
+}
+
+.button--grey:hover {
+    background: $frenchGray;
+    color: $tundora;
 }
