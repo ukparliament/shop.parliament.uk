@@ -14,3 +14,16 @@ body {
     // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
     -webkit-text-decoration-skip: ink;
 }
+
+.site-footer {
+    color: $ebb;
+    a {
+        color: $ebb;
+    }
+    .site-footer__address {
+        font-style: normal;
+    }
+    .site-footer__telephone {
+        text-decoration: none;
+    }
+}
