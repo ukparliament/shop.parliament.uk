@@ -3,14 +3,6 @@
   "presets": {
     "Default": {
       "sections": {
-        "tiles": {
-          "type": "tiles",
-          "blocks": {
-            "tile-0": {
-              "type": "text"
-            }
-          }
-        },
         "collection-list": {
           "type": "collection-list",
           "blocks": {
@@ -41,7 +33,6 @@
         }
       },
       "content_for_index": [
-        "tiles"
       ]
     }
   }
