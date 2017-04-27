@@ -3,7 +3,6 @@ body {
     color: $tundora;
     font-size: 16px;
     line-height: 1.5;
-
     // font-smoothing - anti aliasing
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -23,79 +22,111 @@ body {
 
 // Base Heading Settings
 h1, .h1, h2, h3, h4, h5, h6 {
-  margin-top: $base-spacing-unit-medium;
-  margin-bottom: $base-spacing-unit;
-  padding: 0;
-  color: $martinique;
-  @media screen and (min-width: 768px) {
-    margin-top: $base-spacing-unit-large;
-  }
+    margin: $base-spacing-unit-medium 0 $base-spacing-unit;
+    padding: 0;
+    color: $martinique;
+    @include breakpoint(medium) {
+        margin: $base-spacing-unit-large 0 $base-spacing-unit;
+    }
 }
 
-// Brand Heading Settings - Mobile (pixels)
 h1, .h1 {
-  font-size: 32px;
-  line-height: 1.125; // 36px;
-  margin-top: 0;
-  margin-bottom: $base-spacing-unit-tiny;
+    font-size: 32px;
+    line-height: 1.125; // 36px;
+    margin: 0 0 $base-spacing-unit-tiny;
+    @include breakpoint(medium) {
+        font-size: 36px;
+        line-height: 1.167;
+        margin: 0 0 $base-spacing-unit-small;
+    }
 }
 
 h2 {
-  font-size: 28px;
-  line-height: 1.286; // 36px;
-  margin-top: $base-spacing-unit-extra-large;
-  margin-bottom: $base-spacing-unit-tiny;
+    font-size: 28px;
+    line-height: 1.286; // 36px;
+    margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-tiny;
+    @include breakpoint(medium) {
+        font-size: 32px;
+        line-height: 1.125; // 36px
+        margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
+    }
 }
 
 h3 {
-  font-size: 24px;
-  line-height: 1.250; // 30px;
+    font-size: 24px;
+    line-height: 1.250; // 30px;
+    @include breakpoint(medium) {
+        font-size: 26px;
+        line-height: 1.154; // 30px
+    }
 }
 
 h4 {
-  font-size: 21px;
-  line-height: 1.143; // 24px;
+    font-size: 21px;
+    line-height: 1.143; // 24px;
+    @include breakpoint(medium) {
+        font-size: 22px;
+        line-height: 1.364; // 30px
+    }
 }
 
 h5 {
-  font-size: 18px;
-  line-height: 1.334; // 24px;
+    font-size: 18px;
+    line-height: 1.334; // 24px;
+    @include breakpoint(medium) {
+       font-size: 20px;
+       line-height: 1.2; // 24px
+    }
 }
 
 h6 {
-  font-size: 16px;
-  line-height: 1.5; // 24px;
+    font-size: 16px;
+    line-height: 1.5; // 24px;
+    @include breakpoint(medium) {
+        font-size: 18px;
+        line-height: 1.334; // 24px;
+    }
 }
 
-// Brand Heading Settings - Desktop (pixels)
+.site-header {
+    h1, .h1 {
+        margin-bottom: 0;
+        a {
+            color: $martinique;
+            text-decoration: none;
+        }
+    }
+    .flex-container--one-third {
+        text-align: right;
+    }
+    .site-header__cart {
+        color: $tundora;
+        text-decoration: none;
+    }
+    .site-header__search button[type=submit] {
+        color: $white;
+    }
+}
 
-@media screen and (min-width: 768px) {
-  h1, .h1 {
-    font-size: 36px;
-    line-height: 1.167; // 42px
-    margin-top: 0;
-    margin-bottom: $base-spacing-unit-small;
-  }
-  h2 {
-    font-size: 32px;
-    line-height: 1.125; // 36px
-    margin-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
-    margin-bottom: $base-spacing-unit-small;
-  }
-  h3 {
-    font-size: 26px;
-    line-height: 1.154; // 30px
-  }
-  h4 {
-    font-size: 22px;
-    line-height: 1.364; // 30px
-  }
-  h5 {
-    font-size: 20px;
-    line-height: 1.2; // 24px
-  }
-  h6 {
-    font-size: 18px;
-    line-height: 1.334; // 24px;
-  }
+.site-navigation {
+    .site-navigation__list li a {
+        color: $tundora;
+        text-decoration: none;
+    }
+    .site-navigation--active {
+        font-weight: 700;
+    }
+}
+
+.site-footer {
+    color: $ebb;
+    a {
+        color: $ebb;
+    }
+    .site-footer__address {
+        font-style: normal;
+    }
+    .site-footer__telephone {
+        text-decoration: none;
+    }
 }

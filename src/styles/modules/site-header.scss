@@ -2,22 +2,13 @@
 .site-header {
     background: $white;
     overflow: auto;
-    padding: $base-spacing-unit-medium 0;
     border-bottom: 3px solid $frenchGray;
-    h1, .h1 {
-        margin-bottom: 0;
-        a {
-            color: $martinique;
-            text-decoration: none;
-        }
-    }
-    .flex-container--one-third {
-        text-align: right;
+    padding: $base-spacing-unit $base-spacing-unit-medium;
+    @include breakpoint(medium) {
+        padding: $base-spacing-unit-medium;
     }
     .site-header__cart {
-        color: $tundora;
         margin-bottom: $base-spacing-unit-tiny;
-        text-decoration: none;
         svg {
             margin: -$base-spacing-unit $base-spacing-unit 0 0;
         }
@@ -37,7 +28,6 @@
             border-top-right-radius: 4px;
             border-bottom-right-radius: 4px;
             background: $stTropaz;
-            color: $white;
             padding: $base-spacing-unit $base-spacing-unit-tiny;
             &:hover {
                 background: $stTropazHover;
@@ -51,6 +41,10 @@
 
 .site-navigation {
     background: $ebb;
+    padding: 0 $base-spacing-unit-medium;
+    @include breakpoint(medium) {
+        padding: 0 $base-spacing-unit-medium;
+    }
     .site-navigation__list {
         margin: 0 0 0 (-$base-spacing-unit-medium);
         padding: 0;
@@ -60,13 +54,8 @@
             a {
                 padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
                 display: block;
-                color: $tundora;
-                text-decoration: none;
             }
         }
-    }
-    .site-navigation--active {
-        font-weight: 700;
     }
     .site-navigation--has-submenu {
         position: relative;
