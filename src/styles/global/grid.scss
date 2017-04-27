@@ -1,20 +1,4 @@
 /*================ Flexbox grid ================*/
-.flex-container {
-    display: flex;
-    max-width: 1020px;
-    margin: 0 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.flex-container--one-third {
-    width: 100%;
-    @include breakpoint(medium) {
-        width: 33.3%;
-    }
-}
-
-/*================ Flexbox grid ================*/
 .noflex-container, .flex-container {
     display: block;
     max-width: 1020px;
@@ -27,22 +11,24 @@
     flex-wrap: wrap;
 }
 
-.flex-container--two-thirds {
-    width: 100%;
-    @media screen and (min-width: 768px) {
-        width: 66.6%;
-    }
-}
-
-.flex-container--one-third {
-    width: 100%;
-    @media screen and (min-width: 768px) {
-        width: 33.3%;
-    }
-}
-
+// Vertically center
 .flex-container__vertical-center > div {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+// Thirds
+.flex-container--one-third {
+    width: 100%;
+    @include breakpoint(medium) {
+        width: 33.3%;
+    }
+}
+
+.flex-container--two-thirds {
+    width: 100%;
+    @include breakpoint(medium) {
+        width: 66.6%;
+    }
 }
