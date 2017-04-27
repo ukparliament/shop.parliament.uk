@@ -1,4 +1,5 @@
-<footer class="site-footer flex-container">
+<footer class="site-footer">
+  <div class="flex-container">
     <div class="flex-container--one-third">
       {%- assign footer_top_menu = section.settings.footer_top_menu -%}
       {% if linklists[footer_top_menu].links.size > 0 %}
@@ -40,6 +41,7 @@
       {% endif %}
       <span class="site-footer__copyright">&copy; {{ 'layout.footer.copyright' | t }} {{ 'now' | date: "%Y" }}</span>
     </div>
+  </div>
 </footer>
 
 {% schema %}
