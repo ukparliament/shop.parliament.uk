@@ -1,4 +1,4 @@
-<div class="tiles">
+<div class="tiles" data-section-id="{{ section.id }}" data-section-type="tiles">
   <a href="{{ section.settings.full-width-link }}" class="tile-container tile--full-width" style="background-image: url({{'hoc-hallway.png' | asset_url }});">
     <div class="tile--heading">
       <h3>{{ section.settings.full-width-heading }}</h3>
@@ -92,6 +92,12 @@
         "type": "url",
         "id": "right-one-third-link",
         "label": "Right One-Third Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage tiles",
+        "category": "Tiles"
       }
     ]
   }

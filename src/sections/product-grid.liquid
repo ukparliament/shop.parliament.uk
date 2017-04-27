@@ -1,0 +1,53 @@
+<div class="product-grid noflex-container">
+   {% if section.settings.title != blank %}
+    <h3 class="product-grid__heading">{{ section.settings.title }}</h3>
+  {% endif %}
+  {%- assign collection = collections[section.settings.collection] -%}
+  {%- assign collection_limit = section.settings.products_limit -%}
+  <div class="product-grid__products">
+    {% for product in collection.products limit: collection_limit %}
+      <div class="product-grid__single">
+        <a href="{{ product.url }}" class="product-grid__image">
+          <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
+        </a>
+        <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
+        <p class="product-grid__price">{{ product.price | money }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product grid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Bestsellers"
+      },
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      },
+      {
+        "id": "products_limit",
+        "type": "select",
+        "label": "Products to show",
+        "options": [
+          { "value": "4", "label": "4 Products"},
+          { "value": "8", "label": "8 Products"},
+          { "value": "12", "label": "12 Products"}
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product grid",
+        "category": "Product"
+      }
+    ]
+  }
+{% endschema %}
