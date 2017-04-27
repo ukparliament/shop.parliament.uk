@@ -2,8 +2,11 @@
 .site-header {
     background: $white;
     overflow: auto;
-    padding: $base-spacing-unit-medium 0;
     border-bottom: 3px solid $frenchGray;
+    padding: $base-spacing-unit $base-spacing-unit-medium;
+    @include breakpoint(medium) {
+        padding: $base-spacing-unit-medium;
+    }
     .site-header__cart {
         margin-bottom: $base-spacing-unit-tiny;
         svg {
@@ -38,6 +41,10 @@
 
 .site-navigation {
     background: $ebb;
+    padding: 0 $base-spacing-unit-medium;
+    @include breakpoint(medium) {
+        padding: 0 $base-spacing-unit-medium;
+    }
     .site-navigation__list {
         margin: 0 0 0 (-$base-spacing-unit-medium);
         padding: 0;
