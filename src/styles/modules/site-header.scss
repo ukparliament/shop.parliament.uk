@@ -1,8 +1,83 @@
 /*================ Site Header ================*/
-.site-logo {
-  display: block;
+.site-header {
+    background: $white;
+    overflow: auto;
+    border-bottom: 3px solid $frenchGray;
+    padding: $base-spacing-unit $base-spacing-unit-medium;
+    @include breakpoint(medium) {
+        padding: $base-spacing-unit-medium;
+    }
+    .site-header__cart {
+        margin-bottom: $base-spacing-unit-tiny;
+        svg {
+            margin: -$base-spacing-unit $base-spacing-unit 0 0;
+        }
+    }
+    .site-header__search {
+        display: flex;
+        justify-content: flex-end;
+        input[type=search] {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border: 1px solid $frenchGray;
+            border-right: 0;
+            padding: $base-spacing-unit $base-spacing-unit-tiny;
+            width: 100%;
+        }
+        button[type=submit] {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            background: $stTropaz;
+            padding: $base-spacing-unit $base-spacing-unit-tiny;
+            &:hover {
+                background: $stTropazHover;
+            }
+            svg {
+                margin-top: -2px;
+            }
+        }
+    }
+}
 
-  img {
-    display: block;
-  }
+.site-navigation {
+    background: $ebb;
+    padding: 0 $base-spacing-unit-medium;
+    @include breakpoint(medium) {
+        padding: 0 $base-spacing-unit-medium;
+    }
+    .site-navigation__list {
+        margin: 0 0 0 (-$base-spacing-unit-medium);
+        padding: 0;
+        list-style: none;
+        display: flex;
+        li {
+            a {
+                padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
+                display: block;
+            }
+        }
+    }
+    .site-navigation--has-submenu {
+        position: relative;
+        svg {
+            width: 10px;
+            height: 10px;
+        }
+        .site-navigation__submenu {
+            display: none;
+        }
+    }
+    .site-navigation--has-submenu:hover {
+        .site-navigation__submenu {
+            display: block;
+            position: absolute;
+            min-width: 150%;
+            background: $ebb;
+            list-style: none;
+            padding: 2px 4px 4px;
+            li a:hover {
+                background: $white;
+            }
+        }
+    }
 }

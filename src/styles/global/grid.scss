@@ -1,15 +1,34 @@
 /*================ Flexbox grid ================*/
-.flex-container {
-    display: flex;
+.noflex-container, .flex-container {
+    display: block;
     max-width: 1020px;
     margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
+// Vertically center
+.flex-container__vertical-center > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+// Thirds
 .flex-container--one-third {
     width: 100%;
     @include breakpoint(medium) {
         width: 33.3%;
+    }
+}
+
+.flex-container--two-thirds {
+    width: 100%;
+    @include breakpoint(medium) {
+        width: 66.6%;
     }
 }
