@@ -1,5 +1,8 @@
 {
   "general": {
+    "alerts": {
+      "free_delivery_html": "Free delivery for orders over <strong>{{ price }}</strong>."
+    },
     "accessibility": {
       "skip_to_content": "Skip to content"
     },

@@ -33,10 +33,6 @@
         }
       },
       "content_for_index": [
-        "tiles",
-        "collection-list",
-        "featured-collection",
-        "featured-product"
       ]
     }
   }
