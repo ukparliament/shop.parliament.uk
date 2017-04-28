@@ -1,30 +1,29 @@
 <div class="tiles" data-section-id="{{ section.id }}" data-section-type="tiles">
-
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'full-width-tile' %}
-        <a href="{{ block.settings.full-width-tile-link }}" class="tile-container tile--full-width" style="background-image: url({{'hoc-hallway.png' | asset_url }});">
+        <a href="{{ block.settings.full-width-tile-link }}" class="tile-container tile--full-width" style="background-image: url({{ block.settings.full-width-tile-image | img_url: 'x400' }});">
           <div class="tile--heading">
             <h3>{{ block.settings.full-width-tile-title }}</h3>
             <span class="tile--underline" role="presentation"></span>
           </div>
         </a>
       {% when 'half-width-tiles' %}
-        <a href="{{ block.settings.left-half-width-tile-link }}" class="tile-container tile--half-width" style="background-image: url({{'hoc-products.png' | asset_url }});">
+        <a href="{{ block.settings.left-half-width-tile-link }}" class="tile-container tile--half-width" style="background-image: url({{ block.settings.left-half-width-tile-image | img_url: 'x367' }});">
           <div class="tile--heading">{{ block.settings.left-half-width-tile-title }} <span class="tile--underline" role="presentation"></span>
           </div>
         </a>
-        <a href="{{ block.settings.right-half-width-tile-link }}" class="tile-container tile--half-width" style="background-image: url({{'hol-products.png' | asset_url }});">
+        <a href="{{ block.settings.right-half-width-tile-link }}" class="tile-container tile--half-width" style="background-image: url({{ block.settings.right-half-width-tile-image | img_url: 'x367' }});">
           <div class="tile--heading">{{ block.settings.right-half-width-tile-title }} <span class="tile--underline" role="presentation"></span></div>
         </a>
       {% when 'third-width-tiles' %}
-        <a href="{{ block.settings.left-third-width-tile-link }}" class="tile-container tile--one-third" style="background-image: url({{'vfw-products.png' | asset_url }});">
+        <a href="{{ block.settings.left-third-width-tile-link }}" class="tile-container tile--one-third" style="background-image: url({{ block.settings.left-third-width-tile-image | img_url: 'x241' }});">
           <div class="tile--heading">{{ block.settings.left-third-width-tile-title }}</div>
         </a>
-        <a href="{{ block.settings.right-third-width-tile-link }}" class="tile-container tile--one-third" style="background-image: url({{'bb-products.png' | asset_url }});">
+        <a href="{{ block.settings.center-third-width-tile-link }}" class="tile-container tile--one-third" style="background-image: url({{ block.settings.center-third-width-tile-image | img_url: 'x241' }});">
           <div class="tile--heading">{{ block.settings.center-third-width-tile-title }}</div>
         </a>
-        <a href="{{ block.settings.center-third-width-tile-link }}" class="tile-container tile--one-third" style="background-image: url({{'tiles-products.png' | asset_url }});">
+        <a href="{{ block.settings.right-third-width-tile-link }}" class="tile-container tile--one-third" style="background-image: url({{ block.settings.right-third-width-tile-image | img_url: 'x241' }});">
           <div class="tile--heading">{{ block.settings.right-third-width-tile-title }}</div>
         </a>
     {% endcase %}
@@ -48,6 +47,11 @@
             "type": "url",
             "id": "full-width-tile-link",
             "label": "Full-width tile link"
+          },
+          {
+            "type": "image_picker",
+            "id": "full-width-tile-image",
+            "label": "Full-width tile image"
           }
         ]
       },
@@ -66,6 +70,11 @@
             "label": "Left half-width tile link"
           },
           {
+            "type": "image_picker",
+            "id": "left-half-width-tile-image",
+            "label": "Left half-width tile image"
+          },
+          {
             "type": "text",
             "id": "right-half-width-tile-title",
             "label": "Right half-width tile title"
@@ -74,6 +83,11 @@
             "type": "url",
             "id": "right-half-width-tile-link",
             "label": "Right half-width tile link"
+          },
+          {
+            "type": "image_picker",
+            "id": "right-half-width-tile-image",
+            "label": "Right half-width tile image"
           }
         ]
       },
@@ -92,6 +106,11 @@
             "label": "Left third-width tile link"
           },
           {
+            "type": "image_picker",
+            "id": "left-third-width-tile-image",
+            "label": "Left third-width tile image"
+          },
+          {
             "type": "text",
             "id": "center-third-width-tile-title",
             "label": "Center third-width tile title"
@@ -102,6 +121,11 @@
             "label": "Center third-width tile link"
           },
           {
+            "type": "image_picker",
+            "id": "center-third-width-tile-image",
+            "label": "Center third-width tile image"
+          },
+          {
             "type": "text",
             "id": "right-third-width-tile-title",
             "label": "Right third-width tile title"
@@ -110,6 +134,11 @@
             "type": "url",
             "id": "right-third-width-tile-link",
             "label": "Right third-width tile link"
+          },
+          {
+            "type": "image_picker",
+            "id": "right-third-width-tile-image",
+            "label": "Right third-width tile image"
           }
         ]
       }
