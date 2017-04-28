@@ -1,6 +1,5 @@
 {% paginate collection.products by 12 %}
   <div class="collection flex-container">
-
     <div class="flex-container--one-quarter">
       {% if collection.all_tags.size > 0 %}
         <ul class="collection__filters">
@@ -20,7 +19,6 @@
     </div>
 
     <div class="flex-container--three-quarters">
-
       <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} Shop</h2>
 
       {% if collection.image %}
@@ -47,45 +45,46 @@
       </div>
 
       <div class="product-grid">
-        {% for product in collection.products %}
+        <div class="product-grid__products product-grid__products--thirds">
+          {% for product in collection.products %}
 
-          <div class="product-grid__single">
-            <a href="{{ product.url | within: collection }}" class="product-grid__image">
-              <img src="{{ product.featured_image.src | img_url: '300x300' }}" alt="{{ product.featured_image.alt | escape }}">
-            </a>
-            <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
-            <p class="product-grid__price">
-              {% if product.compare_at_price > product.price %}
+            <div class="product-grid__single">
+              <a href="{{ product.url | within: collection }}" class="product-grid__image">
+                <img src="{{ product.featured_image.src | img_url: '300x300' }}" alt="{{ product.featured_image.alt | escape }}">
+              </a>
+              <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
+              <p class="product-grid__price">
+                {% if product.compare_at_price > product.price %}
 
-                {% if product.price_varies %}
-                  {%- assign sale_price = product.price | money -%}
-                  {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+                  {% if product.price_varies %}
+                    {%- assign sale_price = product.price | money -%}
+                    {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+                  {% else %}
+                    {{ 'products.product.on_sale' | t }}
+                    {{ product.price | money }}
+                  {% endif %}
+
                 {% else %}
-                  {{ 'products.product.on_sale' | t }}
-                  {{ product.price | money }}
+
+                  {% if product.price_varies %}
+                    {%- assign price = product.price | money -%}
+                    {{ 'products.product.from_text_html' | t: price: price }}
+                  {% else %}
+                    {{ product.price | money }}
+                  {% endif %}
+
                 {% endif %}
 
-              {% else %}
-
-                {% if product.price_varies %}
-                  {%- assign price = product.price | money -%}
-                  {{ 'products.product.from_text_html' | t: price: price }}
-                {% else %}
-                  {{ product.price | money }}
+                {% if product.compare_at_price > product.price %}
+                  <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                  <s>{{ product.compare_at_price | money }}</s>
                 {% endif %}
 
-              {% endif %}
-
-              {% if product.compare_at_price > product.price %}
-                <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-                <s>{{ product.compare_at_price | money }}</s>
-              {% endif %}
-
-              {% unless product.available %}
-                {{ 'products.product.sold_out' | t }}
-              {% endunless %}
-            </p>
-          </div>
+                {% unless product.available %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endunless %}
+              </p>
+            </div>
 
         {% else %}
           {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
@@ -108,6 +107,7 @@
           {% endif %}
 
         {% endfor %}
+        </div>
       </div>
 
       {% if paginate.pages > 1 %}
