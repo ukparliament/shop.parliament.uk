@@ -1,8 +1,9 @@
-{% if cart.item_count > 0 %}
+<div class="noflex-container cart">
+  <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} Shop</h2>
   <h1>{{ 'cart.general.title' | t }}</h1>
-
+{% if cart.item_count > 0 %}
   <form action="/cart" method="post" novalidate>
-    <table class="responsive-table">
+    <table class="responsive-table cart--table">
       <thead class="small--hide">
         <tr>
           <th colspan="2">{{ 'cart.label.product' | t }}</th>
@@ -25,18 +26,16 @@
 
           <tr class="responsive-table-row">
             <td data-label="{{ 'customer.order.product' | t }}">
-              <a href="{{ item.url | within: collections.all }}">
-                <img src="{{ item | img_url: '240x240' }}" alt="{{ item.title | escape }}">
+              <a href="{{ item.url | within: collections.all }}" class="product--image">
+                <img src="{{ item | img_url: '300x300' }}" alt="{{ item.title | escape }}">
               </a>
             </td>
             <td>
-              <a href="{{ item.url }}">{{ item.product.title }}</a>
+              <a href="{{ item.url }}" class="product--name">{{ item.product.title }}</a>
 
               {% unless item.variant.title contains 'Default' %}
               <p>{{ item.variant.title }}</p>
               {% endunless %}
-
-              <p>{{ item.vendor }}</p>
 
               {%- assign property_size = item.properties | size -%}
 
@@ -55,11 +54,9 @@
                 {% endfor %}
               {% endif %}
 
-              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
-                <small>{{ 'cart.general.remove' | t }}</small>
-              </a>
+              <a class="button button--small button--grey" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{ 'cart.general.remove' | t }} <span>&times;</span></a>
             </td>
-            <td data-label="{{ 'cart.label.price' | t }}">
+            <td data-label="{{ 'cart.label.price' | t }}" class="product--price">
               {% if item.original_line_price != item.line_price %}
                 <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
                 {{ item.price | money }}
@@ -77,7 +74,7 @@
                      min="0"
                      aria-label="{{ 'cart.general.item_quantity' | t }}">
             </td>
-            <td data-label="{{ 'cart.label.total' | t }}">
+            <td data-label="{{ 'cart.label.total' | t }}" class="product--price">
               {{ item.line_price | money }}
             </td>
           </tr>
@@ -86,22 +83,28 @@
       </tbody>
     </table>
 
-    {% if settings.cart_notes_enable %}
-      <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-      <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-    {% endif %}
-
-    <p>{{ 'cart.general.subtotal' | t }}</p>
-    <p>{{ cart.total_price | money }}</p>
-    {% if cart.total_discounts > 0 %}
-      <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
-    {% endif %}
-    <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
-    <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
-    <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
+    <div class="flex-container cart--meta">
+      <div class="cart--notes">
+        <div class="cart--notes--form">
+          {% if settings.cart_notes_enable %}
+            <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+            <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+          {% endif %}
+        </div>
+      </div>
+      <div class="cart--total">
+        <p>{{ 'cart.general.subtotal' | t }} <strong>{{ cart.total_price | money }}</strong></p>
+        {% if cart.total_discounts > 0 %}
+          <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
+        {% endif %}
+        <p class="cart--total__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</p>
+        <input type="submit" name="update" value="{{ 'cart.general.update' | t }}" class="button button--secondary">
+        <input type="submit" name="checkout" class="button" value="{{ 'cart.general.checkout' | t }}">
+        <a href="/" class="cart--total--back">{{ 'cart.general.back' | t }}</a>
+      </div>
+    </div>
   </form>
 {% else %}
-  <h1>{{ 'cart.general.title' | t }}</h1>
 
   {% comment %}
   Cart empty state
@@ -121,3 +124,4 @@
     <p>{{ 'cart.general.cookies_required' | t }}</p>
   </div>
 {% endif %}
+</div>
