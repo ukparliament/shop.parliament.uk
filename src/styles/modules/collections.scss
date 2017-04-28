@@ -45,13 +45,9 @@
 }
 
 .collection__view-sort {
-    padding: 0 $base-spacing-unit-small;
     margin: $base-spacing-unit-large 0;
     display: flex;
     justify-content: flex-end;
-    @include breakpoint(medium) {
-        padding: 0;
-    }
     .collection__view-sort__options {
         display: flex;
         align-items: center;
