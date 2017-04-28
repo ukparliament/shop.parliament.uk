@@ -1,4 +1,12 @@
-.collection__banner.collection__banner--image {
+.collection__banner {
+    padding: 0 $base-spacing-unit-small;
+    @include breakpoint(medium) {
+        padding: 0;
+    }
+}
+
+.collection__banner--image {
+    padding: 0;
     background-repeat: no-repeat;
     background-position: center center;
     height: 300px;
@@ -39,9 +47,13 @@
 }
 
 .collection__view-sort {
+    padding: 0 $base-spacing-unit-small;
     margin: $base-spacing-unit-large 0;
     display: flex;
     justify-content: flex-end;
+    @include breakpoint(medium) {
+        padding: 0;
+    }
     .collection__view-sort__options {
         display: flex;
         align-items: center;
