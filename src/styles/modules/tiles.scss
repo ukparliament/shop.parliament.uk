@@ -1,0 +1,59 @@
+.tiles {
+    justify-content: space-between;
+}
+
+.tile-container {
+    position: relative;
+    margin: 0 0 $base-spacing-unit-large;
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .tile--heading {
+        width: 75%;
+        position: absolute;
+        bottom: $base-spacing-unit-medium;
+        padding: $base-spacing-unit-medium;
+        background: rgba($algaeGreen, .9);
+        @include breakpoint(medium) {
+            width: 45%;
+        }
+    }
+    .tile--underline {
+        height: 6px;
+        width: 60px;
+        display: block;
+        background: $purpleHeart;
+        margin-top: $base-spacing-unit-tiny;
+    }
+}
+
+.tile--half-width, .tile--one-third {
+    .tile--heading {
+        background: rgba($purpleHeart, .9);
+        padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+    }
+    .tile--underline {
+        background: $algaeGreen;
+    }
+}
+
+.tile--half-width {
+    height: 367px;
+    @include breakpoint(medium) {
+        width: 49%;
+    }
+    .tile--heading {
+        width: 75%;
+    }
+}
+
+.tile--one-third {
+    height: 241px;
+    @include breakpoint(medium) {
+        width: 32.3%;
+    }
+    .tile--heading {
+        width: auto;
+    }
+}
