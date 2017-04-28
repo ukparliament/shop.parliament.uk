@@ -3,9 +3,7 @@
     {% case block.type %}
       {% when 'full-width-tile' %}
         <a href="{{ block.settings.full-width-tile-link }}" class="tile-container tile--full-width" style="background-image: url({{ block.settings.full-width-tile-image | img_url: 'x400' }});">
-          <div class="tile--heading">
-            <h3>{{ block.settings.full-width-tile-title }}</h3>
-            <span class="tile--underline" role="presentation"></span>
+          <div class="tile--heading">{{ block.settings.full-width-tile-title }} <span class="tile--underline" role="presentation"></span>
           </div>
         </a>
       {% when 'half-width-tiles' %}

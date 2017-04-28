@@ -1,4 +1,8 @@
 .product-grid {
+    padding: 0 $base-spacing-unit-small;
+    @include breakpoint(medium) {
+        padding: 0;
+    }
     .product-grid__heading {
         width: 100%;
         margin-bottom: $base-spacing-unit-medium;
@@ -44,5 +48,8 @@
             display: block;
             margin-top: $base-spacing-unit;
         }
+    }
+    .product-grid__single:last-of-type {
+        margin-bottom: 0;
     }
 }

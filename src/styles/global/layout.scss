@@ -14,3 +14,10 @@ html {
 .shopify-section {
     width: 100%;
 }
+
+.shop-heading {
+    padding: 0 $base-spacing-unit-small;
+    @include breakpoint(medium) {
+        padding: 0;
+    }
+}

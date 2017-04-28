@@ -135,14 +135,23 @@ h6 {
     }
 }
 
-.tile--heading h3 {
-    margin: 0;
+.tile--heading {
+    font-weight: 700;
+    color: $martinique;
+}
+
+.tile--full-width .tile--heading {
+    font-size: 24px;
+    line-height: 1.250; // 30px;
+    @include breakpoint(medium) {
+        font-size: 26px;
+        line-height: 1.154; // 30px
+    }
 }
 
 .tile--half-width, .tile--one-third {
     .tile--heading {
         color: $white;
-        font-weight: 700;
     }
 }
 

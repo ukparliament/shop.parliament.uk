@@ -19,7 +19,7 @@
     </div>
 
     <div class="flex-container--three-quarters">
-      <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} Shop</h2>
+      <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} {{ 'general.shop' | t }}</h2>
 
       {% if collection.image %}
         <header role="banner" class="collection__banner collection__banner--image" style="background-image: url({{ collection.image | img_url: 'x300' }});">
