@@ -5,7 +5,6 @@
 .product__image-container--featured {
     background: $white;
     border: 1px solid $frenchGray;
-    text-align: center;
     width: 90%;
 }
 
@@ -19,7 +18,7 @@
         display: block;
     }
     input[type=number] {
-        background: #fff;
+        background: $white;
         border: 1px solid $frenchGray;
         border-radius: 4px;
         padding: $base-spacing-unit $base-spacing-unit-tiny;
@@ -37,18 +36,8 @@
     margin-bottom: $base-spacing-unit-tiny;
 }
 
-.product__price--current {
-    font-size: 32px;
-    color: $martinique;
-    font-weight: 700;
-}
-
 .product__price--old {
-    font-size: 24px;
-    text-decoration: line-through;
     display: inline-block;
-    font-weight: 700;
-    color: $martinique;
     margin-right: $base-spacing-unit;
 }
 
