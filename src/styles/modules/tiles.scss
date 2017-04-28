@@ -1,9 +1,5 @@
 .tiles {
     justify-content: space-between;
-    padding: 0 $base-spacing-unit-small;
-    @include breakpoint(medium) {
-        padding: 0;
-    }
 }
 
 .tile-container {

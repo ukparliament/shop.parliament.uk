@@ -29,6 +29,7 @@ h1, .h1, h2, h3, h4, h5, h6 {
     margin: $base-spacing-unit-medium 0 $base-spacing-unit;
     padding: 0;
     color: $martinique;
+    font-weight: 700;
     @include breakpoint(medium) {
         margin: $base-spacing-unit-large 0 $base-spacing-unit;
     }

@@ -3,6 +3,10 @@
     display: block;
     max-width: 1020px;
     margin: 0 auto;
+    padding: 0 $base-spacing-unit-small;
+    @include breakpoint(medium) {
+        padding: 0;
+    }
 }
 
 .flex-container {
