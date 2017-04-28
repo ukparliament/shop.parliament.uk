@@ -11,7 +11,7 @@
     .product-grid__single {
         width: 100%;
         margin-bottom: $base-spacing-unit-small;
-        @media screen and (min-width: 768px) {
+        @include breakpoint(medium) {
             width: 24%;
             margin-bottom: $base-spacing-unit-medium;
         }
