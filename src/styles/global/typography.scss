@@ -20,6 +20,10 @@ body {
     color: $tundora;
 }
 
+.shop-heading__no-margin {
+    margin-bottom: 0;
+}
+
 // Base Heading Settings
 h1, .h1, h2, h3, h4, h5, h6 {
     margin: $base-spacing-unit-medium 0 $base-spacing-unit;
@@ -139,5 +143,16 @@ h6 {
     .tile--heading {
         color: $white;
         font-weight: 700;
+    }
+}
+
+.product-grid {
+    .product-grid__title {
+        color: $stTropaz;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+    .product-grid__title:hover {
+        color: $stTropazHover;
     }
 }

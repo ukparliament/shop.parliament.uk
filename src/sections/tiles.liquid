@@ -1,4 +1,4 @@
-<div class="tiles" data-section-id="{{ section.id }}" data-section-type="tiles">
+<div class="tiles flex-container" data-section-id="{{ section.id }}" data-section-type="tiles">
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'full-width-tile' %}

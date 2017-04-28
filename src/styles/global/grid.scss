@@ -31,3 +31,18 @@
         width: 66.6%;
     }
 }
+
+// Quarters
+.flex-container--one-quarter {
+    width: 100%;
+    @include breakpoint(medium) {
+        width: 25%;
+    }
+}
+
+.flex-container--three-quarters {
+    width: 100%;
+    @include breakpoint(medium) {
+        width: 75%;
+    }
+}

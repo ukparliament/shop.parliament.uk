@@ -8,6 +8,13 @@
         justify-content: space-between;
         flex-wrap: wrap;
     }
+    .product-grid__products--thirds {
+        .product-grid__single {
+            @include breakpoint(medium) {
+                width: 32.3%;
+            }
+        }
+    }
     .product-grid__single {
         width: 100%;
         margin-bottom: $base-spacing-unit-small;
@@ -35,13 +42,7 @@
         }
         .product-grid__title {
             display: block;
-            color: $stTropaz;
-            text-decoration: underline;
-            font-weight: 700;
             margin-top: $base-spacing-unit;
-        }
-        .product-grid__title:hover {
-            color: $stTropazHover;
         }
     }
 }
