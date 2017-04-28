@@ -20,7 +20,7 @@
 // Halves
 .flex-container--half {
     width: 100%;
-    @media screen and (min-width: 768px) {
+    @include breakpoint(medium) {
         width: 50%;
     }
 }
