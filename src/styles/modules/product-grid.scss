@@ -42,13 +42,7 @@
         }
         .product-grid__title {
             display: block;
-            color: $stTropaz;
-            text-decoration: underline;
-            font-weight: 700;
             margin-top: $base-spacing-unit;
-        }
-        .product-grid__title:hover {
-            color: $stTropazHover;
         }
     }
 }

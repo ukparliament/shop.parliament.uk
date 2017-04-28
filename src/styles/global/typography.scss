@@ -145,3 +145,14 @@ h6 {
         font-weight: 700;
     }
 }
+
+.product-grid {
+    .product-grid__title {
+        color: $stTropaz;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+    .product-grid__title:hover {
+        color: $stTropazHover;
+    }
+}
