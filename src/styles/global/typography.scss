@@ -130,3 +130,14 @@ h6 {
         text-decoration: none;
     }
 }
+
+.tile--heading h3 {
+    margin: 0;
+}
+
+.tile--half-width, .tile--one-third {
+    .tile--heading {
+        color: $white;
+        font-weight: 700;
+    }
+}
