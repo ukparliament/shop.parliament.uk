@@ -173,3 +173,37 @@ h6 {
 .product__image-container--featured {
     text-align: center;
 }
+
+.cart--table {
+    thead th {
+        text-align: left;
+        font-weight: 400;
+    }
+    thead th:first-of-type {
+        text-align: center;
+    }
+    .product--name {
+        color: $stTropaz;
+        font-weight: 700;
+    }
+    .product--name:hover {
+        color: $stTropazHover;
+    }
+    .product--price {
+        font-weight: 700;
+    }
+}
+
+.cart--meta {
+    .cart--total {
+        text-align: right;
+        .cart--total__shipping {
+            font-size: 14px;
+            color: $doveGray;
+            line-height: 1;
+        }
+        .cart--total--back {
+            color: $tundora;
+        }
+    }
+}

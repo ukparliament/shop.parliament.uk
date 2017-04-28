@@ -13,26 +13,13 @@
         border: 1px solid $frenchGray;
         border-left: 0;
         border-right: 0;
-        text-align: left;
-        font-weight: 400;
-    }
-    thead th:first-of-type {
-        text-align: center;
     }
     tbody tr td {
         padding-top: $base-spacing-unit-extra-large;
     }
     .product--name {
-        color: $stTropaz;
-        font-weight: 700;
         display: block;
         margin-bottom: $base-spacing-unit-medium;
-    }
-    .product--name:hover {
-        color: $stTropazHover;
-    }
-    .product--price {
-        font-weight: 700;
     }
     input[type=number] {
         background: $white;
@@ -78,15 +65,10 @@
     }
     .cart--total {
         width: 30%;
-        text-align: right;
         .cart--total__shipping {
-            font-size: 14px;
-            color: $doveGray;
             margin-bottom: $base-spacing-unit-medium;
-            line-height: 1;
         }
         .cart--total--back {
-            color: $tundora;
             margin-top: $base-spacing-unit-medium;
             display: block;
         }
