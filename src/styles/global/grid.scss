@@ -17,6 +17,14 @@
     flex-direction: column;
 }
 
+// Halves
+.flex-container--half {
+    width: 100%;
+    @include breakpoint(medium) {
+        width: 50%;
+    }
+}
+
 // Thirds
 .flex-container--one-third {
     width: 100%;
