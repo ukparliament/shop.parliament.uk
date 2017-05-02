@@ -10,30 +10,6 @@
             margin: -$base-spacing-unit $base-spacing-unit 0 0;
         }
     }
-    .site-header__search {
-        display: flex;
-        justify-content: flex-end;
-        input[type=search] {
-            border-top-left-radius: 4px;
-            border-bottom-left-radius: 4px;
-            border: 1px solid $frenchGray;
-            border-right: 0;
-            padding: $base-spacing-unit $base-spacing-unit-tiny;
-            width: 100%;
-        }
-        button[type=submit] {
-            border-top-right-radius: 4px;
-            border-bottom-right-radius: 4px;
-            background: $stTropaz;
-            padding: $base-spacing-unit $base-spacing-unit-tiny;
-            &:hover {
-                background: $stTropazHover;
-            }
-            svg {
-                margin-top: -2px;
-            }
-        }
-    }
     .flex-container--one-third {
         display: none;
         @include breakpoint(medium) {
@@ -42,41 +18,31 @@
     }
 }
 
-.site-navigation {
-    background: $ebb;
-    .site-navigation__list {
-        margin: 0 (-$base-spacing-unit-small) 0 (-$base-spacing-unit-small);
-        padding: 0;
-        list-style: none;
-        display: flex;
-        li {
-            a {
-                padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
-                display: block;
-            }
-        }
+/* Search bar */
+.site-header__search {
+    display: flex;
+    justify-content: flex-end;
+    input[type=search] {
+        -webkit-appearance: none;
+        border-bottom-left-radius: 4px;
+        border-radius: 0;
+        border-right: 0;
+        border-top-left-radius: 4px;
+        border: 1px solid $frenchGray;
+        padding: $base-spacing-unit $base-spacing-unit-tiny;
+        width: 100%;
     }
-    .site-navigation--has-submenu {
-        position: relative;
+    button[type=submit] {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background: $stTropaz;
+        padding: $base-spacing-unit $base-spacing-unit-tiny;
+        &:hover {
+            background: $stTropazHover;
+        }
         svg {
-            width: 10px;
-            height: 10px;
-        }
-        .site-navigation__submenu {
-            display: none;
-        }
-    }
-    .site-navigation--has-submenu:hover {
-        .site-navigation__submenu {
-            display: block;
-            position: absolute;
-            min-width: 150%;
-            background: $ebb;
-            list-style: none;
-            padding: 2px 4px 4px;
-            li a:hover {
-                background: $white;
-            }
+            margin-top: -2px;
+            fill: $white;
         }
     }
 }
