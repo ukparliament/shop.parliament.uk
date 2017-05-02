@@ -3,10 +3,7 @@
     background: $white;
     overflow: auto;
     border-bottom: 3px solid $frenchGray;
-    padding: $base-spacing-unit $base-spacing-unit-medium;
-    @include breakpoint(medium) {
-        padding: $base-spacing-unit-medium;
-    }
+    padding: $base-spacing-unit-small 0;
     .site-header__cart {
         margin-bottom: $base-spacing-unit-tiny;
         svg {
@@ -37,16 +34,18 @@
             }
         }
     }
+    .flex-container--one-third {
+        display: none;
+        @include breakpoint(medium) {
+            display: block;
+        }
+    }
 }
 
 .site-navigation {
     background: $ebb;
-    padding: 0 $base-spacing-unit-medium;
-    @include breakpoint(medium) {
-        padding: 0 $base-spacing-unit-medium;
-    }
     .site-navigation__list {
-        margin: 0 0 0 (-$base-spacing-unit-medium);
+        margin: 0 (-$base-spacing-unit-small) 0 (-$base-spacing-unit-small);
         padding: 0;
         list-style: none;
         display: flex;

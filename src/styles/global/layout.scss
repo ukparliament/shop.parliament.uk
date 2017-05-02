@@ -4,13 +4,6 @@ html {
   background-color: $alabaster;
 }
 
-.page-width {
-  @include clearfix();
-  max-width: $width-site;
-  padding: 0 $gutter;
-  margin: 0 auto;
-}
-
 .shopify-section {
     width: 100%;
 }

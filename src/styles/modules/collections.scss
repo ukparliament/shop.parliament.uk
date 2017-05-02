@@ -1,17 +1,23 @@
-.collection__banner.collection__banner--image {
+.collection__banner--image {
     background-repeat: no-repeat;
     background-position: center center;
-    height: 300px;
     position: relative;
-    margin-top: $base-spacing-unit-extra-large;
+    margin: $base-spacing-unit-extra-large (-$base-spacing-unit-small);
+    height: 200px;
+    @include breakpoint(medium) {
+        height: 300px;
+    }
     h1 {
         position: absolute;
         left: 0;
         top: $base-spacing-unit-small;
-        max-width: 50%;
         background-color: rgba($white, .9);
         padding: $base-spacing-unit-tiny $base-spacing-unit-small;
         box-sizing: border-box;
+        max-width: 85%;
+        @include breakpoint(medium) {
+            max-width: 50%;
+        }
     }
 }
 

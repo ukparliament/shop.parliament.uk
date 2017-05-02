@@ -46,7 +46,8 @@
       "title": "Search for products on our site",
       "placeholder": "Search our store",
       "submit": "Search"
-    }
+    },
+    "shop": "Shop"
   },
   "blogs": {
     "article": {
