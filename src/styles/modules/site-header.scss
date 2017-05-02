@@ -10,30 +10,6 @@
             margin: -$base-spacing-unit $base-spacing-unit 0 0;
         }
     }
-    .site-header__search {
-        display: flex;
-        justify-content: flex-end;
-        input[type=search] {
-            border-top-left-radius: 4px;
-            border-bottom-left-radius: 4px;
-            border: 1px solid $frenchGray;
-            border-right: 0;
-            padding: $base-spacing-unit $base-spacing-unit-tiny;
-            width: 100%;
-        }
-        button[type=submit] {
-            border-top-right-radius: 4px;
-            border-bottom-right-radius: 4px;
-            background: $stTropaz;
-            padding: $base-spacing-unit $base-spacing-unit-tiny;
-            &:hover {
-                background: $stTropazHover;
-            }
-            svg {
-                margin-top: -2px;
-            }
-        }
-    }
     .flex-container--one-third {
         display: none;
         @include breakpoint(medium) {
@@ -46,7 +22,7 @@
     background: $ebb;
     width: 100%;
     display: block;
-    padding: 0 $base-spacing-unit-small;
+    padding: $base-spacing-unit-tiny $base-spacing-unit-small;
     @include breakpoint(medium) {
         display: none;
     }
@@ -78,10 +54,11 @@
         }
         li {
             a {
-                padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
+                padding: $base-spacing-unit-tiny 0;
                 display: inline-block;
                 @include breakpoint(medium) {
                     display: block;
+                    padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
                 }
             }
         }
@@ -96,6 +73,15 @@
             display: none;
             list-style: none;
             padding: 2px 4px 4px;
+            li a {
+                padding-left: $base-spacing-unit-tiny;
+                @include breakpoint(medium) {
+                    padding-left: 0;
+                }
+            }
+            li:last-child {
+                border-bottom: 0;
+            }
         }
     }
     @include breakpoint(medium) {
@@ -146,17 +132,19 @@
 }
 
 .site-navigation {
-    background-color: #f6f6f6;
+    transition: 300ms;
+    background-color: $alabaster;
     position: fixed;
     top: 0;
     bottom: 0;
     left: -300px;
     width: 300px;
-    border-right: 1px solid #e9e9e9;
+    border-right: 1px solid $frenchGray;
     li {
-        border-bottom: 1px solid #e9e9e9;
+        border-bottom: 1px solid $ebb;
     }
     @include breakpoint(medium) {
+        transition: 0s;
         position: static;
         width: 100%;
         background: $ebb;
@@ -168,13 +156,69 @@
     .site-navigation__list {
         margin: 0;
         @include breakpoint(medium) {
-            margin: 0 (-$base-spacing-unit-small) 0 (-$base-spacing-unit-small);
+            margin: 0 (-$base-spacing-unit-extra-extra-large) 0 (-$base-spacing-unit-extra-extra-large);
         }
     }
     .flex-container {
         padding: 0 $base-spacing-unit-tiny;
         @include breakpoint(medium) {
             padding: 0 $base-spacing-unit-small;
+        }
+    }
+}
+
+/* Search bar */
+.site-header__search {
+    display: flex;
+    justify-content: flex-end;
+    input[type=search] {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border: 1px solid $frenchGray;
+        border-right: 0;
+        padding: $base-spacing-unit $base-spacing-unit-tiny;
+        width: 100%;
+    }
+    button[type=submit] {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background: $stTropaz;
+        padding: $base-spacing-unit $base-spacing-unit-tiny;
+        &:hover {
+            background: $stTropazHover;
+        }
+        svg {
+            margin-top: -2px;
+            fill: $white;
+        }
+    }
+}
+
+/* Mobile extras for Navigation */
+.site-navigation__mobile-extras {
+    width: 100%;
+    padding: $base-spacing-unit-tiny 0;
+    border-bottom: 1px solid $ebb;
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.site-navigation__mobile-extras__heading {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: $base-spacing-unit-tiny 0;
+    margin-bottom: $base-spacing-unit-tiny;
+    border-bottom: 1px solid $ebb;
+    span {
+        display: block;
+        font-size: 24px;
+        line-height: 1.250; // 30px;
+        @include breakpoint(medium) {
+            font-size: 26px;
+            line-height: 1.154; // 30px
         }
     }
 }

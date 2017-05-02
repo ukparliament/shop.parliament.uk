@@ -42,11 +42,31 @@
   </div>
 </header>
 
-<label for="mobile-menu-button" class="mobile-menu-button">Open Menu</label>
+<label for="mobile-menu-button" class="mobile-menu-button">{% include 'icon-hamburger' %}</label>
 <input type="checkbox" id="mobile-menu-button" class="mobile-menu-button-input">
 
 <nav role="navigation" class="site-navigation">
   <div class="flex-container">
+    <div class="site-navigation__mobile-extras">
+      <div class="site-navigation__mobile-extras__heading">
+        <span>Browse</span>
+        <label for="mobile-menu-button" class="mobile-menu-button-inset">{% include 'icon-close' %}</label>
+      </div>
+      <form action="/search" method="get" role="search" class="site-header__search">
+        <label for="Search" class="label-hidden">
+          {{ 'general.search.placeholder' | t }}
+        </label>
+        <input type="search"
+               name="q"
+               id="Search"
+               value="{{ search.terms | escape }}"
+               placeholder="{{ 'general.search.placeholder' | t }}">
+        <button type="submit" class="btn">
+          {% include 'icon-search' %}
+          <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+        </button>
+      </form>
+    </div>
     <ul class="site-navigation__list">
       {% for link in linklists[section.settings.main_linklist].links %}
         {%- assign child_list_handle = link.title | handleize -%}
