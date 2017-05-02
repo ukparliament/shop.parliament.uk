@@ -30,9 +30,64 @@
         },
         "featured-product": {
           "type": "featured-product"
+        },
+        "tiles": {
+          "type": "tiles",
+          "blocks": {
+            "fwt": {
+              "type": "full-width-tile",
+              "settings": {
+                "full-width-tile-title": "All products",
+                "full-width-tile-link": "shopify:\/\/collections\/all",
+                "full-width-tile-image": "shopify:\/\/shop_images\/ap.png"
+              }
+            },
+            "hwt": {
+              "type": "half-width-tiles",
+              "settings": {
+                "left-half-width-tile-title": "House of Commons",
+                "left-half-width-tile-link": "shopify:\/\/collections\/collection-1",
+                "left-half-width-tile-image": "shopify:\/\/shop_images\/hoc.png",
+                "right-half-width-tile-title": "House of Lords",
+                "right-half-width-tile-link": "shopify:\/\/collections\/collection-without-image",
+                "right-half-width-tile-image": "shopify:\/\/shop_images\/hol.png"
+              }
+            },
+            "twt": {
+              "type": "third-width-tiles",
+              "settings": {
+                "left-third-width-tile-title": "Votes for Women",
+                "left-third-width-tile-link": "",
+                "left-third-width-tile-image": "shopify:\/\/shop_images\/vfw.png",
+                "center-third-width-tile-title": "Big Ben",
+                "center-third-width-tile-link": "",
+                "center-third-width-tile-image": "shopify:\/\/shop_images\/bb.png",
+                "right-third-width-tile-title": "Tiles",
+                "right-third-width-tile-link": "",
+                "right-third-width-tile-image": "shopify:\/\/shop_images\/tiles.png"
+              }
+            }
+          },
+          "block_order": [
+            "fwt",
+            "hwt",
+            "twt"
+          ],
+          "settings": {
+          }
+        },
+        "product-grid": {
+          "type": "product-grid",
+          "settings": {
+            "title": "Bestsellers",
+            "collection": "bestsellers",
+            "products_limit": "4"
+          }
         }
       },
       "content_for_index": [
+        "tiles",
+        "product-grid"
       ]
     }
   }
