@@ -42,7 +42,10 @@
   </div>
 </header>
 
-<label for="mobile-menu-button" class="mobile-menu-button">{% include 'icon-hamburger' %}</label>
+<label for="mobile-menu-button" class="mobile-menu-button">
+  {% include 'icon-hamburger' %}
+  <a href="/cart">{% include 'icon-cart' %}</a>
+</label>
 <input type="checkbox" id="mobile-menu-button" class="mobile-menu-button-input">
 
 <nav role="navigation" class="site-navigation">

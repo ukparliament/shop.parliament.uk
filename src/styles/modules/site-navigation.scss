@@ -1,0 +1,173 @@
+.site-navigation {
+    background: $alabaster;
+    border-right: 1px solid $frenchGray;
+    position: fixed;
+    bottom: 0;
+    left: -300px;
+    top: 0;
+    transition: 300ms;
+    width: 300px;
+    @include breakpoint(medium) {
+        position: static;
+        transition: 0s;
+        width: 100%;
+        background: $ebb;
+        border-right: 0;
+    }
+    li {
+        border-bottom: 1px solid $ebb;
+        @include breakpoint(medium) {
+            border-bottom: 0;
+        }
+    }
+    .flex-container {
+        padding: 0 $base-spacing-unit-tiny;
+        @include breakpoint(medium) {
+            padding: 0 $base-spacing-unit-small;
+        }
+    }
+    .site-navigation__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include breakpoint(medium) {
+            flex-direction: row;
+            margin: 0 (-$base-spacing-unit-extra-extra-large) 0 (-$base-spacing-unit-extra-extra-large);
+        }
+        li {
+            a {
+                padding: $base-spacing-unit-tiny 0;
+                display: inline-block;
+                @include breakpoint(medium) {
+                    display: block;
+                    padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
+                }
+            }
+        }
+    }
+    .site-navigation--has-submenu {
+        position: relative;
+        svg {
+            width: 10px;
+            height: 10px;
+        }
+        .site-navigation__submenu {
+            display: none;
+            list-style: none;
+            padding: 2px 4px 4px;
+            li a {
+                padding-left: $base-spacing-unit-tiny;
+                @include breakpoint(medium) {
+                    padding-left: 0;
+                }
+            }
+            li:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+    @include breakpoint(medium) {
+        .site-navigation--has-submenu:hover {
+            .site-navigation__submenu {
+                display: block;
+                position: absolute;
+                min-width: 150%;
+                background: $ebb;
+                list-style: none;
+                padding: 2px 4px 4px;
+                li a:hover {
+                    background: $white;
+                }
+            }
+        }
+    }
+}
+
+/* Mobile menu */
+.mobile-menu-button {
+    background: $ebb;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    svg {
+        margin: $base-spacing-unit-tiny $base-spacing-unit-small;
+    }
+    a {
+        color: $tundora;
+    }
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.mobile-menu-button-input {
+    display: none;
+}
+
+.mobile-menu-button-input:checked {
+    margin-left: 300px;
+}
+
+.mobile-menu-button-input:checked + .site-navigation {
+    left: 0;
+}
+
+[id^=drop-] {
+    display: none;
+}
+
+[id^=drop-]:checked + .site-navigation__submenu {
+    display: block;
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.site-navigation--caret {
+    display: none;
+    @include breakpoint(medium) {
+        display: inline-block;
+    }
+}
+
+.site-navigation--plus {
+    position: absolute;
+    right: 0;
+    font-size: 32px;
+    font-weight: 400;
+    vertical-align: middle;
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.site-navigation__mobile-extras {
+    width: 100%;
+    padding: $base-spacing-unit-tiny 0;
+    border-bottom: 1px solid $ebb;
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.site-navigation__mobile-extras__heading {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: $base-spacing-unit-tiny 0;
+    margin-bottom: $base-spacing-unit-tiny;
+    border-bottom: 1px solid $ebb;
+    span {
+        display: block;
+        font-size: 24px;
+        line-height: 1.250; // 30px;
+        @include breakpoint(medium) {
+            font-size: 26px;
+            line-height: 1.154; // 30px
+        }
+    }
+}
