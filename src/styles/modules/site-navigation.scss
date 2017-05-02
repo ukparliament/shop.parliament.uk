@@ -61,11 +61,11 @@
             width: 10px;
             height: 10px;
         }
-        [id^=drop-] {
+        [id^=submenu-] {
             display: none;
         }
 
-        [id^=drop-]:checked + .site-navigation__submenu {
+        [id^=submenu-]:checked + .site-navigation__submenu {
             display: block;
             @include breakpoint(medium) {
                 display: none;
@@ -147,6 +147,7 @@
     }
 }
 
+/* Extras that only appear on Mobile */
 .site-navigation__mobile-extras {
     width: 100%;
     padding: $base-spacing-unit-tiny 0;

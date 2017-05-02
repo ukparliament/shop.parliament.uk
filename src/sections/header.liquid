@@ -79,8 +79,8 @@
               {{ link.title }}
               <span class="site-navigation--caret">{% include 'icon-arrow-down' %}</span>
             </a>
-            <label for="drop-{{ child_list_handle }}" class="site-navigation--plus">&plus;</label>
-            <input type="checkbox" id="drop-{{ child_list_handle }}">
+            <label for="submenu-{{ child_list_handle }}" class="site-navigation--plus">&plus;</label>
+            <input type="checkbox" id="submenu-{{ child_list_handle }}">
             <ul class="site-navigation__submenu">
               {% for childlink in menus[child_list_handle].links %}
                 <li {% if childlink.active %}class="site-navigation--active"{% endif %}>
