@@ -42,6 +42,9 @@
   </div>
 </header>
 
+<label for="mobile-menu-button" class="mobile-menu-button">Open Menu</label>
+<input type="checkbox" id="mobile-menu-button" class="mobile-menu-button-input">
+
 <nav role="navigation" class="site-navigation">
   <div class="flex-container">
     <ul class="site-navigation__list">
@@ -51,8 +54,10 @@
           <li class="site-navigation--has-submenu{% if link.active %} site-navigation--active{% endif %}">
             <a href="{{ link.url }}" class="site-navigation__link">
               {{ link.title }}
-              {% include 'icon-arrow-down' %}
+              <span class="site-navigation--caret">{% include 'icon-arrow-down' %}</span>
             </a>
+            <label for="drop-{{ child_list_handle }}" class="site-navigation--plus">&plus;</label>
+            <input type="checkbox" id="drop-{{ child_list_handle }}">
             <ul class="site-navigation__submenu">
               {% for childlink in menus[child_list_handle].links %}
                 <li {% if childlink.active %}class="site-navigation--active"{% endif %}>
