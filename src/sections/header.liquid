@@ -42,18 +42,18 @@
   </div>
 </header>
 
-<label for="mobile-menu-button" class="mobile-menu-button">
+<label for="site-navigation__mobile-menu-button" class="site-navigation__mobile-menu-button">
   {% include 'icon-hamburger' %}
   <a href="/cart">{% include 'icon-cart' %}</a>
 </label>
-<input type="checkbox" id="mobile-menu-button" class="mobile-menu-button-input">
+<input type="checkbox" id="site-navigation__mobile-menu-button" class="site-navigation__mobile-menu-button-input">
 
 <nav role="navigation" class="site-navigation">
   <div class="flex-container">
     <div class="site-navigation__mobile-extras">
       <div class="site-navigation__mobile-extras__heading">
-        <span>Browse</span>
-        <label for="mobile-menu-button" class="mobile-menu-button-inset">{% include 'icon-close' %}</label>
+        <h3>Browse</h3>
+        <label for="site-navigation__mobile-menu-button" class="site-navigation__mobile-menu-button-inset">{% include 'icon-close' %}</label>
       </div>
       <form action="/search" method="get" role="search" class="site-header__search">
         <label for="Search" class="label-hidden">

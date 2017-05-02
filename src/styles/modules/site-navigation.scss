@@ -7,6 +7,7 @@
     top: 0;
     transition: 300ms;
     width: 300px;
+    z-index: 2;
     @include breakpoint(medium) {
         position: static;
         transition: 0s;
@@ -46,6 +47,12 @@
                     padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
                 }
             }
+            a:hover {
+                text-decoration: underline;
+                @include breakpoint(medium) {
+                    text-decoration: none;
+                }
+            }
         }
     }
     .site-navigation--has-submenu {
@@ -54,15 +61,22 @@
             width: 10px;
             height: 10px;
         }
+        [id^=drop-] {
+            display: none;
+        }
+
+        [id^=drop-]:checked + .site-navigation__submenu {
+            display: block;
+            @include breakpoint(medium) {
+                display: none;
+            }
+        }
         .site-navigation__submenu {
             display: none;
             list-style: none;
             padding: 2px 4px 4px;
             li a {
                 padding-left: $base-spacing-unit-tiny;
-                @include breakpoint(medium) {
-                    padding-left: 0;
-                }
             }
             li:last-child {
                 border-bottom: 0;
@@ -86,8 +100,8 @@
     }
 }
 
-/* Mobile menu */
-.mobile-menu-button {
+/* Mobile menu buttons */
+.site-navigation__mobile-menu-button {
     background: $ebb;
     display: flex;
     width: 100%;
@@ -103,27 +117,16 @@
     }
 }
 
-.mobile-menu-button-input {
+.site-navigation__mobile-menu-button-input {
     display: none;
 }
 
-.mobile-menu-button-input:checked {
+.site-navigation__mobile-menu-button-input:checked {
     margin-left: 300px;
 }
 
-.mobile-menu-button-input:checked + .site-navigation {
+.site-navigation__mobile-menu-button-input:checked + .site-navigation {
     left: 0;
-}
-
-[id^=drop-] {
-    display: none;
-}
-
-[id^=drop-]:checked + .site-navigation__submenu {
-    display: block;
-    @include breakpoint(medium) {
-        display: none;
-    }
 }
 
 .site-navigation--caret {
@@ -161,13 +164,8 @@
     padding: $base-spacing-unit-tiny 0;
     margin-bottom: $base-spacing-unit-tiny;
     border-bottom: 1px solid $ebb;
-    span {
-        display: block;
-        font-size: 24px;
-        line-height: 1.250; // 30px;
-        @include breakpoint(medium) {
-            font-size: 26px;
-            line-height: 1.154; // 30px
-        }
+    h3 {
+        margin: 0;
+        font-weight: 400;
     }
 }
