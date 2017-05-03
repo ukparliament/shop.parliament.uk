@@ -16,12 +16,15 @@ body {
 
 .shop-heading {
     font-weight: 400;
-    margin-bottom: $base-spacing-unit-extra-large;
+    margin: $base-spacing-unit-medium 0;
     color: $tundora;
+    @include breakpoint(medium) {
+        margin: $base-spacing-unit-extra-large 0;
+    }
 }
 
 .shop-heading__no-margin {
-    margin-bottom: 0;
+    margin: 0;
 }
 
 // Base Heading Settings
@@ -142,8 +145,6 @@ h6 {
 }
 
 .tile--full-width .tile--heading {
-    font-size: 24px;
-    line-height: 1.250; // 30px;
     @include breakpoint(medium) {
         font-size: 26px;
         line-height: 1.154; // 30px
