@@ -1,0 +1,10 @@
+.breadcrumbs {
+    width: 100%;
+    padding: $base-spacing-unit-extra-extra-extra-large 0 $base-spacing-unit-tiny;
+    a {
+        color: $tundora;
+    }
+    span {
+        margin: 0 $base-spacing-unit-tiny;
+    }
+}
