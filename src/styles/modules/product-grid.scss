@@ -1,7 +1,10 @@
 .product-grid {
     .product-grid__heading {
         width: 100%;
-        margin-bottom: $base-spacing-unit-medium;
+        margin-bottom: $base-spacing-unit-small;
+        @include breakpoint(medium) {
+            margin-bottom: $base-spacing-unit-medium;
+        }
     }
     .product-grid__products {
         display: flex;

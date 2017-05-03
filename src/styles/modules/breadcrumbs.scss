@@ -2,13 +2,15 @@
     width: 100%;
     padding-top: $base-spacing-unit-tiny;
     padding-bottom: $base-spacing-unit-tiny;
+    display: flex;
+    flex-wrap: wrap;
     @include breakpoint(medium) {
         padding-top: $base-spacing-unit-extra-extra-extra-large;
     }
     a {
         color: $tundora;
     }
-    span {
+    span[aria-hidden] {
         margin: 0 $base-spacing-unit-tiny;
     }
 }
