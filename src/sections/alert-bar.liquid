@@ -1,0 +1,25 @@
+{% if section.settings.show_alert_bar %}
+<div class="alert-bar alert-bar__green">
+  <div class="noflex-container rte">{{ section.settings.alert_bar_text }}</div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Alert Bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_alert_bar",
+        "label": "Show alert bar",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "alert_bar_text",
+        "label": "Alert bar message",
+        "default": "Free delivery on orders over <strong>£50</strong>."
+      }
+    ]
+  }
+{% endschema %}
