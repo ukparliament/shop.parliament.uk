@@ -206,7 +206,9 @@ h6 {
 
 .cart--meta {
     .cart--total {
-        text-align: right;
+        @include breakpoint(medium) {
+            text-align: right;
+        }
         .cart--total__shipping {
             font-size: 14px;
             color: $doveGray;

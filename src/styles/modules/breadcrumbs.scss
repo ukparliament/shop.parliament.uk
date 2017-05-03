@@ -1,6 +1,10 @@
 .breadcrumbs {
     width: 100%;
-    padding: $base-spacing-unit-extra-extra-extra-large 0 $base-spacing-unit-tiny;
+    padding-top: $base-spacing-unit-tiny;
+    padding-bottom: $base-spacing-unit-tiny;
+    @include breakpoint(medium) {
+        padding-top: $base-spacing-unit-extra-extra-extra-large;
+    }
     a {
         color: $tundora;
     }
