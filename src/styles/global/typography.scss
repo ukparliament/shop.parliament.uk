@@ -18,13 +18,14 @@ body {
     font-weight: 400;
     margin: $base-spacing-unit-medium 0;
     color: $tundora;
+    font-size: 28px;
     @include breakpoint(medium) {
         margin: $base-spacing-unit-extra-large 0;
     }
 }
 
 .shop-heading__no-margin {
-    margin: 0;
+    margin-bottom: 0;
 }
 
 // Base Heading Settings
