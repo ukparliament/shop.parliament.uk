@@ -1,17 +1,5 @@
 {% paginate search.results by 10 %}
 
-  <h1>
-    {% if search.performed %}
-      {% if search.results_count == 0 %}
-        {{ 'general.search.no_results_html' | t: terms: search.terms }}
-      {% else %}
-        {{ 'general.search.results_for_html' | t: terms: search.terms }}
-      {% endif %}
-    {% else %}
-      {{ 'general.search.title' | t }}
-    {% endif %}
-  </h1>
-
   <form action="/search" method="get" role="search">
     <label for="Search" class="label-hidden">
       {{ 'general.search.placeholder' | t }}
