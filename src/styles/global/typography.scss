@@ -220,3 +220,17 @@ h6 {
         }
     }
 }
+
+p a {
+    color: $stTropaz;
+    font-weight: 700;
+}
+
+p a:hover {
+    color: $stTropazHover;
+}
+
+p a:focus {
+    background: $algaeGreen;
+    outline: 3px solid $algaeGreen;
+}
