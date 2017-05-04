@@ -1,5 +1,5 @@
 {
-  "name": "parliament.uk-shop",
+  "name": "UK Parliament Shop",
   "version": "0.0.1",
   "devDependencies": {
     "@shopify/slate-tools": "0.2.7"
