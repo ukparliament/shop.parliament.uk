@@ -4,7 +4,7 @@
       {% if collection.all_tags.size > 0 %}
         <ul class="collection__filters">
           {% for tag in collection.all_tags %}
-            {% unless tag contains 'price-' %}
+            {% unless tag contains 'price-' or tag contains 'vendor-' %}
               {% if current_tags contains tag %}
                 <li class="collection__filters--active">
                   {{ tag | link_to_remove_tag: tag }}
@@ -38,6 +38,25 @@
               <li class="collection__filters--active">{{ 'Over £50' | link_to_remove_tag: 'price-over-50' }}</li>
             {% else %}
               <li>{{ 'Over £50' | link_to_tag: 'price-over-50' }}</li>
+            {% endif %}
+          {% endif %}
+        </ul>
+        <ul class="collection__filters">
+          {% if collection.all_tags contains 'vendor-house-of-commons' %}
+            {% if current_tags contains 'vendor-house-of-commons' %}
+              <li class="collection__filters--active">{{ 'House of Commons' | link_to_remove_tag: 'vendor-house-of-commons' }}</li>
+            {% else %}
+              <li>{{ 'House of Commons' | link_to_tag: 'vendor-house-of-commons' }}</li>
+            {% endif %}
+            {% if current_tags contains 'vendor-house-of-lords' %}
+              <li class="collection__filters--active">{{ 'House of Lords' | link_to_remove_tag: 'vendor-house-of-lords' }}</li>
+            {% else %}
+              <li>{{ 'House of Lords' | link_to_tag: 'vendor-house-of-lords' }}</li>
+            {% endif %}
+            {% if current_tags contains 'vendor-uk-parliament' %}
+              <li class="collection__filters--active">{{ 'UK Parliament' | link_to_remove_tag: 'vendor-uk-parliament' }}</li>
+            {% else %}
+              <li>{{ 'UK Parliament' | link_to_tag: 'vendor-uk-parliament' }}</li>
             {% endif %}
           {% endif %}
         </ul>
