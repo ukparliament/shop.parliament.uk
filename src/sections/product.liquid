@@ -9,10 +9,6 @@
   <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
-  <div class="noflex-container">
-    <h3 class="shop-heading shop-heading__no-margin">{{ shop.name }} Shop</h3>
-    <h1 class="product--title">{{ product.title }}</h1>
-  </div>
   <div class="flex-container">
     <div class="product__image-container flex-container--half">
       <div class="product__image-container--featured">

@@ -1,8 +1,5 @@
 {
   "general": {
-    "alerts": {
-      "free_delivery_html": "Free delivery for orders over <strong>{{ price }}</strong>."
-    },
     "accessibility": {
       "skip_to_content": "Skip to content"
     },
@@ -75,9 +72,10 @@
   },
   "cart": {
     "general": {
+      "back": "Back to shopping",
       "title": "Shopping Cart",
       "remove": "Remove",
-      "note": "Special instructions for seller",
+      "note": "Please leave special delivery instructions or a delivery note below:",
       "subtotal": "Subtotal",
       "shipping_at_checkout": "Shipping & taxes calculated at checkout",
       "update": "Update Cart",
@@ -100,7 +98,8 @@
   "collections": {
     "general": {
       "no_matches": "Sorry, there are no products in this collection",
-      "link_title": "Browse our {{ title }} collection"
+      "link_title": "Browse our {{ title }} collection",
+      "more": "More"
     }
   },
   "contact": {

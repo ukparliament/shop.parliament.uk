@@ -1,9 +1,8 @@
 .site-footer {
     background: $martinique;
     margin: $base-spacing-unit-extra-extra-large 0 0 0;
-    padding: 0 $base-spacing-unit-small;
     @include breakpoint(medium) {
-        padding: $base-spacing-unit-medium;
+        padding: $base-spacing-unit-medium 0;
     }
     .flex-container--one-third {
         padding: $base-spacing-unit-small 0;

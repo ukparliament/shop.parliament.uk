@@ -2,23 +2,28 @@
   This page represents the /collections and /products pages.
 {% endcomment %}
 
-<h1>{{ page_title }}</h1>
-
-{% for collection in collections %}
-  {% unless collection.handle == 'frontpage' %}
-    <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: title }}">
-      {% if collection.image != blank %}
-        {{ collection | img_url: '480x480' | img_tag: collection.title }}
-      {% elsif collection.products.first != blank %}
-        {{ collection.products.first | img_url: '480x480' | img_tag: collection.title }}
-      {% else %}
-        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
-        {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
-      {% endif %}
-    </a>
-
-    <p>
-      <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: title }}">{{ collection.title }}</a>
-    </p>
-  {% endunless %}
-{% endfor %}
+<div class="flex-container list-collections">
+  {% for collection in collections %}
+    <div class="list-collections__collection">
+      {% unless collection.handle == 'frontpage' %}
+        <div class="list-collections__collection__header">
+          <h2>{{ collection.title }}</h2>
+          <a href="{{ collection.url }}" title="{{ collections.general.link_title | t: title: title }}">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
+        </div>
+        <div class="product-grid noflex-container">
+          <div class="product-grid__products product-grid__products--fifths">
+            {% for product in collection.products limit: 5 %}
+              <div class="product-grid__single">
+                <a href="{{ product.url }}" class="product-grid__image">
+                  <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
+                </a>
+                <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
+                <p class="product-grid__price">{{ product.price | money }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endunless %}
+    </div>
+  {% endfor %}
+</div>

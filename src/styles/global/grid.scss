@@ -7,6 +7,9 @@
     @include breakpoint(medium) {
         padding: 0;
     }
+    .noflex-container, .flex-container {
+        padding: 0;
+    }
 }
 
 .flex-container {

@@ -16,8 +16,12 @@ body {
 
 .shop-heading {
     font-weight: 400;
-    margin-bottom: $base-spacing-unit-extra-large;
+    margin: $base-spacing-unit-medium 0;
     color: $tundora;
+    font-size: 28px;
+    @include breakpoint(medium) {
+        margin: $base-spacing-unit-extra-large 0;
+    }
 }
 
 .shop-heading__no-margin {
@@ -142,8 +146,6 @@ h6 {
 }
 
 .tile--full-width .tile--heading {
-    font-size: 24px;
-    line-height: 1.250; // 30px;
     @include breakpoint(medium) {
         font-size: 26px;
         line-height: 1.154; // 30px
@@ -206,7 +208,9 @@ h6 {
 
 .cart--meta {
     .cart--total {
-        text-align: right;
+        @include breakpoint(medium) {
+            text-align: right;
+        }
         .cart--total__shipping {
             font-size: 14px;
             color: $doveGray;
@@ -216,4 +220,18 @@ h6 {
             color: $tundora;
         }
     }
+}
+
+p a {
+    color: $stTropaz;
+    font-weight: 700;
+}
+
+p a:hover {
+    color: $stTropazHover;
+}
+
+p a:focus {
+    background: $algaeGreen;
+    outline: 3px solid $algaeGreen;
 }

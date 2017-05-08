@@ -1,12 +1,22 @@
 .product-grid {
     .product-grid__heading {
         width: 100%;
-        margin-bottom: $base-spacing-unit-medium;
+        margin-bottom: $base-spacing-unit-small;
+        @include breakpoint(medium) {
+            margin-bottom: $base-spacing-unit-medium;
+        }
     }
     .product-grid__products {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+    }
+    .product-grid__products--fifths {
+        .product-grid__single {
+            @include breakpoint(medium) {
+                width: 19%;
+            }
+        }
     }
     .product-grid__products--thirds {
         .product-grid__single {
