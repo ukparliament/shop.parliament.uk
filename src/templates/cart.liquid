@@ -1,6 +1,4 @@
 <div class="noflex-container cart">
-  <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} {{ 'general.shop' | t }}</h2>
-  <h1>{{ 'cart.general.title' | t }}</h1>
 {% if cart.item_count > 0 %}
   <form action="/cart" method="post" novalidate>
     <table class="responsive-table cart--table">

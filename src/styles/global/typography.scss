@@ -18,6 +18,7 @@ body {
     font-weight: 400;
     margin: $base-spacing-unit-medium 0;
     color: $tundora;
+    font-size: 28px;
     @include breakpoint(medium) {
         margin: $base-spacing-unit-extra-large 0;
     }
@@ -219,4 +220,18 @@ h6 {
             color: $tundora;
         }
     }
+}
+
+p a {
+    color: $stTropaz;
+    font-weight: 700;
+}
+
+p a:hover {
+    color: $stTropazHover;
+}
+
+p a:focus {
+    background: $algaeGreen;
+    outline: 3px solid $algaeGreen;
 }

@@ -72,6 +72,42 @@
   {% include 'breadcrumbs' %}
 
   <main role="main" id="MainContent" class="sticky-footer-content">
+    <div class="noflex-container">
+      {% unless template == 'product' or template == 'cart' or template == 'collection' or template == 'page' or template == '404' or template == 'search' %}
+        <h2 class="shop-heading">{{ shop.name }} {{ 'general.shop' | t }}</h2>
+      {% endunless %}
+      {% if template == 'product' %}
+        <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} {{ 'general.shop' | t }}</h2>
+        <h1 class="product--title">{{ product.title }}</h1>
+      {% endif %}
+      {% if template == 'cart' %}
+        <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} {{ 'general.shop' | t }}</h2>
+        <h1>{{ 'cart.general.title' | t }}</h1>
+      {% endif %}
+      {% if template == 'page' %}
+        <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} {{ 'general.shop' | t }}</h2>
+        <h1>{{ page.title }}</h1>
+      {% endif %}
+      {% if template == '404' %}
+        <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} {{ 'general.shop' | t }}</h2>
+        <h1>{{ 'general.404.title' | t }}</h1>
+      {% endif %}
+      {% if template == 'search' %}
+        <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} {{ 'general.shop' | t }}</h2>
+        <h1>
+          {% if search.performed %}
+            {% if search.results_count == 0 %}
+              {{ 'general.search.no_results_html' | t: terms: search.terms }}
+            {% else %}
+              {{ 'general.search.results_for_html' | t: terms: search.terms }}
+            {% endif %}
+          {% else %}
+            {{ 'general.search.title' | t }}
+          {% endif %}
+        </h1>
+      {% endif %}
+    </div>
+
     {{ content_for_layout }}
   </main>
 
