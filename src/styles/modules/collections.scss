@@ -1,3 +1,7 @@
+.collection .shop-heading {
+    margin: 0;
+}
+
 .collection__banner--image {
     background-repeat: no-repeat;
     background-position: center center;
@@ -22,10 +26,14 @@
 }
 
 .collection__filters {
+    display: none;
     margin: $base-spacing-unit-extra-large 0 0 0;
     list-style: none;
     padding: 0;
     font-size: 14px;
+    @include breakpoint(medium) {
+        display: block;
+    }
     li {
         border-bottom: 1px solid $frenchGray;
         max-width: 75%;

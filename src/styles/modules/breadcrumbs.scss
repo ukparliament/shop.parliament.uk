@@ -1,10 +1,19 @@
 .breadcrumbs {
     width: 100%;
-    padding: $base-spacing-unit-extra-extra-extra-large 0 $base-spacing-unit-tiny;
+    display: flex;
+    flex-wrap: wrap;
+    padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+    @include breakpoint(medium) {
+        padding: $base-spacing-unit-large 0;
+    }
     a {
         color: $tundora;
     }
-    span {
+    span[aria-hidden] {
         margin: 0 $base-spacing-unit-tiny;
     }
+}
+
+.breadcrumbs + .sticky-footer-content .noflex-container .shop-heading {
+    margin-top: 0;
 }

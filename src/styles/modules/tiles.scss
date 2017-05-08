@@ -40,12 +40,6 @@
     margin-bottom: 0;
 }
 
-.tile--full-width {
-    .tile--underline {
-        margin-top: $base-spacing-unit-tiny;
-    }
-}
-
 .tile--half-width, .tile--one-third {
     .tile--heading {
         background: rgba($purpleHeart, .9);
