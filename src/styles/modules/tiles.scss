@@ -51,6 +51,9 @@
 }
 
 .tile--half-width {
+    .tile--underline {
+        margin-top: $base-spacing-unit;
+    }
     @include breakpoint(medium) {
         width: 49%;
         height: 367px;
@@ -63,6 +66,7 @@
 .tile--one-third {
     @include breakpoint(medium) {
         width: 32.3%;
+        height: 241px;
     }
     .tile--heading {
         width: auto;
