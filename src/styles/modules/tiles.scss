@@ -66,6 +66,7 @@
 .tile--one-third {
     @include breakpoint(medium) {
         width: 32.3%;
+        height: 241px;
     }
     .tile--heading {
         width: auto;
