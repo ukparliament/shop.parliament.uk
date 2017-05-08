@@ -51,6 +51,9 @@
 }
 
 .tile--half-width {
+    .tile--underline {
+        margin-top: $base-spacing-unit;
+    }
     @include breakpoint(medium) {
         width: 49%;
         height: 367px;
