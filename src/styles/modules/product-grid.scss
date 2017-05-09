@@ -25,6 +25,29 @@
             }
         }
     }
+    .product-grid__products--rows {
+        .product-grid__single {
+            width: 100%;
+            @include breakpoint(medium) {
+                display: flex;
+                align-items: center;
+            }
+            .product-grid__image {
+                @include breakpoint(medium) {
+                    width: 250px;
+                    flex: 0 0 auto;
+                }
+            }
+            .product-grid__description {
+                @include breakpoint(medium) {
+                    margin: 0 $base-spacing-unit-medium;
+                    a {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
     .product-grid__single {
         width: 100%;
         margin-bottom: $base-spacing-unit-small;

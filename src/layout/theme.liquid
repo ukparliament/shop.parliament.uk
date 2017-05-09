@@ -73,7 +73,7 @@
 
   <main role="main" id="MainContent" class="sticky-footer-content">
     <div class="noflex-container">
-      {% unless template == 'product' or template == 'cart' or template == 'collection' or template == 'page' or template == '404' or template == 'search' %}
+      {% unless template == 'product' or template == 'cart' or template == 'collection' or template == 'page' or template == '404' or template == 'search' or template == 'collection.list' %}
         <h2 class="shop-heading">{{ shop.name }} {{ 'general.shop' | t }}</h2>
       {% endunless %}
       {% if template == 'product' %}
