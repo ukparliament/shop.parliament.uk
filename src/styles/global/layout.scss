@@ -19,5 +19,7 @@ html {
 }
 
 .page .rte {
-    width: 720px;
+    @include breakpoint(medium) {
+        width: 720px;
+    }
 }
