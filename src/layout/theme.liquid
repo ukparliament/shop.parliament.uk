@@ -63,11 +63,11 @@
 
 <body id="{{ page_title | handle }}" class="sticky-footer template-{{ template.name | handle }}">
 
-  {% section 'alert-bar' %}
-
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {% section 'header' %}
+
+  {% section 'offers-bar' %}
 
   {% include 'breadcrumbs' %}
 

@@ -1,0 +1,73 @@
+{% if section.settings.show_offers_bar %}
+  <div class="offers-bar flex-container">
+    {% for block in section.blocks %}
+      <div class="offers-bar__third">
+        <div class="offers-bar__icon">
+          {% if block.settings.icon == 'tag-blue' %}
+            <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation">
+          {% elsif block.settings.icon == 'tag-green' %}
+            <img src="{{ 'icon-tag-green.svg' | asset_url }}" role="presentation">
+          {% elsif block.settings.icon == 'mouse-yellow' %}
+            <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation">
+          {% endif %}
+        </div>
+        <div class="offers-bar__description">
+          {% if block.settings.url %}
+            <strong><a href="{{ block.settings.url }}">{{ block.settings.title }}</a></strong>
+          {% else %}
+            <strong>{{ block.settings.title }}</strong>
+          {% endif %}
+          <p>{{ block.settings.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Offers Bar",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_offers_bar",
+        "label": "Show offers bar",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "id": "icon",
+            "type": "radio",
+            "options": [
+              { "value": "tag-blue", "label": "Tag icon, blue" },
+              { "value": "tag-green", "label": "Tag icon, green" },
+              { "value": "mouse-yellow", "label": "Mouse icon, yellow" }
+            ],
+            "label": "Block icon"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Block title"
+          },
+          {
+            "id": "description",
+            "type": "text",
+            "label": "Block description"
+          },
+          {
+            "id": "url",
+            "type": "url",
+            "label": "Block URL"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
