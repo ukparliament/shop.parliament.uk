@@ -25,7 +25,7 @@ body {
 }
 
 .shop-heading__no-margin {
-    margin-bottom: 0;
+    margin: 0;
 }
 
 // Base Heading Settings
@@ -111,6 +111,7 @@ h6 {
     .site-header__cart {
         color: $tundora;
         text-decoration: none;
+        font-size: 14px;
     }
     .site-header__search button[type=submit] {
         color: $white;

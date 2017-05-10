@@ -1,0 +1,40 @@
+.microsite-masthead {
+    background: $martinique;
+    color: $alabaster;
+    font-size: 12px;
+    padding: $base-spacing-unit 0;
+    .flex-container {
+        justify-content: space-between;
+    }
+    .microsite-masthead__back {
+        font-weight: 700;
+    }
+    a {
+        color: $alabaster;
+        text-decoration: none;
+        .icon {
+            height: 10px;
+            width: 7.5px;
+            margin-right: $base-spacing-unit;
+        }
+        span {
+            text-decoration: underline;
+        }
+    }
+    ul {
+        display: none;
+        @include breakpoint(medium) {
+            display: block;
+        }
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            display: inline-block;
+            margin-left: $base-spacing-unit-small;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
