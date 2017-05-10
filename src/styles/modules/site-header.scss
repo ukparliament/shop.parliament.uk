@@ -4,6 +4,11 @@
     overflow: auto;
     border-bottom: 3px solid $frenchGray;
     padding: $base-spacing-unit-small 0;
+    img {
+        max-width: 385px;
+        height: 61px;
+        width: 100%;
+    }
     .site-header__cart {
         margin-bottom: $base-spacing-unit;
         display: block;
