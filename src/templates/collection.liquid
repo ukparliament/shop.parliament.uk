@@ -18,6 +18,7 @@
           {% endfor %}
         </ul>
         <ul class="collection__filters">
+          <strong class="collection__filters--heading">{{ 'collections.filter_by' | t: title: 'Price' }}</strong>
           {% if collection.all_tags contains 'price-under-5' %}
             {% if current_tags contains 'price-under-5' %}
               <li class="collection__filters--active">{{ 'Under £5' | link_to_remove_tag: 'price-under-5' }}</li>
@@ -42,6 +43,7 @@
           {% endif %}
         </ul>
         <ul class="collection__filters">
+          <strong class="collection__filters--heading">{{ 'collections.filter_by' | t: title: 'Vendor' }}</strong>
           {% if collection.all_tags contains 'vendor-house-of-commons' %}
             {% if current_tags contains 'vendor-house-of-commons' %}
               <li class="collection__filters--active">{{ 'House of Commons' | link_to_remove_tag: 'vendor-house-of-commons' }}</li>
