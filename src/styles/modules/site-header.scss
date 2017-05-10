@@ -5,9 +5,12 @@
     border-bottom: 3px solid $frenchGray;
     padding: $base-spacing-unit-small 0;
     .site-header__cart {
-        margin-bottom: $base-spacing-unit-tiny;
+        margin-bottom: $base-spacing-unit;
+        display: block;
         svg {
-            margin: -$base-spacing-unit $base-spacing-unit 0 0;
+            height: 16px;
+            width: 19px;
+            margin-top: -$base-spacing-unit;
         }
     }
     .flex-container--one-third {

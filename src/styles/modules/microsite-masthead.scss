@@ -2,9 +2,12 @@
     background: $martinique;
     color: $alabaster;
     font-size: 12px;
-    padding: $base-spacing-unit-tiny 0;
+    padding: $base-spacing-unit 0;
     .flex-container {
         justify-content: space-between;
+    }
+    .microsite-masthead__back {
+        font-weight: 700;
     }
     a {
         color: $alabaster;
