@@ -6,7 +6,7 @@
       {% else %}
         <div class="h1" itemscope itemtype="http://schema.org/Organization">
       {% endif %}
-          <a href="/" itemprop="url">{{ shop.name }}</a>
+          <a href="/" itemprop="url" title="{{ shop.name }}"><img src="{{ 'logo.svg' | asset_url }}"></a>
       {% if template.name == 'index' %}
         </h1>
       {% else %}
