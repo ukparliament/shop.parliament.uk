@@ -100,7 +100,8 @@
       "no_matches": "Sorry, there are no products in this collection",
       "link_title": "Browse our {{ title }} collection",
       "more": "More"
-    }
+    },
+    "filter_by": "Filter by {{ title }}"
   },
   "contact": {
     "form": {
