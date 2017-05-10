@@ -1,0 +1,31 @@
+.offers-bar {
+    display: none;
+    @include breakpoint(medium) {
+        display: flex;
+        margin-top: $base-spacing-unit-large;
+    }
+    .offers-bar__third {
+        line-height: 1.2;
+        font-size: 14px;
+        padding: $base-spacing-unit 0;
+        @include breakpoint(medium) {
+            margin-bottom: 0;
+            border-right: 2px solid $frenchGray;
+            width: 33.3%;
+            display: flex;
+            justify-content: center;
+        }
+        a {
+            color: $tundora;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    .offers-bar__third:last-of-type {
+        border-right: 0;
+    }
+    .offers-bar__icon {
+        padding-right: $base-spacing-unit-tiny;
+    }
+}

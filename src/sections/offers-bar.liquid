@@ -1,0 +1,45 @@
+{% if section.settings.show_offers_bar %}
+<div class="offers-bar flex-container">
+  <div class="offers-bar__third">
+    <div class="offers-bar__icon">
+      <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation">
+    </div>
+    <div class="offers-bar__description">
+      <strong>Free UK delivery</strong>
+      <p>on all orders over &pound;50</p>
+    </div>
+  </div>
+  <div class="offers-bar__third">
+    <div class="offers-bar__icon">
+      <img src="{{ 'icon-tag-green.svg' | asset_url }}" role="presentation">
+    </div>
+    <div class="offers-bar__description">
+      <strong><a href="#">Tours of Parliament</a></strong>
+      <p>a range of regular and specialist tours</p>
+    </div>
+  </div>
+  <div class="offers-bar__third">
+    <div class="offers-bar__icon">
+      <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation">
+    </div>
+    <div class="offers-bar__description">
+      <strong><a href="#">Subscribe to our newsletter</a></strong>
+      <p>for information on all future events &amp; offers</p>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Offers Bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_offers_bar",
+        "label": "Show offers bar",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}
