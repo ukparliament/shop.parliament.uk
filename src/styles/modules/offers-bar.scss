@@ -3,6 +3,7 @@
     @include breakpoint(medium) {
         display: flex;
         margin-top: $base-spacing-unit-large;
+        justify-content: center;
     }
     .offers-bar__third {
         line-height: 1.2;
