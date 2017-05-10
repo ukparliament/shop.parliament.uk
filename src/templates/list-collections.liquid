@@ -4,8 +4,8 @@
 
 <div class="flex-container list-collections">
   {% for collection in collections %}
-    <div class="list-collections__collection">
-      {% unless collection.handle == 'frontpage' %}
+    {% unless collection.handle == 'frontpage' %}
+      <div class="list-collections__collection">
         <div class="list-collections__collection__header">
           <h2>{{ collection.title }}</h2>
           <a href="{{ collection.url }}" title="{{ collections.general.link_title | t: title: title }}">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
@@ -23,7 +23,7 @@
             {% endfor %}
           </div>
         </div>
-      {% endunless %}
-    </div>
+      </div>
+    {% endunless %}
   {% endfor %}
 </div>

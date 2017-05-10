@@ -47,6 +47,9 @@
             background: $white;
         }
     }
+    .collection__filters--heading {
+        display: block;
+    }
     .collection__filters--active a {
         font-weight: 700;
     }

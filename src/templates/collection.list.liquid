@@ -4,23 +4,68 @@
       {% if collection.all_tags.size > 0 %}
         <ul class="collection__filters">
           {% for tag in collection.all_tags %}
-            {% if current_tags contains tag %}
-              <li class="collection__filters--active">
-                {{ tag | link_to_remove_tag: tag }}
-              </li>
-            {% else %}
-              <li>
-                {{ tag | link_to_tag: tag }}
-              </li>
-            {% endif %}
+            {% unless tag contains 'price-' or tag contains 'vendor-' %}
+              {% if current_tags contains tag %}
+                <li class="collection__filters--active">
+                  {{ tag | link_to_remove_tag: tag }}
+                </li>
+              {% else %}
+                <li>
+                  {{ tag | link_to_tag: tag }}
+                </li>
+              {% endif %}
+            {% endunless %}
           {% endfor %}
+        </ul>
+        <ul class="collection__filters">
+          <strong class="collection__filters--heading">{{ 'collections.filter_by' | t: title: 'Price' }}</strong>
+          {% if collection.all_tags contains 'price-under-5' %}
+            {% if current_tags contains 'price-under-5' %}
+              <li class="collection__filters--active">{{ 'Under £5' | link_to_remove_tag: 'price-under-5' }}</li>
+            {% else %}
+              <li>{{ 'Under £5' | link_to_tag: 'price-under-5' }}</li>
+            {% endif %}
+            {% if current_tags contains 'price-5-25' %}
+              <li class="collection__filters--active">{{ '£5-£25' | link_to_remove_tag: 'price-5-25' }}</li>
+            {% else %}
+              <li>{{ '£5-£25' | link_to_tag: 'price-5-25' }}</li>
+            {% endif %}
+            {% if current_tags contains 'price-25-50' %}
+              <li class="collection__filters--active">{{ '£25-£50' | link_to_remove_tag: 'price-25-50' }}</li>
+            {% else %}
+              <li>{{ '£25-£50' | link_to_tag: 'price-25-50' }}</li>
+            {% endif %}
+            {% if current_tags contains 'price-over-50' %}
+              <li class="collection__filters--active">{{ 'Over £50' | link_to_remove_tag: 'price-over-50' }}</li>
+            {% else %}
+              <li>{{ 'Over £50' | link_to_tag: 'price-over-50' }}</li>
+            {% endif %}
+          {% endif %}
+        </ul>
+        <ul class="collection__filters">
+          <strong class="collection__filters--heading">{{ 'collections.filter_by' | t: title: 'Vendor' }}</strong>
+          {% if collection.all_tags contains 'vendor-house-of-commons' %}
+            {% if current_tags contains 'vendor-house-of-commons' %}
+              <li class="collection__filters--active">{{ 'House of Commons' | link_to_remove_tag: 'vendor-house-of-commons' }}</li>
+            {% else %}
+              <li>{{ 'House of Commons' | link_to_tag: 'vendor-house-of-commons' }}</li>
+            {% endif %}
+            {% if current_tags contains 'vendor-house-of-lords' %}
+              <li class="collection__filters--active">{{ 'House of Lords' | link_to_remove_tag: 'vendor-house-of-lords' }}</li>
+            {% else %}
+              <li>{{ 'House of Lords' | link_to_tag: 'vendor-house-of-lords' }}</li>
+            {% endif %}
+            {% if current_tags contains 'vendor-uk-parliament' %}
+              <li class="collection__filters--active">{{ 'UK Parliament' | link_to_remove_tag: 'vendor-uk-parliament' }}</li>
+            {% else %}
+              <li>{{ 'UK Parliament' | link_to_tag: 'vendor-uk-parliament' }}</li>
+            {% endif %}
+          {% endif %}
         </ul>
       {% endif %}
     </div>
 
     <div class="flex-container--three-quarters">
-      <h2 class="shop-heading shop-heading__no-margin">{{ shop.name }} {{ 'general.shop' | t }}</h2>
-
       {% if collection.image %}
         <header role="banner" class="collection__banner collection__banner--image" style="background-image: url({{ collection.image | img_url: 'x300' }});">
       {% else %}
