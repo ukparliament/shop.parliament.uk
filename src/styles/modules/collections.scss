@@ -62,6 +62,7 @@
     .collection__view-sort__options {
         display: flex;
         align-items: center;
+        margin-left: $base-spacing-unit-medium;
         a:first-child {
             margin-right: $base-spacing-unit-small;
         }
@@ -69,6 +70,13 @@
             height: 18px;
             width: auto;
             fill: $frenchGray;
+        }
+        select {
+            background-color: $white;
+            border-radius: 4px;
+            border: 1px solid $frenchGray;
+            padding: $base-spacing-unit $base-spacing-unit-medium $base-spacing-unit $base-spacing-unit-tiny;
+            margin-left: $base-spacing-unit-tiny;
         }
     }
     .collection__view-sort__options--group {
