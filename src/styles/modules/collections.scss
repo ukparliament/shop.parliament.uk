@@ -57,11 +57,18 @@
 
 .collection__view-sort {
     margin: $base-spacing-unit-large 0;
-    display: flex;
-    justify-content: flex-end;
+    @include breakpoint(medium) {
+        display: flex;
+        justify-content: flex-end;
+    }
     .collection__view-sort__options {
         display: flex;
         align-items: center;
+        margin-bottom: $base-spacing-unit-tiny;
+        @include breakpoint(medium) {
+            margin-bottom: 0;
+            margin-left: $base-spacing-unit-medium;
+        }
         a:first-child {
             margin-right: $base-spacing-unit-small;
         }
@@ -69,6 +76,13 @@
             height: 18px;
             width: auto;
             fill: $frenchGray;
+        }
+        select {
+            background-color: $white;
+            border-radius: 4px;
+            border: 1px solid $frenchGray;
+            padding: $base-spacing-unit $base-spacing-unit-medium $base-spacing-unit $base-spacing-unit-tiny;
+            margin-left: $base-spacing-unit-tiny;
         }
     }
     .collection__view-sort__options--group {

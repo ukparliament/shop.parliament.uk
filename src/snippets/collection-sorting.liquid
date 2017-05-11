@@ -1,0 +1,20 @@
+<div class="collection__view-sort__options">
+  <span>{{ 'collections.views.change' | t }}</span>
+  <div class="collection__view-sort__options--group">
+    <a href="#" data-view="grid" title="{{ collections.views.grid | t }}">{% include 'icon-grid-view' %}</a>
+    <a href="#" data-view="list" title="{{ collections.views.list | t }}">{% include 'icon-list-view' %}</a>
+  </div>
+</div>
+<div class="collection__view-sort__options">
+  <label for="SortBy">{{ 'collections.sorting.title' | t }}</label>
+  <select name="SortBy" id="SortBy">
+    <option value="manual">{{ 'collections.sorting.featured' | t }}</option>
+    <option value="best-selling">{{ 'collections.sorting.best_selling' | t }}</option>
+    <option value="title-ascending">{{ 'collections.sorting.az' | t }}</option>
+    <option value="title-descending">{{ 'collections.sorting.za' | t }}</option>
+    <option value="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</option>
+    <option value="price-descending">{{ 'collections.sorting.price_descending' | t }}</option>
+    <option value="created-descending">{{ 'collections.sorting.date_descending' | t }}</option>
+    <option value="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</option>
+  </select>
+</div>
