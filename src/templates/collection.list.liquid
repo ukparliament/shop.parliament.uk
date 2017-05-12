@@ -30,41 +30,67 @@
               <a href="{{ product.url | within: collection }}" class="product-grid__image">
                 <img src="{{ product.featured_image.src | img_url: '300x300' }}" alt="{{ product.featured_image.alt | escape }}">
               </a>
+
+              {% assign bestseller = false %}
+              {% assign on_sale = false %}
+              {% assign new_product = false %}
+              {% for c in product.collections %}
+                {% if c.handle == "bestsellers" %}
+                  {% assign bestseller = true %}
+                {% endif %}
+                {% if c.handle == "new" %}
+                  {% assign new_product = true %}
+                {% endif %}
+              {% endfor %}
+              {% if product.compare_at_price > product.price %}
+                {% assign on_sale = true %}
+              {% endif %}
+
               <div class="product-grid__description">
                   <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
+
+                  <p class="product-grid__price">
+                    {% if on_sale == true %}
+                      <span class="badge">{{ 'products.product.on_sale' | t }}</span>
+                    {% elsif bestseller == true %}
+                      <span class="badge">{{ 'products.product.bestseller' | t }}</span>
+                    {% elsif new_product == true %}
+                      <span class="badge">{{ 'products.product.new' | t }}</span>
+                    {% endif %}
+
+                    {% if product.compare_at_price > product.price %}
+
+                      {% if product.price_varies %}
+                        {%- assign sale_price = product.price | money -%}
+                        {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+                      {% else %}
+                        {{ 'products.product.on_sale' | t }}
+                        {{ product.price | money }}
+                      {% endif %}
+
+                    {% else %}
+
+                      {% if product.price_varies %}
+                        {%- assign price = product.price | money -%}
+                        {{ 'products.product.from_text_html' | t: price: price }}
+                      {% else %}
+                        {{ product.price | money }}
+                      {% endif %}
+
+                    {% endif %}
+
+                    {% if product.compare_at_price > product.price %}
+                      <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                      <s>{{ product.compare_at_price | money }}</s>
+                    {% endif %}
+
+                    {% unless product.available %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% endunless %}
+                  </p>
+
                   {{ product.description | truncate: 150 }}
               </div>
-              <p class="product-grid__price">
-                {% if product.compare_at_price > product.price %}
-
-                  {% if product.price_varies %}
-                    {%- assign sale_price = product.price | money -%}
-                    {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-                  {% else %}
-                    {{ 'products.product.on_sale' | t }}
-                    {{ product.price | money }}
-                  {% endif %}
-
-                {% else %}
-
-                  {% if product.price_varies %}
-                    {%- assign price = product.price | money -%}
-                    {{ 'products.product.from_text_html' | t: price: price }}
-                  {% else %}
-                    {{ product.price | money }}
-                  {% endif %}
-
-                {% endif %}
-
-                {% if product.compare_at_price > product.price %}
-                  <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-                  <s>{{ product.compare_at_price | money }}</s>
-                {% endif %}
-
-                {% unless product.available %}
-                  {{ 'products.product.sold_out' | t }}
-                {% endunless %}
-              </p>
             </div>
 
         {% else %}
