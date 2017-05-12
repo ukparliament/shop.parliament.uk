@@ -1,4 +1,16 @@
 <div class="noflex-container">
+  <h1 class="page-heading">
+    {% if search.performed %}
+      {% if search.results_count == 0 %}
+        {{ 'general.search.no_results_html' | t: terms: search.terms }}
+      {% else %}
+        {{ 'general.search.results_for_html' | t: terms: search.terms }}
+      {% endif %}
+    {% else %}
+      {{ 'general.search.title' | t }}
+    {% endif %}
+  </h1>
+
   {% paginate search.results by 10 %}
 
     <form action="/search" method="get" role="search">
