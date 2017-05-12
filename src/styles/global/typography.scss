@@ -14,20 +14,6 @@ body {
     -webkit-text-decoration-skip: ink;
 }
 
-.shop-heading {
-    font-weight: 400;
-    margin: $base-spacing-unit-medium 0;
-    color: $tundora;
-    font-size: 28px;
-    @include breakpoint(medium) {
-        margin: $base-spacing-unit-extra-large 0;
-    }
-}
-
-.shop-heading__no-margin {
-    margin: 0;
-}
-
 // Base Heading Settings
 h1, .h1, h2, h3, h4, h5, h6 {
     margin: $base-spacing-unit-medium 0 $base-spacing-unit;
@@ -238,4 +224,19 @@ p a:hover {
 p a:focus {
     background: $algaeGreen;
     outline: 3px solid $algaeGreen;
+}
+
+/* Page headings */
+.page-heading {
+    margin: $base-spacing-unit-large 0 $base-spacing-unit-small;
+    @include breakpoint(medium) {
+        margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
+    }
+}
+
+.breadcrumbs + .sticky-footer-content .page-heading {
+    margin-top: $base-spacing-unit-tiny;
+    @include breakpoint(medium) {
+        margin-top: 0;
+    }
 }

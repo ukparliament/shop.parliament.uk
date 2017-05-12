@@ -7,11 +7,14 @@
 .product__image-container--featured {
     background: $white;
     border: 1px solid $frenchGray;
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: $base-spacing-unit-tiny;
+    @include breakpoint(medium) {
+        width: 90%;
+    }
 }
 
 .product__image--extras {
@@ -29,10 +32,6 @@
             display: block;
         }
     }
-}
-
-.product--title {
-    margin: 0 0 $base-spacing-unit-extra-extra-large;
 }
 
 .product {
