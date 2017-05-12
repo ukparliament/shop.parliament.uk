@@ -4,7 +4,8 @@
     <table class="responsive-table cart--table">
       <thead class="small--hide">
         <tr>
-          <th colspan="2">{{ 'cart.label.product' | t }}</th>
+          <th>&nbsp;</th> <!-- Empty TH for inlining of product name -->
+          <th>{{ 'cart.label.product' | t }}</th>
           <th>{{ 'cart.label.price' | t }}</th>
           <th>{{ 'cart.label.quantity' | t }}</th>
           <th>{{ 'cart.label.total' | t }}</th>
@@ -23,12 +24,12 @@
         {% endcomment %}
 
           <tr class="responsive-table-row">
-            <td data-label="{{ 'customer.order.product' | t }}">
+            <td>
               <a href="{{ item.url | within: collections.all }}" class="product--image">
                 <img src="{{ item | img_url: '300x300' }}" alt="{{ item.title | escape }}">
               </a>
             </td>
-            <td>
+            <td class="cart--table__product">
               <a href="{{ item.url }}" class="product--name">{{ item.product.title }}</a>
 
               {% unless item.variant.title contains 'Default' %}
@@ -54,7 +55,7 @@
 
               <a class="button button--small button--grey" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{ 'cart.general.remove' | t }} <span>&times;</span></a>
             </td>
-            <td data-label="{{ 'cart.label.price' | t }}" class="product--price">
+            <td data-label="{{ 'cart.label.price' | t }}">
               {% if item.original_line_price != item.line_price %}
                 <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
                 {{ item.price | money }}

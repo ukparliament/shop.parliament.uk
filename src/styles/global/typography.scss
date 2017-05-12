@@ -204,6 +204,9 @@ h6 {
     }
     .product--price {
         font-weight: 700;
+        @include breakpoint(medium) {
+            font-weight: 400;
+        }
     }
 }
 
