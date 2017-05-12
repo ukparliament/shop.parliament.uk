@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     padding: $base-spacing-unit-tiny $base-spacing-unit-small;
     @include breakpoint(medium) {
-        padding: $base-spacing-unit-large 0;
+        padding: $base-spacing-unit-large 0 $base-spacing-unit-tiny;
     }
     a {
         color: $tundora;
