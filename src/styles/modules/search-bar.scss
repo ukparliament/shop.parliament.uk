@@ -27,6 +27,7 @@
 }
 
 .search-bar__large {
+    margin-bottom: $base-spacing-unit-medium;
     input[type=search] {
         padding: $base-spacing-unit-small $base-spacing-unit-medium;
     }
