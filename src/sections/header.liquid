@@ -20,7 +20,7 @@
         ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }} {{ cart.total_price | money }})
       </a>
 
-      <form action="/search" method="get" role="search" class="site-header__search">
+      <form action="/search" method="get" role="search" class="search-bar">
         <label for="Search" class="label-hidden">
           {{ 'general.search.placeholder' | t }}
         </label>
@@ -51,7 +51,7 @@
         <h3>Browse</h3>
         <label for="site-navigation__mobile-menu-button" class="site-navigation__mobile-menu-button-inset">{% include 'icon-close' %}</label>
       </div>
-      <form action="/search" method="get" role="search" class="site-header__search">
+      <form action="/search" method="get" role="search" class="search-bar">
         <label for="Search" class="label-hidden">
           {{ 'general.search.placeholder' | t }}
         </label>

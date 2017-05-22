@@ -13,7 +13,7 @@
 
   {% paginate search.results by 10 %}
 
-    <form action="/search" method="get" role="search">
+    <form action="/search" method="get" role="search" class="search-bar search-bar__large">
       <label for="Search" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
       </label>
