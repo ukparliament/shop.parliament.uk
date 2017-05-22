@@ -13,7 +13,7 @@
 
   {% paginate search.results by 10 %}
 
-    <form action="/search" method="get" role="search">
+    <form action="/search" method="get" role="search" class="search-bar search-bar__large">
       <label for="Search" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
       </label>
@@ -30,46 +30,77 @@
 
 
   {% if search.performed %}
+    <div class="product-grid">
+      <div class="product-grid__products product-grid__products--rows">
+        {% for item in search.results %}
+          {% if item.object_type == 'product' %}
+            <div class="product-grid__single">
+              <a href="{{ item.url }}" class="product-grid__image">
+                <img src="{{ item.featured_image.src | img_url: '300x300' }}" alt="{{ item.featured_image.alt | escape }}">
+              </a>
+              <div class="product-grid__description">
+                <a href="{{ item.url | within: collection }}" class="product-grid__title">{{ item.title }}</a>
+
+                <p class="product-grid__price">
+                  {% if on_sale == true %}
+                    <span class="badge">{{ 'products.product.on_sale' | t }}</span>
+                  {% elsif bestseller == true %}
+                    <span class="badge">{{ 'products.product.bestseller' | t }}</span>
+                  {% elsif new_product == true %}
+                    <span class="badge">{{ 'products.product.new' | t }}</span>
+                  {% endif %}
+
+                  {% if item.compare_at_price > item.price %}
+
+                    {% if item.price_varies %}
+                      {%- assign sale_price = item.price | money -%}
+                      {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+                    {% else %}
+                      {{ 'products.product.on_sale' | t }}
+                      {{ item.price | money }}
+                    {% endif %}
+
+                  {% else %}
+
+                    {% if item.price_varies %}
+                      {%- assign price = item.price | money -%}
+                      {{ 'products.product.from_text_html' | t: price: price }}
+                    {% else %}
+                      {{ item.price | money }}
+                    {% endif %}
+
+                  {% endif %}
+
+                  {% if item.compare_at_price > item.price %}
+                    <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                    <s>{{ item.compare_at_price | money }}</s>
+                  {% endif %}
+
+                  {% unless item.available %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% endunless %}
+                </p>
+
+                {{ item.description | truncate: 150 }}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
       <ul>
         {% for item in search.results %}
-          <li>
-            {% if item.featured_image %}
-              <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
-                {{ item.featured_image.src | img_url: '240x240' | img_tag: item.featured_image.alt }}
-              </a>
-            {% endif %}
-
-            <h5>{{ item.title | link_to: item.url }}</h5>
-
-            {% if item.object_type == 'product' %}
-              <p>
-                {% if item.compare_at_price > item.price %}
-                  {% if item.price_varies %}
-                    {% assign sale_price = item.price | money %}
-                    {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-                  {% else %}
-                    {{ 'products.product.on_sale' | t }}
-                    <span itemprop="price">{{ item.price | money }}</span>
-                  {% endif %}
-                  <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-                  <s>{{ item.compare_at_price | money }}</s>
-                {% else %}
-                  {% if item.price_varies %}
-                    {% assign price = item.price | money %}
-                    <span itemprop="price">{{ 'products.product.from_text_html' | t: price: price }}</span>
-                  {% else %}
-                    <span itemprop="price">{{ item.price | money }}</span>
-                  {% endif %}
+          {% unless item.object_type == 'product' %}
+            <li>
+                {% if item.featured_image %}
+                  <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
+                    {{ item.featured_image.src | img_url: '240x240' | img_tag: item.featured_image.alt }}
+                  </a>
                 {% endif %}
-                {% unless item.available %}
-                {{ 'products.product.sold_out' | t }}
-                {% endunless %}
-              </p>
-            {% else %}
-              <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
-            {% endif %}
-
-          </li>
+                <h5>{{ item.title | link_to: item.url }}</h5>
+                <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
+            </li>
+          {% endunless %}
         {% endfor %}
       </ul>
 
