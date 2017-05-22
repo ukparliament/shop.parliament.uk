@@ -52,7 +52,10 @@
         width: 100%;
         margin-bottom: $base-spacing-unit-small;
         position: relative;
-        @include breakpoint(medium) {
+        @include breakpoint(xsmall) {
+            width: 49%;
+        }
+        @include breakpoint(small) {
             width: 24%;
             margin-bottom: $base-spacing-unit-medium;
         }
