@@ -11,13 +11,6 @@
         justify-content: space-between;
         flex-wrap: wrap;
     }
-    .product-grid__products--fifths {
-        .product-grid__single {
-            @include breakpoint(medium) {
-                width: 19%;
-            }
-        }
-    }
     .product-grid__products--thirds {
         .product-grid__single {
             @include breakpoint(medium) {

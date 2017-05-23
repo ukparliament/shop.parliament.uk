@@ -11,22 +11,17 @@
             align-items: center;
             flex-flow: row nowrap;
             justify-content: space-between;
-            h2 {
-                margin: $base-spacing-unit-medium 0;
-            }
-            a {
-                color: $stTropaz;
-                text-decoration: none;
-                font-weight: 700;
-            }
-            a:hover {
-                color: $stTropazHover;
-            }
         }
     }
     .list-collections__collection:last-of-type {
         border-bottom: 0;
         margin-bottom: 0;
         padding-bottom: 0;
+    }
+    .list-collections__collection__header__more {
+        display: none;
+        @include breakpoint(small) {
+            display: block;
+        }
     }
 }
