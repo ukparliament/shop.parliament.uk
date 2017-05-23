@@ -245,3 +245,24 @@ p a:focus {
 .breadcrumbs {
     font-size: 14px;
 }
+
+/* List of collections */
+.list-collections__collection__header {
+    h2 {
+        margin: $base-spacing-unit-medium 0;
+        a {
+            @include breakpoint(small) {
+                color: $martinique;
+                text-decoration: none;
+            }
+        }
+    }
+    a {
+        color: $tundora;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+    a:hover {
+        color: $black;
+    }
+}
