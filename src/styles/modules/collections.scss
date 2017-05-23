@@ -52,6 +52,7 @@
 }
 
 .collection__view-sort {
+    display: none;
     margin: $base-spacing-unit-large 0;
     @include breakpoint(medium) {
         display: flex;
@@ -72,6 +73,11 @@
             height: 18px;
             width: auto;
             fill: $frenchGray;
+        }
+        a:hover {
+            svg {
+                fill: $doveGray;
+            }
         }
         select {
             background-color: $white;
