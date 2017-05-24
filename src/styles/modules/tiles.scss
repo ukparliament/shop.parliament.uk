@@ -33,24 +33,9 @@
         }
     }
     img {
-        transition: all 300ms linear;
         display: block;
+        transition: all 300ms linear;
         will-change: transform;
-    }
-}
-
-.tile-container:hover {
-    .tile--heading {
-        text-decoration: underline;
-    }
-    img {
-        transform: scale(1.04);
-    }
-}
-
-.tile--one-third:hover {
-    img {
-        transform: scale(1.07);
     }
 }
 
@@ -61,19 +46,15 @@
     }
 }
 
-.tile--half-width {
-    .tile--underline {
-        height: 4px;
-        width: 40px;
-    }
-    @include breakpoint(xsmall) {
-        width: 49%;
+.tile-container:hover {
+    img {
+        transform: scale(1.04);
     }
 }
 
-.tile--one-third {
-    @include breakpoint(xsmall) {
-        width: 32.3%;
+.tile--one-third:hover {
+    img {
+        transform: scale(1.07);
     }
 }
 
@@ -88,16 +69,24 @@
 }
 
 .tile--half-width {
-    .tile--underline {
-        margin-top: $base-spacing-unit;
-    }
     .tile--heading {
         width: 75%;
+    }
+    .tile--underline {
+        height: 4px;
+        width: 40px;
+        margin-top: $base-spacing-unit;
+    }
+    @include breakpoint(xsmall) {
+        width: 49%;
     }
 }
 
 .tile--one-third {
     .tile--heading {
         width: auto;
+    }
+    @include breakpoint(xsmall) {
+        width: 32.3%;
     }
 }
