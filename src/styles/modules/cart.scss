@@ -29,9 +29,6 @@
         .product--name {
             display: block;
             margin-bottom: $base-spacing-unit-tiny;
-            @include breakpoint(medium) {
-                margin-bottom: $base-spacing-unit-medium;
-            }
         }
     }
     input[type=number] {
@@ -39,7 +36,6 @@
         border: 1px solid $frenchGray;
         border-radius: 4px;
         padding: $base-spacing-unit $base-spacing-unit-tiny;
-        margin-top: $base-spacing-unit;
         width: $base-spacing-unit * 10;
         text-align: right;
         @include breakpoint(medium) {
@@ -48,9 +44,7 @@
     }
     .product--image {
         width: 100%;
-        @include breakpoint(medium) {
-            width: 80%;
-        }
+        max-width: 300px;
         height: 200px;
         display: block;
         border: 1px solid $frenchGray;
@@ -90,6 +84,7 @@
                 width: 100%;
                 border: 1px solid $frenchGray;
                 border-radius: 4px;
+                padding: $base-spacing-unit;
             }
         }
     }
@@ -104,6 +99,9 @@
         .cart--total--back {
             margin-top: $base-spacing-unit-medium;
             display: block;
+        }
+        .cart--total--back:hover {
+            color: $black;
         }
     }
 }
