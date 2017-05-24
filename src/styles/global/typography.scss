@@ -99,9 +99,6 @@ h6 {
         text-decoration: none;
         font-size: 14px;
     }
-    .site-header__search button[type=submit] {
-        color: $white;
-    }
 }
 
 .site-navigation {
@@ -272,5 +269,12 @@ p a:focus {
     }
     a:hover {
         color: $black;
+    }
+}
+
+/* Search bar */
+.search-bar__large {
+    input[type=search] {
+        font-size: 21px;
     }
 }
