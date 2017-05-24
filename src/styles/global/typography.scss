@@ -275,6 +275,8 @@ p a:focus {
 /* Search bar */
 .search-bar__large {
     input[type=search] {
-        font-size: 21px;
+        @include breakpoint(medium) {
+            font-size: 21px;
+        }
     }
 }
