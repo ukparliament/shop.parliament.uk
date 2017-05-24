@@ -5,9 +5,9 @@
 
 .tile-container {
     width: 100%;
-    background-size: cover;
     position: relative;
     margin: 0 0 $base-spacing-unit-small;
+    overflow: hidden;
     @include breakpoint(medium) {
         margin: 0 0 $base-spacing-unit-large;
     }
@@ -32,35 +32,48 @@
             margin-top: $base-spacing-unit-tiny;
         }
     }
+    img {
+        transition: all 300ms linear;
+        display: block;
+        will-change: transform;
+    }
+}
+
+.tile-container:hover {
+    .tile--heading {
+        text-decoration: underline;
+    }
+    img {
+        transform: scale(1.04);
+    }
+}
+
+.tile--one-third:hover {
+    img {
+        transform: scale(1.07);
+    }
 }
 
 .tile-container:last-of-type {
     margin-bottom: 0;
-}
-
-.tile--full-width {
-    height: 78vw;
-    max-height: 400px;
-    @include breakpoint(xsmall) {
-        height: 39vw;
+    @include breakpoint(small) {
+        margin-bottom: $base-spacing-unit-large;
     }
 }
 
 .tile--half-width {
-    height: 73.4vw;
-    max-height: 367px;
+    .tile--underline {
+        height: 4px;
+        width: 40px;
+    }
     @include breakpoint(xsmall) {
         width: 49%;
-        height: 36.7vw;
     }
 }
 
 .tile--one-third {
-    height: 72vw;
-    max-height: 241px;
     @include breakpoint(xsmall) {
         width: 32.3%;
-        height: 24vw;
     }
 }
 
