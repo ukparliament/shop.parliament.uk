@@ -127,6 +127,7 @@ h6 {
     }
 }
 
+/* Tiles */
 .tile--heading {
     font-weight: 700;
     color: $martinique;
@@ -145,6 +146,13 @@ h6 {
     }
 }
 
+.tile-container:hover {
+    .tile--heading {
+        text-decoration: underline;
+    }
+}
+
+/* Product grid */
 .product-grid {
     .product-grid__title {
         color: $stTropaz;
