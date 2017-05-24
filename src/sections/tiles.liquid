@@ -4,18 +4,16 @@
       {% when 'full-width-tile' %}
         <a href="{{ block.settings.full-width-tile-link }}" class="tile-container tile--full-width">
           <img role="presentation" src="{{ block.settings.full-width-tile-image | img_url: 'x400' }}">
-          <div class="tile--heading">{{ block.settings.full-width-tile-title }} <span class="tile--underline" role="presentation"></span>
-          </div>
+          <div class="tile--heading">{{ block.settings.full-width-tile-title }}</div>
         </a>
       {% when 'half-width-tiles' %}
         <a href="{{ block.settings.left-half-width-tile-link }}" class="tile-container tile--half-width">
           <img role="presentation" src="{{ block.settings.left-half-width-tile-image | img_url: 'x367' }}">
-          <div class="tile--heading">{{ block.settings.left-half-width-tile-title }} <span class="tile--underline" role="presentation"></span>
-          </div>
+          <div class="tile--heading">{{ block.settings.left-half-width-tile-title }}</div>
         </a>
         <a href="{{ block.settings.right-half-width-tile-link }}" class="tile-container tile--half-width">
           <img role="presentation" src="{{ block.settings.right-half-width-tile-image | img_url: 'x367' }}">
-          <div class="tile--heading">{{ block.settings.right-half-width-tile-title }} <span class="tile--underline" role="presentation"></span></div>
+          <div class="tile--heading">{{ block.settings.right-half-width-tile-title }}</div>
         </a>
       {% when 'third-width-tiles' %}
         <a href="{{ block.settings.left-third-width-tile-link }}" class="tile-container tile--one-third">

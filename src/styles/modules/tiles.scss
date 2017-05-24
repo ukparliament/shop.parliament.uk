@@ -22,8 +22,9 @@
             padding: $base-spacing-unit-medium;
         }
     }
-    .tile--underline {
+    .tile--heading:after {
         height: 6px;
+        content: ' ';
         width: 60px;
         display: block;
         background: $tara;
@@ -36,13 +37,17 @@
         display: block;
         transition: all 300ms linear;
         will-change: transform;
+        max-width: 200%;
+        @include breakpoint(xsmall) {
+            max-width: 100%;
+        }
     }
 }
 
 .tile-container:last-of-type {
     margin-bottom: 0;
-    @include breakpoint(small) {
-        margin-bottom: $base-spacing-unit-large;
+    @include breakpoint(xsmall) {
+        margin: 0 0 $base-spacing-unit-small;
     }
 }
 
@@ -63,8 +68,11 @@
         background: rgba($purpleHeart, .9);
         padding: $base-spacing-unit-tiny $base-spacing-unit-small;
     }
-    .tile--underline {
+    .tile--heading:after {
         background: $whiteLilac;
+    }
+    img {
+        max-width: 100%;
     }
 }
 
@@ -72,7 +80,7 @@
     .tile--heading {
         width: 75%;
     }
-    .tile--underline {
+    .tile--heading:after {
         height: 4px;
         width: 40px;
         margin-top: $base-spacing-unit;
@@ -85,6 +93,9 @@
 .tile--one-third {
     .tile--heading {
         width: auto;
+    }
+    .tile--heading:after {
+        display: none;
     }
     @include breakpoint(xsmall) {
         width: 32.3%;
