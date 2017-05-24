@@ -25,7 +25,6 @@
         }
     }
     .cart--table__product {
-        text-align: left;
         .product--name {
             display: block;
             margin-bottom: $base-spacing-unit-tiny;
@@ -41,10 +40,6 @@
         padding: $base-spacing-unit $base-spacing-unit-tiny;
         margin-top: $base-spacing-unit;
         width: $base-spacing-unit * 10;
-        text-align: right;
-        @include breakpoint(medium) {
-            text-align: left;
-        }
     }
     .product--image {
         width: 100%;
@@ -55,7 +50,6 @@
         display: block;
         border: 1px solid $frenchGray;
         background: $white;
-        text-align: center;
         padding: $base-spacing-unit-medium;
         img {
             max-height: 100%;
