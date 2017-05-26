@@ -364,4 +364,16 @@ p a:focus {
 /* Pagination */
 .pagination {
     text-align: center;
+    .prev {
+        text-align: left;
+    }
+    .next {
+        text-align: right;
+    }
+    .current {
+        font-weight: 700;
+    }
+    a {
+        color: $stTropaz;
+    }
 }
