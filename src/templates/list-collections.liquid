@@ -7,8 +7,8 @@
     {% unless collection.handle == 'frontpage' %}
       <div class="list-collections__collection">
         <div class="list-collections__collection__header">
-          <h2><a href="{{ collection.url }}" title="{{ collections.general.link_title | t: title: title }}">{{ collection.title }}</a></h2>
-          <a href="{{ collection.url }}" title="{{ collections.general.link_title | t: title: title }}" class="list-collections__collection__header__more">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
+          <h2><a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}">{{ collection.title }}</a></h2>
+          <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}" class="list-collections__collection__header__more">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
         </div>
         <div class="product-grid noflex-container">
           <div class="product-grid__products">
