@@ -47,12 +47,6 @@
                     padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
                 }
             }
-            a:hover {
-                text-decoration: underline;
-                @include breakpoint(medium) {
-                    text-decoration: none;
-                }
-            }
         }
     }
     .site-navigation--has-submenu {
@@ -139,8 +133,6 @@
 .site-navigation--plus {
     position: absolute;
     right: 0;
-    font-size: 32px;
-    font-weight: 400;
     vertical-align: middle;
     @include breakpoint(medium) {
         display: none;
@@ -165,8 +157,4 @@
     padding: $base-spacing-unit-tiny 0;
     margin-bottom: $base-spacing-unit-tiny;
     border-bottom: 1px solid $ebb;
-    h3 {
-        margin: 0;
-        font-weight: 400;
-    }
 }

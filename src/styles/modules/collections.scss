@@ -26,7 +26,6 @@
     margin: $base-spacing-unit-extra-large 0 0 0;
     list-style: none;
     padding: 0;
-    font-size: 14px;
     @include breakpoint(medium) {
         display: block;
     }
@@ -36,8 +35,6 @@
         a {
             display: block;
             padding: $base-spacing-unit-tiny $base-spacing-unit-tiny;
-            text-decoration: none;
-            color: $tundora;
         }
         a:hover {
             background: $white;
@@ -45,9 +42,6 @@
     }
     .collection__filters--heading {
         display: block;
-    }
-    .collection__filters--active a {
-        font-weight: 700;
     }
 }
 

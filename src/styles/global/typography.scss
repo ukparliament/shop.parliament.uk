@@ -1,7 +1,7 @@
 body {
     font-family: $base-font-stack;
     color: $tundora;
-    font-size: 16px;
+    font-size: $font-size-base;
     line-height: 1.5;
     // font-smoothing - anti aliasing
     -webkit-font-smoothing: antialiased;
@@ -109,6 +109,24 @@ h6 {
     .site-navigation--active {
         font-weight: 700;
     }
+    .site-navigation__list li a:hover {
+        text-decoration: underline;
+        @include breakpoint(medium) {
+            text-decoration: none;
+        }
+    }
+}
+
+.site-navigation--plus {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.site-navigation__mobile-extras__heading {
+    h3 {
+        margin: 0;
+        font-weight: 400;
+    }
 }
 
 .site-footer {
@@ -159,6 +177,11 @@ h6 {
     .product-grid__title:hover {
         color: $stTropazHover;
     }
+    .product-grid__single {
+        .product-grid__image {
+            text-align: center;
+        }
+    }
 }
 
 .product__price--current {
@@ -179,6 +202,12 @@ h6 {
 }
 
 .cart--table {
+    input[type=number] {
+        text-align: right;
+        @include breakpoint(medium) {
+            text-align: left;
+        }
+    }
     thead th {
         text-align: left;
         font-weight: 400;
@@ -198,6 +227,12 @@ h6 {
         @include breakpoint(medium) {
             font-weight: 400;
         }
+    }
+    .cart--table__product {
+        text-align: left;
+    }
+    .product--image {
+        text-align: center;
     }
 }
 
@@ -251,6 +286,19 @@ p a:focus {
     font-size: 14px;
 }
 
+/* Collection filters */
+.collection__filters {
+    font-size: 14px;
+    li a {
+        text-decoration: none;
+        color: $tundora;
+    }
+}
+
+.collection__filters--active a {
+    font-weight: 700;
+}
+
 /* List of collections */
 .list-collections__collection__header {
     h2 {
@@ -279,4 +327,41 @@ p a:focus {
             font-size: 21px;
         }
     }
+}
+
+/* Product badges */
+.badge {
+    font-size: 13px;
+}
+
+/* Microsite masthead */
+.microsite-masthead {
+    color: $alabaster;
+    font-size: 12px;
+    .microsite-masthead__back {
+        font-weight: 700;
+    }
+    a {
+        color: $alabaster;
+        text-decoration: none;
+        span {
+            text-decoration: underline;
+        }
+    }
+    ul li a {
+        text-decoration: underline;
+    }
+}
+
+.offers-bar .offers-bar__third {
+    line-height: 1.2;
+    font-size: 14px;
+    a {
+        color: $tundora;
+    }
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
 }
