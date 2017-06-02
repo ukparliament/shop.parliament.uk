@@ -1,0 +1,7 @@
+<a href="{{ product.url | within: collection }}" class="product-image-frame">
+  {% if product.featured_image %}
+    <img src="{{ product.featured_image.src | img_url: 'x200' }}" alt="{{ product.featured_image.alt | escape }}">
+  {% else %}
+    <img src="{{ item | img_url: '300x300' }}" alt="{{ item.title | escape }}">
+  {% endif %}
+</a>

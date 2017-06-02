@@ -21,9 +21,7 @@
         {% for item in search.results %}
           {% if item.object_type == 'product' %}
             <div class="product-grid__single">
-              <a href="{{ item.url }}" class="product-grid__image">
-                <img src="{{ item.featured_image.src | img_url: '300x300' }}" alt="{{ item.featured_image.alt | escape }}">
-              </a>
+              {% include 'product.image-frame', product: item %}
               <div class="product-grid__description">
                 <a href="{{ item.url | within: collection }}" class="product-grid__title">{{ item.title }}</a>
 

@@ -37,19 +37,6 @@
         padding: $base-spacing-unit $base-spacing-unit-tiny;
         width: $base-spacing-unit * 10;
     }
-    .product--image {
-        width: 100%;
-        max-width: 300px;
-        height: 200px;
-        display: block;
-        border: 1px solid $frenchGray;
-        background: $white;
-        padding: $base-spacing-unit-medium;
-        img {
-            max-height: 100%;
-            max-width: 100%;
-        }
-    }
 }
 
 .cart--meta {

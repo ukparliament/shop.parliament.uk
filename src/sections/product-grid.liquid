@@ -7,9 +7,7 @@
   <div class="product-grid__products">
     {% for product in collection.products limit: collection_limit %}
       <div class="product-grid__single">
-        <a href="{{ product.url }}" class="product-grid__image">
-          <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
-        </a>
+        {% include 'product.image-frame', product: product %}
         <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
         <p class="product-grid__price">{{ product.price | money }}</p>
       </div>
