@@ -6,10 +6,12 @@
           <div class="offers-bar__icon">
             {% if block.settings.icon == 'tag-blue' %}
               <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation">
-            {% elsif block.settings.icon == 'tag-green' %}
-              <img src="{{ 'icon-tag-green.svg' | asset_url }}" role="presentation">
+            {% elsif block.settings.icon == 'people-multi' %}
+              <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation">
             {% elsif block.settings.icon == 'mouse-yellow' %}
               <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation">
+            {% elsif block.settings.icon == 'mail-green' %}
+              <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation">
             {% endif %}
           </div>
           <div class="offers-bar__description">
@@ -48,8 +50,9 @@
             "type": "radio",
             "options": [
               { "value": "tag-blue", "label": "Tag icon, blue" },
-              { "value": "tag-green", "label": "Tag icon, green" },
-              { "value": "mouse-yellow", "label": "Mouse icon, yellow" }
+              { "value": "people-multi", "label": "People icon, multicoloured" },
+              { "value": "mouse-yellow", "label": "Mouse icon, yellow" },
+              { "value": "mail-green", "label": "Mail icon, green" }
             ],
             "label": "Block icon"
           },
