@@ -27,9 +27,10 @@
           {% for product in collection.products %}
 
             <div class="product-grid__single">
-              <a href="{{ product.url | within: collection }}" class="product-grid__image">
+              {% include 'product.image-frame', product: product %}
+              {% comment %}<a href="{{ product.url | within: collection }}" class="product-grid__image">
                 <img src="{{ product.featured_image.src | img_url: '300x300' }}" alt="{{ product.featured_image.alt | escape }}">
-              </a>
+              </a>{% endcomment %}
               {% assign bestseller = false %}
               {% assign on_sale = false %}
               {% assign new_product = false %}

@@ -4,7 +4,7 @@
 
 <div class="flex-container list-collections">
   {% for collection in collections %}
-    {% unless collection.handle == 'frontpage' %}
+    {% unless collection.handle == 'frontpage' or collection.products.count == 0 %}
       <div class="list-collections__collection">
         <div class="list-collections__collection__header">
           <h2><a href="{{ collection.url }}" title="{{ collections.general.link_title | t: title: title }}">{{ collection.title }}</a></h2>
@@ -14,9 +14,7 @@
           <div class="product-grid__products">
             {% for product in collection.products limit: 4 %}
               <div class="product-grid__single">
-                <a href="{{ product.url }}" class="product-grid__image">
-                  <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
-                </a>
+                {% include 'product.image-frame', product: product %}
                 <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
                 <p class="product-grid__price">{{ product.price | money }}</p>
               </div>

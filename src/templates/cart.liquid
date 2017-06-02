@@ -25,11 +25,7 @@
           {% endcomment %}
 
             <tr class="responsive-table-row">
-              <td>
-                <a href="{{ item.url | within: collections.all }}" class="product--image">
-                  <img src="{{ item | img_url: '300x300' }}" alt="{{ item.title | escape }}">
-                </a>
-              </td>
+              <td>{% include 'product.image-frame', product: item %}</td>
               <td class="cart--table__product">
                 <a href="{{ item.url }}" class="product--name">{{ item.product.title }}</a>
 
