@@ -17,7 +17,7 @@
         bottom: $base-spacing-unit-medium;
         padding: $base-spacing-unit-tiny $base-spacing-unit-small;
         background: rgba($algaeGreen, .9);
-        @include breakpoint(medium) {
+        @include breakpoint(small) {
             width: 45%;
             padding: $base-spacing-unit-medium;
         }
