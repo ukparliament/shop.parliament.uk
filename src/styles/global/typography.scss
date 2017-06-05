@@ -130,9 +130,12 @@ h6 {
 }
 
 .site-footer {
-    color: $ebb;
+    color: $alabaster;
     a {
-        color: $ebb;
+        color: $alabaster;
+    }
+    a:hover {
+        color: $frenchGray;
     }
     .site-footer__address {
         font-style: normal;
