@@ -7,8 +7,6 @@
         justify-content: center;
     }
     .offers-bar__third {
-        line-height: 1.2;
-        font-size: 14px;
         padding: $base-spacing-unit 0;
         @include breakpoint(medium) {
             margin-bottom: 0;
@@ -16,9 +14,6 @@
             width: 33.3%;
             display: flex;
             justify-content: center;
-        }
-        a {
-            color: $tundora;
         }
         p {
             margin: 0;

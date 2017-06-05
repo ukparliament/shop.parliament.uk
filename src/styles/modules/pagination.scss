@@ -1,4 +1,13 @@
 .pagination {
     margin: $base-spacing-unit-medium 0 $base-spacing-unit-extra-extra-large;
-    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    .prev, .next {
+        flex: 1 1 auto;
+    }
+    span, a {
+        min-width: $base-spacing-unit-medium;
+        display: block;
+    }
 }

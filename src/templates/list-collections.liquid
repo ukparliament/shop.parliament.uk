@@ -4,19 +4,17 @@
 
 <div class="flex-container list-collections">
   {% for collection in collections %}
-    {% unless collection.handle == 'frontpage' %}
+    {% unless collection.handle == 'frontpage' or collection.products.count == 0 %}
       <div class="list-collections__collection">
         <div class="list-collections__collection__header">
-          <h2>{{ collection.title }}</h2>
-          <a href="{{ collection.url }}" title="{{ collections.general.link_title | t: title: title }}">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
+          <h2><a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}">{{ collection.title }}</a></h2>
+          <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}" class="list-collections__collection__header__more">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
         </div>
         <div class="product-grid noflex-container">
-          <div class="product-grid__products product-grid__products--fifths">
-            {% for product in collection.products limit: 5 %}
+          <div class="product-grid__products">
+            {% for product in collection.products limit: 4 %}
               <div class="product-grid__single">
-                <a href="{{ product.url }}" class="product-grid__image">
-                  <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
-                </a>
+                {% include 'product.image-frame', product: product %}
                 <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
                 <p class="product-grid__price">{{ product.price | money }}</p>
               </div>

@@ -1,0 +1,18 @@
+{% if size == 'large' %}
+  <form action="/search" method="get" role="search" class="search-bar search-bar__large">
+  {% else %}
+  <form action="/search" method="get" role="search" class="search-bar">
+{% endif %}
+  <label for="Search" class="label-hidden">
+    {{ 'general.search.placeholder' | t }}
+  </label>
+  <input type="search"
+         name="q"
+         id="Search"
+         value="{{ search.terms | escape }}"
+         placeholder="{{ 'general.search.placeholder' | t }}">
+  <button type="submit" class="btn">
+    {% include 'icon-search' %}
+    <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+  </button>
+</form>
