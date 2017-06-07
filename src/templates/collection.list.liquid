@@ -23,7 +23,7 @@
       </div>
 
       <div class="product-grid">
-        <div class="product-grid__products product-grid__products--thirds">
+        <div class="product-grid__products product-grid__products--rows">
           {% for product in collection.products %}
 
             <div class="product-grid__single">
@@ -43,45 +43,51 @@
                 {% assign on_sale = true %}
               {% endif %}
 
-              <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
-              <p class="product-grid__price">
-                {% if on_sale == true %}
-                  <span class="badge">{{ 'products.product.on_sale' | t }}</span>
-                {% elsif bestseller == true %}
-                  <span class="badge">{{ 'products.product.bestseller' | t }}</span>
-                {% elsif new_product == true %}
-                  <span class="badge">{{ 'products.product.new' | t }}</span>
-                {% endif %}
+              <div class="product-grid__description">
+                  <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
 
-                {% if product.compare_at_price > product.price %}
+                  <p class="product-grid__price">
+                    {% if on_sale == true %}
+                      <span class="badge">{{ 'products.product.on_sale' | t }}</span>
+                    {% elsif bestseller == true %}
+                      <span class="badge">{{ 'products.product.bestseller' | t }}</span>
+                    {% elsif new_product == true %}
+                      <span class="badge">{{ 'products.product.new' | t }}</span>
+                    {% endif %}
 
-                  {% if product.price_varies %}
-                    {%- assign sale_price = product.price | money -%}
-                    {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-                  {% else %}
-                    {{ product.price | money }}
-                  {% endif %}
+                    {% if product.compare_at_price > product.price %}
 
-                {% else %}
+                      {% if product.price_varies %}
+                        {%- assign sale_price = product.price | money -%}
+                        {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+                      {% else %}
+                        {{ 'products.product.on_sale' | t }}
+                        {{ product.price | money }}
+                      {% endif %}
 
-                  {% if product.price_varies %}
-                    {%- assign price = product.price | money -%}
-                    {{ 'products.product.from_text_html' | t: price: price }}
-                  {% else %}
-                    {{ product.price | money }}
-                  {% endif %}
+                    {% else %}
 
-                {% endif %}
+                      {% if product.price_varies %}
+                        {%- assign price = product.price | money -%}
+                        {{ 'products.product.from_text_html' | t: price: price }}
+                      {% else %}
+                        {{ product.price | money }}
+                      {% endif %}
 
-                {% if product.compare_at_price > product.price %}
-                  <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-                  <s>{{ product.compare_at_price | money }}</s>
-                {% endif %}
+                    {% endif %}
 
-                {% unless product.available %}
-                  {{ 'products.product.sold_out' | t }}
-                {% endunless %}
-              </p>
+                    {% if product.compare_at_price > product.price %}
+                      <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                      <s>{{ product.compare_at_price | money }}</s>
+                    {% endif %}
+
+                    {% unless product.available %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% endunless %}
+                  </p>
+
+                  {{ product.description | truncate: 150 }}
+              </div>
             </div>
 
         {% else %}

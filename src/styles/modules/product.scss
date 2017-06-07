@@ -1,0 +1,93 @@
+.product {
+    margin-bottom: $base-spacing-unit-extra-extra-large;
+    label {
+        display: block;
+    }
+    input[type=number] {
+        background: $white;
+        border: 1px solid $frenchGray;
+        border-radius: 4px;
+        padding: $base-spacing-unit $base-spacing-unit-tiny;
+        margin-top: $base-spacing-unit;
+        width: $base-spacing-unit * 10;
+    }
+    button[type=submit] {
+        margin-top: $base-spacing-unit-small;
+    }
+}
+
+.product__price {
+    border-bottom: 1px solid $frenchGray;
+    padding-bottom: $base-spacing-unit-tiny;
+    margin-bottom: $base-spacing-unit-tiny;
+}
+
+.product__price--old {
+    display: inline-block;
+    margin-right: $base-spacing-unit;
+}
+
+.product__description {
+    border-bottom: 1px solid $frenchGray;
+    padding-bottom: $base-spacing-unit-tiny;
+    margin-top: $base-spacing-unit-small;
+    p {
+        margin-top: 0;
+    }
+}
+
+/* Product image framing */
+.product-image-frame-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.product-image-frame {
+    align-items: center;
+    background: $white;
+    border: 1px solid $frenchGray;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    max-width: 300px;
+    padding: $base-spacing-unit-medium;
+    width: 100%;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+.product-image-frame__featured {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    @include breakpoint(medium) {
+        width: 90%;
+        max-width: 90%;
+    }
+}
+
+.product-image-frame__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    @include breakpoint(medium) {
+        width: 90%;
+        max-width: 90%;
+    }
+    li {
+        max-width: 19%;
+        margin-top: $base-spacing-unit-tiny;
+        margin-right: $base-spacing-unit-tiny;
+        a {
+            width: auto;
+            height: auto;
+            padding: $base-spacing-unit-tiny;
+        }
+    }
+}

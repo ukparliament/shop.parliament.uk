@@ -43,7 +43,8 @@
       "title": "Search for products on our site",
       "placeholder": "Search our store",
       "submit": "Search"
-    }
+    },
+    "shop": "Shop"
   },
   "blogs": {
     "article": {
@@ -71,11 +72,12 @@
   },
   "cart": {
     "general": {
+      "back": "Back to shopping",
       "title": "Shopping Cart",
       "remove": "Remove",
-      "note": "Special instructions for seller",
+      "note": "Please leave special delivery instructions or a delivery note below:",
       "subtotal": "Subtotal",
-      "shipping_at_checkout": "Shipping & taxes calculated at checkout",
+      "shipping_at_checkout": "Delivery options available at checkout",
       "update": "Update Cart",
       "checkout": "Check Out",
       "empty": "Your cart is currently empty.",
@@ -96,7 +98,25 @@
   "collections": {
     "general": {
       "no_matches": "Sorry, there are no products in this collection",
-      "link_title": "Browse our {{ title }} collection"
+      "link_title": "Browse our {{ title }} collection",
+      "more": "More"
+    },
+    "filter_by": "Filter by {{ title }}",
+    "sorting": {
+      "title": "Sort by",
+      "featured": "Featured",
+      "best_selling": "Best Selling",
+      "az": "Alphabetically, A-Z",
+      "za": "Alphabetically, Z-A",
+      "price_ascending": "Price, low to high",
+      "price_descending": "Price, high to low",
+      "date_descending": "Date, new to old",
+      "date_ascending": "Date, old to new"
+    },
+    "views": {
+      "list": "List view",
+      "grid": "Grid view",
+      "change": "Change view"
     }
   },
   "contact": {
@@ -235,7 +255,7 @@
     },
     "footer": {
       "social_platform": "{{ name }} on {{ platform }}",
-      "copyright": "Copyright"
+      "copyright": "Parliamentary Copyright"
     }
   },
   "products": {
@@ -243,11 +263,13 @@
       "regular_price": "Regular price",
       "sold_out": "Sold Out",
       "unavailable": "Unavailable",
-      "on_sale": "On Sale",
-      "on_sale_from_html": "On Sale from {{ price }}",
+      "on_sale": "Sale",
+      "on_sale_from_html": "From {{ price }}",
       "from_text_html": "From {{ price }}",
       "quantity": "Quantity",
-      "add_to_cart": "Add to Cart"
+      "add_to_cart": "Add to Cart",
+      "bestseller": "Bestseller",
+      "new": "New"
     }
   },
   "gift_cards": {

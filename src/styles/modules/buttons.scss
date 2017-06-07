@@ -1,0 +1,66 @@
+.button {
+    @include prefix('user-select', 'none', moz ms webkit spec);
+    @include prefix(appearance, none, webkit moz spec);
+    display: inline-block;
+    width: auto;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 0;
+    border-radius: 4px;
+    padding: $base-spacing-unit $base-spacing-unit-medium;
+
+    // button colours
+    background: $stTropaz;
+    color: $white;
+
+    span {
+        line-height: 1;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: $base-spacing-unit;
+    }
+}
+
+.button--small {
+    padding: ($base-spacing-unit / 2) $base-spacing-unit-tiny;
+    font-size: 14px;
+}
+
+.button:hover {
+    background: $stTropazBtnHover;
+}
+
+.button--secondary {
+    background: $periwinkle;
+    color: $martinique;
+}
+
+.button--secondary:hover {
+    background: $periwinkleHover;
+}
+
+.button--alternative {
+    background: $algaeGreen;
+    color: $martinique;
+}
+
+.button--alternative:hover {
+    background: $algaeGreenHover;
+}
+
+.button--grey {
+    background: $frenchGray;
+    color: $tundora;
+}
+
+.button--grey:hover {
+    background: $frenchGray;
+    color: $tundora;
+    opacity: 0.8;
+}
+
+.button[disabled] {
+    background: $frenchGray;
+}

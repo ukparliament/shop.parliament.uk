@@ -1,0 +1,27 @@
+.list-collections {
+    display: flex;
+    flex-flow: column nowrap;
+    .list-collections__collection {
+        margin-bottom: $base-spacing-unit-extra-extra-extra-large;
+        padding-bottom: $base-spacing-unit-medium;
+        border-bottom: 1px solid $frenchGray;
+        .list-collections__collection__header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+    }
+    .list-collections__collection:last-of-type {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .list-collections__collection__header__more {
+        display: none;
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
+}

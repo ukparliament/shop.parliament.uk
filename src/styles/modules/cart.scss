@@ -1,0 +1,88 @@
+.cart {
+    margin-bottom: $base-spacing-unit-extra-large;
+}
+
+.cart--table {
+    border-bottom: 1px solid $frenchGray;
+    border-collapse: separate;
+    width: 100%;
+    margin-bottom: $base-spacing-unit-large;
+    padding-bottom: $base-spacing-unit-small;
+    @include breakpoint(medium) {
+        margin-bottom: $base-spacing-unit-extra-large;
+        padding-bottom: $base-spacing-unit-extra-large;
+    }
+    thead th {
+        padding: $base-spacing-unit-medium 0;
+        border: 1px solid $frenchGray;
+        border-left: 0;
+        border-right: 0;
+    }
+    tbody tr td {
+        padding: $base-spacing-unit-small 0 0;
+        @include breakpoint(medium) {
+            padding-top: $base-spacing-unit-extra-large;
+        }
+    }
+    .cart--table__product {
+        .product--name {
+            display: block;
+            margin-bottom: $base-spacing-unit-tiny;
+        }
+    }
+    input[type=number] {
+        background: $white;
+        border: 1px solid $frenchGray;
+        border-radius: 4px;
+        padding: $base-spacing-unit $base-spacing-unit-tiny;
+        width: $base-spacing-unit * 10;
+    }
+}
+
+.cart--meta {
+    flex-flow: column;
+    justify-content: space-between;
+    @include breakpoint(medium) {
+        flex-flow: row wrap;
+    }
+    .cart--notes {
+        width: 100%;
+        @include breakpoint(medium) {
+            width: 60%;
+        }
+        .cart--notes--form {
+            padding: $base-spacing-unit-tiny;
+            @include breakpoint(medium) {
+                padding: $base-spacing-unit-small;
+            }
+            background: $ebb;
+            label {
+                display: block;
+                margin-bottom: $base-spacing-unit;
+            }
+            textarea {
+                display: block;
+                width: 100%;
+                border: 1px solid $frenchGray;
+                border-radius: 4px;
+                padding: $base-spacing-unit;
+            }
+        }
+    }
+    .cart--total {
+        width: 100%;
+        @include breakpoint(medium) {
+            width: 30%;
+        }
+        .cart--total__shipping {
+            margin-bottom: $base-spacing-unit-medium;
+        }
+        .cart--total--back {
+            margin-top: $base-spacing-unit-medium;
+            display: block;
+        }
+        .cart--total--back:hover {
+            color: $black;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.tiles {
+    justify-content: space-between;
+    margin-top: $base-spacing-unit-small;
+}
+
+.tile-container {
+    width: 100%;
+    position: relative;
+    margin: 0 0 $base-spacing-unit-small;
+    overflow: hidden;
+    @include breakpoint(medium) {
+        margin: 0 0 $base-spacing-unit-large;
+    }
+    .tile--heading {
+        width: 75%;
+        position: absolute;
+        bottom: $base-spacing-unit-medium;
+        padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+        background: rgba($algaeGreen, .9);
+        @include breakpoint(medium) {
+            width: 45%;
+            padding: $base-spacing-unit-medium;
+        }
+    }
+    .tile--heading:after {
+        height: 6px;
+        content: ' ';
+        width: 60px;
+        display: block;
+        background: $tara;
+        margin-top: $base-spacing-unit;
+        @include breakpoint(medium) {
+            margin-top: $base-spacing-unit-tiny;
+        }
+    }
+    img {
+        display: block;
+        transition: all 300ms linear;
+        will-change: transform;
+        max-width: 200%;
+        @include breakpoint(xsmall) {
+            max-width: 100%;
+        }
+    }
+}
+
+.tile-container:last-of-type {
+    margin-bottom: 0;
+    @include breakpoint(xsmall) {
+        margin: 0 0 $base-spacing-unit-small;
+    }
+}
+
+.tile-container:hover {
+    img {
+        transform: scale(1.04);
+    }
+}
+
+.tile--one-third:hover {
+    img {
+        transform: scale(1.07);
+    }
+}
+
+.tile--half-width, .tile--one-third {
+    .tile--heading {
+        background: rgba($purpleHeart, .9);
+        padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+    }
+    .tile--heading:after {
+        background: $whiteLilac;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+.tile--half-width {
+    .tile--heading {
+        width: 75%;
+    }
+    .tile--heading:after {
+        height: 4px;
+        width: 40px;
+        margin-top: $base-spacing-unit;
+    }
+    @include breakpoint(xsmall) {
+        width: 49%;
+    }
+}
+
+.tile--one-third {
+    .tile--heading {
+        width: auto;
+    }
+    .tile--heading:after {
+        display: none;
+    }
+    @include breakpoint(xsmall) {
+        width: 32.3%;
+    }
+}

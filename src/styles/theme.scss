@@ -12,6 +12,7 @@
 
 /*================ COMMON ================*/
 @import url('global/normalize.scss');
+@import url('global/typography.scss');
 @import url('global/slate-reset.scss');
 @import url('global/helper-classes.scss');
 @import url('global/grid.scss');
@@ -24,6 +25,20 @@
 @import url('global/blank-states.scss');
 
 /*================ MODULES ================*/
-@import url('modules/site-header.scss');
-@import url('modules/site-footer.scss');
+@import url('modules/badges.scss');
+@import url('modules/breadcrumbs.scss');
+@import url('modules/buttons.scss');
+@import url('modules/cart.scss');
+@import url('modules/collections.scss');
 @import url('modules/gift-card-template.scss');
+@import url('modules/list-collections.scss');
+@import url('modules/microsite-masthead.scss');
+@import url('modules/offers-bar.scss');
+@import url('modules/pagination.scss');
+@import url('modules/product-grid.scss');
+@import url('modules/product.scss');
+@import url('modules/search-bar.scss');
+@import url('modules/site-footer.scss');
+@import url('modules/site-header.scss');
+@import url('modules/site-navigation.scss');
+@import url('modules/tiles.scss');

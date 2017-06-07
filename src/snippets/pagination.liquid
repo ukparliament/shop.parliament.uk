@@ -1,3 +1,9 @@
 <div class="pagination">
-  {{ paginate | default_pagination }}
+  {% unless paginate.previous.is_link %}
+    <span class="prev"></span>
+  {% endunless %}
+  {{ paginate | default_pagination: next: 'Next', previous: 'Previous' }}
+  {% unless paginate.next.is_link %}
+    <span class="next"></span>
+  {% endunless %}
 </div>
