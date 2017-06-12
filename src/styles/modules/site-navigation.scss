@@ -80,12 +80,13 @@
     @include breakpoint(medium) {
         .site-navigation--has-submenu:hover {
             .site-navigation__submenu {
-                display: block;
-                position: absolute;
-                min-width: 150%;
                 background: $ebb;
+                display: block;
                 list-style: none;
+                min-width: 200%;
                 padding: 2px 4px 4px;
+                position: absolute;
+                z-index: 2;
                 li a:hover {
                     background: $white;
                 }
