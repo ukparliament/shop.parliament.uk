@@ -12,33 +12,37 @@ body {
     // Experimental text decoration declaration (webkit only)
     // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
     -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+    @include breakpoint(medium) {
+        font-size: $font-size-base + 2px; // 18px
+    }
 }
 
 // Base Heading Settings
 h1, .h1, h2, h3, h4, h5, h6 {
+    color: $martinique;
+    font-weight: 500;
     margin: $base-spacing-unit-medium 0 $base-spacing-unit;
     padding: 0;
-    color: $martinique;
-    font-weight: 700;
     @include breakpoint(medium) {
         margin: $base-spacing-unit-large 0 $base-spacing-unit;
     }
 }
 
 h1, .h1 {
-    font-size: 32px;
-    line-height: 1.125; // 36px;
+    font-size: 34px;
+    line-height: 1.059; // 36px;
     margin: 0 0 $base-spacing-unit-tiny;
     @include breakpoint(medium) {
-        font-size: 36px;
-        line-height: 1.167;
+        font-size: 44px;
+        line-height: 1.091; // 48px
         margin: 0 0 $base-spacing-unit-small;
     }
 }
 
 h2 {
-    font-size: 28px;
-    line-height: 1.286; // 36px;
+    font-size: 27px;
+    line-height: 1.111; // 36px;
     margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-tiny;
     @include breakpoint(medium) {
         font-size: 32px;
@@ -57,17 +61,17 @@ h3 {
 }
 
 h4 {
-    font-size: 21px;
-    line-height: 1.143; // 24px;
+    font-size: 20px;
+    line-height: 1.2; // 24px;
     @include breakpoint(medium) {
         font-size: 22px;
-        line-height: 1.364; // 30px
+        line-height: 1.091; // 30px
     }
 }
 
 h5 {
-    font-size: 18px;
-    line-height: 1.334; // 24px;
+    font-size: 16px;
+    line-height: 1.125; // 24px;
     @include breakpoint(medium) {
        font-size: 20px;
        line-height: 1.2; // 24px
@@ -76,7 +80,7 @@ h5 {
 
 h6 {
     font-size: 16px;
-    line-height: 1.5; // 24px;
+    line-height: 1.125; // 24px;
     @include breakpoint(medium) {
         font-size: 18px;
         line-height: 1.334; // 24px;
@@ -97,7 +101,7 @@ h6 {
     .site-header__cart {
         color: $tundora;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
@@ -107,7 +111,7 @@ h6 {
         text-decoration: none;
     }
     .site-navigation--active {
-        font-weight: 700;
+        font-weight: 500;
     }
     .site-navigation__list li a:hover {
         text-decoration: underline;
@@ -147,7 +151,7 @@ h6 {
 
 /* Tiles */
 .tile--heading {
-    font-weight: 700;
+    font-weight: 500;
     color: $martinique;
 }
 
@@ -175,7 +179,7 @@ h6 {
     .product-grid__title {
         color: $stTropaz;
         text-decoration: underline;
-        font-weight: 700;
+        font-weight: 500;
     }
     .product-grid__title:hover {
         color: $stTropazHover;
@@ -190,13 +194,13 @@ h6 {
 .product__price--current {
     font-size: 32px;
     color: $martinique;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .product__price--old {
-    font-size: 24px;
+    font-size: 22px;
     text-decoration: line-through;
-    font-weight: 700;
+    font-weight: 500;
     color: $martinique;
 }
 
@@ -220,13 +224,13 @@ h6 {
     }
     .product--name {
         color: $stTropaz;
-        font-weight: 700;
+        font-weight: 500;
     }
     .product--name:hover {
         color: $stTropazHover;
     }
     .product--price {
-        font-weight: 700;
+        font-weight: 500;
         @include breakpoint(medium) {
             font-weight: 400;
         }
@@ -245,7 +249,7 @@ h6 {
             text-align: right;
         }
         .cart--total__shipping {
-            font-size: 14px;
+            font-size: 16px;
             color: $doveGray;
             line-height: 1;
         }
@@ -257,7 +261,7 @@ h6 {
 
 p a {
     color: $stTropaz;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 p a:hover {
@@ -286,12 +290,12 @@ p a:focus {
 
 /* Breadcrumbs */
 .breadcrumbs {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* Collection filters */
 .collection__filters {
-    font-size: 14px;
+    font-size: 16px;
     li a {
         text-decoration: none;
         color: $tundora;
@@ -299,7 +303,7 @@ p a:focus {
 }
 
 .collection__filters--active a {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 /* List of collections */
@@ -316,7 +320,7 @@ p a:focus {
     a {
         color: $tundora;
         text-decoration: underline;
-        font-weight: 700;
+        font-weight: 500;
     }
     a:hover {
         color: $black;
@@ -327,7 +331,7 @@ p a:focus {
 .search-bar__large {
     input[type=search] {
         @include breakpoint(medium) {
-            font-size: 21px;
+            font-size: 22px;
         }
     }
 }
@@ -340,9 +344,9 @@ p a:focus {
 /* Microsite masthead */
 .microsite-masthead {
     color: $alabaster;
-    font-size: 12px;
+    font-size: 14px;
     .microsite-masthead__back {
-        font-weight: 700;
+        font-weight: 500;
     }
     a {
         color: $alabaster;
@@ -357,8 +361,8 @@ p a:focus {
 }
 
 .offers-bar .offers-bar__third {
-    line-height: 1.2;
-    font-size: 14px;
+    line-height: 1.125;
+    font-size: 16px;
     a {
         color: $tundora;
     }
@@ -374,7 +378,7 @@ p a:focus {
         text-align: right;
     }
     .current {
-        font-weight: 700;
+        font-weight: 500;
     }
     a {
         color: $stTropaz;
