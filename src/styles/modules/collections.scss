@@ -45,6 +45,10 @@
     }
 }
 
+.collection__filters:first-of-type {
+    margin-top: $base-spacing-unit-tiny;
+}
+
 .collection__view-sort {
     display: none;
     margin: $base-spacing-unit-large 0;
