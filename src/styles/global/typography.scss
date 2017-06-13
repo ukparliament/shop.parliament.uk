@@ -261,7 +261,6 @@ h6 {
 
 p a {
     color: $stTropaz;
-    font-weight: 500;
 }
 
 p a:hover {
@@ -382,5 +381,8 @@ p a:focus {
     }
     a {
         color: $stTropaz;
+    }
+    a:hover {
+        color: $stTropazHover;
     }
 }
