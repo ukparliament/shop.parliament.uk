@@ -18,8 +18,11 @@
 
 .product__price {
     border-bottom: 1px solid $frenchGray;
-    padding-bottom: $base-spacing-unit-tiny;
+    padding: $base-spacing-unit-tiny 0;
     margin-bottom: $base-spacing-unit-tiny;
+    @include breakpoint(medium) {
+        padding: 0 0 $base-spacing-unit-tiny;
+    }
 }
 
 .product__price--old {
@@ -32,6 +35,18 @@
     padding-bottom: $base-spacing-unit-tiny;
     margin-top: $base-spacing-unit-small;
     p {
+        margin-top: 0;
+    }
+    ul, ol {
+        margin-left: 0;
+        padding-left: $base-spacing-unit-small;
+    }
+}
+
+.product__add-to-cart {
+    display: inline-block;
+    margin-left: $base-spacing-unit;
+    button[type=submit] {
         margin-top: 0;
     }
 }

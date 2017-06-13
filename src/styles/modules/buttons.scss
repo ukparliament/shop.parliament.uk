@@ -15,7 +15,7 @@
     background: $stTropaz;
     color: $white;
 
-    span {
+    .icon ~ span {
         line-height: 1;
         vertical-align: middle;
         display: inline-block;
