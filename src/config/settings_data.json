@@ -92,16 +92,16 @@
               "settings": {
                 "icon": "tag-blue",
                 "title": "Free UK delivery",
-                "description": "on all orders over £50",
+                "description": "on orders over £50",
                 "url": ""
               }
             },
             "two": {
               "type": "block",
               "settings": {
-                "icon": "tag-green",
-                "title": "Tours of Parliament",
-                "description": "a range of regular and specialist tours",
+                "icon": "people-multi",
+                "title": "Tour Parliament",
+                "description": "to experience heritage and democracy",
                 "url": ""
               }
             },
@@ -110,7 +110,7 @@
               "settings": {
                 "icon": "mouse-yellow",
                 "title": "Subscribe to our newsletter",
-                "description": "for information on all future events & offers",
+                "description": "for offers and events",
                 "url": ""
               }
             }
