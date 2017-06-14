@@ -1,7 +1,7 @@
 /*================ Flexbox grid ================*/
 .noflex-container, .flex-container {
     display: block;
-    max-width: 1020px;
+    max-width: 1120px;
     margin: 0 auto;
     padding: 0 $base-spacing-unit-small;
     @include breakpoint(medium) {

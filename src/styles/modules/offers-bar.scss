@@ -1,20 +1,18 @@
 .offers-bar {
     display: none;
+    margin-top: $base-spacing-unit-large;
+    margin-bottom: $base-spacing-unit-tiny;
+    justify-content: center;
     @include breakpoint(medium) {
         display: flex;
-        margin-top: $base-spacing-unit-large;
-        margin-bottom: ($base-spacing-unit-large - $base-spacing-unit-small);
-        justify-content: center;
     }
     .offers-bar__third {
         padding: $base-spacing-unit 0;
-        @include breakpoint(medium) {
-            margin-bottom: 0;
-            border-right: 2px solid $frenchGray;
-            width: 33.3%;
-            display: flex;
-            justify-content: center;
-        }
+        margin-bottom: 0;
+        border-right: 2px solid $frenchGray;
+        width: 33.3%;
+        display: flex;
+        justify-content: center;
         p {
             margin: 0;
         }
