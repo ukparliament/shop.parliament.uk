@@ -10,7 +10,7 @@
       {{ collection.title | link_to: collection.url }}
     {% endif %}
     <span aria-hidden="true">&rsaquo;</span>
-    <span>{{ product.title }}</span>
+    <span title="{{ product.title }}">{{ product.title | truncate: 32 }}</span>
   {% elsif template contains 'collection' and collection.handle %}
     <span aria-hidden="true">&rsaquo;</span>
     {% if current_tags %}
@@ -37,7 +37,7 @@
     <span>{{ article.title }}</span>
   {% else %}
    <span aria-hidden="true">&rsaquo;</span>
-   <span>{{ page_title }}</span>
+   <span title="{{ page_title }}">{{ page_title | truncate: 32 }}</span>
   {% endif %}
 </nav>
 {% endunless %}

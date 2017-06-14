@@ -44,7 +44,7 @@
         {%- assign child_list_handle = link.title | handleize -%}
         {% if menus[child_list_handle].links != blank %}
           <li class="site-navigation--has-submenu{% if link.active %} site-navigation--active{% endif %}">
-            <a href="{{ link.url }}" class="site-navigation__link">
+            <a href="{{ link.url }}">
               {{ link.title }}
               <span class="site-navigation--caret">{% include 'icon-arrow-down' %}</span>
             </a>
@@ -53,14 +53,14 @@
             <ul class="site-navigation__submenu">
               {% for childlink in menus[child_list_handle].links %}
                 <li {% if childlink.active %}class="site-navigation--active"{% endif %}>
-                  <a href="{{ childlink.url }}" class="site-navigation__link">{{ childlink.title | escape }}</a>
+                  <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
                 </li>
               {% endfor %}
             </ul>
           </li>
         {% else %}
           <li {% if link.active %}class="site-navigation--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-navigation__link">{{ link.title }}</a>
+            <a href="{{ link.url }}">{{ link.title }}</a>
           </li>
         {% endif %}
       {% endfor %}

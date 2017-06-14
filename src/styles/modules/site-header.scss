@@ -3,11 +3,15 @@
     background: $white;
     overflow: auto;
     border-bottom: 3px solid $frenchGray;
-    padding: $base-spacing-unit-small 0;
+    padding: $base-spacing-unit 0;
+    @include breakpoint(medium) {
+        padding: $base-spacing-unit-small 0;
+    }
     img {
         max-width: 385px;
         height: 61px;
         width: 100%;
+        display: block;
     }
     .site-header__cart {
         margin-bottom: $base-spacing-unit;
@@ -23,5 +27,8 @@
         @include breakpoint(medium) {
             display: block;
         }
+    }
+    h1 a, .h1 a {
+        display: block;
     }
 }

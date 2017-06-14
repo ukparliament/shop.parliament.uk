@@ -34,7 +34,7 @@
         max-width: 75%;
         a {
             display: block;
-            padding: $base-spacing-unit-tiny $base-spacing-unit-tiny;
+            padding: $base-spacing-unit;
         }
         a:hover {
             background: $white;
@@ -42,11 +42,12 @@
     }
     .collection__filters--heading {
         display: block;
+        margin-bottom: $base-spacing-unit;
     }
 }
 
 .collection__filters:first-of-type {
-    margin-top: $base-spacing-unit-tiny;
+    margin-top: $base-spacing-unit-medium;
 }
 
 .collection__view-sort {
