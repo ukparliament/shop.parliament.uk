@@ -45,10 +45,22 @@ theme.Product = (function() {
 
     slate.Image.preload(this.productSingleObject.images, this.settings.imageSize);
 
+    this.initProductImageSwapper();
+
     this.initVariants();
   }
 
   Product.prototype = $.extend({}, Product.prototype, {
+
+    /**
+     * Handles swapping of images on products with multiple images
+     */
+    initProductImageSwapper: function() {
+      $(selectors.productThumbs).on('click', function(event) {
+        event.preventDefault();
+        $(selectors.productFeaturedImage).attr('src', $(this).attr('href'));
+      });
+    },
 
     /**
      * Handles change events from the variant inputs

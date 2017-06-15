@@ -1,5 +1,6 @@
 {% if collection.all_tags.size > 0 %}
   <ul class="collection__filters">
+    <span class="collection__filters--heading">{{ 'collections.title' | t }}</span>
     {% for tag in collection.all_tags %}
       {% unless tag contains 'price-' or tag contains 'vendor-' %}
         {% if current_tags contains tag %}
@@ -16,7 +17,7 @@
   </ul>
   {% if collection.all_tags contains 'price-under-5' %}
     <ul class="collection__filters">
-      <strong class="collection__filters--heading">{{ 'collections.filter_by' | t: title: 'Price' }}</strong>
+      <span class="collection__filters--heading">{{ 'collections.filter_by' | t: title: 'Price' }}</span>
         {% if current_tags contains 'price-under-5' %}
           <li class="collection__filters--active">{{ 'Under £5' | link_to_remove_tag: 'price-under-5' }}</li>
         {% else %}
@@ -41,7 +42,7 @@
   {% endif %}
   {% if collection.all_tags contains 'vendor-house-of-commons' %}
     <ul class="collection__filters">
-      <strong class="collection__filters--heading">{{ 'collections.filter_by' | t: title: 'Vendor' }}</strong>
+      <span class="collection__filters--heading">{{ 'collections.filter_by' | t: title: 'Vendor' }}</span>
         {% if current_tags contains 'vendor-house-of-commons' %}
           <li class="collection__filters--active">{{ 'House of Commons' | link_to_remove_tag: 'vendor-house-of-commons' }}</li>
         {% else %}

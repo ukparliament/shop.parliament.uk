@@ -8,9 +8,7 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
   <link rel="canonical" href="{{ canonical_url }}">
 
-  {% if settings.favicon != blank %}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-  {% endif %}
+  <link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/web1devci.static-assets/favicon.ico">
 
   {%- assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros: gift_card.currency -%}
   {%- assign formatted_initial_value_stripped = formatted_initial_value | strip_html -%}

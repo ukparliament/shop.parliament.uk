@@ -31,9 +31,11 @@
 }
 
 .product__description {
-    border-bottom: 1px solid $frenchGray;
     padding-bottom: $base-spacing-unit-tiny;
     margin-top: $base-spacing-unit-small;
+    @include breakpoint(medium) {
+        border-bottom: 1px solid $frenchGray;
+    }
     p {
         margin-top: 0;
     }
@@ -74,6 +76,13 @@
     }
 }
 
+.cart .product-image-frame {
+    max-width: 100%;
+    @include breakpoint(medium) {
+        max-width: 300px;
+    }
+}
+
 .product-image-frame__featured {
     height: auto;
     width: 100%;
@@ -102,7 +111,10 @@
         a {
             width: auto;
             height: auto;
-            padding: $base-spacing-unit-tiny;
+            padding: $base-spacing-unit;
+            @include breakpoint(medium) {
+                padding: $base-spacing-unit-tiny;
+            }
         }
     }
 }

@@ -27,15 +27,24 @@
 }
 
 .search-bar__large {
-    margin-bottom: $base-spacing-unit-medium;
+    margin-bottom: $base-spacing-unit-extra-large;
+    @include breakpoint(medium) {
+        margin-bottom: $base-spacing-unit-extra-extra-extra-large;
+    }
     input[type=search] {
-        padding: $base-spacing-unit-small $base-spacing-unit-medium;
+        padding: $base-spacing-unit-tiny;
+        @include breakpoint(medium) {
+            padding: $base-spacing-unit-small $base-spacing-unit-medium;
+        }
     }
     button[type=submit] {
-        padding: $base-spacing-unit-small $base-spacing-unit-medium;
+        padding: 0 $base-spacing-unit-tiny;
+        @include breakpoint(medium) {
+            padding: $base-spacing-unit-small $base-spacing-unit-medium;
+        }
         svg {
-            width: 25px;
-            height: 25px;
+            width: $base-spacing-unit-medium;
+            height: $base-spacing-unit-medium;
         }
     }
 }

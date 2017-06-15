@@ -52,6 +52,9 @@
             margin: 0;
             padding: 0;
         }
+        .product-grid__price ~ p {
+            margin-top: $base-spacing-unit;
+        }
         .product-grid__title {
             display: block;
             margin-top: $base-spacing-unit;
