@@ -102,6 +102,9 @@ h6 {
         color: $tundora;
         text-decoration: none;
         font-size: 16px;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -110,7 +113,7 @@ h6 {
         color: $tundora;
         text-decoration: none;
     }
-    .site-navigation--active {
+    .site-navigation--active > a {
         font-weight: 500;
     }
     .site-navigation__list li > a:hover {
@@ -291,6 +294,9 @@ p a:focus {
 
 /* Collection filters */
 .collection__filters {
+    .collection__filters--heading {
+        font-weight: 500;
+    }
     li a {
         font-size: 16px;
         text-decoration: none;
