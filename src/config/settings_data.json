@@ -37,7 +37,7 @@
             "fwt": {
               "type": "full-width-tile",
               "settings": {
-                "full-width-tile-title": "All products",
+                "full-width-tile-title": "All Products",
                 "full-width-tile-link": "shopify:\/\/collections\/all",
                 "full-width-tile-image": "shopify:\/\/shop_images\/ap.png"
               }

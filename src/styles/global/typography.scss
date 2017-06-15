@@ -113,11 +113,8 @@ h6 {
     .site-navigation--active {
         font-weight: 500;
     }
-    .site-navigation__list li a:hover {
+    .site-navigation__list li > a:hover {
         text-decoration: underline;
-        @include breakpoint(medium) {
-            text-decoration: none;
-        }
     }
 }
 
@@ -294,8 +291,8 @@ p a:focus {
 
 /* Collection filters */
 .collection__filters {
-    font-size: 16px;
     li a {
+        font-size: 16px;
         text-decoration: none;
         color: $tundora;
     }
@@ -310,16 +307,21 @@ p a:focus {
     h2 {
         margin: $base-spacing-unit-medium 0;
         a {
+            color: $stTropaz;
             @include breakpoint(small) {
                 color: $martinique;
                 text-decoration: none;
+            }
+        }
+        a:hover {
+            @include breakpoint(small) {
+                color: $martinique;
             }
         }
     }
     a {
         color: $tundora;
         text-decoration: underline;
-        font-weight: 500;
     }
     a:hover {
         color: $black;
@@ -354,6 +356,9 @@ p a:focus {
             text-decoration: underline;
         }
     }
+    a:hover {
+        color: $frenchGray;
+    }
     ul li a {
         text-decoration: underline;
     }
@@ -384,5 +389,12 @@ p a:focus {
     }
     a:hover {
         color: $stTropazHover;
+    }
+}
+
+/* Product */
+.product {
+    input[type=number] {
+        line-height: 1.5;
     }
 }
