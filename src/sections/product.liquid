@@ -20,7 +20,7 @@
           {% for image in product.images %}
             <li>
               <a class="product-image-frame" href="{{ image.src | img_url: '480x480' }}" data-product-single-thumbnail>
-                <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+                <img src="{{ image.src | img_url: '80x80' }}" alt="{{ image.alt | escape }}">
               </a>
             </li>
           {% endfor %}
