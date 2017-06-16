@@ -1,13 +1,5 @@
 .breadcrumbs {
-    // width: 100%;
-    // display: flex;
-    // flex-wrap: wrap;
     margin-top: $base-spacing-unit-tiny;
-    // padding-bottom: $base-spacing-unit-tiny;
-    // @include breakpoint(medium) {
-    //     padding-top: $base-spacing-unit-large;
-    //     padding-bottom: $base-spacing-unit-tiny;
-    // }
     span[aria-hidden] {
         margin: 0 $base-spacing-unit-tiny;
     }
