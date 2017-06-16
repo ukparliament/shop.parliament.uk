@@ -1,29 +1,33 @@
 {% if template == 'index' %}
   {% if section.settings.show_offers_bar %}
-    <div class="offers-bar flex-container">
-      {% for block in section.blocks %}
-        <div class="offers-bar__third">
-          <div class="offers-bar__icon">
-            {% if block.settings.icon == 'tag-blue' %}
-              <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation">
-            {% elsif block.settings.icon == 'people-multi' %}
-              <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation">
-            {% elsif block.settings.icon == 'mouse-yellow' %}
-              <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation">
-            {% elsif block.settings.icon == 'mail-green' %}
-              <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation">
-            {% endif %}
-          </div>
-          <div class="offers-bar__description">
-            {% if block.settings.url %}
-              <strong><a href="{{ block.settings.url }}">{{ block.settings.title }}</a></strong>
-            {% else %}
-              <strong>{{ block.settings.title }}</strong>
-            {% endif %}
-            <p>{{ block.settings.description }}</p>
-          </div>
+    <div class="offers-bar">
+      <div class="container">
+        <div class="grid">
+          {% for block in section.blocks %}
+            <div class="grid-cell grid-cell-1of3">
+              <div class="offers-bar__icon">
+                {% if block.settings.icon == 'tag-blue' %}
+                  <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation">
+                {% elsif block.settings.icon == 'people-multi' %}
+                  <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation">
+                {% elsif block.settings.icon == 'mouse-yellow' %}
+                  <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation">
+                {% elsif block.settings.icon == 'mail-green' %}
+                  <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation">
+                {% endif %}
+              </div>
+              <div class="offers-bar__description">
+                {% if block.settings.url %}
+                  <strong><a href="{{ block.settings.url }}">{{ block.settings.title }}</a></strong>
+                {% else %}
+                  <strong>{{ block.settings.title }}</strong>
+                {% endif %}
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      {% endfor %}
+      </div>
     </div>
   {% endif %}
 {% endif %}

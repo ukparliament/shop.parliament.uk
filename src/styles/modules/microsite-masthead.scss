@@ -1,22 +1,23 @@
 .microsite-masthead {
     background: $martinique;
     padding: $base-spacing-unit 0;
-    .flex-container {
+    .container {
+        display: flex;
         justify-content: space-between;
     }
-    a .icon {
+    .microsite-masthead__back .icon {
         height: 10px;
         width: 7.5px;
         margin-right: $base-spacing-unit;
     }
-    ul {
+    .microsite-masthead__links {
         display: none;
-        @include breakpoint(medium) {
-            display: block;
-        }
         padding: 0;
         margin: 0;
         list-style: none;
+        @include breakpoint(small) {
+            display: block;
+        }
         li {
             display: inline-block;
             margin-left: $base-spacing-unit-small;

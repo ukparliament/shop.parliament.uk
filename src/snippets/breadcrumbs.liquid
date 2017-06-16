@@ -1,46 +1,48 @@
 {% unless template == 'index' or template == 'cart' or template == '404' or template == 'search' %}
-<nav class="breadcrumbs container" role="navigation" aria-label="breadcrumbs">
-  <div class="grid">
-    <div class="grid-cell grid-cell-1of1">
-      <a href="/" title="Home">Home</a>
-      {% if template contains 'page' %}
-        <span aria-hidden="true">&rsaquo;</span>
-        <span>{{ page.title }}</span>
-      {% elsif template contains 'product' %}
-        {% if collection.url %}
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <div class="container">
+    <div class="grid">
+      <div class="grid-cell grid-cell-1of1">
+        <a href="/" title="Home">Home</a>
+        {% if template contains 'page' %}
           <span aria-hidden="true">&rsaquo;</span>
-          {{ collection.title | link_to: collection.url }}
-        {% endif %}
-        <span aria-hidden="true">&rsaquo;</span>
-        <span title="{{ product.title }}">{{ product.title | truncate: 32 }}</span>
-      {% elsif template contains 'collection' and collection.handle %}
-        <span aria-hidden="true">&rsaquo;</span>
-        {% if current_tags %}
-          {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-          {{ collection.title | link_to: url }}
+          <span>{{ page.title }}</span>
+        {% elsif template contains 'product' %}
+          {% if collection.url %}
+            <span aria-hidden="true">&rsaquo;</span>
+            {{ collection.title | link_to: collection.url }}
+          {% endif %}
           <span aria-hidden="true">&rsaquo;</span>
-          <span>{{ current_tags | join: " + " }}</span>
-        {% else %}
-          <span>{{ collection.title }}</span>
-        {% endif %}
-      {% elsif template == 'blog' %}
-        <span aria-hidden="true">&rsaquo;</span>
-        {% if current_tags %}
+          <span title="{{ product.title }}">{{ product.title | truncate: 32 }}</span>
+        {% elsif template contains 'collection' and collection.handle %}
+          <span aria-hidden="true">&rsaquo;</span>
+          {% if current_tags %}
+            {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+            {{ collection.title | link_to: url }}
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>{{ current_tags | join: " + " }}</span>
+          {% else %}
+            <span>{{ collection.title }}</span>
+          {% endif %}
+        {% elsif template == 'blog' %}
+          <span aria-hidden="true">&rsaquo;</span>
+          {% if current_tags %}
+            {{ blog.title | link_to: blog.url }}
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>{{ current_tags | join: " + " }}</span>
+          {% else %}
+          <span>{{ blog.title }}</span>
+          {% endif %}
+        {% elsif template == 'article' %}
+          <span aria-hidden="true">&rsaquo;</span>
           {{ blog.title | link_to: blog.url }}
           <span aria-hidden="true">&rsaquo;</span>
-          <span>{{ current_tags | join: " + " }}</span>
+          <span>{{ article.title }}</span>
         {% else %}
-        <span>{{ blog.title }}</span>
+         <span aria-hidden="true">&rsaquo;</span>
+         <span title="{{ page_title }}">{{ page_title | truncate: 32 }}</span>
         {% endif %}
-      {% elsif template == 'article' %}
-        <span aria-hidden="true">&rsaquo;</span>
-        {{ blog.title | link_to: blog.url }}
-        <span aria-hidden="true">&rsaquo;</span>
-        <span>{{ article.title }}</span>
-      {% else %}
-       <span aria-hidden="true">&rsaquo;</span>
-       <span title="{{ page_title }}">{{ page_title | truncate: 32 }}</span>
-      {% endif %}
+      </div>
     </div>
   </div>
 </nav>

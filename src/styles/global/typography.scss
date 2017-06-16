@@ -287,11 +287,6 @@ p a:focus {
     }
 }
 
-/* Breadcrumbs */
-.breadcrumbs {
-    font-size: 16px;
-}
-
 /* Collection filters */
 .collection__filters {
     .collection__filters--heading {
@@ -348,36 +343,6 @@ p a:focus {
     font-size: 13px;
 }
 
-/* Microsite masthead */
-.microsite-masthead {
-    color: $alabaster;
-    font-size: 14px;
-    .microsite-masthead__back {
-        font-weight: 500;
-    }
-    a {
-        color: $alabaster;
-        text-decoration: none;
-        span {
-            text-decoration: underline;
-        }
-    }
-    a:hover {
-        color: $frenchGray;
-    }
-    ul li a {
-        text-decoration: underline;
-    }
-}
-
-.offers-bar .offers-bar__third {
-    line-height: 1.125;
-    font-size: 16px;
-    a {
-        color: $tundora;
-    }
-}
-
 /* Pagination */
 .pagination {
     text-align: center;
@@ -402,5 +367,45 @@ p a:focus {
 .product {
     input[type=number] {
         line-height: 1.5;
+    }
+}
+
+/* NEW AND REFACTORED */
+/* Microsite masthead */
+.microsite-masthead {
+    color: $alabaster;
+    font-size: 14px;
+    .microsite-masthead__back {
+        font-weight: 500;
+    }
+    a {
+        color: $alabaster;
+        text-decoration: none;
+        span {
+            text-decoration: underline;
+        }
+        &:hover {
+            color: $frenchGray;
+        }
+    }
+    .microsite-masthead__links li a {
+        text-decoration: underline;
+    }
+}
+
+/* Offers bar */
+.offers-bar .grid-cell {
+    line-height: 1.125;
+    font-size: 16px;
+    a {
+        color: $tundora;
+    }
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 16px;
+    a {
+        color: $tundora;
     }
 }
