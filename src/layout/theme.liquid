@@ -67,7 +67,9 @@
 
   {% section 'header' %}
 
-  {% section 'offers-bar' %}
+  {% if template == 'index' %}
+    {% section 'offers-bar' %}
+  {% endif %}
 
   {% include 'breadcrumbs' %}
 

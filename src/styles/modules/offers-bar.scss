@@ -1,6 +1,6 @@
 .offers-bar {
     display: none;
-    @include breakpoint(medium) {
+    @include breakpoint(small) {
         display: block;
     }
     margin-top: $base-spacing-unit-small;
