@@ -72,13 +72,6 @@
     }
 }
 
-.cart .product-image-frame {
-    max-width: 100%;
-    @include breakpoint(medium) {
-        max-width: 300px;
-    }
-}
-
 .product-image-frame__featured {
     height: auto;
     width: 100%;
