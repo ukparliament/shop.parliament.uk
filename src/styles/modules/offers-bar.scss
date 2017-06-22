@@ -1,12 +1,10 @@
 .offers-bar {
     display: none;
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
         display: block;
     }
-    margin-top: $base-spacing-unit-small;
-    margin-bottom: $base-spacing-unit-tiny;
     .grid {
-        margin-top: $base-spacing-unit-small;
+        margin-top: $base-spacing-unit-large;
     }
     .grid-cell {
         display: flex;

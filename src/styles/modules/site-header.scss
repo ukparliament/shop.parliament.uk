@@ -2,18 +2,18 @@
     background: $white;
     overflow: auto;
     border-bottom: 3px solid $frenchGray;
+    padding: $base-spacing-unit 0;
+    @include breakpoint(small) {
+        padding: $base-spacing-unit-small 0;
+    }
     .grid {
-        padding: $base-spacing-unit 0;
+        margin-bottom: 0;
         .grid-cell-1of3 {
             display: none;
-        }
-        @include breakpoint(small) {
-            padding: $base-spacing-unit-small 0;
-            .grid-cell-1of3 {
+            @include breakpoint(small) {
                 display: block;
             }
         }
-        margin-bottom: 0;
     }
     img {
         max-width: 385px;
@@ -28,12 +28,6 @@
             height: 16px;
             width: 19px;
             margin-top: -$base-spacing-unit;
-        }
-    }
-    .flex-container--one-third {
-        display: none;
-        @include breakpoint(medium) {
-            display: block;
         }
     }
     h1 a, .h1 a {

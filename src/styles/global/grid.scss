@@ -1,5 +1,5 @@
 .container {
-    max-width: 1120px;
+    max-width: (1120px + ($base-spacing-unit-small * 2));
     padding: 0 $base-spacing-unit-small;
     margin: 0 auto;
     width: 100%;
