@@ -22,13 +22,9 @@
 }
 
 .collection__filters {
-    display: none;
     margin: $base-spacing-unit-extra-large 0 0 0;
     list-style: none;
     padding: 0;
-    @include breakpoint(medium) {
-        display: block;
-    }
     li {
         border-bottom: 1px solid $frenchGray;
         max-width: 75%;
@@ -51,20 +47,16 @@
 }
 
 .collection__view-sort {
-    display: none;
     margin: $base-spacing-unit-large 0;
-    @include breakpoint(medium) {
+    display: none;
+    @include breakpoint(small) {
         display: flex;
         justify-content: flex-end;
     }
     .collection__view-sort__options {
         display: flex;
         align-items: center;
-        margin-bottom: $base-spacing-unit-tiny;
-        @include breakpoint(medium) {
-            margin-bottom: 0;
-            margin-left: $base-spacing-unit-medium;
-        }
+        margin: 0 0 0 $base-spacing-unit-medium;
         a:first-child {
             margin-right: $base-spacing-unit-small;
         }

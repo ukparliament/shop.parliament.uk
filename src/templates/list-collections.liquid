@@ -6,19 +6,21 @@
   {% for collection in collections %}
     {% unless collection.handle == 'frontpage' or collection.products.count == 0 %}
       <div class="list-collections__collection grid-cell grid-cell-1of1">
-        <div class="list-collections__collection__header">
-          <h2><a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}">{{ collection.title }}</a></h2>
-          <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}" class="list-collections__collection__header__more">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
-        </div>
-        <div class="product-grid">
-          <div class="product-grid__products grid">
-            {% for product in collection.products limit: 4 %}
-              <div class="product-grid__single grid-cell grid-cell-1of4">
-                {% include 'product.image-frame', product: product %}
-                <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
-                <p class="product-grid__price">{{ product.price | money }}</p>
-              </div>
-            {% endfor %}
+        <div class="grid-cell-borders">
+          <div class="list-collections__collection__header">
+            <h2><a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}">{{ collection.title }}</a></h2>
+            <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}" class="list-collections__collection__header__more">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
+          </div>
+          <div class="product-grid">
+            <div class="product-grid__products grid">
+              {% for product in collection.products limit: 4 %}
+                <div class="product-grid__single grid-cell grid-cell-1of4-1of2-1of1">
+                  {% include 'product.image-frame', product: product %}
+                  <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
+                  <p class="product-grid__price">{{ product.price | money }}</p>
+                </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>

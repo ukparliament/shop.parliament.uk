@@ -47,4 +47,20 @@
             flex: 0 0 25%;
         }
     }
+    .grid-cell-1of3-1of2-1of1 {
+        flex: 0 0 100%;
+        @include breakpoint(small) {
+            flex: 0 0 50%;
+        }
+        @include breakpoint(medium) {
+            flex: 0 0 33.3%;
+        }
+    }
+    // Hide on mobile
+    .grid-cell-hide-on-mobile {
+        display: none;
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
 }

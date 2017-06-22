@@ -1,7 +1,7 @@
 {% paginate collection.products by 12 %}
 <div class="grid">
 
-  <div class="grid-cell grid-cell-1of4">
+  <div class="grid-cell grid-cell-1of4 grid-cell-hide-on-mobile">
     {% include 'collection-filters' %}
   </div>
 
@@ -26,7 +26,7 @@
     <div class="product-grid grid">
         {% for product in collection.products %}
 
-          <div class="product-grid__single grid-cell grid-cell-1of3">
+          <div class="product-grid__single grid-cell grid-cell-1of3-1of2-1of1">
             {% include 'product.image-frame', product: product %}
             {% assign bestseller = false %}
             {% assign on_sale = false %}
