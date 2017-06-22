@@ -64,11 +64,20 @@
     height: 200px;
     justify-content: center;
     max-width: 300px;
+    @include breakpoint(small) {
+        max-width: 100%;
+    }
     padding: $base-spacing-unit-medium;
     width: 100%;
     img {
         max-height: 100%;
         max-width: 100%;
+    }
+}
+
+.grid-cell-1of1 {
+    .product-image-frame {
+        max-width: 300px;
     }
 }
 

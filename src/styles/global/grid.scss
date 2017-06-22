@@ -40,25 +40,25 @@
     // Smaller screens
     .grid-cell-1of4-1of2-1of1 {
         flex: 0 0 100%;
-        @include breakpoint(small) {
+        @include breakpoint(xsmall) {
             flex: 0 0 50%;
         }
-        @include breakpoint(medium) {
+        @include breakpoint(small) {
             flex: 0 0 25%;
         }
     }
     .grid-cell-1of3-1of2-1of1 {
         flex: 0 0 100%;
-        @include breakpoint(small) {
+        @include breakpoint(xsmall) {
             flex: 0 0 50%;
         }
-        @include breakpoint(medium) {
+        @include breakpoint(small) {
             flex: 0 0 33.3%;
         }
     }
     .grid-cell-1of2-1of1 {
         flex: 0 0 100%;
-        @include breakpoint(small) {
+        @include breakpoint(xsmall) {
             flex: 0 0 50%;
         }
     }
@@ -68,5 +68,12 @@
         @include breakpoint(small) {
             display: block;
         }
+    }
+}
+
+.grid-reverse-on-mobile {
+    flex-direction: column-reverse;
+    @include breakpoint(small) {
+        flex-direction: row;
     }
 }

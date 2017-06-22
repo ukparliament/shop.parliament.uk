@@ -8,7 +8,9 @@
     transition: 300ms;
     width: 300px;
     z-index: 2;
+    overflow: scroll;
     @include breakpoint(medium) {
+        overflow: hidden;
         position: static;
         transition: 0s;
         width: 100%;
