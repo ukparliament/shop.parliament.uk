@@ -56,6 +56,12 @@
             flex: 0 0 33.3%;
         }
     }
+    .grid-cell-1of2-1of1 {
+        flex: 0 0 100%;
+        @include breakpoint(small) {
+            flex: 0 0 50%;
+        }
+    }
     // Hide on mobile
     .grid-cell-hide-on-mobile {
         display: none;

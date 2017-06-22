@@ -11,7 +11,7 @@
   <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
   <div class="grid">
-    <div class="grid-cell grid-cell-1of2">
+    <div class="grid-cell grid-cell-1of2-1of1">
       <div class="product-image-frame-container">
         <div class="product-image-frame product-image-frame__featured">
           <img src="{{ featured_image | img_url: '480x480' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
@@ -29,7 +29,7 @@
         {% endif %}
       </div>
     </div>
-    <div class="grid-cell grid-cell-1of2">
+    <div class="grid-cell grid-cell-1of2-1of1">
       <div data-price-wrapper class="product__price">
         {% if product.compare_at_price_max > product.price %}
           <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>

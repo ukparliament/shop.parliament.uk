@@ -16,7 +16,7 @@
 
 {% if search.performed %}
   <div class="product-grid">
-    <div class="product-grid__products product-grid__products--rows grid">
+    <div class="product-grid__products grid">
       {% for item in search.results %}
         {% if item.object_type == 'product' %}
           <div class="product-grid__single grid-cell grid-cell-1of1">
