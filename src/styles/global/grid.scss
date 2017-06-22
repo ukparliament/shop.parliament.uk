@@ -37,4 +37,14 @@
     .grid-cell-1of8 {
         flex: 0 0 12.5%;
     }
+    // Smaller screens
+    .grid-cell-1of4-1of2-1of1 {
+        flex: 0 0 100%;
+        @include breakpoint(small) {
+            flex: 0 0 50%;
+        }
+        @include breakpoint(medium) {
+            flex: 0 0 25%;
+        }
+    }
 }

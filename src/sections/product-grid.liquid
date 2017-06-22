@@ -4,9 +4,9 @@
   {% endif %}
   {%- assign collection = collections[section.settings.collection] -%}
   {%- assign collection_limit = section.settings.products_limit -%}
-  <div class="product-grid__products grid">
+  <div class="grid">
     {% for product in collection.products limit: collection_limit %}
-      <div class="product-grid__single grid-cell grid-cell-1of4">
+      <div class="product-grid__single grid-cell grid-cell-1of4-1of2-1of1">
         {% include 'product.image-frame', product: product %}
         <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
         <p class="product-grid__price">{{ product.price | money }}</p>

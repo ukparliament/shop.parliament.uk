@@ -37,7 +37,7 @@
         display: block;
         transition: all 300ms linear;
         will-change: transform;
-        max-width: 200%;
+        // max-width: 200%;
         @include breakpoint(xsmall) {
             max-width: 100%;
         }

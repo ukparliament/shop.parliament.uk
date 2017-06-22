@@ -224,7 +224,7 @@ h6 {
 
 .cart--meta {
     .cart--total {
-        @include breakpoint(medium) {
+        @include breakpoint(small) {
             text-align: right;
         }
         .cart--total__shipping {

@@ -78,8 +78,8 @@
       </tbody>
     </table>
 
-    <div class="grid">
-      <div class="grid-cell cart--meta">
+    <div class="cart--meta grid">
+      <div class="grid-cell">
         <div class="cart--notes">
           <div class="cart--notes--form">
             {% if settings.cart_notes_enable %}
@@ -89,7 +89,7 @@
           </div>
         </div>
       </div>
-      <div class="grid-cell grid-cell-1of3">
+      <div class="grid-cell grid-cell-1of2">
         <div class="cart--total">
           <p>{{ 'cart.general.subtotal' | t }} <strong>{{ cart.total_price | money }}</strong></p>
           {% if cart.total_discounts > 0 %}

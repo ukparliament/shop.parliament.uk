@@ -6,18 +6,6 @@
             margin-bottom: $base-spacing-unit-medium;
         }
     }
-    // .product-grid__products {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     flex-wrap: wrap;
-    // }
-    // .product-grid__products--thirds {
-    //     .product-grid__single {
-    //         @include breakpoint(medium) {
-    //             width: 32.3%;
-    //         }
-    //     }
-    // }
     .product-grid__products--rows {
         .product-grid__single {
             width: 100%;
@@ -37,16 +25,6 @@
         }
     }
     .product-grid__single {
-        width: 100%;
-        margin-bottom: $base-spacing-unit-small;
-        position: relative;
-        // @include breakpoint(xsmall) {
-        //     width: 49%;
-        // }
-        // @include breakpoint(small) {
-        //     width: 24%;
-        //     margin-bottom: $base-spacing-unit-medium;
-        // }
         .product-grid__price {
             display: block;
             margin: 0;
