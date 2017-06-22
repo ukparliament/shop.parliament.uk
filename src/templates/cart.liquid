@@ -78,24 +78,28 @@
       </tbody>
     </table>
 
-    <div class="flex-container cart--meta">
-      <div class="cart--notes">
-        <div class="cart--notes--form">
-          {% if settings.cart_notes_enable %}
-            <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-            <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-          {% endif %}
+    <div class="grid">
+      <div class="grid-cell cart--meta">
+        <div class="cart--notes">
+          <div class="cart--notes--form">
+            {% if settings.cart_notes_enable %}
+              <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+              <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+            {% endif %}
+          </div>
         </div>
       </div>
-      <div class="cart--total">
-        <p>{{ 'cart.general.subtotal' | t }} <strong>{{ cart.total_price | money }}</strong></p>
-        {% if cart.total_discounts > 0 %}
-          <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
-        {% endif %}
-        <p class="cart--total__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</p>
-        <input type="submit" name="update" value="{{ 'cart.general.update' | t }}" class="button button--secondary">
-        <input type="submit" name="checkout" class="button" value="{{ 'cart.general.checkout' | t }}">
-        <a href="/" class="cart--total--back">{{ 'cart.general.back' | t }}</a>
+      <div class="grid-cell grid-cell-1of3">
+        <div class="cart--total">
+          <p>{{ 'cart.general.subtotal' | t }} <strong>{{ cart.total_price | money }}</strong></p>
+          {% if cart.total_discounts > 0 %}
+            <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
+          {% endif %}
+          <p class="cart--total__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</p>
+          <input type="submit" name="update" value="{{ 'cart.general.update' | t }}" class="button button--secondary">
+          <input type="submit" name="checkout" class="button" value="{{ 'cart.general.checkout' | t }}">
+          <a href="/" class="cart--total--back">{{ 'cart.general.back' | t }}</a>
+        </div>
       </div>
     </div>
   </form>
