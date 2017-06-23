@@ -10,7 +10,7 @@
     z-index: 2;
     overflow: scroll;
     @include breakpoint(medium) {
-        overflow: hidden;
+        overflow: visible;
         position: static;
         transition: 0s;
         width: 100%;
