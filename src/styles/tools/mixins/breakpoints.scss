@@ -22,4 +22,10 @@
       @content;
     }
   }
+
+  @else if $breakpoint == "tiles" {
+    @media (min-width: $breakpoint-tiles) {
+      @content;
+    }
+  }
 }

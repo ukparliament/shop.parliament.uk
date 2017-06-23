@@ -129,26 +129,25 @@ h6 {
 }
 
 /* Tiles */
-.tile--heading {
-    font-weight: 500;
-    color: $martinique;
-}
-
-.tile--full-width .tile--heading {
-    @include breakpoint(medium) {
-        font-size: 26px;
-        line-height: 1.154; // 30px
-    }
-}
-
-.tile--half-width, .tile--one-third {
+.tiles {
     .tile--heading {
+        font-weight: 500;
         color: $white;
     }
-}
 
-.tile-container:hover {
-    .tile--heading {
+    .grid-cell-1of1 .tile--heading {
+        color: $martinique;
+        @include breakpoint(tiles) {
+            font-size: 26px;
+            line-height: 1.154; // 30px
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover .tile--heading {
         text-decoration: underline;
     }
 }

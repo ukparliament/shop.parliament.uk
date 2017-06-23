@@ -1,4 +1,56 @@
-<div class="tiles flex-container" data-section-id="{{ section.id }}" data-section-type="tiles">
+<div class="tiles" data-section-id="{{ section.id }}" data-section-type="tiles">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'full-width-tile' %}
+        <div class="grid">
+          <div class="grid-cell grid-cell-1of1">
+            <a href="{{ block.settings.full-width-tile-link }}">
+              <img role="presentation" src="{{ block.settings.full-width-tile-image | img_url: 'x400' }}">
+              <div class="tile--heading">{{ block.settings.full-width-tile-title }}</div>
+            </a>
+          </div>
+        </div>
+      {% when 'half-width-tiles' %}
+        <div class="grid">
+          <div class="grid-cell grid-cell-1of2-1of1">
+            <a href="{{ block.settings.left-half-width-tile-link }}">
+              <img role="presentation" src="{{ block.settings.left-half-width-tile-image | img_url: 'x367' }}">
+              <div class="tile--heading">{{ block.settings.left-half-width-tile-title }}</div>
+            </a>
+          </div>
+          <div class="grid-cell grid-cell-1of2-1of1">
+            <a href="{{ block.settings.right-half-width-tile-link }}">
+              <img role="presentation" src="{{ block.settings.right-half-width-tile-image | img_url: 'x367' }}">
+              <div class="tile--heading">{{ block.settings.right-half-width-tile-title }}</div>
+            </a>
+          </div>
+        </div>
+      {% when 'third-width-tiles' %}
+        <div class="grid">
+          <div class="grid-cell grid-cell-1of3-1of1">
+            <a href="{{ block.settings.left-third-width-tile-link }}">
+              <img role="presentation" src="{{ block.settings.left-third-width-tile-image | img_url: 'x241' }}">
+              <div class="tile--heading">{{ block.settings.left-third-width-tile-title }}</div>
+            </a>
+          </div>
+          <div class="grid-cell grid-cell-1of3-1of1">
+            <a href="{{ block.settings.center-third-width-tile-link }}">
+              <img role="presentation" src="{{ block.settings.center-third-width-tile-image | img_url: 'x241' }}">
+              <div class="tile--heading">{{ block.settings.center-third-width-tile-title }}</div>
+            </a>
+          </div>
+          <div class="grid-cell grid-cell-1of3-1of1">
+            <a href="{{ block.settings.right-third-width-tile-link }}">
+              <img role="presentation" src="{{ block.settings.right-third-width-tile-image | img_url: 'x241' }}">
+              <div class="tile--heading">{{ block.settings.right-third-width-tile-title }}</div>
+            </a>
+          </div>
+        </div>
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% comment %}<div class="tiles" data-section-id="{{ section.id }}" data-section-type="tiles">
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'full-width-tile' %}
@@ -30,7 +82,7 @@
         </a>
     {% endcase %}
   {% endfor %}
-</div>
+</div>{% endcomment %}
 
 {% schema %}
   {
