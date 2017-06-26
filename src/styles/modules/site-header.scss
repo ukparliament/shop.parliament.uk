@@ -2,8 +2,8 @@
     background: $white;
     overflow: auto;
     border-bottom: 3px solid $frenchGray;
-    padding: $base-spacing-unit 0;
-    @include breakpoint(small) {
+    padding: $base-spacing-unit-tiny 0;
+    @include breakpoint(xsmall) {
         padding: $base-spacing-unit-small 0;
     }
     .grid {
