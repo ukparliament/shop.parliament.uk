@@ -36,10 +36,12 @@
     .grid-cell-1of1 {
         .tile--heading {
             background: rgba($algaeGreen, .9);
+            width: 100%;
             @include breakpoint(tiles) {
-                width: 81%;
+                width: 50%;
+                padding: $base-spacing-unit-small;
             }
-            @include breakpoint(medium) {
+            @include breakpoint(small) {
                 width: 40%;
                 padding: $base-spacing-unit-medium;
             }
@@ -47,6 +49,9 @@
                 height: 6px;
                 width: 60px;
                 @include breakpoint(tiles) {
+                    margin-top: $base-spacing-unit;
+                }
+                @include breakpoint(small) {
                     margin-top: $base-spacing-unit-tiny;
                 }
             }
