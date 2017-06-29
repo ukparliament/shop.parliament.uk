@@ -1,8 +1,4 @@
 /*================ Helper Classes ================*/
-.clearfix {
-  @include clearfix();
-}
-
 .visually-hidden {
   @include visually-hidden();
 }
