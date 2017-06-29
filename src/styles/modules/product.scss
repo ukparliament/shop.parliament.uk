@@ -1,5 +1,4 @@
 .product {
-    margin-bottom: $base-spacing-unit-extra-extra-large;
     label {
         display: block;
     }
@@ -18,11 +17,8 @@
 
 .product__price {
     border-bottom: 1px solid $frenchGray;
-    padding: $base-spacing-unit-tiny 0;
-    margin-bottom: $base-spacing-unit-tiny;
-    @include breakpoint(medium) {
-        padding: 0 0 $base-spacing-unit-tiny;
-    }
+    margin: 0 0 $base-spacing-unit-tiny;
+    padding: 0 0 $base-spacing-unit-tiny;
 }
 
 .product__price--old {
@@ -68,6 +64,9 @@
     height: 200px;
     justify-content: center;
     max-width: 300px;
+    @include breakpoint(small) {
+        max-width: 100%;
+    }
     padding: $base-spacing-unit-medium;
     width: 100%;
     img {
@@ -76,9 +75,8 @@
     }
 }
 
-.cart .product-image-frame {
-    max-width: 100%;
-    @include breakpoint(medium) {
+.grid-cell-1of1 {
+    .product-image-frame {
         max-width: 300px;
     }
 }

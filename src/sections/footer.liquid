@@ -1,45 +1,49 @@
-<footer class="site-footer">
-  <div class="flex-container">
-    <div class="flex-container--one-third">
-      {%- assign footer_top_menu = section.settings.footer_top_menu -%}
-      {% if linklists[footer_top_menu].links.size > 0 %}
-        <ul class="site-footer__linklist">
-          {% for link in linklists[footer_top_menu].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      {%- assign footer_bottom_menu = section.settings.footer_bottom_menu -%}
-      {% if linklists[footer_bottom_menu].links.size > 0 %}
-        <ul class="site-footer__linklist">
-          {% for link in linklists[footer_bottom_menu].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </div>
-    <div class="flex-container--one-third">
-      <address class="site-footer__address">
-        {%- assign address_street = shop.address.street | split: ',' -%}
-        {{ shop.name }}<br><br>
-        {{ address_street[0] }},<br>
-        {{ address_street[1] }},<br>
-        {{ shop.address.city }}, {{ shop.address.zip }},<br>
-        {{ shop.address.country }}
-      </address><br>
-      <a href="tel:{{ shop.phone | remove: ' ' }}" class="site-footer__telephone">{{ shop.phone }}</a><br><br>
-      <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
-    </div>
-    <div class="flex-container--one-third">
-      {%- assign footer_right_menu = section.settings.footer_right_menu -%}
-      {% if linklists[footer_right_menu].links.size > 0 %}
-        <ul class="site-footer__linklist">
-          {% for link in linklists[footer_right_menu].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      <span class="site-footer__copyright">&copy; {{ 'layout.footer.copyright' | t }} {{ 'now' | date: "%Y" }}</span>
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div class="grid-cell grid-cell-1of3">
+        {%- assign footer_top_menu = section.settings.footer_top_menu -%}
+        {% if linklists[footer_top_menu].links.size > 0 %}
+          <ul class="site-footer__linklist">
+            {% for link in linklists[footer_top_menu].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {%- assign footer_bottom_menu = section.settings.footer_bottom_menu -%}
+        {% if linklists[footer_bottom_menu].links.size > 0 %}
+          <ul class="site-footer__linklist">
+            {% for link in linklists[footer_bottom_menu].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <div class="grid-cell grid-cell-1of3">
+        <div class="footer--bordered">
+          <address class="site-footer__address">
+            {%- assign address_street = shop.address.street | split: ',' -%}
+            {{ shop.name }}<br><br>
+            {{ address_street[0] }},<br>
+            {{ address_street[1] }},<br>
+            {{ shop.address.city }}, {{ shop.address.zip }},<br>
+            {{ shop.address.country }}
+          </address><br>
+          <a href="tel:{{ shop.phone | remove: ' ' }}" class="site-footer__telephone">{{ shop.phone }}</a><br><br>
+          <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+        </div>
+      </div>
+      <div class="grid-cell grid-cell-1of3">
+        {%- assign footer_right_menu = section.settings.footer_right_menu -%}
+        {% if linklists[footer_right_menu].links.size > 0 %}
+          <ul class="site-footer__linklist">
+            {% for link in linklists[footer_right_menu].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <span class="site-footer__copyright">&copy; {{ 'layout.footer.copyright' | t }} {{ 'now' | date: "%Y" }}</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -47,6 +51,7 @@
 {% schema %}
   {
     "name": "Footer",
+    "class": "site-footer",
     "settings": [
       {
         "type": "link_list",

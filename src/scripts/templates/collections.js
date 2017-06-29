@@ -4,6 +4,13 @@ function getParameterByName(a,b){b||(b=window.location.href),a=a.replace(/[\[\]]
 theme.collectionViews = function () {
   var $changeView = $('[data-view]');
   if ($changeView.length) {
+
+    var viewParameter = getParameterByName('view');
+    if(viewParameter) {
+      $('[data-view=' + viewParameter + ']').addClass('active');
+    } else {
+      $('[data-view=grid]').addClass('active');
+    }
     $changeView.on('click', function() {
       var view = $(this).data('view'),
           url = document.URL,

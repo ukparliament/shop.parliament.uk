@@ -1,17 +1,6 @@
 @import 'mixins/breakpoints.scss';
 
 /*================ Mixins ================*/
-@mixin clearfix() {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-
-  // sass-lint:disable
-  *zoom: 1;
-}
-
 /*============================================================================
   Prefix mixin for generating vendor prefixes.
   Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss

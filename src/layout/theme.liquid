@@ -63,15 +63,17 @@
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
-  {% section 'microsite-masthead' %}
+  {% include 'microsite-masthead' %}
 
   {% section 'header' %}
 
-  {% section 'offers-bar' %}
+  {% if template == 'index' %}
+    {% section 'offers-bar' %}
+  {% endif %}
 
   {% include 'breadcrumbs' %}
 
-  <main role="main" id="MainContent" class="sticky-footer-content">
+  <main role="main" id="MainContent" class="container sticky-footer-content">
     {{ content_for_layout }}
   </main>
 
