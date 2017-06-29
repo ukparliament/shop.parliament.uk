@@ -8,7 +8,9 @@
     transition: 300ms;
     width: 300px;
     z-index: 2;
+    overflow: scroll;
     @include breakpoint(medium) {
+        overflow: visible;
         position: static;
         transition: 0s;
         width: 100%;
@@ -21,22 +23,14 @@
             border-bottom: 0;
         }
     }
-    .flex-container {
-        padding: 0 $base-spacing-unit-tiny;
-        @include breakpoint(medium) {
-            padding: 0 $base-spacing-unit-small;
-        }
-    }
     .site-navigation__list {
         margin: 0;
         padding: 0;
         list-style: none;
         display: flex;
         flex-direction: column;
-        width: 100%;
         @include breakpoint(medium) {
             flex-direction: row;
-            margin: 0 (-$base-spacing-unit-extra-extra-large) 0 (-$base-spacing-unit-extra-extra-large);
         }
         li {
             a {
@@ -46,6 +40,9 @@
                     display: block;
                     padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
                 }
+            }
+            &:first-of-type a {
+                padding-left: 0;
             }
         }
     }

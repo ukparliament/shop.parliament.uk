@@ -1,11 +1,19 @@
-/*================ Site Header ================*/
 .site-header {
     background: $white;
     overflow: auto;
     border-bottom: 3px solid $frenchGray;
     padding: $base-spacing-unit 0;
-    @include breakpoint(medium) {
+    @include breakpoint(small) {
         padding: $base-spacing-unit-small 0;
+    }
+    .grid {
+        margin-bottom: 0;
+        .grid-cell-1of3 {
+            display: none;
+            @include breakpoint(small) {
+                display: block;
+            }
+        }
     }
     img {
         max-width: 385px;
@@ -20,12 +28,6 @@
             height: 16px;
             width: 19px;
             margin-top: -$base-spacing-unit;
-        }
-    }
-    .flex-container--one-third {
-        display: none;
-        @include breakpoint(medium) {
-            display: block;
         }
     }
     h1 a, .h1 a {

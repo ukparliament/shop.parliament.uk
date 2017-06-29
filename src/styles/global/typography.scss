@@ -87,27 +87,6 @@ h6 {
     }
 }
 
-.site-header {
-    h1, .h1 {
-        margin-bottom: 0;
-        a {
-            color: $martinique;
-            text-decoration: none;
-        }
-    }
-    .flex-container--one-third {
-        text-align: right;
-    }
-    .site-header__cart {
-        color: $tundora;
-        text-decoration: none;
-        font-size: 16px;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
 .site-navigation {
     .site-navigation__list li a {
         color: $tundora;
@@ -245,7 +224,7 @@ h6 {
 
 .cart--meta {
     .cart--total {
-        @include breakpoint(medium) {
+        @include breakpoint(small) {
             text-align: right;
         }
         .cart--total__shipping {
@@ -285,11 +264,6 @@ p a:focus {
     @include breakpoint(medium) {
         margin-top: 0;
     }
-}
-
-/* Breadcrumbs */
-.breadcrumbs {
-    font-size: 16px;
 }
 
 /* Collection filters */
@@ -348,36 +322,6 @@ p a:focus {
     font-size: 13px;
 }
 
-/* Microsite masthead */
-.microsite-masthead {
-    color: $alabaster;
-    font-size: 14px;
-    .microsite-masthead__back {
-        font-weight: 500;
-    }
-    a {
-        color: $alabaster;
-        text-decoration: none;
-        span {
-            text-decoration: underline;
-        }
-    }
-    a:hover {
-        color: $frenchGray;
-    }
-    ul li a {
-        text-decoration: underline;
-    }
-}
-
-.offers-bar .offers-bar__third {
-    line-height: 1.125;
-    font-size: 16px;
-    a {
-        color: $tundora;
-    }
-}
-
 /* Pagination */
 .pagination {
     text-align: center;
@@ -402,5 +346,65 @@ p a:focus {
 .product {
     input[type=number] {
         line-height: 1.5;
+    }
+}
+
+/* Microsite masthead */
+.microsite-masthead {
+    color: $alabaster;
+    font-size: 14px;
+    .microsite-masthead__back {
+        font-weight: 500;
+    }
+    a {
+        color: $alabaster;
+        text-decoration: none;
+        span {
+            text-decoration: underline;
+        }
+        &:hover {
+            color: $frenchGray;
+        }
+    }
+    .microsite-masthead__links li a {
+        text-decoration: underline;
+    }
+}
+
+.site-header {
+    h1, .h1 {
+        margin-bottom: 0;
+        a {
+            color: $martinique;
+            text-decoration: none;
+        }
+    }
+    .grid-cell-1of3 {
+        text-align: right;
+    }
+    .site-header__cart {
+        color: $tundora;
+        text-decoration: none;
+        font-size: 16px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Offers bar */
+.offers-bar .grid-cell {
+    line-height: 1.125;
+    font-size: 16px;
+    a {
+        color: $tundora;
+    }
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 16px;
+    a {
+        color: $tundora;
     }
 }

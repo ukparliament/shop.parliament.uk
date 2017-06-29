@@ -1,25 +1,27 @@
 <header class="site-header" role="banner">
-  <div class="flex-container flex-container__vertical-center">
-    <div class="flex-container--two-thirds">
-      {% if template.name == 'index' %}
-        <h1 itemscope itemtype="http://schema.org/Organization">
-      {% else %}
-        <div class="h1" itemscope itemtype="http://schema.org/Organization">
-      {% endif %}
-          <a href="/" itemprop="url" title="{{ shop.name }}"><img src="{{ 'logo.svg' | asset_url }}"></a>
-      {% if template.name == 'index' %}
-        </h1>
-      {% else %}
-        </div>
-      {% endif %}
-    </div>
-    <div class="flex-container--one-third">
-      <a href="/cart" class="site-header__cart">
-        {% include 'icon-cart' %}
-        {{ 'layout.cart.title' | t }}
-        ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }} {{ cart.total_price | money }})
-      </a>
-      {% include 'search-bar' %}
+  <div class="container">
+    <div class="grid">
+      <div class="grid-cell">
+        {% if template.name == 'index' %}
+          <h1 itemscope itemtype="http://schema.org/Organization">
+        {% else %}
+          <div class="h1" itemscope itemtype="http://schema.org/Organization">
+        {% endif %}
+            <a href="/" itemprop="url" title="{{ shop.name }}"><img src="{{ 'logo.svg' | asset_url }}"></a>
+        {% if template.name == 'index' %}
+          </h1>
+        {% else %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="grid-cell grid-cell-1of3">
+        <a href="/cart" class="site-header__cart">
+          {% include 'icon-cart' %}
+          {{ 'layout.cart.title' | t }}
+          ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }} {{ cart.total_price | money }})
+        </a>
+        {% include 'search-bar' %}
+      </div>
     </div>
   </div>
 </header>
@@ -31,7 +33,7 @@
 <input type="checkbox" id="site-navigation__mobile-menu-button" class="site-navigation__mobile-menu-button-input">
 
 <nav role="navigation" class="site-navigation">
-  <div class="flex-container">
+  <div class="container">
     <div class="site-navigation__mobile-extras">
       <div class="site-navigation__mobile-extras__heading">
         <h3>Browse</h3>

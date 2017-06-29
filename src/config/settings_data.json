@@ -108,7 +108,7 @@
             "three": {
               "type": "block",
               "settings": {
-                "icon": "mouse-yellow",
+                "icon": "mail-green",
                 "title": "Subscribe to our newsletter",
                 "description": "for offers and events",
                 "url": ""
