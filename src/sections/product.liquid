@@ -14,7 +14,12 @@
     <div class="grid-cell grid-cell-1of2-1of1">
       <div class="product-image-frame-container">
         <div class="product-image-frame product-image-frame__featured">
-          <img src="{{ featured_image | img_url: '480x480' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
+          <img id="zoom" src="{{ featured_image | img_url: '480x480' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
+          <script>
+            function zoomImage() {
+              $("#zoom").imageLens({ lensSize: 200, imageSrc: "{{ featured_image | img_url: '1000x1000' }}", borderSize: 3, borderColor: "#CBC9CD" });
+            }
+          </script>
         </div>
         {% if product.images.size > 1 %}
           <ul class="product-image-frame__list">
