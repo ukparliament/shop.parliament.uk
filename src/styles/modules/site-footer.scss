@@ -3,7 +3,7 @@
     margin: $base-spacing-unit-extra-extra-large 0 0;
     padding: $base-spacing-unit-small 0;
     @include breakpoint(small) {
-        padding: $base-spacing-unit-extra-extra-extra-large 0;
+        padding: $base-spacing-unit-extra-extra-extra-large $base-spacing-unit-large;
     }
     .site-footer__linklist {
         list-style: none;
@@ -19,20 +19,12 @@
             flex: 0 0 33.3%;
         }
     }
-    .grid-cell-1of3 {
-        padding-bottom: $base-spacing-unit-small;
-        padding-left: 0;
-        margin-left: $base-spacing-unit-small;
-        @include breakpoint(small) {
-            margin-left: 0;
-            padding-left: $base-spacing-unit-extra-extra-extra-large;
-            padding-bottom: 0;
-        }
-    }
-    .grid-cell-1of3:nth-of-type(even) {
+    .footer--bordered {
+        padding: $base-spacing-unit-small 0;
         border-top: 1px solid rgba($alabaster, .13);
         border-bottom: 1px solid rgba($alabaster, .13);
         @include breakpoint(small) {
+            padding: 0 $base-spacing-unit-medium;
             border: 0;
             border-left: 1px solid rgba($alabaster, .13);
             border-right: 1px solid rgba($alabaster, .13);

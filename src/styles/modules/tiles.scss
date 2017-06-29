@@ -57,10 +57,12 @@
             }
         }
     }
-    .grid-cell-1of3-1of1 .tile--heading {
-        width: auto;
-        &:after {
-            display: none;
+    .grid-cell-1of3-1of1 {
+        .tile--heading {
+            width: auto;
+            &:after {
+                display: none;
+            }
         }
         a:hover img {
             @include breakpoint(tiles) {
