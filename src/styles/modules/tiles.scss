@@ -1,103 +1,81 @@
 .tiles {
-    justify-content: space-between;
-    margin-top: $base-spacing-unit-small;
-}
-
-.tile-container {
-    width: 100%;
-    position: relative;
-    margin: 0 0 $base-spacing-unit-small;
-    overflow: hidden;
-    @include breakpoint(medium) {
-        margin: 0 0 $base-spacing-unit-large;
-    }
-    .tile--heading {
-        width: 75%;
-        position: absolute;
-        bottom: $base-spacing-unit-medium;
-        padding: $base-spacing-unit-tiny $base-spacing-unit-small;
-        background: rgba($algaeGreen, .9);
-        @include breakpoint(medium) {
-            width: 45%;
-            padding: $base-spacing-unit-medium;
-        }
-    }
-    .tile--heading:after {
-        height: 6px;
-        content: ' ';
-        width: 60px;
+    margin: $base-spacing-unit-small 0 0 0;
+    a, img {
         display: block;
-        background: $tara;
-        margin-top: $base-spacing-unit;
-        @include breakpoint(medium) {
-            margin-top: $base-spacing-unit-tiny;
+    }
+    img {
+        width: 100%;
+        @include breakpoint(tiles) {
+            transition: all 200ms linear;
+            will-change: transform;
         }
     }
-    img {
-        display: block;
-        transition: all 300ms linear;
-        will-change: transform;
-        // max-width: 200%;
-        @include breakpoint(xsmall) {
-            max-width: 100%;
+    a:hover img {
+        @include breakpoint(tiles) {
+            transform: scale(1.02);
         }
     }
-}
-
-.tile-container:last-of-type {
-    margin-bottom: 0;
-    @include breakpoint(xsmall) {
-        margin: 0 0 $base-spacing-unit-small;
-    }
-}
-
-.tile-container:hover {
-    img {
-        transform: scale(1.04);
-    }
-}
-
-.tile--one-third:hover {
-    img {
-        transform: scale(1.07);
-    }
-}
-
-.tile--half-width, .tile--one-third {
     .tile--heading {
         background: rgba($purpleHeart, .9);
-        padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+        padding: $base-spacing-unit-tiny;
+        @include breakpoint(tiles) {
+            padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+            width: 81%;
+        }
     }
     .tile--heading:after {
-        background: $whiteLilac;
-    }
-    img {
-        max-width: 100%;
-    }
-}
-
-.tile--half-width {
-    .tile--heading {
-        width: 75%;
-    }
-    .tile--heading:after {
+        content: ' ';
+        background: $tara;
         height: 4px;
         width: 40px;
         margin-top: $base-spacing-unit;
+        @include breakpoint(tiles) {
+            display: block;
+        }
     }
-    @include breakpoint(xsmall) {
-        width: 49%;
+    .grid-cell-1of1 {
+        .tile--heading {
+            background: rgba($algaeGreen, .9);
+            width: 100%;
+            @include breakpoint(tiles) {
+                width: 50%;
+                padding: $base-spacing-unit-small;
+            }
+            @include breakpoint(small) {
+                width: 40%;
+                padding: $base-spacing-unit-medium;
+            }
+            &:after {
+                height: 6px;
+                width: 60px;
+                @include breakpoint(tiles) {
+                    margin-top: $base-spacing-unit;
+                }
+                @include breakpoint(small) {
+                    margin-top: $base-spacing-unit-tiny;
+                }
+            }
+        }
     }
-}
-
-.tile--one-third {
-    .tile--heading {
+    .grid-cell-1of3-1of1 .tile--heading {
         width: auto;
+        &:after {
+            display: none;
+        }
+        a:hover img {
+            @include breakpoint(tiles) {
+                transform: scale(1.04);
+            }
+        }
     }
-    .tile--heading:after {
-        display: none;
-    }
-    @include breakpoint(xsmall) {
-        width: 32.3%;
+    a {
+        overflow: hidden;
+        position: relative;
+        @include breakpoint(tiles) {
+            .tile--heading {
+                position: absolute;
+                bottom: $base-spacing-unit-medium;
+            }
+        }
     }
 }
