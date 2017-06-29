@@ -1,10 +1,10 @@
 {% paginate collection.products by 12 %}
-  <div class="collection flex-container">
-    <div class="flex-container--one-quarter">
+  <div class="grid">
+    <div class="grid-cell grid-cell-1of4 grid-cell-hide-on-mobile">
       {% include 'collection-filters' %}
     </div>
 
-    <div class="flex-container--three-quarters">
+    <div class="grid-cell">
       {% if collection.image %}
         <header role="banner" class="collection__banner collection__banner--image" style="background-image: url({{ collection.image | img_url: 'x300' }});">
       {% else %}
@@ -22,11 +22,10 @@
         {% include 'collection-sorting' %}
       </div>
 
-      <div class="product-grid">
-        <div class="product-grid__products product-grid__products--rows">
+      <div class="product-grid grid">
           {% for product in collection.products %}
 
-            <div class="product-grid__single">
+            <div class="product-grid__single grid-cell grid-cell-1of1">
               {% include 'product.image-frame', product: product %}
               {% assign bestseller = false %}
               {% assign on_sale = false %}
@@ -113,10 +112,10 @@
         {% endfor %}
         </div>
       </div>
+      </div>
 
       {% if paginate.pages > 1 %}
         {% include 'pagination' %}
       {% endif %}
     </div>
-  </div>
 {% endpaginate %}
