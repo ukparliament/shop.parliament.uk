@@ -85,8 +85,9 @@
 
 .product-image-frame__featured {
     height: auto;
-    width: 100%;
-    max-width: 100%;
+    img {
+        flex-shrink: 0;
+    }
 }
 
 .product-image-frame__list {
