@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "devDependencies": {
     "@shopify/slate-tools": "0.2.7"
+  },
+  "dependencies": {
+    "normalize.css": "git+https://github.com/necolas/normalize.css.git"
   }
 }
