@@ -15,7 +15,8 @@ html {
 }
 
 .sticky-footer-content {
-    flex: 1;
+    flex: 1 1 auto;
+    height: 100%;
 }
 
 .page .rte {
