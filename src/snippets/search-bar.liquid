@@ -1,14 +1,26 @@
-{% if size == 'large' %}
+{% if type == 'large' %}
   <form action="/search" method="get" role="search" class="search-bar search-bar__large">
   {% else %}
   <form action="/search" method="get" role="search" class="search-bar">
 {% endif %}
-  <label for="Search" class="label-hidden">
+{% if type == 'large' %}
+ <label for="search_large" class="label-hidden">
+{% elsif type == 'mobile' %}
+  <label for="search_mobile" class="label-hidden">
+{% else %}
+ <label for="search" class="label-hidden">
+{% endif %}
     {{ 'general.search.placeholder' | t }}
   </label>
   <input type="search"
          name="q"
-         id="Search"
+         {% if type == 'large' %}
+          id="search_large"
+         {% elsif type == 'mobile' %}
+          id="search_mobile"
+         {% else %}
+          id="search"
+         {% endif %}
          value="{{ search.terms | escape }}"
          placeholder="{{ 'general.search.placeholder' | t }}">
   <button type="submit" class="btn">

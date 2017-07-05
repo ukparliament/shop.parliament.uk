@@ -11,61 +11,88 @@
     margin: (-$base-spacing-unit-small) 0 $base-spacing-unit-small (-$base-spacing-unit-small);
     .grid-cell {
         padding: $base-spacing-unit-small 0 0 $base-spacing-unit-small;
-        flex: 1;
+        flex: 1 1 auto;
+        width: auto;
     }
     .grid-cell-1of1 {
-        flex: 0 0 100%;
+        flex: 0 0 auto;
+        width: 100%;
     }
     .grid-cell-1of2 {
-        flex: 0 0 50%;
+        flex: 0 0 auto;
+        width: 50%;
     }
     .grid-cell-1of3 {
-        flex: 0 0 33.3%;
+        flex: 0 0 auto;
+        width: 33.3%;
     }
     .grid-cell-1of4 {
-        flex: 0 0 25%;
+        flex: 0 0 auto;
+        width: 25%;
     }
     .grid-cell-1of5 {
-        flex: 0 0 20%;
+        flex: 0 0 auto;
+        width: 20%;
     }
     .grid-cell-1of6 {
-        flex: 0 0 16.666%;
+        flex: 0 0 auto;
+        width: 16.666%;
     }
     .grid-cell-1of7 {
-        flex: 0 0 14.285%;
+        flex: 0 0 auto;
+        width: 14.285%;
     }
     .grid-cell-1of8 {
-        flex: 0 0 12.5%;
+        flex: 0 0 auto;
+        width: 12.5%;
     }
     // Smaller screens
     .grid-cell-1of4-1of2-1of1 {
-        flex: 0 0 100%;
+        flex: 0 0 auto;
+        width: 100%;
         @include breakpoint(xsmall) {
-            flex: 0 0 50%;
+            width: 50%;
         }
         @include breakpoint(small) {
-            flex: 0 0 25%;
+            width: 25%;
         }
     }
     .grid-cell-1of3-1of2-1of1 {
-        flex: 0 0 100%;
+        flex: 0 0 auto;
+        width: 100%;
         @include breakpoint(xsmall) {
-            flex: 0 0 50%;
+            width: 50%;
         }
         @include breakpoint(small) {
-            flex: 0 0 33.3%;
+            width: 33.3%;
+        }
+    }
+    .grid-cell-3of4-1of1 {
+        flex: 0 0 auto;
+        width: 100%;
+        @include breakpoint(small) {
+            width: 75%;
+        }
+    }
+    .grid-cell-1of4-1of1 {
+        flex: 0 0 auto;
+        width: 100%;
+        @include breakpoint(small) {
+            width: 25%;
         }
     }
     .grid-cell-1of3-1of1 {
-        flex: 0 0 100%;
+        flex: 0 0 auto;
+        width: 100%;
         @include breakpoint(xsmall) {
-            flex: 0 0 33.3%;
+            width: 33.3%;
         }
     }
     .grid-cell-1of2-1of1 {
-        flex: 0 0 100%;
+        flex: 0 0 auto;
+        width: 100%;
         @include breakpoint(xsmall) {
-            flex: 0 0 50%;
+            width: 50%;
         }
     }
     // Hide on mobile

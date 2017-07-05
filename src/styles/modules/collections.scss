@@ -61,6 +61,10 @@
         margin: 0 0 0 $base-spacing-unit-medium;
         a:first-child {
             margin-right: $base-spacing-unit-small;
+            width: 20px;
+        }
+        a:last-child {
+            width: 30px;
         }
         svg {
             height: 18px;
