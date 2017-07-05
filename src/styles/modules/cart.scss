@@ -36,10 +36,8 @@
 }
 
 .cart--meta {
-    flex-flow: column;
-    justify-content: space-between;
-    @include breakpoint(small) {
-        flex-flow: row wrap;
+    input[type=submit]:first-of-type {
+        margin-bottom: 12px;
     }
     .cart--notes {
         .cart--notes--form {
