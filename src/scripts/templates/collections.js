@@ -46,5 +46,19 @@ theme.collectionSortBy = function() {
   }
 };
 
+theme.collectionsPlusMinus = function() {
+  var $plus = $('.site-navigation--plus');
+  var checkboxes = $('input[id^="submenu"]');
+  checkboxes.on('change', function() {
+    var checked = $(this).is(':checked');
+    if(checked === true) {
+      $(this).prev().text('-');
+    } else {
+      $(this).prev().text('+');
+    }
+  });
+};
+
 theme.collectionViews();
 theme.collectionSortBy();
+theme.collectionsPlusMinus();
