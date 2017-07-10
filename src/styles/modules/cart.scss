@@ -16,7 +16,7 @@
     }
     tbody tr td {
         padding: $base-spacing-unit-small 0 0;
-        @include breakpoint(medium) {
+        @include breakpoint(small) {
             padding: $base-spacing-unit-extra-large $base-spacing-unit-medium 0 0;
         }
     }
@@ -42,7 +42,7 @@
     .cart--notes {
         .cart--notes--form {
             padding: $base-spacing-unit-tiny;
-            @include breakpoint(medium) {
+            @include breakpoint(small) {
                 padding: $base-spacing-unit-small;
             }
             background: $ebb;
