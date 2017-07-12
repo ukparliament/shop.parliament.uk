@@ -64,7 +64,7 @@
                 {% endunless %}
               </p>
 
-              {{ item.description | truncate: 150 }}
+              <p>{{ item.description | strip_html | truncate: 150 }}</p>
             </div>
           </div>
         {% endif %}
