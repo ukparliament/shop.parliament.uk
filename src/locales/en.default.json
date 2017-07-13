@@ -101,6 +101,7 @@
       "link_title": "Browse our {{ title }} collection",
       "more": "More"
     },
+    "all": "All Products",
     "title": "Collections",
     "filter_by": "Filter by {{ title }}",
     "sorting": {
