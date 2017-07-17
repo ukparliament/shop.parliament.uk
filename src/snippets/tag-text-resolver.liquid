@@ -1,0 +1,18 @@
+{% for tag in current_tags %}
+  {% if tag contains 'price-' %}
+    {% if tag contains 'price-under-5' %}
+      {{ 'collections.tags.price-under-5' | t }}
+    {% endif %}
+    {% if tag contains 'price-5-25' %}
+      {{ 'collections.tags.price-5-25' | t }}
+    {% endif %}
+    {% if tag contains 'price-25-50' %}
+      {{ 'collections.tags.price-25-50' | t }}
+    {% endif %}
+    {% if tag contains 'price-over-50' %}
+      {{ 'collections.tags.price-over-50' | t }}
+    {% endif %}
+  {% else %}
+    {{ tag }}
+  {% endif %}
+{% endfor %}

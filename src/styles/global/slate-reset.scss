@@ -28,7 +28,7 @@ form {
 }
 
 // Prevent zoom on touch devices in active inputs
-@include media-query($medium-down) {
+@include breakpoint(medium-down) {
   input,
   textarea,
   select {

@@ -278,6 +278,10 @@ p a:focus {
         font-size: 16px;
         text-decoration: none;
         color: $tundora;
+        line-height: 1;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
