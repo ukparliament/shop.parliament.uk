@@ -1,7 +1,7 @@
 {% if collection.all_tags.size > 0 %}
   <ul class="collection__filters">
     <span class="collection__filters--heading">{{ 'collections.title' | t }}</span>
-    {% if current_tags == blank %}
+      {% if current_tags == blank %}
         <li class="collection__filters--active"><a href="{{ collection.url }}">{{ 'collections.all' | t }}</a></li>
       {% else %}
         <li><a href="{{ collection.url }}">{{ 'collections.all' | t }}</a></li>
