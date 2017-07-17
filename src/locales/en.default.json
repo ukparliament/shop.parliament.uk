@@ -119,6 +119,12 @@
       "list": "List view",
       "grid": "Grid view",
       "change": "Change view"
+    },
+    "tags": {
+      "price-under-5": "Under £5",
+      "price-5-25": "£5-£25",
+      "price-25-50": "£25-£50",
+      "price-over-50": "Over £50"
     }
   },
   "contact": {
