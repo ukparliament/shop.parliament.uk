@@ -5,27 +5,39 @@
     }
   }
 
-  @if $breakpoint == "small" {
+  @if $breakpoint == "small-down" {
+    @media (max-width: $breakpoint-small - 1) {
+        @content;
+    }
+  }
+
+  @else if $breakpoint == "small" {
     @media (min-width: $breakpoint-small) {
-      @content;
+        @content;
+    }
+  }
+
+  @else if $breakpoint == "medium-down" {
+    @media (max-width: $breakpoint-medium - 1) {
+        @content;
     }
   }
 
   @else if $breakpoint == "medium" {
     @media (min-width: $breakpoint-medium) {
-      @content;
+        @content;
     }
   }
 
   @else if $breakpoint == "large" {
     @media (min-width: $breakpoint-large) {
-      @content;
+        @content;
     }
   }
 
   @else if $breakpoint == "tiles" {
     @media (min-width: $breakpoint-tiles) {
-      @content;
+        @content;
     }
   }
 }
