@@ -16,7 +16,7 @@
     }
     tbody tr td {
         padding: $base-spacing-unit-small 0 0;
-        @include breakpoint(medium) {
+        @include breakpoint(small) {
             padding: $base-spacing-unit-extra-large $base-spacing-unit-medium 0 0;
         }
     }
@@ -36,15 +36,13 @@
 }
 
 .cart--meta {
-    flex-flow: column;
-    justify-content: space-between;
-    @include breakpoint(small) {
-        flex-flow: row wrap;
+    input[type=submit]:first-of-type {
+        margin-bottom: 12px;
     }
     .cart--notes {
         .cart--notes--form {
             padding: $base-spacing-unit-tiny;
-            @include breakpoint(medium) {
+            @include breakpoint(small) {
                 padding: $base-spacing-unit-small;
             }
             background: $ebb;

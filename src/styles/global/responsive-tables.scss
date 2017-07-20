@@ -1,7 +1,7 @@
 /*============================================================================
   Responsive tables, defined with .responsive-table on table element.
 ==============================================================================*/
-@include media-query($small) {
+@include breakpoint(small-down) {
   .responsive-table {
     width: 100%;
 

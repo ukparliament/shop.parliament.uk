@@ -1,11 +1,16 @@
 {% if collection.all_tags.size > 0 %}
   <ul class="collection__filters">
     <span class="collection__filters--heading">{{ 'collections.title' | t }}</span>
+      {% if current_tags == blank %}
+        <li class="collection__filters--active"><a href="{{ collection.url }}">{{ 'collections.all' | t }}</a></li>
+      {% else %}
+        <li><a href="{{ collection.url }}">{{ 'collections.all' | t }}</a></li>
+      {% endif %}
     {% for tag in collection.all_tags %}
       {% unless tag contains 'price-' or tag contains 'vendor-' %}
         {% if current_tags contains tag %}
           <li class="collection__filters--active">
-            {{ tag | link_to_remove_tag: tag }}
+            {{ tag | link_to_tag: tag }}
           </li>
         {% else %}
           <li>

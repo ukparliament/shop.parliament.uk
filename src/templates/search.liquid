@@ -12,7 +12,7 @@
 
 {% paginate search.results by 10 %}
 
-{% include 'search-bar', size: 'large' %}
+{% include 'search-bar', type: 'large' %}
 
 {% if search.performed %}
   <div class="product-grid">
@@ -64,7 +64,7 @@
                 {% endunless %}
               </p>
 
-              {{ item.description | truncate: 150 }}
+              <p>{{ item.description | strip_html | truncate: 150 }}</p>
             </div>
           </div>
         {% endif %}

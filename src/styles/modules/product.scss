@@ -53,7 +53,9 @@
 .product-image-frame-container {
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding-right: $base-spacing-unit-extra-large;
 }
 
 .product-image-frame {
@@ -83,11 +85,8 @@
 
 .product-image-frame__featured {
     height: auto;
-    width: 100%;
-    max-width: 100%;
-    @include breakpoint(medium) {
-        width: 90%;
-        max-width: 90%;
+    img {
+        flex-shrink: 0;
     }
 }
 
@@ -98,10 +97,6 @@
     width: 100%;
     max-width: 100%;
     display: flex;
-    @include breakpoint(medium) {
-        width: 90%;
-        max-width: 90%;
-    }
     li {
         max-width: 19%;
         margin-top: $base-spacing-unit-tiny;

@@ -32,11 +32,16 @@
         }
         a {
             display: block;
-            padding: $base-spacing-unit;
+            padding: $base-spacing-unit-tiny;
+            border-left: 6px solid transparent;
         }
         a:hover {
             background: $white;
         }
+    }
+    .collection__filters--active a {
+        border-left-color: $purpleHeart;
+        background: $white;
     }
     .collection__filters--heading {
         display: block;
@@ -61,6 +66,10 @@
         margin: 0 0 0 $base-spacing-unit-medium;
         a:first-child {
             margin-right: $base-spacing-unit-small;
+            width: 20px;
+        }
+        a:last-child {
+            width: 30px;
         }
         svg {
             height: 18px;
