@@ -49,18 +49,7 @@ theme.Product = (function() {
 
     this.initVariants();
 
-    var $zoom = $('.zoom').magnify({
-      magnifiedWidth: 750,
-      magnifiedHeight: 750
-    });
-    $('[data-product-single-thumbnail]').on('click', function() {
-      $zoom.destroy();
-      $zoom = $('.zoom').magnify({
-        magnifiedWidth: 750,
-        magnifiedHeight: 750
-      });
-    });
-
+    this.imageZoom();
   }
 
   Product.prototype = $.extend({}, Product.prototype, {
@@ -162,7 +151,15 @@ theme.Product = (function() {
      */
     onUnload: function() {
       this.$container.off(this.namespace);
-    }
+    },
+
+    imageZoom: function() {
+      var $zoom = $('.zoom').magnify();
+      $('[data-product-single-thumbnail]').on('click', function() {
+        $zoom.destroy();
+        $zoom = $('.zoom').magnify();
+      });
+    },
   });
 
   return Product;
