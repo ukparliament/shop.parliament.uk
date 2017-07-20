@@ -18,6 +18,14 @@ body {
     }
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+    font: inherit;
+}
+
 b, strong {
     font-weight: 500;
 }
