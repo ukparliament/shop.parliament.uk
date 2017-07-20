@@ -19,7 +19,8 @@ theme.Product = (function() {
     productJson: '[data-product-json]',
     productPrice: '[data-product-price]',
     productThumbs: '[data-product-single-thumbnail]',
-    singleOptionSelector: '[data-single-option-selector]'
+    singleOptionSelector: '[data-single-option-selector]',
+    zoomable: '.zoomable'
   };
 
   /**
@@ -154,10 +155,10 @@ theme.Product = (function() {
     },
 
     imageZoom: function() {
-      var $zoom = $('.zoom').magnify();
-      $('[data-product-single-thumbnail]').on('click', function() {
+      var $zoom = $(selectors.zoomable).magnify();
+      $(selectors.productThumbs).on('click', function() {
         $zoom.destroy();
-        $zoom = $('.zoom').magnify();
+        $zoom = $(selectors.zoomable).magnify();
       });
     },
   });
