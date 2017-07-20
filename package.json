@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "The Shopify theme for the Parliamentary shop.",
   "dependencies": {
+    "magnify": "^2.1.0",
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {

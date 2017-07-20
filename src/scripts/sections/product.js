@@ -48,6 +48,19 @@ theme.Product = (function() {
     this.initProductImageSwapper();
 
     this.initVariants();
+
+    var $zoom = $('.zoom').magnify({
+      magnifiedWidth: 750,
+      magnifiedHeight: 750
+    });
+    $('[data-product-single-thumbnail]').on('click', function() {
+      $zoom.destroy();
+      $zoom = $('.zoom').magnify({
+        magnifiedWidth: 750,
+        magnifiedHeight: 750
+      });
+    });
+
   }
 
   Product.prototype = $.extend({}, Product.prototype, {
@@ -59,6 +72,7 @@ theme.Product = (function() {
       $(selectors.productThumbs).on('click', function(event) {
         event.preventDefault();
         $(selectors.productFeaturedImage).attr('src', $(this).attr('href'));
+        $(selectors.productFeaturedImage).attr('data-magnify-src', $(this).attr('data-magnify-src'));
       });
     },
 
