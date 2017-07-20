@@ -12,6 +12,7 @@
 
 /*================ VENDOR ==================*/
 @import url('../../node_modules/normalize.css/normalize.css');
+@import url('../../node_modules/magnify/dist/css/magnify.css');
 
 /*================ COMMON ================*/
 @import url('global/fonts.scss');
@@ -26,7 +27,6 @@
 @import url('global/links-buttons.scss');
 @import url('global/forms.scss');
 @import url('global/blank-states.scss');
-@import url('vendor/magnifier.scss');
 
 /*================ MODULES ================*/
 @import url('modules/badges.scss');
@@ -46,3 +46,4 @@
 @import url('modules/site-header.scss');
 @import url('modules/site-navigation.scss');
 @import url('modules/tiles.scss');
+@import url('modules/magnify.scss');
