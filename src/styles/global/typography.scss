@@ -18,6 +18,15 @@ body {
     }
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
 b, strong {
     font-weight: 500;
 }
