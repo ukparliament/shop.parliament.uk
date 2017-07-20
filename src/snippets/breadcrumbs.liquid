@@ -20,7 +20,7 @@
             {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
             {{ collection.title | link_to: url }}
             <span aria-hidden="true">&rsaquo;</span>
-            <span>{{ current_tags | join: " + " }}</span>
+            <span>{% include 'tag-text-resolver' | tags: current_tags %}</span>
           {% else %}
             <span>{{ collection.title }}</span>
           {% endif %}

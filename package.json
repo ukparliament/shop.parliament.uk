@@ -1,10 +1,23 @@
 {
-  "name": "UK Parliament Shop",
+  "name": "shop.parliament.uk",
   "version": "0.0.1",
+  "description": "The Shopify theme for the Parliamentary shop.",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  },
   "devDependencies": {
-    "@shopify/slate-tools": "0.2.7"
+    "@shopify/slate-tools": "^0.3.1"
   },
   "dependencies": {
     "jquery": "^2.2.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukparliament/shop.parliament.uk.git"
+  },
+  "author": "Jake Mulley",
+  "bugs": {
+    "url": "https://github.com/ukparliament/shop.parliament.uk/issues"
+  },
+  "homepage": "https://github.com/ukparliament/shop.parliament.uk#readme"
 }
