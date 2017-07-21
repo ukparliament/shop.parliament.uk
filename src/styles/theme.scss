@@ -12,6 +12,7 @@
 
 /*================ VENDOR ==================*/
 @import url('../../node_modules/normalize.css/normalize.css');
+@import url('../../node_modules/magnify/dist/css/magnify.css');
 
 /*================ COMMON ================*/
 @import url('global/fonts.scss');
@@ -45,3 +46,4 @@
 @import url('modules/site-header.scss');
 @import url('modules/site-navigation.scss');
 @import url('modules/tiles.scss');
+@import url('modules/magnify.scss');
