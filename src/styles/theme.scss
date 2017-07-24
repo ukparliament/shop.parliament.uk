@@ -10,8 +10,11 @@
 @import url('settings/variables.scss.liquid');
 @import url('settings/colours.scss');
 
+/*================ VENDOR ==================*/
+@import url('../../node_modules/normalize.css/normalize.css');
+@import url('../../node_modules/magnify/dist/css/magnify.css');
+
 /*================ COMMON ================*/
-@import url('global/normalize.scss');
 @import url('global/fonts.scss');
 @import url('global/typography.scss');
 @import url('global/slate-reset.scss');
@@ -43,3 +46,4 @@
 @import url('modules/site-header.scss');
 @import url('modules/site-navigation.scss');
 @import url('modules/tiles.scss');
+@import url('modules/magnify.scss');
