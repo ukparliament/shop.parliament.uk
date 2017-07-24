@@ -19,7 +19,8 @@ theme.Product = (function() {
     productJson: '[data-product-json]',
     productPrice: '[data-product-price]',
     productThumbs: '[data-product-single-thumbnail]',
-    singleOptionSelector: '[data-single-option-selector]'
+    singleOptionSelector: '[data-single-option-selector]',
+    zoomable: '.zoomable'
   };
 
   /**
@@ -48,6 +49,8 @@ theme.Product = (function() {
     this.initProductImageSwapper();
 
     this.initVariants();
+
+    this.imageZoom();
   }
 
   Product.prototype = $.extend({}, Product.prototype, {
@@ -59,6 +62,7 @@ theme.Product = (function() {
       $(selectors.productThumbs).on('click', function(event) {
         event.preventDefault();
         $(selectors.productFeaturedImage).attr('src', $(this).attr('href'));
+        $(selectors.productFeaturedImage).attr('data-magnify-src', $(this).attr('data-magnify-src'));
       });
     },
 
@@ -148,7 +152,15 @@ theme.Product = (function() {
      */
     onUnload: function() {
       this.$container.off(this.namespace);
-    }
+    },
+
+    imageZoom: function() {
+      var $zoom = $(selectors.zoomable).magnify();
+      $(selectors.productThumbs).on('click', function() {
+        $zoom.destroy();
+        $zoom = $(selectors.zoomable).magnify();
+      });
+    },
   });
 
   return Product;
