@@ -9,6 +9,9 @@
   "devDependencies": {
     "@shopify/slate-tools": "^0.3.1"
   },
+  "dependencies": {
+    "jquery": "^2.2.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ukparliament/shop.parliament.uk.git"
