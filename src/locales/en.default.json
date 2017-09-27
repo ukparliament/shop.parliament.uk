@@ -8,8 +8,7 @@
       "page": "Page {{ page }}"
     },
     "404": {
-      "title": "404 Page Not Found",
-      "subtext_html": "This page doesn't exist.",
+      "title": "This page doesn't exist.",
       "cause": {
         "title": "What could have caused this?",
         "bulletpoints_html": "<li>the page might have been moved or deleted</li> <li>the product might be out of stock</li> <li>you might have typed the page address in the browser incorrectly</li>"
