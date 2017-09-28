@@ -75,7 +75,7 @@
         }
     }
     @include breakpoint(medium) {
-        .site-navigation--has-submenu:hover {
+        .site-navigation--has-submenu:hover, .site-navigation--has-submenu:focus {
             .site-navigation__submenu {
                 background: $ebb;
                 display: block;
@@ -84,7 +84,7 @@
                 padding: 2px 4px 4px;
                 position: absolute;
                 z-index: 2;
-                li a:hover {
+                li a:hover, li a:focus {
                     background: $white;
                 }
             }
