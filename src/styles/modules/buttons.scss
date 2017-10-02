@@ -7,7 +7,8 @@
     text-align: center;
     white-space: nowrap;
     border-radius: 4px;
-    padding: $base-spacing-unit $base-spacing-unit-medium;
+    padding: $base-spacing-unit $base-spacing-unit-tiny;
+    cursor: pointer;
 
     // button colours
     border: 1px solid $stTropaz;
@@ -28,8 +29,8 @@
 }
 
 .button:hover {
-    background: $stTropazHover;
-    border-color: $stTropazHover;
+    background: $stTropazButtonHover;
+    border-color: $stTropazButtonHover;
 }
 
 .button--secondary {
@@ -41,17 +42,6 @@
 .button--secondary:hover {
     background: $periwinkleHover;
     border-color: $periwinkleHover;
-}
-
-.button--alternative {
-    background: $algaeGreen;
-    border-color: $algaeGreen;
-    color: $martinique;
-}
-
-.button--alternative:hover {
-    background: $algaeGreenHover;
-    border-color: $algaeGreenHover;
 }
 
 .button--grey {
@@ -68,6 +58,7 @@
 }
 
 .button[disabled] {
-    background: $frenchGray;
-    border-color: $frenchGray;
+    background: $ebb;
+    border-color: $ebb;
+    color: $frenchGray;
 }
