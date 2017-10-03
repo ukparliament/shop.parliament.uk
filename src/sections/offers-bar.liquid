@@ -4,23 +4,65 @@
       {% for block in section.blocks %}
         <div class="grid-cell grid-cell-1of3">
           <div class="offers-bar__icon">
-            {% if block.settings.icon == 'tag-blue' %}
+            {% if block.settings.left-icon == 'tag-blue' %}
               <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.icon == 'people-multi' %}
+            {% elsif block.settings.left-icon == 'people-multi' %}
               <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.icon == 'mouse-yellow' %}
+            {% elsif block.settings.left-icon == 'mouse-yellow' %}
               <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.icon == 'mail-green' %}
+            {% elsif block.settings.left-icon == 'mail-green' %}
               <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation" alt="">
             {% endif %}
           </div>
           <div class="offers-bar__description">
-            {% if block.settings.url %}
-              <strong><a href="{{ block.settings.url }}">{{ block.settings.title }}</a></strong>
+            {% if block.settings.left-url %}
+              <strong><a href="{{ block.settings.left-url }}">{{ block.settings.left-title }}</a></strong>
             {% else %}
-              <strong>{{ block.settings.title }}</strong>
+              <strong>{{ block.settings.left-title }}</strong>
             {% endif %}
-            <p>{{ block.settings.description }}</p>
+            <p>{{ block.settings.left-description }}</p>
+          </div>
+        </div>
+        <div class="grid-cell grid-cell-1of3">
+          <div class="offers-bar__icon">
+            {% if block.settings.center-icon == 'tag-blue' %}
+              <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation" alt="">
+            {% elsif block.settings.center-icon == 'people-multi' %}
+              <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation" alt="">
+            {% elsif block.settings.center-icon == 'mouse-yellow' %}
+              <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation" alt="">
+            {% elsif block.settings.center-icon == 'mail-green' %}
+              <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation" alt="">
+            {% endif %}
+          </div>
+          <div class="offers-bar__description">
+            {% if block.settings.center-url %}
+              <strong><a href="{{ block.settings.center-url }}">{{ block.settings.center-title }}</a></strong>
+            {% else %}
+              <strong>{{ block.settings.center-title }}</strong>
+            {% endif %}
+            <p>{{ block.settings.center-description }}</p>
+          </div>
+        </div>
+        <div class="grid-cell grid-cell-1of3">
+          <div class="offers-bar__icon">
+            {% if block.settings.right-icon == 'tag-blue' %}
+              <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation" alt="">
+            {% elsif block.settings.right-icon == 'people-multi' %}
+              <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation" alt="">
+            {% elsif block.settings.right-icon == 'mouse-yellow' %}
+              <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation" alt="">
+            {% elsif block.settings.right-icon == 'mail-green' %}
+              <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation" alt="">
+            {% endif %}
+          </div>
+          <div class="offers-bar__description">
+            {% if block.settings.right-url %}
+              <strong><a href="{{ block.settings.right-url }}">{{ block.settings.right-title }}</a></strong>
+            {% else %}
+              <strong>{{ block.settings.right-title }}</strong>
+            {% endif %}
+            <p>{{ block.settings.right-description }}</p>
           </div>
         </div>
       {% endfor %}
@@ -31,7 +73,6 @@
 {% schema %}
   {
     "name": "Offers Bar",
-    "max_blocks": 3,
     "class": "offers-bar",
     "settings": [
       {
@@ -43,11 +84,12 @@
     ],
     "blocks": [
       {
-        "type": "block",
-        "name": "Block",
+        "type": "offers-bar-content",
+        "name": "Content",
+        "limit": 1,
         "settings": [
           {
-            "id": "icon",
+            "id": "left-icon",
             "type": "radio",
             "options": [
               { "value": "tag-blue", "label": "Tag icon, blue" },
@@ -55,22 +97,74 @@
               { "value": "mouse-yellow", "label": "Mouse icon, yellow" },
               { "value": "mail-green", "label": "Mail icon, green" }
             ],
-            "label": "Block icon"
+            "label": "Left block icon"
           },
           {
-            "id": "title",
+            "id": "left-title",
             "type": "text",
-            "label": "Block title"
+            "label": "Left block title"
           },
           {
-            "id": "description",
+            "id": "left-description",
             "type": "text",
-            "label": "Block description"
+            "label": "Left block description"
           },
           {
-            "id": "url",
+            "id": "left-url",
             "type": "url",
-            "label": "Block URL"
+            "label": "Left block URL"
+          },
+          {
+            "id": "center-icon",
+            "type": "radio",
+            "options": [
+              { "value": "tag-blue", "label": "Tag icon, blue" },
+              { "value": "people-multi", "label": "People icon, multicoloured" },
+              { "value": "mouse-yellow", "label": "Mouse icon, yellow" },
+              { "value": "mail-green", "label": "Mail icon, green" }
+            ],
+            "label": "Center block icon"
+          },
+          {
+            "id": "center-title",
+            "type": "text",
+            "label": "Center block title"
+          },
+          {
+            "id": "center-description",
+            "type": "text",
+            "label": "Center block description"
+          },
+          {
+            "id": "center-url",
+            "type": "url",
+            "label": "Center block URL"
+          },
+          {
+            "id": "right-icon",
+            "type": "radio",
+            "options": [
+              { "value": "tag-blue", "label": "Tag icon, blue" },
+              { "value": "people-multi", "label": "People icon, multicoloured" },
+              { "value": "mouse-yellow", "label": "Mouse icon, yellow" },
+              { "value": "mail-green", "label": "Mail icon, green" }
+            ],
+            "label": "Right block icon"
+          },
+          {
+            "id": "right-title",
+            "type": "text",
+            "label": "Right block title"
+          },
+          {
+            "id": "right-description",
+            "type": "text",
+            "label": "Right block description"
+          },
+          {
+            "id": "right-url",
+            "type": "url",
+            "label": "Right block URL"
           }
         ]
       }
