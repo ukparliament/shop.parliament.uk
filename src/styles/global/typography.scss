@@ -414,6 +414,9 @@ p a:focus {
     font-size: 16px;
     a {
         color: $tundora;
+        &:hover {
+            color: $doveGray;
+        }
     }
 }
 
