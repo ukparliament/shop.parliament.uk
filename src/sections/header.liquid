@@ -26,7 +26,6 @@
   </div>
 </header>
 
-<!-- Desktop navigation -->
 <nav class="site-navigation" role="navigation">
   <ul class="site-navigation__menu">
     {% for link in linklists[section.settings.main_linklist].links %}
@@ -51,6 +50,28 @@
     {% endfor %}
   </ul>
 </nav>
+
+<div class="site-navigation--mobile">
+  <input type="checkbox" id="menu-toggle" class="site-navigation__menu--toggle">
+  <label class="site-navigation--mobile__button" for="menu-toggle">{% include 'icon-hamburger' %}</label>
+  <a href="/cart" class="site-navigation--mobile__button">{% include 'icon-cart' %}</a>
+  <nav class="site-navigation--mobile__nav">
+    <div class="site-navigation--mobile__nav--heading">
+      <h3>Browse</h3>
+      <label class="menu-toggle" for="menu-toggle">{% include 'icon-close' %}</label>
+    </div>
+    {% include 'search-bar' %}
+    <ul>
+      {% for link in linklists[section.settings.main_linklist].links %}
+        <li>
+          <a href="{{ link.url }}" title="{{ link.title }}" {% if link.active %}class="site-navigation--mobile--active"{% endif %}>
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
 
 {% schema %}
   {
