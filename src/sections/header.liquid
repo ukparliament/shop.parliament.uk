@@ -32,7 +32,7 @@
     {% for link in linklists[section.settings.main_linklist].links %}
       {%- assign child_list_handle = link.title | handleize -%}
       {% if menus[child_list_handle].links != blank %}
-        <li class="site-navigation__menu__item">
+        <li class="site-navigation__menu__item{% if link.active %} site-navigation__menu__item--active{% endif %}">
           <a href="{{ link.url }}" title="{{ link.title }}">
             {{ link.title }}
             <span class="site-navigation--caret">{% include 'icon-arrow-down' %}</span>
@@ -40,7 +40,9 @@
           <div class="site-navigation__menu__submenu">
             <ul class="site-navigation__menu__submenu--group">
               {% for childlink in menus[child_list_handle].links %}
-                <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                <li {% if childlink.active %}class="site-navigation__menu__item--active"{% endif %}>
+                  <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                </li>
               {% endfor %}
             </ul>
           </div>
@@ -49,29 +51,6 @@
     {% endfor %}
   </ul>
 </nav>
-
-{% comment %}<nav role="navigation" class="site-navigation">
-  <div class="container">
-    <ul class="site-navigation__list">
-      {% for link in linklists[section.settings.main_linklist].links %}
-        {%- assign child_list_handle = link.title | handleize -%}
-        {% if menus[child_list_handle].links != blank %}
-          <li class="site-navigation__list__item">
-            <a href="{{ link.url }}">{{ link.title }}</a>
-            <div class="site-navigation__submenu">
-              <ul class="site-navigation__submenu__list">
-                {% for childlink in menus[child_list_handle].links %}
-                  <li {% if childlink.active %}class="site-navigation--active"{% endif %}>
-                    <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-{% endcomment %}
 
 {% schema %}
   {
