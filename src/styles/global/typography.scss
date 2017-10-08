@@ -100,28 +100,13 @@ h6 {
     }
 }
 
-.site-navigation {
-    .site-navigation__list li a {
+.site-navigation__menu__item {
+    a {
         color: $tundora;
         text-decoration: none;
-    }
-    .site-navigation--active > a {
-        font-weight: 500;
-    }
-    .site-navigation__list li > a:hover {
-        text-decoration: underline;
-    }
-}
-
-.site-navigation--plus {
-    font-size: 32px;
-    font-weight: 400;
-}
-
-.site-navigation__mobile-extras__heading {
-    h3 {
-        margin: 0;
-        font-weight: 400;
+        &:hover, &:focus, &.open {
+            text-decoration: underline;
+        }
     }
 }
 
