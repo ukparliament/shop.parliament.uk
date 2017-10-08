@@ -34,6 +34,10 @@
             height: 10px;
         }
     }
+
+    .site-navigation__menu__item > a:hover ~ .site-navigation__menu__submenu {
+        display: block;
+    }
 }
 
 .site-navigation__menu__submenu {
