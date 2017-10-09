@@ -57,17 +57,29 @@
   <a href="/cart" class="site-navigation--mobile__button">{% include 'icon-cart' %}</a>
   <nav class="site-navigation--mobile__nav">
     <div class="site-navigation--mobile__nav--heading">
-      <h3>Browse</h3>
+      <h3>{{ 'layout.browse' | t }}</h3>
       <label class="menu-toggle" for="menu-toggle">{% include 'icon-close' %}</label>
     </div>
     {% include 'search-bar' %}
     <ul>
       {% for link in linklists[section.settings.main_linklist].links %}
-        <li>
-          <a href="{{ link.url }}" title="{{ link.title }}" {% if link.active %}class="site-navigation--mobile--active"{% endif %}>
-            {{ link.title }}
-          </a>
-        </li>
+        {%- assign child_list_handle = link.title | handleize -%}
+          <li>
+            <a href="{{ link.url }}" title="{{ link.title }}" {% if link.active %}class="site-navigation--mobile--active"{% endif %}>
+              {{ link.title }}
+            </a>
+            {% if menus[child_list_handle].links != blank %}
+              <input type="checkbox" id="menu-toggle-{{ child_list_handle }}" class="site-navigation__menu--toggle">
+              <label class="site-navigation--mobile__button" for="menu-toggle-{{ child_list_handle }}">{% include 'icon-plus' %}</label>
+              <ul class="site-navigation__menu__submenu">
+                {% for childlink in menus[child_list_handle].links %}
+                  <li {% if childlink.active %}class="site-navigation__menu__item--active"{% endif %}>
+                    <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
       {% endfor %}
     </ul>
   </nav>

@@ -137,6 +137,13 @@
             list-style: none;
             padding: 0;
             margin: 0;
+
+            > li {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
             li {
                 border-bottom: 1px solid $frenchGray;
                 a {
@@ -159,7 +166,27 @@
                         }
                     }
                 }
+                .site-navigation--mobile__button {
+                    padding-right: 0;
+                }
             }
+
+            .site-navigation__menu__submenu {
+                display: none;
+            }
+
+            .site-navigation__menu--toggle:checked ~ .site-navigation__menu__submenu {
+                display: block;
+                width: 100%;
+                margin-left: 18px;
+            }
+
+            .site-navigation__menu__submenu {
+                li:last-child {
+                    border-bottom: 0;
+                }
+            }
+
         }
     }
 }
