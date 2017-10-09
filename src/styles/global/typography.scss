@@ -365,10 +365,7 @@ p a {
         span {
             text-decoration: underline;
         }
-        &:hover {
-            color: $frenchGray;
-        }
-        &:focus {
+        &:hover, &:focus {
             color: $frenchGray;
         }
     }
