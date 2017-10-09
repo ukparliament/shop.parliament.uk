@@ -19,6 +19,9 @@ window.theme = window.theme || {};
 // =require templates/customers-login.js
 // =require templates/collections.js
 
+/*================ Accessibility ================*/
+// =require accessibility/navigation.js
+
 $(document).ready(function() {
   var sections = new slate.Sections();
   sections.register('product', theme.Product);

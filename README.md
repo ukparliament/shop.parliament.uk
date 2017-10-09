@@ -45,5 +45,5 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 [shop.parliament.uk]:     https://github.com/ukparliament/shop.parliament.uk
 [pds]:                    https://www.parliament.uk/mps-lords-and-offices/offices/bicameral/parliamentary-digital-service/
 
-[info-license]:           http://www.parliament.uk/site-information/copyright/open-parliament-licence/
+[info-license]:           https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/
 [shield-license]:         https://img.shields.io/badge/license-Open%20Parliament%20Licence-blue.svg

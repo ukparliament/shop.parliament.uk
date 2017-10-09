@@ -2,15 +2,14 @@
   "name": "shop.parliament.uk",
   "version": "0.0.1",
   "description": "The Shopify theme for the Parliamentary shop.",
-  "dependencies": {
-    "magnify": "^2.1.0",
-    "normalize.css": "^7.0.0"
-  },
   "devDependencies": {
     "@shopify/slate-tools": "^0.3.1"
   },
   "dependencies": {
-    "jquery": "^2.2.4"
+    "accessible-mega-menu": "git+https://github.com/adobe-accessibility/Accessible-Mega-Menu.git",
+    "jquery": "^2.2.4",
+    "magnify": "^2.1.0",
+    "normalize.css": "^7.0.0"
   },
   "repository": {
     "type": "git",

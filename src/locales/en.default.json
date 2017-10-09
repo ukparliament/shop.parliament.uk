@@ -8,8 +8,15 @@
       "page": "Page {{ page }}"
     },
     "404": {
-      "title": "404 Page Not Found",
-      "subtext_html": "The page you requested does not exist. Click <a href=\"/collections/all\">here</a> to continue shopping."
+      "title": "This page doesn't exist.",
+      "cause": {
+        "title": "What could have caused this?",
+        "bulletpoints_html": "<li>the page might have been moved or deleted</li> <li>the product might be out of stock</li> <li>you might have typed the page address in the browser incorrectly</li>"
+      },
+      "action": {
+        "title": "What can you do now?",
+        "bulletpoints_html": "<li>try typing the page address again</li> <li>go back to the <a href=\"/\">Shop homepage</a></li>"
+      }
     },
     "password_page": {
       "opening_soon": "Opening Soon",
@@ -247,6 +254,7 @@
     }
   },
   "layout": {
+    "browse": "Browse",
     "cart": {
       "title": "Cart",
       "items_count": {
