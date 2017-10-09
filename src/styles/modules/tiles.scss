@@ -10,7 +10,7 @@
             will-change: transform;
         }
     }
-    a:hover img {
+    a:hover img, a:focus img {
         @include breakpoint(tiles) {
             transform: scale(1.02);
         }
@@ -65,7 +65,7 @@
                 display: none;
             }
         }
-        a:hover img {
+        a:hover img, a:focus img {
             @include breakpoint(tiles) {
                 transform: scale(1.04);
             }
