@@ -10,7 +10,7 @@
             will-change: transform;
         }
     }
-    a:hover img {
+    a:hover img, a:focus img {
         @include breakpoint(tiles) {
             transform: scale(1.02);
         }
@@ -25,7 +25,7 @@
     }
     .tile--heading:after {
         content: ' ';
-        background: $tara;
+        background: $whiteLilac;
         height: 4px;
         width: 40px;
         margin-top: $base-spacing-unit;
@@ -46,6 +46,7 @@
                 padding: $base-spacing-unit-medium;
             }
             &:after {
+                background: $tara;
                 height: 6px;
                 width: 60px;
                 @include breakpoint(tiles) {
@@ -64,7 +65,7 @@
                 display: none;
             }
         }
-        a:hover img {
+        a:hover img, a:focus img {
             @include breakpoint(tiles) {
                 transform: scale(1.04);
             }

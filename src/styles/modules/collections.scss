@@ -34,9 +34,9 @@
             display: block;
             padding: $base-spacing-unit-tiny;
             border-left: 6px solid transparent;
-        }
-        a:hover {
-            background: $white;
+            &:hover, &:focus {
+                background: $white;
+            }
         }
     }
     .collection__filters--active a {
@@ -76,7 +76,7 @@
             width: auto;
             fill: $frenchGray;
         }
-        .active, a:hover {
+        .active, a:hover, a:focus {
             svg {
                 fill: $doveGray;
             }

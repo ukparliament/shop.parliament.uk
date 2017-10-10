@@ -254,6 +254,7 @@
     }
   },
   "layout": {
+    "browse": "Browse",
     "cart": {
       "title": "Cart",
       "items_count": {

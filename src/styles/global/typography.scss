@@ -100,38 +100,27 @@ h6 {
     }
 }
 
-.site-navigation {
-    .site-navigation__list li a {
+.site-navigation__menu__item {
+    a {
         color: $tundora;
         text-decoration: none;
-    }
-    .site-navigation--active > a {
-        font-weight: 500;
-    }
-    .site-navigation__list li > a:hover {
-        text-decoration: underline;
+        &:hover, &:focus, &.open {
+            text-decoration: underline;
+        }
     }
 }
 
-.site-navigation--plus {
-    font-size: 32px;
-    font-weight: 400;
-}
-
-.site-navigation__mobile-extras__heading {
-    h3 {
-        margin: 0;
-        font-weight: 400;
-    }
+.site-navigation__menu__item--active > a {
+    font-weight: 700;
 }
 
 .site-footer {
     color: $alabaster;
     a {
         color: $alabaster;
-    }
-    a:hover {
-        color: $frenchGray;
+        &:hover, &:focus {
+            color: $frenchGray;
+        }
     }
     .site-footer__address {
         font-style: normal;
@@ -155,13 +144,13 @@ h6 {
             line-height: 1.154; // 30px
         }
     }
-
     a {
         text-decoration: none;
-    }
-
-    a:hover .tile--heading {
-        text-decoration: underline;
+        &:hover, &:focus {
+            .tile--heading {
+               text-decoration: underline;
+            }
+        }
     }
 }
 
@@ -171,9 +160,9 @@ h6 {
         color: $stTropaz;
         text-decoration: underline;
         font-weight: 500;
-    }
-    .product-grid__title:hover {
-        color: $stTropazHover;
+        &:hover, &:focus {
+            color: $stTropazHover;
+        }
     }
     .product-grid__single {
         .product-grid__image {
@@ -216,9 +205,9 @@ h6 {
     .product--name {
         color: $stTropaz;
         font-weight: 500;
-    }
-    .product--name:hover {
-        color: $stTropazHover;
+        &:hover, &:focus {
+            color: $stTropazHover;
+        }
     }
     .product--price {
         font-weight: 500;
@@ -252,15 +241,13 @@ h6 {
 
 p a {
     color: $stTropaz;
-}
-
-p a:hover {
-    color: $stTropazHover;
-}
-
-p a:focus {
-    background: $algaeGreen;
-    outline: 3px solid $algaeGreen;
+    &:hover, &:focus {
+        color: $stTropazHover;
+    }
+    &:focus {
+        background: $algaeGreen;
+        outline: 3px solid $algaeGreen;
+    }
 }
 
 /* Page headings */
@@ -288,7 +275,7 @@ p a:focus {
         text-decoration: none;
         color: $tundora;
         line-height: 1;
-        &:hover {
+        &:hover, &:focus {
             text-decoration: underline;
         }
     }
@@ -309,7 +296,7 @@ p a:focus {
                 text-decoration: none;
             }
         }
-        a:hover {
+        a:hover, a:focus {
             @include breakpoint(small) {
                 color: $martinique;
             }
@@ -319,7 +306,7 @@ p a:focus {
         color: $tundora;
         text-decoration: underline;
     }
-    a:hover {
+    a:hover, a:focus {
         color: $black;
     }
 }
@@ -353,7 +340,7 @@ p a:focus {
     a {
         color: $stTropaz;
     }
-    a:hover {
+    a:hover, a:focus {
         color: $stTropazHover;
     }
 }
@@ -378,7 +365,7 @@ p a:focus {
         span {
             text-decoration: underline;
         }
-        &:hover {
+        &:hover, &:focus {
             color: $frenchGray;
         }
     }
@@ -402,7 +389,7 @@ p a:focus {
         color: $tundora;
         text-decoration: none;
         font-size: 16px;
-        &:hover {
+        &:hover, &:focus {
             text-decoration: underline;
         }
     }
@@ -414,6 +401,9 @@ p a:focus {
     font-size: 16px;
     a {
         color: $tundora;
+        &:hover {
+            color: $doveGray;
+        }
     }
 }
 

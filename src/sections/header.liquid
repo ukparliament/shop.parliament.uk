@@ -26,49 +26,64 @@
   </div>
 </header>
 
-<label for="site-navigation__mobile-menu-button" class="site-navigation__mobile-menu-button">
-  {% include 'icon-hamburger' %}
-  <a href="/cart">{% include 'icon-cart' %}</a>
-</label>
-<input type="checkbox" id="site-navigation__mobile-menu-button" class="site-navigation__mobile-menu-button-input">
-
-<nav role="navigation" class="site-navigation">
-  <div class="container">
-    <div class="site-navigation__mobile-extras">
-      <div class="site-navigation__mobile-extras__heading">
-        <h3>Browse</h3>
-        <label for="site-navigation__mobile-menu-button" class="site-navigation__mobile-menu-button-inset">{% include 'icon-close' %}</label>
-      </div>
-      {% include 'search-bar' %}
-    </div>
-    <ul class="site-navigation__list">
-      {% for link in linklists[section.settings.main_linklist].links %}
-        {%- assign child_list_handle = link.title | handleize -%}
-        {% if menus[child_list_handle].links != blank %}
-          <li class="site-navigation--has-submenu{% if link.active %} site-navigation--active{% endif %}">
-            <a href="{{ link.url }}">
-              {{ link.title }}
-              <span class="site-navigation--caret">{% include 'icon-arrow-down' %}</span>
-            </a>
-            <label for="submenu-{{ child_list_handle }}" class="site-navigation--plus">&plus;</label>
-            <input type="checkbox" id="submenu-{{ child_list_handle }}">
-            <ul class="site-navigation__submenu">
+<nav class="site-navigation" role="navigation">
+  <ul class="site-navigation__menu">
+    {% for link in linklists[section.settings.main_linklist].links %}
+      {%- assign child_list_handle = link.title | handleize -%}
+      {% if menus[child_list_handle].links != blank %}
+        <li class="site-navigation__menu__item{% if link.active %} site-navigation__menu__item--active{% endif %}">
+          <a href="{{ link.url }}" title="{{ link.title }}">
+            {{ link.title }}
+            <span class="site-navigation--caret">{% include 'icon-arrow-down' %}</span>
+          </a>
+          <div class="site-navigation__menu__submenu">
+            <ul class="site-navigation__menu__submenu--group">
               {% for childlink in menus[child_list_handle].links %}
-                <li {% if childlink.active %}class="site-navigation--active"{% endif %}>
+                <li {% if childlink.active %}class="site-navigation__menu__item--active"{% endif %}>
                   <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
                 </li>
               {% endfor %}
             </ul>
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+
+<div class="site-navigation--mobile">
+  <input type="checkbox" id="menu-toggle" class="site-navigation__menu--toggle">
+  <label class="site-navigation--mobile__button" for="menu-toggle">{% include 'icon-hamburger' %}</label>
+  <a href="/cart" class="site-navigation--mobile__button">{% include 'icon-cart' %}</a>
+  <nav class="site-navigation--mobile__nav">
+    <div class="site-navigation--mobile__nav--heading">
+      <h3>{{ 'layout.browse' | t }}</h3>
+      <label class="menu-toggle" for="menu-toggle">{% include 'icon-close' %}</label>
+    </div>
+    {% include 'search-bar' %}
+    <ul>
+      {% for link in linklists[section.settings.main_linklist].links %}
+        {%- assign child_list_handle = link.title | handleize -%}
+          <li>
+            <a href="{{ link.url }}" title="{{ link.title }}" {% if link.active %}class="site-navigation--mobile--active"{% endif %}>
+              {{ link.title }}
+            </a>
+            {% if menus[child_list_handle].links != blank %}
+              <input type="checkbox" id="menu-toggle-{{ child_list_handle }}" class="site-navigation__menu--toggle">
+              <label class="site-navigation--mobile__button" for="menu-toggle-{{ child_list_handle }}">{% include 'icon-plus' %}</label>
+              <ul class="site-navigation__menu__submenu">
+                {% for childlink in menus[child_list_handle].links %}
+                  <li {% if childlink.active %}class="site-navigation__menu__item--active"{% endif %}>
+                    <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </li>
-        {% else %}
-          <li {% if link.active %}class="site-navigation--active"{% endif %}>
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          </li>
-        {% endif %}
       {% endfor %}
     </ul>
-  </div>
-</nav>
+  </nav>
+</div>
 
 {% schema %}
   {

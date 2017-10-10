@@ -28,7 +28,7 @@
     font-size: 14px;
 }
 
-.button:hover {
+.button:hover, .button:focus {
     background: $stTropazButtonHover;
     border-color: $stTropazButtonHover;
 }
@@ -39,7 +39,7 @@
     color: $martinique;
 }
 
-.button--secondary:hover {
+.button--secondary:hover, .button--secondary:focus {
     background: $periwinkleHover;
     border-color: $periwinkleHover;
 }
@@ -50,7 +50,7 @@
     color: $tundora;
 }
 
-.button--grey:hover {
+.button--grey:hover, .button--grey:focus {
     background: $frenchGray;
     border-color: $frenchGray;
     color: $tundora;
