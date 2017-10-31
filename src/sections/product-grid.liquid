@@ -1,9 +1,12 @@
+{%- assign collection = collections[section.settings.collection] -%}
+{%- assign collection_limit = section.settings.products_limit -%}
+
 <div class="product-grid">
    {% if section.settings.title != blank %}
-    <h3 class="product-grid__heading">{{ section.settings.title }}</h3>
+    <h3 class="product-grid__heading"><a href="{{ collection.url }}">{{ section.settings.title }}</a></h3>
+  {% else if collection.title %}
+    <h3 class="product-grid__heading"><a href="{{ collection.url }}">{{ collection.title }}</a></h3>
   {% endif %}
-  {%- assign collection = collections[section.settings.collection] -%}
-  {%- assign collection_limit = section.settings.products_limit -%}
   <div class="grid">
     {% for product in collection.products limit: collection_limit %}
       <div class="product-grid__single grid-cell grid-cell-1of4-1of2-1of1">
