@@ -2,11 +2,10 @@
 {%- assign collection_limit = section.settings.products_limit -%}
 
 <div class="product-grid">
-   {% if section.settings.title != blank %}
-    <h3 class="product-grid__heading"><a href="{{ collection.url }}">{{ section.settings.title }}</a></h3>
-  {% else if collection.title %}
+  <div class="product-grid__header">
     <h3 class="product-grid__heading"><a href="{{ collection.url }}">{{ collection.title }}</a></h3>
-  {% endif %}
+    <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}" class="product-grid__header__more">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
+  </div>
   <div class="grid">
     {% for product in collection.products limit: collection_limit %}
       <div class="product-grid__single grid-cell grid-cell-1of4-1of2-1of1">
