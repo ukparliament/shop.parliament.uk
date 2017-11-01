@@ -1,6 +1,18 @@
 .product-grid {
-    .product-grid__heading {
+    .product-grid__header {
         width: 100%;
+        display: flex;
+        align-items: center;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .product-grid__header__more {
+        display: none;
+        @include breakpoint(small) {
+            display: block;
+        }
+    }
+    .product-grid__heading {
         margin-bottom: $base-spacing-unit-small;
         @include breakpoint(medium) {
             margin-bottom: $base-spacing-unit-medium;
