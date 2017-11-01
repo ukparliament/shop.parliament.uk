@@ -271,7 +271,7 @@
     },
     "footer": {
       "social_platform": "{{ name }} on {{ platform }}",
-      "copyright": "Parliamentary Copyright"
+      "copyright": "UK Parliament Copyright"
     }
   },
   "products": {

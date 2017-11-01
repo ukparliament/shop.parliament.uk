@@ -24,9 +24,9 @@
           <address class="site-footer__address">
             {%- assign address_street = shop.address.street | split: ',' -%}
             {{ shop.name }}<br><br>
-            {{ address_street[0] }},<br>
-            {{ address_street[1] }},<br>
-            {{ shop.address.city }}, {{ shop.address.zip }},<br>
+            {{ address_street[0] }}<br>
+            {{ address_street[1] }}<br>
+            {{ shop.address.city }} {{ shop.address.zip }}<br>
             {{ shop.address.country }}
           </address><br>
           <a href="tel:{{ shop.phone | remove: ' ' }}" class="site-footer__telephone">{{ shop.phone }}</a><br><br>
