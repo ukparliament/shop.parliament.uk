@@ -6,7 +6,6 @@
 // =require ../../node_modules/jquery/dist/jquery.min.js
 
 // =require ../../node_modules/magnify/dist/js/jquery.magnify.js
-// =require ../../node_modules/magnify/dist/js/jquery.magnify-mobile.js
 
 // =require ../../node_modules/accessible-mega-menu/js/jquery-accessibleMegaMenu.js
 

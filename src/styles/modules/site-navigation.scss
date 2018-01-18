@@ -111,6 +111,7 @@
         overflow: auto;
         position: fixed;
         top: 0;
+        left: 0;
         transition: transform 300ms ease;
         transform: translateX(-100%);
         z-index: 2;
