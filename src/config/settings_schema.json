@@ -8,16 +8,6 @@
     "theme_support_email": "mulleyjb@parliament.uk"
   },
   {
-    "name": "GTM Code",
-    "settings": [
-      {
-        "type": "text",
-        "id": "gtm_code",
-        "label": "GTM Code"
-      }
-    ]
-  },
-  {
     "name": "Typography",
     "settings": [
       {
