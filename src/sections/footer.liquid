@@ -2,18 +2,18 @@
   <div class="container">
     <div class="grid">
       <div class="grid-cell grid-cell-1of3">
-        {%- assign footer_top_menu = section.settings.footer_top_menu -%}
-        {% if linklists[footer_top_menu].links.size > 0 %}
+        {%- assign footer_left_menu = section.settings.footer_left_menu -%}
+        {% if linklists[footer_left_menu].links.size > 0 %}
           <ul class="site-footer__linklist">
-            {% for link in linklists[footer_top_menu].links %}
+            {% for link in linklists[footer_left_menu].links %}
               <li><a href="{{ link.url }}">{{ link.title }}</a></li>
             {% endfor %}
           </ul>
         {% endif %}
-        {%- assign footer_bottom_menu = section.settings.footer_bottom_menu -%}
-        {% if linklists[footer_bottom_menu].links.size > 0 %}
+        {%- assign footer_middle_menu = section.settings.footer_middle_menu -%}
+        {% if linklists[footer_middle_menu].links.size > 0 %}
           <ul class="site-footer__linklist">
-            {% for link in linklists[footer_bottom_menu].links %}
+            {% for link in linklists[footer_middle_menu].links %}
               <li><a href="{{ link.url }}">{{ link.title }}</a></li>
             {% endfor %}
           </ul>
@@ -30,7 +30,9 @@
             {{ shop.address.country }}
           </address><br>
           <a href="tel:{{ shop.phone | remove: ' ' }}" class="site-footer__telephone">{{ shop.phone }}</a><br><br>
-          <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+          {% if section.settings.footer_contact_email %}
+            <a href="mailto:{{ section.settings.footer_contact_email }}">{{ section.settings.footer_contact_email }}</a>
+          {% endif %}
         </div>
       </div>
       <div class="grid-cell grid-cell-1of3">
@@ -55,14 +57,14 @@
     "settings": [
       {
         "type": "link_list",
-        "id": "footer_top_menu",
-        "label": "Footer top menu",
+        "id": "footer_left_menu",
+        "label": "Footer left menu",
         "default": "footer"
       },
       {
         "type": "link_list",
-        "id": "footer_bottom_menu",
-        "label": "Footer bottom menu",
+        "id": "footer_middle_menu",
+        "label": "Footer middle menu",
         "default": "footer"
       },
       {
@@ -70,6 +72,11 @@
         "id": "footer_right_menu",
         "label": "Footer right menu",
         "default": "footer"
+      },
+      {
+        "type": "text",
+        "id": "footer_contact_email",
+        "label": "Footer contact email"
       }
     ]
   }
