@@ -30,8 +30,8 @@
             {{ shop.address.country }}
           </address><br>
           <a href="tel:{{ shop.phone | remove: ' ' }}" class="site-footer__telephone">{{ shop.phone }}</a><br><br>
-          {% if settings.footer_contact_email %}
-            <a href="mailto:{{ settings.footer_contact_email }}">{{ settings.footer_contact_email }}</a>
+          {% if section.settings.footer_contact_email %}
+            <a href="mailto:{{ section.settings.footer_contact_email }}">{{ section.settings.footer_contact_email }}</a>
           {% endif %}
         </div>
       </div>
