@@ -61,6 +61,13 @@
 
 <body id="{{ page_title | handle }}" class="sticky-footer template-{{ template.name | handle }}">
 
+  <div class="status--banner theme--caution cookie" id="cookie">
+     <div class="container">
+        <p>Parliament.uk uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>.
+        </p>
+      </div>
+  </div>
+
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {% include 'microsite-masthead' %}
