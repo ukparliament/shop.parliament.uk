@@ -56,10 +56,20 @@
   <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
   <!--[if lt IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
 
+  <script src="{{ 'cookie_disclaimer.js' | asset_url }}" defer="defer"></script>
+
+
   {{ content_for_header }}
 </head>
 
 <body id="{{ page_title | handle }}" class="sticky-footer template-{{ template.name | handle }}">
+
+  <div class="status--banner theme--caution cookie" id="cookie">
+     <div class="container">
+        <p>shop.parliament.uk uses cookies to make the site simpler. <a href="https://beta.parliament.uk/meta/cookie-policy">Find out more about cookies</a>.
+        </p>
+      </div>
+  </div>
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
