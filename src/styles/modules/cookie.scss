@@ -1,27 +1,19 @@
 .status--banner {
-    font-size: 14px;
+    font-size: 16px;
     border-bottom-width: 2px;
     border-bottom-style: solid;
     padding: 2px 0;
-    padding-top: 2px;
-    padding-right: 0px;
-    padding-bottom: 2px;
-    padding-left: 0px;
 }
 
 
 .status--banner {
     color: #4D4D4D;
     border-color: #FBCF20;
-    border-top-color: rgb(251, 207, 32);
-    border-right-color: rgb(251, 207, 32);
-    border-bottom-color: rgb(251, 207, 32);
-    border-left-color: rgb(251, 207, 32);
     background-color: #FEF3C7;
     line-height: 0.5;
 }
 
-.has-js .cookie {
+#cookie {
     display: none;
 }
 
