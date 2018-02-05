@@ -13,6 +13,7 @@ window.theme = window.theme || {};
 
 /*================ Cookies ================*/
 // =require cookies/cookie_disclaimer.js
+// =require cookies/cookie_policy.js
 
 /*================ Sections ================*/
 // =require sections/product.js
