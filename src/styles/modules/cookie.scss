@@ -10,14 +10,14 @@
     color: #4D4D4D;
     border-color: #FBCF20;
     background-color: #FEF3C7;
-    line-height: 0.5;
-}
-
-#cookie {
-    display: none;
+    line-height: 1;
 }
 
 .block.theme--caution a:link, .hero.theme--caution a:link, .hint.theme--caution a:link, .status--banner.theme--caution a:link, .status--highlight.theme--caution a:link {
     color: #373151;
     text-decoration: underline;
+}
+
+.js #cookie { 
+    display: none; 
 }

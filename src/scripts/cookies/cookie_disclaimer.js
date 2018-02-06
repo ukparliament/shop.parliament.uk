@@ -37,4 +37,3 @@ if (!cookieName && cookieContent) {
    cookieContent.style.display = 'block';
    setCookie('UK_Parliament__seen_cookie_message', 'yes', 28);
 }
-
