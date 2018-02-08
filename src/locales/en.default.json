@@ -18,6 +18,10 @@
         "bulletpoints_html": "<li>try typing the page address again</li> <li>go back to the <a href=\"/\">Shop homepage</a></li>"
       }
     },
+    "cookie": {
+        "banner_text": "shop.parliament.uk uses cookies to make the site simpler.",
+        "banner_anchor_text": "Find out more about cookies"
+      },
     "password_page": {
       "opening_soon": "Opening Soon",
       "spread_the_word": "Spread the word",
