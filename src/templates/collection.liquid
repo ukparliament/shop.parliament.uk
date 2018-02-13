@@ -1,3 +1,28 @@
+{% assign url_parts = canonical_url | split: '/' %}
+{% assign selected_collection = url_parts[4] %}
+
+{% if url_parts[5] == null %}
+   {% assign selected_tags = null %}
+{% else %}
+   {% assign selected_tags = url_parts.last | split: '+' %}
+{% endif %}
+
+{% assign products_in_selected_tags = '' %}
+{% for product in collections[selected_collection].products %}
+   {% for product_tag in product.tags %}
+	   {% assign lowercase_product_tag = product_tag|downcase %}
+	   {% unless selected_tags contains lowercase_product_tag  %}
+		  {% continue %}
+	   {% endunless %}
+
+	   {% assign products_in_selected_tags = product.id | append:"," | append:products_in_selected_tags %}
+
+	   {% break %}
+   {% endfor %}
+{% endfor %}
+
+{% assign test = products_in_selected_tags | split:"," %}
+{{test|json}}
 {% paginate collection.products by 12 %}
   <div class="grid grid-reverse-on-mobile">
     <div class="grid-cell grid-cell-1of4-1of1">
@@ -21,66 +46,74 @@
         {% include 'collection-sorting' %}
       </div>
 
+
       <div class="product-grid grid">
-          {% for product in collection.products %}
+          {% for product in collections[selected_collection].products %}
+		    {% for product_tag in product.tags %}
+			   {% assign lowercase_product_tag = product_tag|downcase %}
+			   {% unless selected_tags contains lowercase_product_tag  %}
+                  {% continue %}
+			   {% endunless %}
 
-            <div class="product-grid__single grid-cell grid-cell-1of3-1of2-1of1">
-              {% include 'product.image-frame', product: product %}
-              {% assign bestseller = false %}
-              {% assign on_sale = false %}
-              {% assign new_product = false %}
-              {% for c in product.collections %}
-                {% if c.handle == "bestsellers" %}
-                  {% assign bestseller = true %}
-                {% endif %}
-                {% if c.handle == "new" %}
-                  {% assign new_product = true %}
-                {% endif %}
-              {% endfor %}
-              {% if product.compare_at_price > product.price %}
-                {% assign on_sale = true %}
-              {% endif %}
+				<div class="product-grid__single grid-cell grid-cell-1of3-1of2-1of1">
+				  {% include 'product.image-frame', product: product %}
+				  {% assign bestseller = false %}
+				  {% assign on_sale = false %}
+				  {% assign new_product = false %}
+				  {% for c in product.collections %}
+					{% if c.handle == "bestsellers" %}
+					  {% assign bestseller = true %}
+					{% endif %}
+					{% if c.handle == "new" %}
+					  {% assign new_product = true %}
+					{% endif %}
+				  {% endfor %}
+				  {% if product.compare_at_price > product.price %}
+					{% assign on_sale = true %}
+				  {% endif %}
 
-              <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
-              <p class="product-grid__price">
-                {% if on_sale == true %}
-                  <span class="badge">{{ 'products.product.on_sale' | t }}</span>
-                {% elsif bestseller == true %}
-                  <span class="badge">{{ 'products.product.bestseller' | t }}</span>
-                {% elsif new_product == true %}
-                  <span class="badge">{{ 'products.product.new' | t }}</span>
-                {% endif %}
+				  <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
+				  <p class="product-grid__price">
+					{% if on_sale == true %}
+					  <span class="badge">{{ 'products.product.on_sale' | t }}</span>
+					{% elsif bestseller == true %}
+					  <span class="badge">{{ 'products.product.bestseller' | t }}</span>
+					{% elsif new_product == true %}
+					  <span class="badge">{{ 'products.product.new' | t }}</span>
+					{% endif %}
 
-                {% if product.compare_at_price > product.price %}
+					{% if product.compare_at_price > product.price %}
 
-                  {% if product.price_varies %}
-                    {%- assign sale_price = product.price | money -%}
-                    {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-                  {% else %}
-                    {{ product.price | money }}
-                  {% endif %}
+					  {% if product.price_varies %}
+						{%- assign sale_price = product.price | money -%}
+						{{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+					  {% else %}
+						{{ product.price | money }}
+					  {% endif %}
 
-                {% else %}
+					{% else %}
 
-                  {% if product.price_varies %}
-                    {%- assign price = product.price | money -%}
-                    {{ 'products.product.from_text_html' | t: price: price }}
-                  {% else %}
-                    {{ product.price | money }}
-                  {% endif %}
+					  {% if product.price_varies %}
+						{%- assign price = product.price | money -%}
+						{{ 'products.product.from_text_html' | t: price: price }}
+					  {% else %}
+						{{ product.price | money }}
+					  {% endif %}
 
-                {% endif %}
+					{% endif %}
 
-                {% if product.compare_at_price > product.price %}
-                  <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-                  <s>{{ product.compare_at_price | money }}</s>
-                {% endif %}
+					{% if product.compare_at_price > product.price %}
+					  <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+					  <s>{{ product.compare_at_price | money }}</s>
+					{% endif %}
 
-                {% unless product.available %}
-                  {{ 'products.product.sold_out' | t }}
-                {% endunless %}
-              </p>
-            </div>
+					{% unless product.available %}
+					  {{ 'products.product.sold_out' | t }}
+					{% endunless %}
+				  </p>
+				</div>
+				{% break %}
+				{% endfor %}
 
         {% else %}
           {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}

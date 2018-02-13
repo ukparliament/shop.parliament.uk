@@ -1,4 +1,5 @@
 {% if collection.all_tags.size > 0 %}
+
   <ul class="collection__filters">
     <span class="collection__filters--heading">{{ 'collections.title' | t }}</span>
       {% if current_tags == blank %}
@@ -10,11 +11,11 @@
       {% unless tag contains 'price-' or tag contains 'vendor-' %}
         {% if current_tags contains tag %}
           <li class="collection__filters--active">
-            {{ tag | link_to_tag: tag }}
+            {{ tag | link_to_remove_tag: tag }}
           </li>
         {% else %}
           <li>
-            {{ tag | link_to_tag: tag }}
+            {{ tag | link_to_add_tag: tag }}
           </li>
         {% endif %}
       {% endunless %}
@@ -26,22 +27,22 @@
         {% if current_tags contains 'price-under-5' %}
           <li class="collection__filters--active">{{ 'Under £5' | link_to_remove_tag: 'price-under-5' }}</li>
         {% else %}
-          <li>{{ 'Under £5' | link_to_tag: 'price-under-5' }}</li>
+          <li>{{ 'Under £5' | link_to_add_tag: 'price-under-5' }}</li>
         {% endif %}
         {% if current_tags contains 'price-5-25' %}
           <li class="collection__filters--active">{{ '£5-£25' | link_to_remove_tag: 'price-5-25' }}</li>
         {% else %}
-          <li>{{ '£5-£25' | link_to_tag: 'price-5-25' }}</li>
+          <li>{{ '£5-£25' | link_to_add_tag: 'price-5-25' }}</li>
         {% endif %}
         {% if current_tags contains 'price-25-50' %}
           <li class="collection__filters--active">{{ '£25-£50' | link_to_remove_tag: 'price-25-50' }}</li>
         {% else %}
-          <li>{{ '£25-£50' | link_to_tag: 'price-25-50' }}</li>
+          <li>{{ '£25-£50' | link_to_add_tag: 'price-25-50' }}</li>
         {% endif %}
         {% if current_tags contains 'price-over-50' %}
           <li class="collection__filters--active">{{ 'Over £50' | link_to_remove_tag: 'price-over-50' }}</li>
         {% else %}
-          <li>{{ 'Over £50' | link_to_tag: 'price-over-50' }}</li>
+          <li>{{ 'Over £50' | link_to_add_tag: 'price-over-50' }}</li>
         {% endif %}
     </ul>
   {% endif %}

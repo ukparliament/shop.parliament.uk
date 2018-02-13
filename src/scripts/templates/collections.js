@@ -6,6 +6,7 @@ theme.collectionViews = function () {
   if ($changeView.length) {
 
     var viewParameter = getParameterByName('view');
+
     if(viewParameter) {
       $('[data-view=' + viewParameter + ']').addClass('active');
     } else {
