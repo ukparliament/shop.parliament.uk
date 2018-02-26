@@ -22,7 +22,7 @@ window.theme = window.theme || {};
 /*================ Accessibility ================*/
 // =require accessibility/navigation.js
 
-/*================ Accessibility ================*/
+/*================ Monitoring ================*/
 // =require monitoring/hotjar.js
 
 
