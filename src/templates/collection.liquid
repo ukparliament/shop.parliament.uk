@@ -1,28 +1,57 @@
 {% assign url_parts = canonical_url | split: '/' %}
 {% assign selected_collection = url_parts[4] %}
+{% assign sort_by = null %}
+
+{% if content_for_header contains 'sort_by=' %}
+  {% assign sort_by = content_for_header | split: 'sort_by=' | last | split: '\' | first %}
+{% endif %}
+
+{% if sort_by contains 'descending' %}
+  {% assign is_desc = 1 %}
+{% else %}
+  {% assign is_desc = 0 %}
+{% endif %}
+
+{% if sort_by != null %}
+   {% assign sort_by = sort_by | remove: 'ascending' | remove: 'descending' | remove: '-' %}
+{% endif %}
+
+{% assign pri = null %}
+{% assign added = null %}
 
 {% if url_parts[5] == null %}
    {% assign selected_tags = null %}
+   {% assign product_ids = null %}
 {% else %}
+
    {% assign selected_tags = url_parts.last | split: '+' %}
+   {% assign products_in_selected_tags = '' %}
+   {% for product in collections[selected_collection].products %}
+	   {% for product_tag in product.tags %}
+           {% if product_tag contains 'price-' %}
+		      {% assign pri = 1 %}
+		   {% else %}
+			  {% assign added = 1 %}
+           {% endif %}
+
+		   {% assign lowercase_product_tag = product_tag|downcase %}
+		   {% unless selected_tags contains lowercase_product_tag  %}
+			   {% continue %}
+		   {% endunless %}
+
+           {% if pri == 1 and added == 1 %}
+		      {% assign pri = null %}
+		      {% assign added = null %}
+		      {% assign products_in_selected_tags = product.id | append:"," | append:products_in_selected_tags %}
+		      {% break %}
+		   {% endif %}
+	   {% endfor %}
+   {% endfor %}
+
+   {% assign product_ids = products_in_selected_tags | split:"," %}
+
 {% endif %}
 
-{% assign products_in_selected_tags = '' %}
-{% for product in collections[selected_collection].products %}
-   {% for product_tag in product.tags %}
-	   {% assign lowercase_product_tag = product_tag|downcase %}
-	   {% unless selected_tags contains lowercase_product_tag  %}
-		  {% continue %}
-	   {% endunless %}
-
-	   {% assign products_in_selected_tags = product.id | append:"," | append:products_in_selected_tags %}
-
-	   {% break %}
-   {% endfor %}
-{% endfor %}
-
-{% assign test = products_in_selected_tags | split:"," %}
-{{test|json}}
 {% paginate collection.products by 12 %}
   <div class="grid grid-reverse-on-mobile">
     <div class="grid-cell grid-cell-1of4-1of1">
@@ -46,14 +75,22 @@
         {% include 'collection-sorting' %}
       </div>
 
-
       <div class="product-grid grid">
-          {% for product in collections[selected_collection].products %}
-		    {% for product_tag in product.tags %}
-			   {% assign lowercase_product_tag = product_tag|downcase %}
-			   {% unless selected_tags contains lowercase_product_tag  %}
-                  {% continue %}
-			   {% endunless %}
+	      {% assign sort_by = 'price' %}
+	      {% assign col = collections[selected_collection].products | sort: sort_by %}
+
+          {% if is_desc == 1 %}
+             {% assign col = col | reverse %}
+		  {% endif %}
+
+          {% for product in col %}
+
+			   {% if product_ids != null %}
+			      {% assign p_id = product.id|downcase %}
+			      {% unless product_ids contains p_id  %}
+                     {% continue %}
+			      {% endunless %}
+               {% endif %}
 
 				<div class="product-grid__single grid-cell grid-cell-1of3-1of2-1of1">
 				  {% include 'product.image-frame', product: product %}
@@ -112,8 +149,6 @@
 					{% endunless %}
 				  </p>
 				</div>
-				{% break %}
-				{% endfor %}
 
         {% else %}
           {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}

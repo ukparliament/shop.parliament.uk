@@ -66,4 +66,16 @@
         {% endif %}
     </ul>
   {% endif %}
+
+    <ul class="collection__filters">
+      <span class="collection__filters--heading">Houses</span>
+        {% if current_tags contains 'vendor-house-of-lords' %}
+          <li class='collection__filters--active'>{{ 'Houses of Parliament' | link_to_remove_tag: 'vendor-uk-parliament' }}</li>
+		{% else %}
+          <li>{{ 'Houses of Parliament' | link_to_tag: 'vendor-uk-parliament' }}</li>
+		{% endif %}
+          <li>{{ 'House of Commons' | link_to_tag: 'vendor-house-of-commons' }}</li>
+          <li>{{ 'House of Lords' | link_to_tag: 'vendor-house-of-lords' }}</li>
+    </ul>
+
 {% endif %}
