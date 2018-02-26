@@ -22,6 +22,10 @@ window.theme = window.theme || {};
 /*================ Accessibility ================*/
 // =require accessibility/navigation.js
 
+/*================ Accessibility ================*/
+// =require monitoring/hotjar.js
+
+
 $(document).ready(function() {
   var sections = new slate.Sections();
   sections.register('product', theme.Product);
