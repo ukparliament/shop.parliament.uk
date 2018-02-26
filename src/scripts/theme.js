@@ -23,7 +23,7 @@ window.theme = window.theme || {};
 // =require accessibility/navigation.js
 
 /*================ Monitoring ================*/
-// =require monitoring/hotjar.js
+// =require monitoring/hotjar.js.liquid
 
 
 $(document).ready(function() {
