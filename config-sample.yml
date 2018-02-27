@@ -10,3 +10,10 @@
 # For more information on this config file:
 #   Configuration variables | http://shopify.github.io/themekit/configuration/
 #   Ignore patterns | http://shopify.github.io/themekit/ignores/
+
+development:
+  password:
+  theme_id:
+  store:
+  ignore_files:
+    - "config/settings_data.json"

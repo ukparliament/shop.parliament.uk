@@ -5,6 +5,7 @@
   "dependencies": {
     "@shopify/slate": "^0.13.0",
     "@shopify/slate-tools": "^0.13.0",
+    "@shopify/themekit": "^0.6.12",
     "accessible-mega-menu": "git+https://github.com/adobe-accessibility/Accessible-Mega-Menu.git",
     "jquery": "^2.2.4",
     "magnify": "^2.1.0",
