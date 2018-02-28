@@ -11,16 +11,9 @@
 #   Configuration variables | http://shopify.github.io/themekit/configuration/
 #   Ignore patterns | http://shopify.github.io/themekit/ignores/
 
----
-
 development:
   password:
   theme_id:
-  store: your-shop.myshopify.com
+  store:
   ignore_files:
-
-production:
-  password:
-  theme_id: "live"
-  store: your-shop.myshopify.com
-  ignore_files:
+    - "config/settings_data.json"

@@ -1,0 +1,29 @@
+pipelines:
+  parliament.uk-shop:
+    group: Third-Party-Applications
+    label_template: "${COUNT}"
+    materials:
+      parliament.uk-shop-git:
+        git: https://github.com/ukparliament/shop.parliament.uk.git
+        branch: development
+        auto_update: true
+    stages:
+      - build:
+          jobs:
+            build:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: npm
+                    arguments:
+                      - install
+                - exec:
+                    run_if: passed
+                    command: make
+                    arguments:
+                      - deploy
+
+environments:
+  Web.DEVCI:
+    pipelines:
+      - parliament.uk-shop
