@@ -11,10 +11,10 @@
     "name": "hjid",
     "settings": [
       {
-		"id": "hjid",
-		"label": "Hotjar id",
-		"default": "771371",
-		"type": "text"
+        "id": "hjid",
+        "label": "Hotjar id",
+        "default": "771371",
+        "type": "text"
       }
 	]
   },
