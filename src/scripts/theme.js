@@ -23,8 +23,7 @@ window.theme = window.theme || {};
 // =require accessibility/navigation.js
 
 /*================ Monitoring ================*/
-// =require monitoring/hotjar.js.liquid
-
+// =require monitoring/hotjar.js
 
 $(document).ready(function() {
   var sections = new slate.Sections();

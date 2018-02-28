@@ -9,13 +9,13 @@
   },
   {
     "name": "hjid",
-	"settings": [
-	{
+    "settings": [
+      {
 		"id": "hjid",
 		"label": "Hotjar id",
 		"default": "771371",
 		"type": "text"
-	  }
+      }
 	]
   },
   {
