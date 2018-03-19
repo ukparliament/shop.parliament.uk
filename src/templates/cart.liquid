@@ -84,7 +84,7 @@
           <div class="cart--notes--form">
             {% if settings.cart_notes_enable %}
               <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-              <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+              <textarea name="note" id="CartSpecialInstructions" maxlength="300">{{ cart.note }}</textarea>
             {% endif %}
           </div>
         </div>
