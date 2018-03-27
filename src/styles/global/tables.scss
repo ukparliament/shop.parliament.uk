@@ -1,4 +1,4 @@
-// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+// Variables inherited from 'settings/spacing.scss' and 'settings/colours.scss'
 
 .rte__table-wrapper table {
   width: 100%;
@@ -38,4 +38,8 @@
     margin-bottom: $base-spacing-unit-small;
     text-align: left;
   }
+
+.page .rte td:first-child {
+    width: 40% !important;
+    word-wrap: break-word;
 }
