@@ -8,6 +8,17 @@
     "theme_support_email": "mulleyjb@parliament.uk"
   },
   {
+    "name": "hjid",
+    "settings": [
+      {
+        "id": "hjid",
+        "label": "Hotjar id",
+        "default": "771371",
+        "type": "text"
+      }
+    ]
+  },
+  {
     "name": "Typography",
     "settings": [
       {

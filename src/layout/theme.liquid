@@ -57,13 +57,18 @@
   <!--[if lt IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
 
   {{ content_for_header }}
+
+  <script>
+    var hjid_value = {{ settings.hjid | json }};
+  </script>
+
 </head>
 
 <body id="{{ page_title | handle }}" class="sticky-footer template-{{ template.name | handle }}">
 
   <div class="status--banner theme--caution cookie" id="cookie">
      <div class="container">
-        <p>{{ 'general.cookie.banner_text' | t }} <a href="/pages/cookies-policy">{{ 'general.cookie.banner_anchor_text' | t }}</a>.
+        <p>{{ 'general.cookie.banner_text' | t }} <a href="/pages/cookies-policy">{{ 'general.cookie.banner_anchor_text' | t }}</a>
         </p>
       </div>
   </div>

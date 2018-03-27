@@ -1,11 +1,11 @@
 pipelines:
-  shop.parliament.uk:
+  parliament.uk-shop:
     group: Third-Party-Applications
     label_template: "${COUNT}"
     materials:
-      shop.parliament.uk.git:
+      parliament.uk-shop-git:
         git: https://github.com/ukparliament/shop.parliament.uk.git
-        branch: development
+        branch: master
         auto_update: true
     stages:
       - build:
@@ -24,6 +24,6 @@ pipelines:
                       - deploy
 
 environments:
-  Web.DEVCI:
+  Web.LIVE:
     pipelines:
-      - shop.parliament.uk
+      - parliament.uk-shop

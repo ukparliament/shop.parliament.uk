@@ -1,4 +1,41 @@
-.page .rte td:first-child {
-    width: 40% !important;
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
+.rte__table-wrapper table {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit-small;
+  background: $grey-4;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  table-layout: initial;
+  th, td {
+    padding: 12px;
+  }
+  td {
     word-wrap: break-word;
+  }
+  th, tr:first-child > td {
+      background: $grey-1;
+      color: $white;
+      &:nth-child(even) {
+        border-left: 1px solid $grey-5;
+        border-right: 1px solid $grey-5;
+      }
+  }
+  thead th, tfoot td {
+    text-align: left;
+  }
+  tbody tr:nth-child(even) {
+    background: $grey-3;
+  }
+  tbody tr td:nth-child(even) {
+    border-left: 1px solid $grey-5;
+    border-right: 1px solid $grey-5;
+  }
+  caption {
+    margin-top: 0;
+    margin-bottom: $base-spacing-unit-small;
+    text-align: left;
+  }
 }
