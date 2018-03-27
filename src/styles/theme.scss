@@ -9,6 +9,8 @@
 /*================ SETTINGS ================*/
 @import url('settings/variables.scss.liquid');
 @import url('settings/colours.scss');
+@import url('settings/grid-settings.scss');
+@import url('settings/spacing.scss');
 
 /*================ VENDOR ==================*/
 @import url('../../node_modules/normalize.css/normalize.css');
@@ -27,6 +29,7 @@
 @import url('global/links-buttons.scss');
 @import url('global/forms.scss');
 @import url('global/blank-states.scss');
+@import url('global/tables.scss');
 
 /*================ MODULES ================*/
 @import url('modules/badges.scss');
