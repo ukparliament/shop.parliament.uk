@@ -11,6 +11,9 @@ window.theme = window.theme || {};
 // =require slate/images.js
 // =require slate/variants.js
 
+/*================ Cookies ================*/
+// =require cookies/cookie_disclaimer.js
+
 /*================ Sections ================*/
 // =require sections/product.js
 
@@ -21,6 +24,9 @@ window.theme = window.theme || {};
 
 /*================ Accessibility ================*/
 // =require accessibility/navigation.js
+
+/*================ Monitoring ================*/
+// =require monitoring/hotjar.js
 
 $(document).ready(function() {
   var sections = new slate.Sections();
