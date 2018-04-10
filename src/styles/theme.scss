@@ -7,11 +7,11 @@
 @import url('tools/mixins.scss');
 
 /*================ SETTINGS ================*/
-@import url('settings/variables.scss.liquid');
+@import url('settings/breakpoints.scss');
 @import url('settings/colours.scss');
 @import url('settings/spacing.scss');
 @import url('settings/typography.scss');
-@import url('settings/breakpoints.scss');
+@import url('settings/variables.scss.liquid');
 
 /*================ VENDOR ==================*/
 @import url('../../node_modules/normalize.css/normalize.css');
