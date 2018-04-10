@@ -1,5 +1,5 @@
 .status--banner {
-  font-size: 16px;
+  @include fontsize(16);
   border-bottom-width: 2px;
   border-bottom-style: solid;
   padding: 2px 0;

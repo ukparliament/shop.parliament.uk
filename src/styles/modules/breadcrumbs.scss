@@ -1,6 +1,17 @@
 .breadcrumbs {
   margin-top: $base-spacing-unit-tiny;
+  @include fontsize(16);
+  a {
+    color: $tundora;
+  }
   span[aria-hidden] {
       margin: 0 $base-spacing-unit-tiny;
+  }
+}
+
+.breadcrumbs + .sticky-footer-content .page-heading {
+  margin-top: $base-spacing-unit-tiny;
+  @include breakpoint(medium) {
+    margin-top: 0;
   }
 }

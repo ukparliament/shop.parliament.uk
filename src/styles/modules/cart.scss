@@ -13,17 +13,16 @@
     border: 1px solid $frenchGray;
     border-left: 0;
     border-right: 0;
+    text-align: left;
+    font-weight: 400;
+  }
+  thead th:first-of-type {
+    text-align: center;
   }
   tbody tr td {
     padding: $base-spacing-unit-small 0 0;
     @include breakpoint(small) {
       padding: $base-spacing-unit-extra-large $base-spacing-unit-medium 0 0;
-    }
-  }
-  .cart--table__product {
-    .product--name {
-      display: block;
-      margin-bottom: $base-spacing-unit-tiny;
     }
   }
   input[type=number] {
@@ -32,6 +31,31 @@
     border-radius: 4px;
     padding: $base-spacing-unit $base-spacing-unit-tiny;
     width: $base-spacing-unit * 10;
+    text-align: right;
+    @include breakpoint(medium) {
+      text-align: left;
+    }
+  }
+  .cart--table__product {
+    text-align: left;
+    .product--name {
+      display: block;
+      margin-bottom: $base-spacing-unit-tiny;
+      color: $stTropaz;
+      font-weight: 500;
+      &:hover, &:focus {
+        color: $stTropazHover;
+      }
+    }
+    .product--price {
+      font-weight: 500;
+      @include breakpoint(medium) {
+        font-weight: 400;
+      }
+    }
+    .product--image {
+      text-align: center;
+    }
   }
 }
 
@@ -60,15 +84,22 @@
     }
   }
   .cart--total {
+    @include breakpoint(small) {
+      text-align: right;
+    }
     p:first-child {
       margin-top: 0;
     }
     .cart--total__shipping {
       margin-bottom: $base-spacing-unit-medium;
+      @include fontsize(16);
+      color: $doveGray;
+      line-height: 1;
     }
     .cart--total--back {
       margin-top: $base-spacing-unit-medium;
       display: block;
+      color: $tundora;
       &:hover, &:focus {
         color: $black;
       }

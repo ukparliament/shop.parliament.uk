@@ -30,6 +30,7 @@
   input[type=search] {
     padding: $base-spacing-unit-tiny;
     @include breakpoint(medium) {
+      @include fontsize(22);
       padding: $base-spacing-unit-small $base-spacing-unit-medium;
     }
   }

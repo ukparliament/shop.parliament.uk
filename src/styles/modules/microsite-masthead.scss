@@ -1,7 +1,7 @@
 .microsite-masthead {
   background: $martinique;
   padding: $base-spacing-unit 0;
-  font-size: 14px;
+  @include fontsize(14);
   a {
     color: $alabaster;
     text-decoration: underline;
