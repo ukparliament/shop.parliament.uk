@@ -1,27 +1,27 @@
 .list-collections {
-    .list-collections__collection {
-        .grid-cell-borders {
-            border-bottom: 1px solid $frenchGray;
-            padding-bottom: $base-spacing-unit-medium;
-        }
-        .list-collections__collection__header {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-        }
+  .list-collections__collection {
+    .grid-cell-borders {
+      border-bottom: 1px solid $frenchGray;
+      padding-bottom: $base-spacing-unit-medium;
     }
-    .list-collections__collection:last-of-type {
-        .grid-cell-borders {
-            border: 0;
-            padding-bottom: 0;
-        }
+    .list-collections__collection__header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-flow: row nowrap;
+      justify-content: space-between;
     }
-    .list-collections__collection__header__more {
-        display: none;
-        @include breakpoint(small) {
-            display: block;
-        }
+  }
+  .list-collections__collection:last-of-type {
+    .grid-cell-borders {
+      border: 0;
+      padding-bottom: 0;
     }
+  }
+  .list-collections__collection__header__more {
+    display: none;
+    @include breakpoint(small) {
+      display: block;
+    }
+  }
 }

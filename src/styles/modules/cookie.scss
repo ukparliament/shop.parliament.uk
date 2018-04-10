@@ -1,23 +1,23 @@
 .status--banner {
-    font-size: 16px;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    padding: 2px 0;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  padding: 2px 0;
 }
 
 
 .status--banner {
-    color: #4D4D4D;
-    border-color: #FBCF20;
-    background-color: #FEF3C7;
-    line-height: 1;
+  color: #4D4D4D;
+  border-color: #FBCF20;
+  background-color: #FEF3C7;
+  line-height: 1;
 }
 
 .block.theme--caution a:link, .hero.theme--caution a:link, .hint.theme--caution a:link, .status--banner.theme--caution a:link, .status--highlight.theme--caution a:link {
-    color: #373151;
-    text-decoration: underline;
+  color: #373151;
+  text-decoration: underline;
 }
 
-.js #cookie { 
-    display: none; 
+.js #cookie {
+  display: none;
 }

@@ -1,52 +1,52 @@
 .product-grid {
-    .product-grid__header {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+  .product-grid__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .product-grid__header__more {
+    display: none;
+    @include breakpoint(small) {
+      display: block;
     }
-    .product-grid__header__more {
-        display: none;
-        @include breakpoint(small) {
-            display: block;
-        }
+  }
+  .product-grid__heading {
+    margin-bottom: $base-spacing-unit-small;
+    @include breakpoint(medium) {
+      margin-bottom: $base-spacing-unit-medium;
     }
-    .product-grid__heading {
-        margin-bottom: $base-spacing-unit-small;
-        @include breakpoint(medium) {
-            margin-bottom: $base-spacing-unit-medium;
-        }
+  }
+  .product-grid__single.grid-cell-1of1 {
+    display: block;
+    width: 100%;
+    @include breakpoint(small) {
+      display: flex;
+      align-items: center;
     }
-    .product-grid__single.grid-cell-1of1 {
-        display: block;
-        width: 100%;
-        @include breakpoint(small) {
-            display: flex;
-            align-items: center;
+    .product-grid__description {
+      @include breakpoint(small) {
+        margin: 0 0 0 $base-spacing-unit-medium;
+        width: 50%;
+        a {
+          margin-top: 0;
         }
-        .product-grid__description {
-            @include breakpoint(small) {
-                margin: 0 0 0 $base-spacing-unit-medium;
-                width: 50%;
-                a {
-                    margin-top: 0;
-                }
-            }
-        }
+      }
     }
-    .product-grid__single {
-        .product-grid__price {
-            display: block;
-            margin: 0;
-            padding: 0;
-        }
-        .product-grid__price ~ p {
-            margin-top: $base-spacing-unit;
-        }
-        .product-grid__title {
-            display: block;
-            margin-top: $base-spacing-unit;
-        }
+  }
+  .product-grid__single {
+    .product-grid__price {
+      display: block;
+      margin: 0;
+      padding: 0;
     }
+    .product-grid__price ~ p {
+      margin-top: $base-spacing-unit;
+    }
+    .product-grid__title {
+      display: block;
+      margin-top: $base-spacing-unit;
+    }
+  }
 }
