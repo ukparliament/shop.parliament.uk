@@ -130,30 +130,6 @@ h6 {
   }
 }
 
-/* Tiles */
-.tiles {
-  .tile--heading {
-    font-weight: 500;
-    color: $white;
-  }
-
-  .grid-cell-1of1 .tile--heading {
-    color: $martinique;
-    @include breakpoint(tiles) {
-      font-size: 26px;
-      line-height: 1.154; // 30px
-    }
-  }
-  a {
-    text-decoration: none;
-    &:hover, &:focus {
-      .tile--heading {
-       text-decoration: underline;
-     }
-   }
- }
-}
-
 /* Product grid */
 .product-grid {
   .product-grid__title {
