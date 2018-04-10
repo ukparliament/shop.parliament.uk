@@ -24,19 +24,19 @@
 
 .search-bar__large {
   margin-bottom: $base-spacing-unit-extra-large;
-  @include breakpoint(medium) {
+  @include media($medium) {
     margin-bottom: $base-spacing-unit-extra-extra-extra-large;
   }
   input[type=search] {
     padding: $base-spacing-unit-tiny;
-    @include breakpoint(medium) {
+    @include media($medium) {
       @include fontsize(22);
       padding: $base-spacing-unit-small $base-spacing-unit-medium;
     }
   }
   .button {
     padding: 0 $base-spacing-unit-tiny;
-    @include breakpoint(medium) {
+    @include media($medium) {
       padding: $base-spacing-unit-small $base-spacing-unit-medium;
     }
     svg {

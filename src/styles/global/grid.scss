@@ -50,55 +50,55 @@
   .grid-cell-1of4-1of2-1of1 {
     flex: 0 0 auto;
     width: 100%;
-    @include breakpoint(xsmall) {
+    @include media($xsmall) {
       width: 50%;
     }
-    @include breakpoint(small) {
+    @include media($small) {
       width: 25%;
     }
   }
   .grid-cell-1of3-1of2-1of1 {
     flex: 0 0 auto;
     width: 100%;
-    @include breakpoint(xsmall) {
+    @include media($xsmall) {
       width: 50%;
     }
-    @include breakpoint(small) {
+    @include media($small) {
       width: 33.3%;
     }
   }
   .grid-cell-3of4-1of1 {
     flex: 0 0 auto;
     width: 100%;
-    @include breakpoint(small) {
+    @include media($small) {
       width: 75%;
     }
   }
   .grid-cell-1of4-1of1 {
     flex: 0 0 auto;
     width: 100%;
-    @include breakpoint(small) {
+    @include media($small) {
       width: 25%;
     }
   }
   .grid-cell-1of3-1of1 {
     flex: 0 0 auto;
     width: 100%;
-    @include breakpoint(xsmall) {
+    @include media($xsmall) {
       width: 33.3%;
     }
   }
   .grid-cell-1of2-1of1 {
     flex: 0 0 auto;
     width: 100%;
-    @include breakpoint(xsmall) {
+    @include media($xsmall) {
       width: 50%;
     }
   }
   // Hide on mobile
   .grid-cell-hide-on-mobile {
     display: none;
-    @include breakpoint(small) {
+    @include media($small) {
       display: block;
     }
   }
@@ -106,7 +106,7 @@
 
 .grid-reverse-on-mobile {
   flex-direction: column-reverse;
-  @include breakpoint(small) {
+  @include media($small) {
     flex-direction: row;
   }
 }

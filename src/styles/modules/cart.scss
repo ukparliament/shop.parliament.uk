@@ -4,7 +4,7 @@
   width: 100%;
   margin-bottom: $base-spacing-unit-large;
   padding-bottom: $base-spacing-unit-small;
-  @include breakpoint(medium) {
+  @include media($medium) {
     margin-bottom: $base-spacing-unit-extra-large;
     padding-bottom: $base-spacing-unit-extra-large;
   }
@@ -21,7 +21,7 @@
   }
   tbody tr td {
     padding: $base-spacing-unit-small 0 0;
-    @include breakpoint(small) {
+    @include media($small) {
       padding: $base-spacing-unit-extra-large $base-spacing-unit-medium 0 0;
     }
   }
@@ -32,7 +32,7 @@
     padding: $base-spacing-unit $base-spacing-unit-tiny;
     width: $base-spacing-unit * 10;
     text-align: right;
-    @include breakpoint(medium) {
+    @include media($medium) {
       text-align: left;
     }
   }
@@ -49,7 +49,7 @@
     }
     .product--price {
       font-weight: 500;
-      @include breakpoint(medium) {
+      @include media($medium) {
         font-weight: 400;
       }
     }
@@ -66,7 +66,7 @@
   .cart--notes {
     .cart--notes--form {
       padding: $base-spacing-unit-tiny;
-      @include breakpoint(small) {
+      @include media($small) {
         padding: $base-spacing-unit-small;
       }
       background: $grey-4;
@@ -84,7 +84,7 @@
     }
   }
   .cart--total {
-    @include breakpoint(small) {
+    @include media($small) {
       text-align: right;
     }
     p:first-child {

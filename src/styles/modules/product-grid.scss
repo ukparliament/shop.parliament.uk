@@ -24,13 +24,13 @@
       margin: $base-spacing-unit-medium 0;
       a {
         color: $link;
-        @include breakpoint(small) {
+        @include media($small) {
           color: $deep-purple;
           text-decoration: none;
         }
       }
       a:hover, a:focus {
-        @include breakpoint(small) {
+        @include media($small) {
           color: $deep-purple;
         }
       }
@@ -38,25 +38,25 @@
   }
   .product-grid__header__more {
     display: none;
-    @include breakpoint(small) {
+    @include media($small) {
       display: block;
     }
   }
   .product-grid__heading {
     margin-bottom: $base-spacing-unit-small;
-    @include breakpoint(medium) {
+    @include media($medium) {
       margin-bottom: $base-spacing-unit-medium;
     }
   }
   .product-grid__single.grid-cell-1of1 {
     display: block;
     width: 100%;
-    @include breakpoint(small) {
+    @include media($small) {
       display: flex;
       align-items: center;
     }
     .product-grid__description {
-      @include breakpoint(small) {
+      @include media($small) {
         margin: 0 0 0 $base-spacing-unit-medium;
         width: 50%;
         a {

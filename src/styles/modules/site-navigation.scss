@@ -2,7 +2,7 @@
 .site-navigation {
   background: $grey-4;
   display: none;
-  @include breakpoint(medium) {
+  @include media($medium) {
     display: block;
   }
   .site-navigation__menu {
@@ -92,7 +92,7 @@
   display: flex;
   justify-content: space-between;
   background: $grey-4;
-  @include breakpoint(medium) {
+  @include media($medium) {
     display: none;
   }
 

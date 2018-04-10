@@ -1,7 +1,7 @@
 /* Page headings */
 .page-heading {
   margin: $base-spacing-unit-large 0 $base-spacing-unit-small;
-  @include breakpoint(medium) {
+  @include media($medium) {
     margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
   }
 }

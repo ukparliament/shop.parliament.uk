@@ -30,7 +30,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    @include breakpoint(small) {
+    @include media($small) {
       display: block;
     }
     li {

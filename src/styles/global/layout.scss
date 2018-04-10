@@ -20,7 +20,7 @@ html {
 }
 
 .page .rte {
-  @include breakpoint(medium) {
+  @include media($medium) {
     max-width: 720px;
   }
 }

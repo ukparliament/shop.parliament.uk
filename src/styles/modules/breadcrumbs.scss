@@ -11,7 +11,7 @@
 
 .breadcrumbs + .sticky-footer-content .page-heading {
   margin-top: $base-spacing-unit-tiny;
-  @include breakpoint(medium) {
+  @include media($medium) {
     margin-top: 0;
   }
 }

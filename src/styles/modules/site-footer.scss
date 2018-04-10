@@ -3,7 +3,7 @@
   margin: $base-spacing-unit-extra-extra-large 0 0;
   padding: $base-spacing-unit-small 0;
   color: $grey-5;
-  @include breakpoint(small) {
+  @include media($small) {
     padding: $base-spacing-unit-extra-extra-extra-large $base-spacing-unit-large;
   }
   a {
@@ -23,7 +23,7 @@
   .grid-cell-1of3 {
     flex: 0 0 auto;
     width: 100%;
-    @include breakpoint(small) {
+    @include media($small) {
       width: 33.3%;
     }
   }
@@ -31,7 +31,7 @@
     padding: $base-spacing-unit-small 0;
     border-top: 1px solid rgba($grey-5, .13);
     border-bottom: 1px solid rgba($grey-5, .13);
-    @include breakpoint(small) {
+    @include media($small) {
       padding: 0 $base-spacing-unit-medium;
       border: 0;
       border-left: 1px solid rgba($grey-5, .13);
