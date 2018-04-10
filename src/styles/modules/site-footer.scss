@@ -2,8 +2,15 @@
   background: $martinique;
   margin: $base-spacing-unit-extra-extra-large 0 0;
   padding: $base-spacing-unit-small 0;
+  color: $alabaster;
   @include breakpoint(small) {
     padding: $base-spacing-unit-extra-extra-extra-large $base-spacing-unit-large;
+  }
+  a {
+    color: $alabaster;
+    &:hover, &:focus {
+      color: $frenchGray;
+    }
   }
   .site-footer__linklist {
     list-style: none;
@@ -30,5 +37,11 @@
       border-left: 1px solid rgba($alabaster, .13);
       border-right: 1px solid rgba($alabaster, .13);
     }
+  }
+  .site-footer__address {
+    font-style: normal;
+  }
+  .site-footer__telephone {
+    text-decoration: none;
   }
 }

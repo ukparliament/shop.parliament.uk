@@ -114,22 +114,6 @@ h6 {
   font-weight: 700;
 }
 
-.site-footer {
-  color: $alabaster;
-  a {
-    color: $alabaster;
-    &:hover, &:focus {
-      color: $frenchGray;
-    }
-  }
-  .site-footer__address {
-    font-style: normal;
-  }
-  .site-footer__telephone {
-    text-decoration: none;
-  }
-}
-
 /* Product grid */
 .product-grid {
   .product-grid__title {
