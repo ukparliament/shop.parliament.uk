@@ -1,13 +1,13 @@
 .pagination {
-    margin: $base-spacing-unit-extra-extra-extra-large 0 0;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    .prev, .next {
-        flex: 1 1 auto;
-    }
-    span, a {
-        min-width: $base-spacing-unit-medium;
-        display: block;
-    }
+  margin: $base-spacing-unit-extra-extra-extra-large 0 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  .prev, .next {
+    flex: 1 1 auto;
+  }
+  span, a {
+    min-width: $base-spacing-unit-medium;
+    display: block;
+  }
 }
