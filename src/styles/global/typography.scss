@@ -1,21 +1,26 @@
+html {
+  font-size: $base-font-size;
+}
+
 body {
-    font-family: $base-font-stack;
-    color: $tundora;
-    font-size: $font-size-base;
-    line-height: 1.5;
-    // font-smoothing - anti aliasing
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    // font-feature-settings - vertically aligned typeface
-    // https://developer.mozilla.org/en/docs/Web/CSS/font-feature-settings
-    font-feature-settings: 'pnum';
-    // Experimental text decoration declaration (webkit only)
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
-    -webkit-text-decoration-skip: ink;
-    text-decoration-skip: ink;
-    @include breakpoint(medium) {
-        font-size: $font-size-base + 2px; // 18px
-    }
+  color: $tundora;
+  direction: ltr;
+  font-family: $base-font-stack;
+  // font-smoothing - anti aliasing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // font-feature-settings - vertically aligned typeface
+  // https://developer.mozilla.org/en/docs/Web/CSS/font-feature-settings
+  font-feature-settings: 'pnum';
+  // Experimental text decoration declaration (webkit only)
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+  @include fontsize(16);
+  line-height: 1.5;
+  @include breakpoint(medium) {
+    @include fontsize(18);
+  }
 }
 
 button,
@@ -43,59 +48,59 @@ h1, .h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-    font-size: 34px;
+  @include fontsize(34);
     line-height: 1.059; // 36px;
     margin: 0 0 $base-spacing-unit-tiny;
     @include breakpoint(medium) {
-        font-size: 44px;
+      @include fontsize(44);
         line-height: 1.091; // 48px
         margin: 0 0 $base-spacing-unit-small;
     }
 }
 
 h2 {
-    font-size: 27px;
+  @include fontsize(27);
     line-height: 1.111; // 36px;
     margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-tiny;
     @include breakpoint(medium) {
-        font-size: 32px;
+      @include fontsize(32);
         line-height: 1.125; // 36px
         margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
     }
 }
 
 h3 {
-    font-size: 24px;
+  @include fontsize(24);
     line-height: 1.250; // 30px;
     @include breakpoint(medium) {
-        font-size: 26px;
+      @include fontsize(26);
         line-height: 1.154; // 30px
     }
 }
 
 h4 {
-    font-size: 20px;
+  @include fontsize(20);
     line-height: 1.2; // 24px;
     @include breakpoint(medium) {
-        font-size: 22px;
+      @include fontsize(22);
         line-height: 1.091; // 30px
     }
 }
 
 h5 {
-    font-size: 16px;
+  @include fontsize(16);
     line-height: 1.125; // 24px;
     @include breakpoint(medium) {
-       font-size: 20px;
-       line-height: 1.2; // 24px
+      @include fontsize(20);
+        line-height: 1.2; // 24px
     }
 }
 
 h6 {
-    font-size: 16px;
+  @include fontsize(16);
     line-height: 1.125; // 24px;
     @include breakpoint(medium) {
-        font-size: 18px;
+      @include fontsize(18);
         line-height: 1.334; // 24px;
     }
 }
@@ -140,7 +145,7 @@ h6 {
     .grid-cell-1of1 .tile--heading {
         color: $martinique;
         @include breakpoint(tiles) {
-            font-size: 26px;
+          @include fontsize(26);
             line-height: 1.154; // 30px
         }
     }
@@ -172,13 +177,13 @@ h6 {
 }
 
 .product__price--current {
-    font-size: 32px;
+  @include fontsize(32);
     color: $martinique;
     font-weight: 500;
 }
 
 .product__price--old {
-    font-size: 22px;
+  @include fontsize(22);
     text-decoration: line-through;
     font-weight: 500;
     color: $martinique;
@@ -229,7 +234,7 @@ h6 {
             text-align: right;
         }
         .cart--total__shipping {
-            font-size: 16px;
+          @include fontsize(16);
             color: $doveGray;
             line-height: 1;
         }
@@ -271,7 +276,7 @@ p a {
         font-weight: 500;
     }
     li a {
-        font-size: 16px;
+      @include fontsize(16);
         text-decoration: none;
         color: $tundora;
         line-height: 1;
@@ -315,14 +320,14 @@ p a {
 .search-bar__large {
     input[type=search] {
         @include breakpoint(medium) {
-            font-size: 22px;
+          @include fontsize(22);
         }
     }
 }
 
 /* Product badges */
 .badge {
-    font-size: 13px;
+  @include fontsize(13);
 }
 
 /* Pagination */
@@ -355,7 +360,7 @@ p a {
 /* Microsite masthead */
 .microsite-masthead {
     color: $alabaster;
-    font-size: 14px;
+  @include fontsize(14);
     .microsite-masthead__back {
         font-weight: 500;
     }
