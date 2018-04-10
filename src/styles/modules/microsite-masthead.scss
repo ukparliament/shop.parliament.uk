@@ -1,12 +1,12 @@
 .microsite-masthead {
-  background: $martinique;
+  background: $deep-purple;
   padding: $base-spacing-unit 0;
   @include fontsize(14);
   a {
-    color: $alabaster;
+    color: $grey-5;
     text-decoration: underline;
     &:hover, &:focus {
-      color: $frenchGray;
+      color: $grey-3;
     }
   }
   .container {

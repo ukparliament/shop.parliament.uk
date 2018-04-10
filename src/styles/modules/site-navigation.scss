@@ -1,6 +1,6 @@
 /* Desktop styles */
 .site-navigation {
-  background: $ebb;
+  background: $grey-4;
   display: none;
   @include breakpoint(medium) {
     display: block;
@@ -30,7 +30,7 @@
 
       a {
         padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
-        color: $tundora;
+        color: $grey-1;
         text-decoration: none;
         &:hover, &:focus, &.open {
           text-decoration: underline;
@@ -53,7 +53,7 @@
   }
 
   .site-navigation__menu__submenu {
-    background: $ebb;
+    background: $grey-4;
     display: none;
     min-width: 250px;
     padding: 2px 4px 4px;
@@ -91,14 +91,14 @@
 .site-navigation--mobile {
   display: flex;
   justify-content: space-between;
-  background: $ebb;
+  background: $grey-4;
   @include breakpoint(medium) {
     display: none;
   }
 
   .site-navigation--mobile__button {
     padding: $base-spacing-unit-tiny $base-spacing-unit-small;
-    color: $tundora;
+    color: $grey-1;
   }
 
   // Toggles
@@ -114,7 +114,7 @@
   .site-navigation--mobile__nav {
     background: $white;
     height: 100vh;
-    border-right: 1px solid $frenchGray;
+    border-right: 1px solid $grey-3;
     padding: $base-spacing-unit-medium $base-spacing-unit-small;
     width: 300px;
     overflow: auto;
@@ -129,7 +129,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid $frenchGray;
+      border-bottom: 1px solid $grey-3;
       padding-bottom: $base-spacing-unit-tiny;
       margin-bottom: $base-spacing-unit-tiny;
       h3 {
@@ -139,7 +139,7 @@
     }
 
     .search-bar {
-      border-bottom: 1px solid $frenchGray;
+      border-bottom: 1px solid $grey-3;
       padding-bottom: $base-spacing-unit-tiny;
     }
 
@@ -155,12 +155,12 @@
       }
 
       li {
-        border-bottom: 1px solid $frenchGray;
+        border-bottom: 1px solid $grey-3;
         a {
           position: relative;
           padding: $base-spacing-unit-tiny 0;
           display: block;
-          color: $tundora;
+          color: $grey-1;
           text-decoration: none;
           &.site-navigation--mobile--active {
             font-weight: 500;
@@ -168,7 +168,7 @@
               left: -$base-spacing-unit-small;
               content: ' ';
               width: $base-spacing-unit;
-              background: $purpleHeart;
+              background: $purple;
               bottom: 0;
               top: 0;
               display: block;

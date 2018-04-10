@@ -21,9 +21,9 @@
     display: block;
   }
   a {
-    color: $stTropaz;
+    color: $link;
   }
   a:hover, a:focus {
-    color: $stTropazHover;
+    color: $link-hover;
   }
 }

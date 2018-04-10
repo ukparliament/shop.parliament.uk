@@ -16,7 +16,7 @@
     }
   }
   .tile--heading {
-    background: rgba($purpleHeart, .9);
+    background: rgba($purple, .9);
     padding: $base-spacing-unit-tiny;
     font-weight: 500;
     color: $white;
@@ -27,7 +27,7 @@
   }
   .tile--heading:after {
     content: ' ';
-    background: $whiteLilac;
+    background: $purple--light;
     height: 4px;
     width: 40px;
     margin-top: $base-spacing-unit;
@@ -37,8 +37,8 @@
   }
   .grid-cell-1of1 {
     .tile--heading {
-      color: $martinique;
-      background: rgba($algaeGreen, .9);
+      color: $deep-purple;
+      background: rgba($mint, .9);
       width: 100%;
       @include breakpoint(tiles) {
         @include fontsize(26);
@@ -51,7 +51,7 @@
         padding: $base-spacing-unit-medium;
       }
       &:after {
-        background: $tara;
+        background: $mint--light;
         height: 6px;
         width: 60px;
         @include breakpoint(tiles) {
