@@ -1,18 +1,15 @@
 .site-header {
   background: $white;
-  overflow: auto;
   border-bottom: 3px solid $frenchGray;
-  padding: $base-spacing-unit-tiny 0;
+  padding: $base-spacing-unit-tiny 0 0;
   @include breakpoint(xsmall) {
-    padding: $base-spacing-unit-small 0;
+    padding: $base-spacing-unit-small 0 0;
   }
-  .grid {
-    margin-bottom: 0;
-    .grid-cell-1of3 {
-      display: none;
-      @include breakpoint(small) {
-        display: block;
-      }
+  .grid-cell-1of3 {
+    display: none;
+    text-align: right;
+    @include breakpoint(small) {
+      display: block;
     }
   }
   img {
@@ -24,13 +21,24 @@
   .site-header__cart {
     margin-bottom: $base-spacing-unit;
     display: block;
+    color: $tundora;
+    text-decoration: none;
+    font-size: 16px;
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
     svg {
       height: 16px;
       width: 19px;
       margin-top: -$base-spacing-unit;
     }
   }
-  h1 a, .h1 a {
-    display: block;
+  h1, .h1 {
+    margin-bottom: 0;
+    a {
+      display: block;
+      color: $martinique;
+      text-decoration: none;
+    }
   }
 }

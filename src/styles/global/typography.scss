@@ -312,27 +312,6 @@ p a {
   }
 }
 
-.site-header {
-  h1, .h1 {
-    margin-bottom: 0;
-    a {
-      color: $martinique;
-      text-decoration: none;
-    }
-  }
-  .grid-cell-1of3 {
-    text-align: right;
-  }
-  .site-header__cart {
-    color: $tundora;
-    text-decoration: none;
-    font-size: 16px;
-    &:hover, &:focus {
-      text-decoration: underline;
-    }
-  }
-}
-
 /* Breadcrumbs */
 .breadcrumbs {
   font-size: 16px;
