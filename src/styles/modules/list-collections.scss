@@ -10,6 +10,28 @@
       align-items: center;
       flex-flow: row nowrap;
       justify-content: space-between;
+      h2 {
+        margin: $base-spacing-unit-medium 0;
+        a {
+          color: $stTropaz;
+          @include breakpoint(small) {
+            color: $martinique;
+            text-decoration: none;
+          }
+        }
+        a:hover, a:focus {
+          @include breakpoint(small) {
+            color: $martinique;
+          }
+        }
+      }
+      a {
+        color: $tundora;
+        text-decoration: underline;
+      }
+      a:hover, a:focus {
+        color: $black;
+      }
     }
   }
   .list-collections__collection:last-of-type {

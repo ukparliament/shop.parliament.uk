@@ -1,0 +1,68 @@
+// Base Heading Settings
+h1, .h1, h2, h3, h4, h5, h6 {
+  color: $martinique;
+  font-weight: 500;
+  margin: $base-spacing-unit-medium 0 $base-spacing-unit;
+  padding: 0;
+  @include breakpoint(medium) {
+    margin: $base-spacing-unit-large 0 $base-spacing-unit;
+  }
+}
+
+h1, .h1 {
+  @include fontsize(34);
+  line-height: 1.059; // 36px;
+  margin: 0 0 $base-spacing-unit-tiny;
+  @include breakpoint(medium) {
+    @include fontsize(44);
+    line-height: 1.091; // 48px
+    margin: 0 0 $base-spacing-unit-small;
+  }
+}
+
+h2 {
+  @include fontsize(27);
+  line-height: 1.111; // 36px;
+  margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-tiny;
+  @include breakpoint(medium) {
+    @include fontsize(32);
+    line-height: 1.125; // 36px
+    margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
+  }
+}
+
+h3 {
+  @include fontsize(24);
+  line-height: 1.250; // 30px;
+  @include breakpoint(medium) {
+    @include fontsize(26);
+    line-height: 1.154; // 30px
+  }
+}
+
+h4 {
+  @include fontsize(20);
+  line-height: 1.2; // 24px;
+  @include breakpoint(medium) {
+    @include fontsize(22);
+    line-height: 1.091; // 30px
+  }
+}
+
+h5 {
+  @include fontsize(16);
+  line-height: 1.125; // 24px;
+  @include breakpoint(medium) {
+   @include fontsize(20);
+   line-height: 1.2; // 24px
+ }
+}
+
+h6 {
+  @include fontsize(16);
+  line-height: 1.125; // 24px;
+  @include breakpoint(medium) {
+    @include fontsize(18);
+    line-height: 1.334; // 24px;
+  }
+}

@@ -9,6 +9,7 @@
     padding: $base-spacing-unit $base-spacing-unit-tiny;
     margin-top: $base-spacing-unit;
     width: $base-spacing-unit * 10;
+    line-height: 1.5;
   }
   button[type=submit] {
     margin-top: $base-spacing-unit-small;
@@ -21,9 +22,19 @@
   padding: 0 0 $base-spacing-unit-tiny;
 }
 
+.product__price--current {
+  @include fontsize(32);
+  color: $martinique;
+  font-weight: 500;
+}
+
 .product__price--old {
   display: inline-block;
   margin-right: $base-spacing-unit;
+  @include fontsize(22);
+  text-decoration: line-through;
+  font-weight: 500;
+  color: $martinique;
 }
 
 .product__description {

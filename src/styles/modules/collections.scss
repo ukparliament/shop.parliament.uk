@@ -34,18 +34,25 @@
       display: block;
       padding: $base-spacing-unit-tiny;
       border-left: 6px solid transparent;
+      @include fontsize(16);
+      text-decoration: none;
+      color: $tundora;
+      line-height: 1;
       &:hover, &:focus {
         background: $white;
+        text-decoration: underline;
       }
     }
   }
   .collection__filters--active a {
     border-left-color: $purpleHeart;
     background: $white;
+    font-weight: 500;
   }
   .collection__filters--heading {
     display: block;
     margin-bottom: $base-spacing-unit;
+    font-weight: 500;
   }
 }
 

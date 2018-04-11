@@ -41,7 +41,7 @@
       background: rgba($algaeGreen, .9);
       width: 100%;
       @include breakpoint(tiles) {
-        font-size: 26px;
+        @include fontsize(26);
         line-height: 1.154; // 30px
         width: 50%;
         padding: $base-spacing-unit-small;

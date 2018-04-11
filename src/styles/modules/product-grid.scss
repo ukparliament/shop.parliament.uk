@@ -1,10 +1,40 @@
 .product-grid {
+  .product-grid__title {
+    color: $stTropaz;
+    text-decoration: underline;
+    font-weight: 500;
+    &:hover, &:focus {
+      color: $stTropazHover;
+    }
+  }
   .product-grid__header {
     width: 100%;
     display: flex;
     align-items: center;
     flex-flow: row nowrap;
     justify-content: space-between;
+    a {
+      color: $tundora;
+      text-decoration: underline;
+    }
+    a:hover, a:focus {
+      color: $black;
+    }
+    h3 {
+      margin: $base-spacing-unit-medium 0;
+      a {
+        color: $stTropaz;
+        @include breakpoint(small) {
+          color: $martinique;
+          text-decoration: none;
+        }
+      }
+      a:hover, a:focus {
+        @include breakpoint(small) {
+          color: $martinique;
+        }
+      }
+    }
   }
   .product-grid__header__more {
     display: none;
@@ -47,6 +77,9 @@
     .product-grid__title {
       display: block;
       margin-top: $base-spacing-unit;
+    }
+    .product-grid__image {
+      text-align: center;
     }
   }
 }

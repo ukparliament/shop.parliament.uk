@@ -30,12 +30,21 @@
 
       a {
         padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
+        color: $tundora;
+        text-decoration: none;
+        &:hover, &:focus, &.open {
+          text-decoration: underline;
+        }
       }
 
       .site-navigation--caret svg {
         width: 10px;
         height: 10px;
       }
+    }
+
+    .site-navigation__menu__item--active > a {
+      font-weight: 500;
     }
 
     .site-navigation__menu__item > a:hover ~ .site-navigation__menu__submenu {
@@ -154,7 +163,7 @@
           color: $tundora;
           text-decoration: none;
           &.site-navigation--mobile--active {
-            font-weight: 700;
+            font-weight: 500;
             &:before {
               left: -$base-spacing-unit-small;
               content: ' ';

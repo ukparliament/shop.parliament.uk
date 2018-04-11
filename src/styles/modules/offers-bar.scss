@@ -13,7 +13,7 @@
     padding: $base-spacing-unit 0;
     border-right: 2px solid $frenchGray;
     line-height: 1.125;
-    font-size: 16px;
+    @include fontsize(16);
     a {
       color: $tundora;
       &:hover {
