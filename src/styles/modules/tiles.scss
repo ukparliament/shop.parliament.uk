@@ -18,6 +18,8 @@
   .tile--heading {
     background: rgba($purpleHeart, .9);
     padding: $base-spacing-unit-tiny;
+    font-weight: 500;
+    color: $white;
     @include breakpoint(tiles) {
       padding: $base-spacing-unit-tiny $base-spacing-unit-small;
       width: 81%;
@@ -35,9 +37,12 @@
   }
   .grid-cell-1of1 {
     .tile--heading {
+      color: $martinique;
       background: rgba($algaeGreen, .9);
       width: 100%;
       @include breakpoint(tiles) {
+        font-size: 26px;
+        line-height: 1.154; // 30px
         width: 50%;
         padding: $base-spacing-unit-small;
       }
@@ -72,12 +77,18 @@
     }
   }
   a {
+    text-decoration: none;
     overflow: hidden;
     position: relative;
     @include breakpoint(tiles) {
       .tile--heading {
         position: absolute;
         bottom: $base-spacing-unit-medium;
+      }
+    }
+    &:hover, &:focus {
+      .tile--heading {
+        text-decoration: underline;
       }
     }
   }
