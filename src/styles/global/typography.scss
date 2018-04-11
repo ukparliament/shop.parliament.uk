@@ -352,28 +352,6 @@ p a {
   }
 }
 
-/* Microsite masthead */
-.microsite-masthead {
-  color: $alabaster;
-  font-size: 14px;
-  .microsite-masthead__back {
-    font-weight: 500;
-  }
-  a {
-    color: $alabaster;
-    text-decoration: none;
-    span {
-      text-decoration: underline;
-    }
-    &:hover, &:focus {
-      color: $frenchGray;
-    }
-  }
-  .microsite-masthead__links li a {
-    text-decoration: underline;
-  }
-}
-
 .site-header {
   h1, .h1 {
     margin-bottom: 0;
