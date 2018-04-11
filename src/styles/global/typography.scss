@@ -1,21 +1,21 @@
 body {
-    font-family: $base-font-stack;
-    color: $tundora;
-    font-size: $font-size-base;
-    line-height: 1.5;
-    // font-smoothing - anti aliasing
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    // font-feature-settings - vertically aligned typeface
-    // https://developer.mozilla.org/en/docs/Web/CSS/font-feature-settings
-    font-feature-settings: 'pnum';
-    // Experimental text decoration declaration (webkit only)
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
-    -webkit-text-decoration-skip: ink;
-    text-decoration-skip: ink;
-    @include breakpoint(medium) {
-        font-size: $font-size-base + 2px; // 18px
-    }
+  font-family: $base-font-stack;
+  color: $tundora;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  // font-smoothing - anti aliasing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // font-feature-settings - vertically aligned typeface
+  // https://developer.mozilla.org/en/docs/Web/CSS/font-feature-settings
+  font-feature-settings: 'pnum';
+  // Experimental text decoration declaration (webkit only)
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+  @include breakpoint(medium) {
+    font-size: $font-size-base + 2px; // 18px
+  }
 }
 
 button,
@@ -23,420 +23,420 @@ input,
 optgroup,
 select,
 textarea {
-    font: inherit;
-    color: inherit;
+  font: inherit;
+  color: inherit;
 }
 
 b, strong {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 // Base Heading Settings
 h1, .h1, h2, h3, h4, h5, h6 {
-    color: $martinique;
-    font-weight: 500;
-    margin: $base-spacing-unit-medium 0 $base-spacing-unit;
-    padding: 0;
-    @include breakpoint(medium) {
-        margin: $base-spacing-unit-large 0 $base-spacing-unit;
-    }
+  color: $martinique;
+  font-weight: 500;
+  margin: $base-spacing-unit-medium 0 $base-spacing-unit;
+  padding: 0;
+  @include breakpoint(medium) {
+    margin: $base-spacing-unit-large 0 $base-spacing-unit;
+  }
 }
 
 h1, .h1 {
-    font-size: 34px;
-    line-height: 1.059; // 36px;
-    margin: 0 0 $base-spacing-unit-tiny;
-    @include breakpoint(medium) {
-        font-size: 44px;
-        line-height: 1.091; // 48px
-        margin: 0 0 $base-spacing-unit-small;
-    }
+  font-size: 34px;
+  line-height: 1.059; // 36px;
+  margin: 0 0 $base-spacing-unit-tiny;
+  @include breakpoint(medium) {
+    font-size: 44px;
+    line-height: 1.091; // 48px
+    margin: 0 0 $base-spacing-unit-small;
+  }
 }
 
 h2 {
-    font-size: 27px;
-    line-height: 1.111; // 36px;
-    margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-tiny;
-    @include breakpoint(medium) {
-        font-size: 32px;
-        line-height: 1.125; // 36px
-        margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
-    }
+  font-size: 27px;
+  line-height: 1.111; // 36px;
+  margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-tiny;
+  @include breakpoint(medium) {
+    font-size: 32px;
+    line-height: 1.125; // 36px
+    margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
+  }
 }
 
 h3 {
-    font-size: 24px;
-    line-height: 1.250; // 30px;
-    @include breakpoint(medium) {
-        font-size: 26px;
-        line-height: 1.154; // 30px
-    }
+  font-size: 24px;
+  line-height: 1.250; // 30px;
+  @include breakpoint(medium) {
+    font-size: 26px;
+    line-height: 1.154; // 30px
+  }
 }
 
 h4 {
-    font-size: 20px;
-    line-height: 1.2; // 24px;
-    @include breakpoint(medium) {
-        font-size: 22px;
-        line-height: 1.091; // 30px
-    }
+  font-size: 20px;
+  line-height: 1.2; // 24px;
+  @include breakpoint(medium) {
+    font-size: 22px;
+    line-height: 1.091; // 30px
+  }
 }
 
 h5 {
-    font-size: 16px;
-    line-height: 1.125; // 24px;
-    @include breakpoint(medium) {
-       font-size: 20px;
-       line-height: 1.2; // 24px
-    }
+  font-size: 16px;
+  line-height: 1.125; // 24px;
+  @include breakpoint(medium) {
+   font-size: 20px;
+   line-height: 1.2; // 24px
+ }
 }
 
 h6 {
-    font-size: 16px;
-    line-height: 1.125; // 24px;
-    @include breakpoint(medium) {
-        font-size: 18px;
-        line-height: 1.334; // 24px;
-    }
+  font-size: 16px;
+  line-height: 1.125; // 24px;
+  @include breakpoint(medium) {
+    font-size: 18px;
+    line-height: 1.334; // 24px;
+  }
 }
 
 .site-navigation__menu__item {
-    a {
-        color: $tundora;
-        text-decoration: none;
-        &:hover, &:focus, &.open {
-            text-decoration: underline;
-        }
+  a {
+    color: $tundora;
+    text-decoration: none;
+    &:hover, &:focus, &.open {
+      text-decoration: underline;
     }
+  }
 }
 
 .site-navigation__menu__item--active > a {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .site-footer {
+  color: $alabaster;
+  a {
     color: $alabaster;
-    a {
-        color: $alabaster;
-        &:hover, &:focus {
-            color: $frenchGray;
-        }
+    &:hover, &:focus {
+      color: $frenchGray;
     }
-    .site-footer__address {
-        font-style: normal;
-    }
-    .site-footer__telephone {
-        text-decoration: none;
-    }
+  }
+  .site-footer__address {
+    font-style: normal;
+  }
+  .site-footer__telephone {
+    text-decoration: none;
+  }
 }
 
 /* Tiles */
 .tiles {
-    .tile--heading {
-        font-weight: 500;
-        color: $white;
-    }
+  .tile--heading {
+    font-weight: 500;
+    color: $white;
+  }
 
-    .grid-cell-1of1 .tile--heading {
-        color: $martinique;
-        @include breakpoint(tiles) {
-            font-size: 26px;
-            line-height: 1.154; // 30px
-        }
+  .grid-cell-1of1 .tile--heading {
+    color: $martinique;
+    @include breakpoint(tiles) {
+      font-size: 26px;
+      line-height: 1.154; // 30px
     }
-    a {
-        text-decoration: none;
-        &:hover, &:focus {
-            .tile--heading {
-               text-decoration: underline;
-            }
-        }
-    }
+  }
+  a {
+    text-decoration: none;
+    &:hover, &:focus {
+      .tile--heading {
+       text-decoration: underline;
+     }
+   }
+ }
 }
 
 /* Product grid */
 .product-grid {
-    .product-grid__title {
-        color: $stTropaz;
-        text-decoration: underline;
-        font-weight: 500;
-        &:hover, &:focus {
-            color: $stTropazHover;
-        }
+  .product-grid__title {
+    color: $stTropaz;
+    text-decoration: underline;
+    font-weight: 500;
+    &:hover, &:focus {
+      color: $stTropazHover;
     }
-    .product-grid__single {
-        .product-grid__image {
-            text-align: center;
-        }
+  }
+  .product-grid__single {
+    .product-grid__image {
+      text-align: center;
     }
+  }
 }
 
 .product__price--current {
-    font-size: 32px;
-    color: $martinique;
-    font-weight: 500;
+  font-size: 32px;
+  color: $martinique;
+  font-weight: 500;
 }
 
 .product__price--old {
-    font-size: 22px;
-    text-decoration: line-through;
-    font-weight: 500;
-    color: $martinique;
+  font-size: 22px;
+  text-decoration: line-through;
+  font-weight: 500;
+  color: $martinique;
 }
 
 .product__image-container--featured {
-    text-align: center;
+  text-align: center;
 }
 
 .cart--table {
-    input[type=number] {
-        text-align: right;
-        @include breakpoint(medium) {
-            text-align: left;
-        }
+  input[type=number] {
+    text-align: right;
+    @include breakpoint(medium) {
+      text-align: left;
     }
-    thead th {
-        text-align: left;
-        font-weight: 400;
+  }
+  thead th {
+    text-align: left;
+    font-weight: 400;
+  }
+  thead th:first-of-type {
+    text-align: center;
+  }
+  .product--name {
+    color: $stTropaz;
+    font-weight: 500;
+    &:hover, &:focus {
+      color: $stTropazHover;
     }
-    thead th:first-of-type {
-        text-align: center;
+  }
+  .product--price {
+    font-weight: 500;
+    @include breakpoint(medium) {
+      font-weight: 400;
     }
-    .product--name {
-        color: $stTropaz;
-        font-weight: 500;
-        &:hover, &:focus {
-            color: $stTropazHover;
-        }
-    }
-    .product--price {
-        font-weight: 500;
-        @include breakpoint(medium) {
-            font-weight: 400;
-        }
-    }
-    .cart--table__product {
-        text-align: left;
-    }
-    .product--image {
-        text-align: center;
-    }
+  }
+  .cart--table__product {
+    text-align: left;
+  }
+  .product--image {
+    text-align: center;
+  }
 }
 
 .cart--meta {
-    .cart--total {
-        @include breakpoint(small) {
-            text-align: right;
-        }
-        .cart--total__shipping {
-            font-size: 16px;
-            color: $doveGray;
-            line-height: 1;
-        }
-        .cart--total--back {
-            color: $tundora;
-        }
+  .cart--total {
+    @include breakpoint(small) {
+      text-align: right;
     }
+    .cart--total__shipping {
+      font-size: 16px;
+      color: $doveGray;
+      line-height: 1;
+    }
+    .cart--total--back {
+      color: $tundora;
+    }
+  }
 }
 
 p a {
-    color: $stTropaz;
-    &:hover, &:focus {
-        color: $stTropazHover;
-    }
-    &:focus {
-        background: $algaeGreen;
-        outline: 3px solid $algaeGreen;
-    }
+  color: $stTropaz;
+  &:hover, &:focus {
+    color: $stTropazHover;
+  }
+  &:focus {
+    background: $algaeGreen;
+    outline: 3px solid $algaeGreen;
+  }
 }
 
 /* Page headings */
 .page-heading {
-    margin: $base-spacing-unit-large 0 $base-spacing-unit-small;
-    @include breakpoint(medium) {
-        margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
-    }
+  margin: $base-spacing-unit-large 0 $base-spacing-unit-small;
+  @include breakpoint(medium) {
+    margin: $base-spacing-unit-extra-extra-large 0 $base-spacing-unit-small;
+  }
 }
 
 .breadcrumbs + .sticky-footer-content .page-heading {
-    margin-top: $base-spacing-unit-tiny;
-    @include breakpoint(medium) {
-        margin-top: 0;
-    }
+  margin-top: $base-spacing-unit-tiny;
+  @include breakpoint(medium) {
+    margin-top: 0;
+  }
 }
 
 /* Collection filters */
 .collection__filters {
-    .collection__filters--heading {
-        font-weight: 500;
+  .collection__filters--heading {
+    font-weight: 500;
+  }
+  li a {
+    font-size: 16px;
+    text-decoration: none;
+    color: $tundora;
+    line-height: 1;
+    &:hover, &:focus {
+      text-decoration: underline;
     }
-    li a {
-        font-size: 16px;
-        text-decoration: none;
-        color: $tundora;
-        line-height: 1;
-        &:hover, &:focus {
-            text-decoration: underline;
-        }
-    }
+  }
 }
 
 .collection__filters--active a {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 /* List of collections */
 .list-collections__collection__header {
-    h2 {
-        margin: $base-spacing-unit-medium 0;
-        a {
-            color: $stTropaz;
-            @include breakpoint(small) {
-                color: $martinique;
-                text-decoration: none;
-            }
-        }
-        a:hover, a:focus {
-            @include breakpoint(small) {
-                color: $martinique;
-            }
-        }
-    }
+  h2 {
+    margin: $base-spacing-unit-medium 0;
     a {
-        color: $tundora;
-        text-decoration: underline;
+      color: $stTropaz;
+      @include breakpoint(small) {
+        color: $martinique;
+        text-decoration: none;
+      }
     }
     a:hover, a:focus {
-        color: $black;
+      @include breakpoint(small) {
+        color: $martinique;
+      }
     }
+  }
+  a {
+    color: $tundora;
+    text-decoration: underline;
+  }
+  a:hover, a:focus {
+    color: $black;
+  }
 }
 
 /* Search bar */
 .search-bar__large {
-    input[type=search] {
-        @include breakpoint(medium) {
-            font-size: 22px;
-        }
+  input[type=search] {
+    @include breakpoint(medium) {
+      font-size: 22px;
     }
+  }
 }
 
 /* Product badges */
 .badge {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 /* Pagination */
 .pagination {
-    text-align: center;
-    .prev {
-        text-align: left;
-    }
-    .next {
-        text-align: right;
-    }
-    .current {
-        font-weight: 500;
-    }
-    a {
-        color: $stTropaz;
-    }
-    a:hover, a:focus {
-        color: $stTropazHover;
-    }
+  text-align: center;
+  .prev {
+    text-align: left;
+  }
+  .next {
+    text-align: right;
+  }
+  .current {
+    font-weight: 500;
+  }
+  a {
+    color: $stTropaz;
+  }
+  a:hover, a:focus {
+    color: $stTropazHover;
+  }
 }
 
 /* Product */
 .product {
-    input[type=number] {
-        line-height: 1.5;
-    }
+  input[type=number] {
+    line-height: 1.5;
+  }
 }
 
 /* Microsite masthead */
 .microsite-masthead {
+  color: $alabaster;
+  font-size: 14px;
+  .microsite-masthead__back {
+    font-weight: 500;
+  }
+  a {
     color: $alabaster;
-    font-size: 14px;
-    .microsite-masthead__back {
-        font-weight: 500;
+    text-decoration: none;
+    span {
+      text-decoration: underline;
     }
-    a {
-        color: $alabaster;
-        text-decoration: none;
-        span {
-            text-decoration: underline;
-        }
-        &:hover, &:focus {
-            color: $frenchGray;
-        }
+    &:hover, &:focus {
+      color: $frenchGray;
     }
-    .microsite-masthead__links li a {
-        text-decoration: underline;
-    }
+  }
+  .microsite-masthead__links li a {
+    text-decoration: underline;
+  }
 }
 
 .site-header {
-    h1, .h1 {
-        margin-bottom: 0;
-        a {
-            color: $martinique;
-            text-decoration: none;
-        }
+  h1, .h1 {
+    margin-bottom: 0;
+    a {
+      color: $martinique;
+      text-decoration: none;
     }
-    .grid-cell-1of3 {
-        text-align: right;
+  }
+  .grid-cell-1of3 {
+    text-align: right;
+  }
+  .site-header__cart {
+    color: $tundora;
+    text-decoration: none;
+    font-size: 16px;
+    &:hover, &:focus {
+      text-decoration: underline;
     }
-    .site-header__cart {
-        color: $tundora;
-        text-decoration: none;
-        font-size: 16px;
-        &:hover, &:focus {
-            text-decoration: underline;
-        }
-    }
+  }
 }
 
 /* Offers bar */
 .offers-bar .grid-cell {
-    line-height: 1.125;
-    font-size: 16px;
-    a {
-        color: $tundora;
-        &:hover {
-            color: $doveGray;
-        }
+  line-height: 1.125;
+  font-size: 16px;
+  a {
+    color: $tundora;
+    &:hover {
+      color: $doveGray;
     }
+  }
 }
 
 /* Breadcrumbs */
 .breadcrumbs {
-    font-size: 16px;
-    a {
-        color: $tundora;
-    }
+  font-size: 16px;
+  a {
+    color: $tundora;
+  }
 }
 
 /* Product grid */
 .product-grid__header {
-    h3 {
-        margin: $base-spacing-unit-medium 0;
-        a {
-            color: $stTropaz;
-            @include breakpoint(small) {
-                color: $martinique;
-                text-decoration: none;
-            }
-        }
-        a:hover, a:focus {
-            @include breakpoint(small) {
-                color: $martinique;
-            }
-        }
-    }
+  h3 {
+    margin: $base-spacing-unit-medium 0;
     a {
-        color: $tundora;
-        text-decoration: underline;
+      color: $stTropaz;
+      @include breakpoint(small) {
+        color: $martinique;
+        text-decoration: none;
+      }
     }
     a:hover, a:focus {
-        color: $black;
+      @include breakpoint(small) {
+        color: $martinique;
+      }
     }
+  }
+  a {
+    color: $tundora;
+    text-decoration: underline;
+  }
+  a:hover, a:focus {
+    color: $black;
+  }
 }

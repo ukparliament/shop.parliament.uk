@@ -1,84 +1,84 @@
 .tiles {
-    margin: $base-spacing-unit-small 0 0 0;
-    a, img {
-        display: block;
+  margin: $base-spacing-unit-small 0 0 0;
+  a, img {
+    display: block;
+  }
+  img {
+    width: 100%;
+    @include breakpoint(tiles) {
+      transition: all 200ms linear;
+      will-change: transform;
     }
-    img {
-        width: 100%;
+  }
+  a:hover img, a:focus img {
+    @include breakpoint(tiles) {
+      transform: scale(1.02);
+    }
+  }
+  .tile--heading {
+    background: rgba($purpleHeart, .9);
+    padding: $base-spacing-unit-tiny;
+    @include breakpoint(tiles) {
+      padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+      width: 81%;
+    }
+  }
+  .tile--heading:after {
+    content: ' ';
+    background: $whiteLilac;
+    height: 4px;
+    width: 40px;
+    margin-top: $base-spacing-unit;
+    @include breakpoint(tiles) {
+      display: block;
+    }
+  }
+  .grid-cell-1of1 {
+    .tile--heading {
+      background: rgba($algaeGreen, .9);
+      width: 100%;
+      @include breakpoint(tiles) {
+        width: 50%;
+        padding: $base-spacing-unit-small;
+      }
+      @include breakpoint(small) {
+        width: 40%;
+        padding: $base-spacing-unit-medium;
+      }
+      &:after {
+        background: $tara;
+        height: 6px;
+        width: 60px;
         @include breakpoint(tiles) {
-            transition: all 200ms linear;
-            will-change: transform;
+          margin-top: $base-spacing-unit;
         }
+        @include breakpoint(small) {
+          margin-top: $base-spacing-unit-tiny;
+        }
+      }
+    }
+  }
+  .grid-cell-1of3-1of1 {
+    .tile--heading {
+      width: auto;
+      &:after {
+        display: none;
+      }
     }
     a:hover img, a:focus img {
-        @include breakpoint(tiles) {
-            transform: scale(1.02);
-        }
+      @include breakpoint(tiles) {
+        transform: scale(1.04);
+      }
     }
-    .tile--heading {
-        background: rgba($purpleHeart, .9);
-        padding: $base-spacing-unit-tiny;
-        @include breakpoint(tiles) {
-            padding: $base-spacing-unit-tiny $base-spacing-unit-small;
-            width: 81%;
-        }
+  }
+  a {
+    overflow: hidden;
+    position: relative;
+    @include breakpoint(tiles) {
+      .tile--heading {
+        position: absolute;
+        bottom: $base-spacing-unit-medium;
+      }
     }
-    .tile--heading:after {
-        content: ' ';
-        background: $whiteLilac;
-        height: 4px;
-        width: 40px;
-        margin-top: $base-spacing-unit;
-        @include breakpoint(tiles) {
-            display: block;
-        }
-    }
-    .grid-cell-1of1 {
-        .tile--heading {
-            background: rgba($algaeGreen, .9);
-            width: 100%;
-            @include breakpoint(tiles) {
-                width: 50%;
-                padding: $base-spacing-unit-small;
-            }
-            @include breakpoint(small) {
-                width: 40%;
-                padding: $base-spacing-unit-medium;
-            }
-            &:after {
-                background: $tara;
-                height: 6px;
-                width: 60px;
-                @include breakpoint(tiles) {
-                    margin-top: $base-spacing-unit;
-                }
-                @include breakpoint(small) {
-                    margin-top: $base-spacing-unit-tiny;
-                }
-            }
-        }
-    }
-    .grid-cell-1of3-1of1 {
-        .tile--heading {
-            width: auto;
-            &:after {
-                display: none;
-            }
-        }
-        a:hover img, a:focus img {
-            @include breakpoint(tiles) {
-                transform: scale(1.04);
-            }
-        }
-    }
-    a {
-        overflow: hidden;
-        position: relative;
-        @include breakpoint(tiles) {
-            .tile--heading {
-                position: absolute;
-                bottom: $base-spacing-unit-medium;
-            }
-        }
-    }
+  }
 }
