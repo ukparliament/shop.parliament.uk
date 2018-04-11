@@ -17,7 +17,7 @@ body {
   -webkit-text-decoration-skip: ink;
   text-decoration-skip: ink;
   @include fontsize(16);
-  @include breakpoint(medium) {
+  @include media($medium) {
     @include fontsize(18);
   }
 }

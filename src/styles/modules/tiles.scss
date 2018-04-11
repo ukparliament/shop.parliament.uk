@@ -5,13 +5,13 @@
   }
   img {
     width: 100%;
-    @include breakpoint(tiles) {
+    @include media($tiles) {
       transition: all 200ms linear;
       will-change: transform;
     }
   }
   a:hover img, a:focus img {
-    @include breakpoint(tiles) {
+    @include media($tiles) {
       transform: scale(1.02);
     }
   }
@@ -20,7 +20,7 @@
     padding: $base-spacing-unit-tiny;
     font-weight: 500;
     color: $white;
-    @include breakpoint(tiles) {
+    @include media($tiles) {
       padding: $base-spacing-unit-tiny $base-spacing-unit-small;
       width: 81%;
     }
@@ -31,7 +31,7 @@
     height: 4px;
     width: 40px;
     margin-top: $base-spacing-unit;
-    @include breakpoint(tiles) {
+    @include media($tiles) {
       display: block;
     }
   }
@@ -40,13 +40,13 @@
       color: $deep-purple;
       background: rgba($mint, .9);
       width: 100%;
-      @include breakpoint(tiles) {
+      @include media($tiles) {
         @include fontsize(26);
         line-height: 1.154; // 30px
         width: 50%;
         padding: $base-spacing-unit-small;
       }
-      @include breakpoint(small) {
+      @include media($small) {
         width: 40%;
         padding: $base-spacing-unit-medium;
       }
@@ -54,10 +54,10 @@
         background: $mint--light;
         height: 6px;
         width: 60px;
-        @include breakpoint(tiles) {
+        @include media($tiles) {
           margin-top: $base-spacing-unit;
         }
-        @include breakpoint(small) {
+        @include media($small) {
           margin-top: $base-spacing-unit-tiny;
         }
       }
@@ -71,7 +71,7 @@
       }
     }
     a:hover img, a:focus img {
-      @include breakpoint(tiles) {
+      @include media($tiles) {
         transform: scale(1.04);
       }
     }
@@ -80,7 +80,7 @@
     text-decoration: none;
     overflow: hidden;
     position: relative;
-    @include breakpoint(tiles) {
+    @include media($tiles) {
       .tile--heading {
         position: absolute;
         bottom: $base-spacing-unit-medium;

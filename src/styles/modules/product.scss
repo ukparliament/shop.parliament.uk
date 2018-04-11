@@ -40,7 +40,7 @@
 .product__description {
   padding-bottom: $base-spacing-unit-tiny;
   margin-top: $base-spacing-unit-small;
-  @include breakpoint(medium) {
+  @include media($medium) {
     border-bottom: 1px solid $grey-3;
   }
   p {
@@ -77,7 +77,7 @@
   height: 200px;
   justify-content: center;
   max-width: 300px;
-  @include breakpoint(small) {
+  @include media($small) {
     max-width: 100%;
   }
   padding: $base-spacing-unit-medium;
@@ -116,7 +116,7 @@
       width: auto;
       height: auto;
       padding: $base-spacing-unit;
-      @include breakpoint(medium) {
+      @include media($medium) {
         padding: $base-spacing-unit-tiny;
       }
     }

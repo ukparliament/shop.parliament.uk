@@ -4,7 +4,7 @@
   position: relative;
   margin: $base-spacing-unit-extra-large (-$base-spacing-unit-small);
   height: 200px;
-  @include breakpoint(medium) {
+  @include media($medium) {
     height: 300px;
   }
   h1 {
@@ -15,7 +15,7 @@
     padding: $base-spacing-unit-tiny $base-spacing-unit-small;
     box-sizing: border-box;
     max-width: 85%;
-    @include breakpoint(medium) {
+    @include media($medium) {
       max-width: 50%;
     }
   }
@@ -27,7 +27,7 @@
   padding: 0;
   li {
     border-bottom: 1px solid $grey-3;
-    @include breakpoint(small) {
+    @include media($small) {
       max-width: 75%;
     }
     a {
@@ -63,7 +63,7 @@
 .collection__view-sort {
   margin: $base-spacing-unit-large 0;
   display: none;
-  @include breakpoint(small) {
+  @include media($small) {
     display: flex;
     justify-content: flex-end;
   }

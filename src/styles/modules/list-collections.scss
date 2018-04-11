@@ -14,13 +14,13 @@
         margin: $base-spacing-unit-medium 0;
         a {
           color: $link;
-          @include breakpoint(small) {
+          @include media($small) {
             color: $deep-purple;
             text-decoration: none;
           }
         }
         a:hover, a:focus {
-          @include breakpoint(small) {
+          @include media($small) {
             color: $deep-purple;
           }
         }
@@ -42,7 +42,7 @@
   }
   .list-collections__collection__header__more {
     display: none;
-    @include breakpoint(small) {
+    @include media($small) {
       display: block;
     }
   }

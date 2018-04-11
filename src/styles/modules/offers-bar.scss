@@ -1,6 +1,6 @@
 .offers-bar {
   display: none;
-  @include breakpoint(medium) {
+  @include media($medium) {
     display: block;
   }
   .grid {
