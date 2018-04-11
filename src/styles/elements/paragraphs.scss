@@ -1,10 +1,10 @@
 p a {
-  color: $stTropaz;
+  color: $link;
   &:hover, &:focus {
-    color: $stTropazHover;
+    color: $link-hover;
   }
   &:focus {
-    background: $algaeGreen;
-    outline: 3px solid $algaeGreen;
+    background: $mint;
+    outline: 3px solid $mint;
   }
 }

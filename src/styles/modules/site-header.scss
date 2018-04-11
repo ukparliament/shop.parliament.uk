@@ -1,6 +1,6 @@
 .site-header {
   background: $white;
-  border-bottom: 3px solid $frenchGray;
+  border-bottom: 3px solid $grey-3;
   padding: $base-spacing-unit-tiny 0 0;
   @include breakpoint(xsmall) {
     padding: $base-spacing-unit-small 0 0;
@@ -21,7 +21,7 @@
   .site-header__cart {
     margin-bottom: $base-spacing-unit;
     display: block;
-    color: $tundora;
+    color: $grey-1;
     text-decoration: none;
     @include fontsize(16);
     &:hover, &:focus {
@@ -37,7 +37,7 @@
     margin-bottom: 0;
     a {
       display: block;
-      color: $martinique;
+      color: $deep-purple;
       text-decoration: none;
     }
   }

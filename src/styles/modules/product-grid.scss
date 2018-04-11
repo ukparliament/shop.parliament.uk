@@ -1,10 +1,10 @@
 .product-grid {
   .product-grid__title {
-    color: $stTropaz;
+    color: $link;
     text-decoration: underline;
     font-weight: 500;
     &:hover, &:focus {
-      color: $stTropazHover;
+      color: $link-hover;
     }
   }
   .product-grid__header {
@@ -14,24 +14,24 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     a {
-      color: $tundora;
+      color: $grey-1;
       text-decoration: underline;
     }
     a:hover, a:focus {
-      color: $black;
+      color: $link-hover;
     }
     h3 {
       margin: $base-spacing-unit-medium 0;
       a {
-        color: $stTropaz;
+        color: $link;
         @include breakpoint(small) {
-          color: $martinique;
+          color: $deep-purple;
           text-decoration: none;
         }
       }
       a:hover, a:focus {
         @include breakpoint(small) {
-          color: $martinique;
+          color: $deep-purple;
         }
       }
     }

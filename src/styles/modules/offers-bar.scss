@@ -11,13 +11,13 @@
     align-items: center;
     justify-content: center;
     padding: $base-spacing-unit 0;
-    border-right: 2px solid $frenchGray;
+    border-right: 2px solid $grey-3;
     line-height: 1.125;
     @include fontsize(16);
     a {
-      color: $tundora;
+      color: $grey-1;
       &:hover {
-        color: $doveGray;
+        color: $grey-2;
       }
     }
     p {

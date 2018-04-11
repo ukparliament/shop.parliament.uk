@@ -1,7 +1,7 @@
 .list-collections {
   .list-collections__collection {
     .grid-cell-borders {
-      border-bottom: 1px solid $frenchGray;
+      border-bottom: 1px solid $grey-3;
       padding-bottom: $base-spacing-unit-medium;
     }
     .list-collections__collection__header {
@@ -13,24 +13,24 @@
       h2 {
         margin: $base-spacing-unit-medium 0;
         a {
-          color: $stTropaz;
+          color: $link;
           @include breakpoint(small) {
-            color: $martinique;
+            color: $deep-purple;
             text-decoration: none;
           }
         }
         a:hover, a:focus {
           @include breakpoint(small) {
-            color: $martinique;
+            color: $deep-purple;
           }
         }
       }
       a {
-        color: $tundora;
+        color: $grey-1;
         text-decoration: underline;
       }
       a:hover, a:focus {
-        color: $black;
+        color: $link-hover;
       }
     }
   }
