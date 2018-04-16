@@ -1,77 +1,108 @@
 .cart--table {
-    border-bottom: 1px solid $frenchGray;
-    border-collapse: separate;
-    width: 100%;
-    margin-bottom: $base-spacing-unit-large;
-    padding-bottom: $base-spacing-unit-small;
-    @include breakpoint(medium) {
-        margin-bottom: $base-spacing-unit-extra-large;
-        padding-bottom: $base-spacing-unit-extra-large;
+  border-bottom: 1px solid $grey-3;
+  border-collapse: separate;
+  width: 100%;
+  margin-bottom: $base-spacing-unit-large;
+  padding-bottom: $base-spacing-unit-small;
+  @include media($medium) {
+    margin-bottom: $base-spacing-unit-extra-large;
+    padding-bottom: $base-spacing-unit-extra-large;
+  }
+  thead th {
+    padding: $base-spacing-unit-medium 0;
+    border: 1px solid $grey-3;
+    border-left: 0;
+    border-right: 0;
+    text-align: left;
+    font-weight: 400;
+  }
+  thead th:first-of-type {
+    text-align: center;
+  }
+  tbody tr td {
+    padding: $base-spacing-unit-small 0 0;
+    @include media($small) {
+      padding: $base-spacing-unit-extra-large $base-spacing-unit-medium 0 0;
     }
-    thead th {
-        padding: $base-spacing-unit-medium 0;
-        border: 1px solid $frenchGray;
-        border-left: 0;
-        border-right: 0;
+  }
+  input[type=number] {
+    background: $white;
+    border: 1px solid $grey-3;
+    border-radius: 4px;
+    padding: $base-spacing-unit $base-spacing-unit-tiny;
+    width: $base-spacing-unit * 10;
+    text-align: right;
+    @include media($medium) {
+      text-align: left;
     }
-    tbody tr td {
-        padding: $base-spacing-unit-small 0 0;
-        @include breakpoint(small) {
-            padding: $base-spacing-unit-extra-large $base-spacing-unit-medium 0 0;
-        }
+  }
+  .cart--table__product {
+    text-align: left;
+    .product--name {
+      display: block;
+      margin-bottom: $base-spacing-unit-tiny;
+      color: $link;
+      font-weight: 500;
+      &:hover, &:focus {
+        color: $link-hover;
+      }
     }
-    .cart--table__product {
-        .product--name {
-            display: block;
-            margin-bottom: $base-spacing-unit-tiny;
-        }
+    .product--price {
+      font-weight: 500;
+      @include media($medium) {
+        font-weight: 400;
+      }
     }
-    input[type=number] {
-        background: $white;
-        border: 1px solid $frenchGray;
-        border-radius: 4px;
-        padding: $base-spacing-unit $base-spacing-unit-tiny;
-        width: $base-spacing-unit * 10;
+    .product--image {
+      text-align: center;
     }
+  }
 }
 
 .cart--meta {
-    input[type=submit]:first-of-type {
-        margin-bottom: 12px;
+  input[type=submit]:first-of-type {
+    margin-bottom: 12px;
+  }
+  .cart--notes {
+    .cart--notes--form {
+      padding: $base-spacing-unit-tiny;
+      @include media($small) {
+        padding: $base-spacing-unit-small;
+      }
+      background: $grey-4;
+      label {
+        display: block;
+        margin-bottom: $base-spacing-unit;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        border: 1px solid $grey-3;
+        border-radius: 4px;
+        padding: $base-spacing-unit;
+      }
     }
-    .cart--notes {
-        .cart--notes--form {
-            padding: $base-spacing-unit-tiny;
-            @include breakpoint(small) {
-                padding: $base-spacing-unit-small;
-            }
-            background: $ebb;
-            label {
-                display: block;
-                margin-bottom: $base-spacing-unit;
-            }
-            textarea {
-                display: block;
-                width: 100%;
-                border: 1px solid $frenchGray;
-                border-radius: 4px;
-                padding: $base-spacing-unit;
-            }
-        }
+  }
+  .cart--total {
+    @include media($small) {
+      text-align: right;
     }
-    .cart--total {
-        p:first-child {
-            margin-top: 0;
-        }
-        .cart--total__shipping {
-            margin-bottom: $base-spacing-unit-medium;
-        }
-        .cart--total--back {
-            margin-top: $base-spacing-unit-medium;
-            display: block;
-            &:hover, &:focus {
-                color: $black;
-            }
-        }
+    p:first-child {
+      margin-top: 0;
     }
+    .cart--total__shipping {
+      margin-bottom: $base-spacing-unit-medium;
+      @include fontsize(16);
+      color: $grey-2;
+      line-height: 1;
+    }
+    .cart--total--back {
+      margin-top: $base-spacing-unit-medium;
+      display: block;
+      color: $grey-1;
+      &:hover, &:focus {
+        color: $link-hover;
+      }
+    }
+  }
 }

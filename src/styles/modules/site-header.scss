@@ -1,36 +1,44 @@
 .site-header {
-    background: $white;
-    overflow: auto;
-    border-bottom: 3px solid $frenchGray;
-    padding: $base-spacing-unit-tiny 0;
-    @include breakpoint(xsmall) {
-        padding: $base-spacing-unit-small 0;
+  background: $white;
+  border-bottom: 3px solid $grey-3;
+  padding: $base-spacing-unit-tiny 0 0;
+  @include media($xsmall) {
+    padding: $base-spacing-unit-small 0 0;
+  }
+  .grid-cell-1of3 {
+    display: none;
+    text-align: right;
+    @include media($small) {
+      display: block;
     }
-    .grid {
-        margin-bottom: 0;
-        .grid-cell-1of3 {
-            display: none;
-            @include breakpoint(small) {
-                display: block;
-            }
-        }
+  }
+  img {
+    max-width: 385px;
+    height: 61px;
+    width: 100%;
+    display: block;
+  }
+  .site-header__cart {
+    margin-bottom: $base-spacing-unit;
+    display: block;
+    color: $grey-1;
+    text-decoration: none;
+    @include fontsize(16);
+    &:hover, &:focus {
+      text-decoration: underline;
     }
-    img {
-        max-width: 385px;
-        height: 61px;
-        width: 100%;
-        display: block;
+    svg {
+      height: 16px;
+      width: 19px;
+      margin-top: -$base-spacing-unit;
     }
-    .site-header__cart {
-        margin-bottom: $base-spacing-unit;
-        display: block;
-        svg {
-            height: 16px;
-            width: 19px;
-            margin-top: -$base-spacing-unit;
-        }
+  }
+  h1, .h1 {
+    margin-bottom: 0;
+    a {
+      display: block;
+      color: $deep-purple;
+      text-decoration: none;
     }
-    h1 a, .h1 a {
-        display: block;
-    }
+  }
 }

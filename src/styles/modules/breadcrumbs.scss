@@ -1,6 +1,17 @@
 .breadcrumbs {
-    margin-top: $base-spacing-unit-tiny;
-    span[aria-hidden] {
-        margin: 0 $base-spacing-unit-tiny;
-    }
+  margin-top: $base-spacing-unit-tiny;
+  @include fontsize(16);
+  a {
+    color: $grey-1;
+  }
+  span[aria-hidden] {
+      margin: 0 $base-spacing-unit-tiny;
+  }
+}
+
+.breadcrumbs + .sticky-footer-content .page-heading {
+  margin-top: $base-spacing-unit-tiny;
+  @include media($medium) {
+    margin-top: 0;
+  }
 }

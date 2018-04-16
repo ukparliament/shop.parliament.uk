@@ -8,44 +8,15 @@
     "theme_support_email": "mulleyjb@parliament.uk"
   },
   {
-    "name": "hjid",
+    "name": "Analytics",
     "settings": [
       {
         "id": "hjid",
-        "label": "Hotjar id",
-        "default": "771371",
+        "label": "HotJar ID",
+        "default": "000000",
         "type": "text"
       }
-	]
-  },
-  {
-    "name": "Typography",
-    "settings": [
-      {
-        "type": "select",
-        "id": "type_base_size",
-        "label": "Base size",
-        "default": "16px",
-        "options": [
-          {
-            "value": "14px",
-            "label": "14px"
-          },
-          {
-            "value": "15px",
-            "label": "15px"
-          },
-          {
-            "value": "16px",
-            "label": "16px"
-          },
-          {
-            "value": "17px",
-            "label": "17px"
-          }
-        ]
-      }
-    ]
+	  ]
   },
   {
     "name": "Colors",
@@ -53,13 +24,6 @@
       {
         "type": "header",
         "content": "General colors"
-      },
-      {
-        "type": "color",
-        "id": "color_primary",
-        "label": "Primary color",
-        "default": "#000",
-        "info": "Used for text links, and primary buttons"
       },
       {
         "type": "color",

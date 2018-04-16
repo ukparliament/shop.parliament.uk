@@ -1,113 +1,124 @@
 .product {
-    label {
-        display: block;
-    }
-    input[type=number] {
-        background: $white;
-        border: 1px solid $frenchGray;
-        border-radius: 4px;
-        padding: $base-spacing-unit $base-spacing-unit-tiny;
-        margin-top: $base-spacing-unit;
-        width: $base-spacing-unit * 10;
-    }
-    button[type=submit] {
-        margin-top: $base-spacing-unit-small;
-    }
+  label {
+    display: block;
+  }
+  input[type=number] {
+    background: $white;
+    border: 1px solid $grey-3;
+    border-radius: 4px;
+    padding: $base-spacing-unit $base-spacing-unit-tiny;
+    margin-top: $base-spacing-unit;
+    width: $base-spacing-unit * 10;
+    line-height: 1.5;
+  }
+  button[type=submit] {
+    margin-top: $base-spacing-unit-small;
+  }
 }
 
 .product__price {
-    border-bottom: 1px solid $frenchGray;
-    margin: 0 0 $base-spacing-unit-tiny;
-    padding: 0 0 $base-spacing-unit-tiny;
+  border-bottom: 1px solid $grey-3;
+  margin: 0 0 $base-spacing-unit-tiny;
+  padding: 0 0 $base-spacing-unit-tiny;
+}
+
+.product__price--current {
+  @include fontsize(32);
+  color: $deep-purple;
+  font-weight: 500;
 }
 
 .product__price--old {
-    display: inline-block;
-    margin-right: $base-spacing-unit;
+  display: inline-block;
+  margin-right: $base-spacing-unit;
+  @include fontsize(22);
+  text-decoration: line-through;
+  font-weight: 500;
+  color: $deep-purple;
 }
 
 .product__description {
-    padding-bottom: $base-spacing-unit-tiny;
-    margin-top: $base-spacing-unit-small;
-    @include breakpoint(medium) {
-        border-bottom: 1px solid $frenchGray;
-    }
-    p {
-        margin-top: 0;
-    }
-    ul, ol {
-        margin-left: 0;
-        padding-left: $base-spacing-unit-small;
-    }
+  padding-bottom: $base-spacing-unit-tiny;
+  margin-top: $base-spacing-unit-small;
+  @include media($medium) {
+    border-bottom: 1px solid $grey-3;
+  }
+  p {
+    margin-top: 0;
+  }
+  ul, ol {
+    margin-left: 0;
+    padding-left: $base-spacing-unit-small;
+  }
 }
 
 .product__add-to-cart {
-    display: inline-block;
-    margin-left: $base-spacing-unit;
-    button[type=submit] {
-        margin-top: 0;
-    }
+  display: inline-block;
+  margin-left: $base-spacing-unit;
+  button[type=submit] {
+    margin-top: 0;
+  }
 }
 
 /* Product image framing */
 .product-image-frame-container {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 100%;
-    padding-right: $base-spacing-unit-extra-large;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding-right: $base-spacing-unit-extra-large;
 }
 
 .product-image-frame {
-    align-items: center;
-    background: $white;
-    border: 1px solid $frenchGray;
-    display: flex;
-    height: 200px;
-    justify-content: center;
-    max-width: 300px;
-    @include breakpoint(small) {
-        max-width: 100%;
-    }
-    padding: $base-spacing-unit-medium;
-    width: 100%;
-    img {
-        max-height: 100%;
-        max-width: 100%;
-    }
+  align-items: center;
+  background: $white;
+  border: 1px solid $grey-3;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  max-width: 300px;
+  @include media($small) {
+    max-width: 100%;
+  }
+  padding: $base-spacing-unit-medium;
+  width: 100%;
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
 
 .grid-cell-1of1 {
-    .product-image-frame {
-        max-width: 300px;
-    }
+  .product-image-frame {
+    max-width: 300px;
+  }
 }
 
 .product-image-frame__featured {
-    height: auto;
-    img {
-        flex-shrink: 0;
-    }
+  height: auto;
+  img {
+    flex-shrink: 0;
+  }
 }
 
 .product-image-frame__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    li {
-        max-width: 19%;
-        margin-top: $base-spacing-unit-tiny;
-        margin-right: $base-spacing-unit-tiny;
-        a {
-            width: auto;
-            height: auto;
-            padding: $base-spacing-unit;
-            @include breakpoint(medium) {
-                padding: $base-spacing-unit-tiny;
-            }
-        }
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  li {
+    max-width: 19%;
+    margin-top: $base-spacing-unit-tiny;
+    margin-right: $base-spacing-unit-tiny;
+    a {
+      width: auto;
+      height: auto;
+      padding: $base-spacing-unit;
+      @include media($medium) {
+        padding: $base-spacing-unit-tiny;
+      }
     }
+  }
 }

@@ -1,26 +1,41 @@
 .microsite-masthead {
-    background: $martinique;
-    padding: $base-spacing-unit 0;
-    .container {
-        display: flex;
-        justify-content: space-between;
+  background: $deep-purple;
+  padding: $base-spacing-unit 0;
+  @include fontsize(14);
+  a {
+    color: $grey-5;
+    text-decoration: underline;
+    &:hover, &:focus {
+      color: $grey-3;
     }
-    .microsite-masthead__back .icon {
-        height: 10px;
-        width: 7.5px;
-        margin-right: $base-spacing-unit;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .microsite-masthead__back {
+    font-weight: 500;
+    text-decoration: none;
+    .icon {
+      height: 10px;
+      width: 7.5px;
+      margin-right: $base-spacing-unit;
     }
-    .microsite-masthead__links {
-        display: none;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        @include breakpoint(small) {
-            display: block;
-        }
-        li {
-            display: inline-block;
-            margin-left: $base-spacing-unit-small;
-        }
+    span {
+      text-decoration: underline;
     }
+  }
+  .microsite-masthead__links {
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include media($small) {
+      display: block;
+    }
+    li {
+      display: inline-block;
+      margin-left: $base-spacing-unit-small;
+    }
+  }
 }

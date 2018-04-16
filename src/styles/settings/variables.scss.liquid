@@ -1,6 +1,4 @@
 /*================ Color Variables ================*/
-$color-primary: {{ settings.color_primary }};
-
 // Text colors
 $color-body-text: {{ settings.color_body_text }};
 
@@ -18,55 +16,15 @@ $color-error-bg: #000;
 $color-success: #000;
 $color-success-bg: #000;
 
-/*================ Typography Variables ================*/
-$font-size-base: 16px;
-
-/*============================================================================
-  Grid Breakpoints and Class Names
-    - Do not change the variable names
-==============================================================================*/
-$grid-medium: 750px;
-$grid-large: 990px;
-$grid-widescreen: 1400px;
-$grid-gutter: 30px;
-
-$small: 'small';
-$medium: 'medium';
-$medium-down: 'medium-down';
-$medium-up: 'medium-up';
-$large: 'large';
-$large-down: 'large-down';
-$large-up: 'large-up';
-$widescreen: 'widescreen';
-
 /*================ Sizing Variables ================*/
-$width-site: 1180px;
 $gutter: 30px;
 
 /*================ Z-Index ================*/
-$z-index-dropdown: 2;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
 $svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};
-$svg-tick-icon: #{'{{ "icon-tick.svg" | asset_url }}'};
 
-/* Custom */
-/*================ Spacing ================*/
-$base-spacing-unit: 6px;
-$base-spacing-unit-tiny: round($base-spacing-unit * 2); // 12px
-$base-spacing-unit-small: round($base-spacing-unit * 3); // 18px
-$base-spacing-unit-medium: round($base-spacing-unit * 4); // 24px
-$base-spacing-unit-large: round($base-spacing-unit * 5); // 30px
-$base-spacing-unit-extra-large: round($base-spacing-unit * 6); // 36px
-$base-spacing-unit-extra-extra-large: round($base-spacing-unit * 7); // 42px
-$base-spacing-unit-extra-extra-extra-large: round($base-spacing-unit * 8); // 48px
-
-/* Breakpoints */
-$breakpoint-xsmall: 525px;
+/* Legacy Breakpoints */
 $breakpoint-small: 768px;
 $breakpoint-medium: 990px;
-$breakpoint-large: 1200px;
-
-/* Special breakpoint */
-$breakpoint-tiles: 600px;

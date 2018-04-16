@@ -10,14 +10,6 @@
             {% endfor %}
           </ul>
         {% endif %}
-        {%- assign footer_middle_menu = section.settings.footer_middle_menu -%}
-        {% if linklists[footer_middle_menu].links.size > 0 %}
-          <ul class="site-footer__linklist">
-            {% for link in linklists[footer_middle_menu].links %}
-              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
       </div>
       <div class="grid-cell grid-cell-1of3">
         <div class="footer--bordered">
@@ -59,12 +51,6 @@
         "type": "link_list",
         "id": "footer_left_menu",
         "label": "Footer left menu",
-        "default": "footer"
-      },
-      {
-        "type": "link_list",
-        "id": "footer_middle_menu",
-        "label": "Footer middle menu",
         "default": "footer"
       },
       {
