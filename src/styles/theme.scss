@@ -7,17 +7,30 @@
 @import url('tools/mixins.scss');
 
 /*================ SETTINGS ================*/
-@import url('settings/variables.scss.liquid');
+@import url('settings/breakpoints.scss');
 @import url('settings/colours.scss');
 @import url('settings/spacing.scss');
+@import url('settings/typography.scss');
+@import url('settings/variables.scss.liquid');
 
 /*================ VENDOR ==================*/
 @import url('../../node_modules/normalize.css/normalize.css');
 @import url('../../node_modules/magnify/dist/css/magnify.css');
 
+/*================ Generic ================*/
+@import url('generic/fonts.scss');
+
+/*================ Elements ================*/
+@import url('elements/body.scss');
+@import url('elements/forms.scss');
+@import url('elements/headings.scss');
+@import url('elements/paragraphs.scss');
+@import url('elements/strong.scss');
+
+/*================ Components ================*/
+@import url('components/page-heading.scss');
+
 /*================ COMMON ================*/
-@import url('global/fonts.scss');
-@import url('global/typography.scss');
 @import url('global/slate-reset.scss');
 @import url('global/helper-classes.scss');
 @import url('global/grid.scss');

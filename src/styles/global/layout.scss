@@ -1,26 +1,26 @@
 /*================ General layout styles ================*/
 body,
 html {
-  background-color: $alabaster;
+  background-color: $grey-5;
 }
 
 .shopify-section {
-    width: 100%;
+  width: 100%;
 }
 
 .sticky-footer {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .sticky-footer-content {
-    flex: 1 1 auto;
-    height: 100%;
+  flex: 1 1 auto;
+  height: 100%;
 }
 
 .page .rte {
-    @include breakpoint(medium) {
-        max-width: 720px;
-    }
+  @include media($medium) {
+    max-width: 720px;
+  }
 }

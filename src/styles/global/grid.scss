@@ -1,112 +1,112 @@
 .container {
-    max-width: (1120px + ($base-spacing-unit-small * 2));
-    padding: 0 $base-spacing-unit-small;
-    margin: 0 auto;
-    width: 100%;
+  max-width: (1120px + ($base-spacing-unit-small * 2));
+  padding: 0 $base-spacing-unit-small;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin: (-$base-spacing-unit-small) 0 $base-spacing-unit-small (-$base-spacing-unit-small);
-    .grid-cell {
-        padding: $base-spacing-unit-small 0 0 $base-spacing-unit-small;
-        flex: 1 1 auto;
-        width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: (-$base-spacing-unit-small) 0 $base-spacing-unit-small (-$base-spacing-unit-small);
+  .grid-cell {
+    padding: $base-spacing-unit-small 0 0 $base-spacing-unit-small;
+    flex: 1 1 auto;
+    width: auto;
+  }
+  .grid-cell-1of1 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .grid-cell-1of2 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .grid-cell-1of3 {
+    flex: 0 0 auto;
+    width: 33.3%;
+  }
+  .grid-cell-1of4 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .grid-cell-1of5 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+  .grid-cell-1of6 {
+    flex: 0 0 auto;
+    width: 16.666%;
+  }
+  .grid-cell-1of7 {
+    flex: 0 0 auto;
+    width: 14.285%;
+  }
+  .grid-cell-1of8 {
+    flex: 0 0 auto;
+    width: 12.5%;
+  }
+  // Smaller screens
+  .grid-cell-1of4-1of2-1of1 {
+    flex: 0 0 auto;
+    width: 100%;
+    @include media($xsmall) {
+      width: 50%;
     }
-    .grid-cell-1of1 {
-        flex: 0 0 auto;
-        width: 100%;
+    @include media($small) {
+      width: 25%;
     }
-    .grid-cell-1of2 {
-        flex: 0 0 auto;
-        width: 50%;
+  }
+  .grid-cell-1of3-1of2-1of1 {
+    flex: 0 0 auto;
+    width: 100%;
+    @include media($xsmall) {
+      width: 50%;
     }
-    .grid-cell-1of3 {
-        flex: 0 0 auto;
-        width: 33.3%;
+    @include media($small) {
+      width: 33.3%;
     }
-    .grid-cell-1of4 {
-        flex: 0 0 auto;
-        width: 25%;
+  }
+  .grid-cell-3of4-1of1 {
+    flex: 0 0 auto;
+    width: 100%;
+    @include media($small) {
+      width: 75%;
     }
-    .grid-cell-1of5 {
-        flex: 0 0 auto;
-        width: 20%;
+  }
+  .grid-cell-1of4-1of1 {
+    flex: 0 0 auto;
+    width: 100%;
+    @include media($small) {
+      width: 25%;
     }
-    .grid-cell-1of6 {
-        flex: 0 0 auto;
-        width: 16.666%;
+  }
+  .grid-cell-1of3-1of1 {
+    flex: 0 0 auto;
+    width: 100%;
+    @include media($xsmall) {
+      width: 33.3%;
     }
-    .grid-cell-1of7 {
-        flex: 0 0 auto;
-        width: 14.285%;
+  }
+  .grid-cell-1of2-1of1 {
+    flex: 0 0 auto;
+    width: 100%;
+    @include media($xsmall) {
+      width: 50%;
     }
-    .grid-cell-1of8 {
-        flex: 0 0 auto;
-        width: 12.5%;
+  }
+  // Hide on mobile
+  .grid-cell-hide-on-mobile {
+    display: none;
+    @include media($small) {
+      display: block;
     }
-    // Smaller screens
-    .grid-cell-1of4-1of2-1of1 {
-        flex: 0 0 auto;
-        width: 100%;
-        @include breakpoint(xsmall) {
-            width: 50%;
-        }
-        @include breakpoint(small) {
-            width: 25%;
-        }
-    }
-    .grid-cell-1of3-1of2-1of1 {
-        flex: 0 0 auto;
-        width: 100%;
-        @include breakpoint(xsmall) {
-            width: 50%;
-        }
-        @include breakpoint(small) {
-            width: 33.3%;
-        }
-    }
-    .grid-cell-3of4-1of1 {
-        flex: 0 0 auto;
-        width: 100%;
-        @include breakpoint(small) {
-            width: 75%;
-        }
-    }
-    .grid-cell-1of4-1of1 {
-        flex: 0 0 auto;
-        width: 100%;
-        @include breakpoint(small) {
-            width: 25%;
-        }
-    }
-    .grid-cell-1of3-1of1 {
-        flex: 0 0 auto;
-        width: 100%;
-        @include breakpoint(xsmall) {
-            width: 33.3%;
-        }
-    }
-    .grid-cell-1of2-1of1 {
-        flex: 0 0 auto;
-        width: 100%;
-        @include breakpoint(xsmall) {
-            width: 50%;
-        }
-    }
-    // Hide on mobile
-    .grid-cell-hide-on-mobile {
-        display: none;
-        @include breakpoint(small) {
-            display: block;
-        }
-    }
+  }
 }
 
 .grid-reverse-on-mobile {
-    flex-direction: column-reverse;
-    @include breakpoint(small) {
-        flex-direction: row;
-    }
+  flex-direction: column-reverse;
+  @include media($small) {
+    flex-direction: row;
+  }
 }

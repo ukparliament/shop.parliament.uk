@@ -1,17 +1,15 @@
 <div class="tiles" data-section-id="{{ section.id }}" data-section-type="tiles">
   {% for block in section.blocks %}
-    {% case block.type %}
-      {% when 'full-width-tile' %}
-        <div class="grid">
+    <div class="grid">
+      {% case block.type %}
+        {% when 'full-width-tile' %}
           <div class="grid-cell grid-cell-1of1">
             <a href="{{ block.settings.full-width-tile-link }}">
               <img role="presentation" src="{{ block.settings.full-width-tile-image | img_url: 'x400' }}" alt="">
               <div class="tile--heading">{{ block.settings.full-width-tile-title }}</div>
             </a>
           </div>
-        </div>
-      {% when 'half-width-tiles' %}
-        <div class="grid">
+        {% when 'half-width-tiles' %}
           <div class="grid-cell grid-cell-1of2-1of1">
             <a href="{{ block.settings.left-half-width-tile-link }}">
               <img role="presentation" src="{{ block.settings.left-half-width-tile-image | img_url: 'x367' }}" alt="">
@@ -24,9 +22,7 @@
               <div class="tile--heading">{{ block.settings.right-half-width-tile-title }}</div>
             </a>
           </div>
-        </div>
-      {% when 'third-width-tiles' %}
-        <div class="grid">
+        {% when 'third-width-tiles' %}
           <div class="grid-cell grid-cell-1of3-1of1">
             <a href="{{ block.settings.left-third-width-tile-link }}">
               <img role="presentation" src="{{ block.settings.left-third-width-tile-image | img_url: 'x241' }}" alt="">
@@ -45,8 +41,8 @@
               <div class="tile--heading">{{ block.settings.right-third-width-tile-title }}</div>
             </a>
           </div>
-        </div>
-    {% endcase %}
+      {% endcase %}
+    </div>
   {% endfor %}
 </div>
 

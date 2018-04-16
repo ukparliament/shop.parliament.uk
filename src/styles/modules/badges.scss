@@ -1,6 +1,7 @@
 .badge {
-    display: inline-block;
-    margin: 0 $base-spacing-unit 0 0;
-    background: $algaeGreen;
-    padding: 0 3px;
+  display: inline-block;
+  margin: 0 $base-spacing-unit 0 0;
+  background: $mint;
+  padding: 0 3px;
+  @include fontsize(13);
 }

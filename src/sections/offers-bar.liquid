@@ -2,17 +2,12 @@
   <div class="container">
     <div class="grid">
       {% for block in section.blocks %}
+        {% capture left-icon %}icon-{{block.settings.left-icon}}.svg{% endcapture %}
+        {% capture center-icon %}icon-{{block.settings.center-icon}}.svg{% endcapture %}
+        {% capture right-icon %}icon-{{block.settings.right-icon}}.svg{% endcapture %}
         <div class="grid-cell grid-cell-1of3">
           <div class="offers-bar__icon">
-            {% if block.settings.left-icon == 'tag-blue' %}
-              <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.left-icon == 'people-multi' %}
-              <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.left-icon == 'mouse-yellow' %}
-              <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.left-icon == 'mail-green' %}
-              <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation" alt="">
-            {% endif %}
+            <img src="{{ left-icon | asset_url }}" role="presentation" alt="">
           </div>
           <div class="offers-bar__description">
             {% if block.settings.left-url %}
@@ -25,15 +20,7 @@
         </div>
         <div class="grid-cell grid-cell-1of3">
           <div class="offers-bar__icon">
-            {% if block.settings.center-icon == 'tag-blue' %}
-              <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.center-icon == 'people-multi' %}
-              <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.center-icon == 'mouse-yellow' %}
-              <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.center-icon == 'mail-green' %}
-              <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation" alt="">
-            {% endif %}
+            <img src="{{ center-icon | asset_url }}" role="presentation" alt="">
           </div>
           <div class="offers-bar__description">
             {% if block.settings.center-url %}
@@ -46,15 +33,7 @@
         </div>
         <div class="grid-cell grid-cell-1of3">
           <div class="offers-bar__icon">
-            {% if block.settings.right-icon == 'tag-blue' %}
-              <img src="{{ 'icon-tag-blue.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.right-icon == 'people-multi' %}
-              <img src="{{ 'icon-people-multi.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.right-icon == 'mouse-yellow' %}
-              <img src="{{ 'icon-mouse-yellow.svg' | asset_url }}" role="presentation" alt="">
-            {% elsif block.settings.right-icon == 'mail-green' %}
-              <img src="{{ 'icon-mail-green.svg' | asset_url }}" role="presentation" alt="">
-            {% endif %}
+            <img src="{{ right-icon | asset_url }}" role="presentation" alt="">
           </div>
           <div class="offers-bar__description">
             {% if block.settings.right-url %}

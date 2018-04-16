@@ -1,13 +1,29 @@
 .pagination {
-    margin: $base-spacing-unit-extra-extra-extra-large 0 0;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    .prev, .next {
-        flex: 1 1 auto;
-    }
-    span, a {
-        min-width: $base-spacing-unit-medium;
-        display: block;
-    }
+  text-align: center;
+  margin: $base-spacing-unit-extra-extra-extra-large 0 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  .prev, .next {
+    flex: 1 1 auto;
+  }
+  .prev {
+    text-align: left;
+  }
+  .next {
+    text-align: right;
+  }
+  .current {
+    font-weight: 500;
+  }
+  span, a {
+    min-width: $base-spacing-unit-medium;
+    display: block;
+  }
+  a {
+    color: $link;
+  }
+  a:hover, a:focus {
+    color: $link-hover;
+  }
 }

@@ -1,42 +1,11 @@
 @mixin breakpoint($breakpoint) {
-  @if $breakpoint == "xsmall" {
-    @media (min-width: $breakpoint-xsmall) {
-        @content;
-    }
-  }
-
   @if $breakpoint == "small-down" {
     @media (max-width: $breakpoint-small - 1) {
         @content;
     }
   }
-
-  @else if $breakpoint == "small" {
-    @media (min-width: $breakpoint-small) {
-        @content;
-    }
-  }
-
   @else if $breakpoint == "medium-down" {
     @media (max-width: $breakpoint-medium - 1) {
-        @content;
-    }
-  }
-
-  @else if $breakpoint == "medium" {
-    @media (min-width: $breakpoint-medium) {
-        @content;
-    }
-  }
-
-  @else if $breakpoint == "large" {
-    @media (min-width: $breakpoint-large) {
-        @content;
-    }
-  }
-
-  @else if $breakpoint == "tiles" {
-    @media (min-width: $breakpoint-tiles) {
         @content;
     }
   }

@@ -1,64 +1,64 @@
 .button {
-    @include prefix('user-select', 'none', moz ms webkit spec);
-    @include prefix(appearance, none, webkit moz spec);
+  @include prefix('user-select', 'none', moz ms webkit spec);
+  @include prefix(appearance, none, webkit moz spec);
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 4px;
+  padding: $base-spacing-unit $base-spacing-unit-tiny;
+  cursor: pointer;
+
+  // button colours
+  border: 1px solid $link;
+  background: $link;
+  color: $white;
+
+  .icon ~ span {
+    line-height: 1;
+    vertical-align: middle;
     display: inline-block;
-    width: auto;
-    text-decoration: none;
-    text-align: center;
-    white-space: nowrap;
-    border-radius: 4px;
-    padding: $base-spacing-unit $base-spacing-unit-tiny;
-    cursor: pointer;
-
-    // button colours
-    border: 1px solid $stTropaz;
-    background: $stTropaz;
-    color: $white;
-
-    .icon ~ span {
-        line-height: 1;
-        vertical-align: middle;
-        display: inline-block;
-        margin-left: $base-spacing-unit;
-    }
+    margin-left: $base-spacing-unit;
+  }
 }
 
 .button--small {
-    padding: ($base-spacing-unit / 2) $base-spacing-unit-tiny;
-    font-size: 14px;
+  padding: ($base-spacing-unit / 2) $base-spacing-unit-tiny;
+  @include fontsize(14);
 }
 
 .button:hover, .button:focus {
-    background: $stTropazButtonHover;
-    border-color: $stTropazButtonHover;
+  background: $button--primary__hover;
+  border-color: $button--primary__hover;
 }
 
 .button--secondary {
-    background: $periwinkle;
-    border-color: $periwinkle;
-    color: $martinique;
+  background: $button--secondary;
+  border-color: $button--secondary;
+  color: $deep-purple;
 }
 
 .button--secondary:hover, .button--secondary:focus {
-    background: $periwinkleHover;
-    border-color: $periwinkleHover;
+  background: $button--secondary__hover;
+  border-color: $button--secondary__hover;
 }
 
 .button--grey {
-    background: $frenchGray;
-    border-color: $frenchGray;
-    color: $tundora;
+  background: $grey-3;
+  border-color: $grey-3;
+  color: $grey-1;
 }
 
 .button--grey:hover, .button--grey:focus {
-    background: $frenchGray;
-    border-color: $frenchGray;
-    color: $tundora;
-    opacity: 0.8;
+  background: $grey-3;
+  border-color: $grey-3;
+  color: $grey-1;
+  opacity: 0.8;
 }
 
 .button[disabled] {
-    background: $ebb;
-    border-color: $ebb;
-    color: $frenchGray;
+  background: $grey-4;
+  border-color: $grey-4;
+  color: $grey-3;
 }

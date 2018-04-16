@@ -1,0 +1,10 @@
+p a {
+  color: $link;
+  &:hover, &:focus {
+    color: $link-hover;
+  }
+  &:focus {
+    background: $mint;
+    outline: 3px solid $mint;
+  }
+}
