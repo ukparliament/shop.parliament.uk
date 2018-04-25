@@ -19,9 +19,12 @@
       }
     },
     "cookie": {
-        "banner_text": "shop.parliament.uk uses cookies to make the site simpler.",
-        "banner_anchor_text": "Find out more about cookies."
-      },
+      "banner_text": "shop.parliament.uk uses cookies to make the site simpler.",
+      "banner_anchor_text": "Find out more about cookies."
+    },
+    "pagination": {
+      "title": "Pagination"
+    },
     "password_page": {
       "opening_soon": "Opening Soon",
       "spread_the_word": "Spread the word",
@@ -53,7 +56,8 @@
       "results_for_html": "Your search for \"{{ terms }}\" revealed the following:",
       "title": "Search for products on our site",
       "placeholder": "Search our store",
-      "submit": "Search"
+      "submit": "Search",
+      "page_title": "Search"
     },
     "shop": "Shop"
   },
