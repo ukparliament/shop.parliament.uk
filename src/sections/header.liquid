@@ -1,4 +1,4 @@
-<header class="site-header" role="banner">
+<header class="site-header">
   <div class="container">
     <div class="grid">
       <div class="grid-cell">
@@ -26,7 +26,7 @@
   </div>
 </header>
 
-<nav class="site-navigation" role="navigation">
+<nav class="site-navigation">
   <ul class="site-navigation__menu">
     {% for link in linklists[section.settings.main_linklist].links %}
       {%- assign child_list_handle = link.title | handleize -%}
@@ -60,7 +60,7 @@
       <h3>{{ 'layout.browse' | t }}</h3>
       <label class="menu-toggle" for="menu-toggle">{% include 'icon-close' %}</label>
     </div>
-    {% include 'search-bar' %}
+    {% include 'search-bar', type: 'mobile' %}
     <ul>
       {% for link in linklists[section.settings.main_linklist].links %}
         {%- assign child_list_handle = link.title | handleize -%}
