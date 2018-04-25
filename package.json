@@ -8,7 +8,7 @@
     "@shopify/themekit": "^0.6.12",
     "accessible-mega-menu": "git+https://github.com/adobe-accessibility/Accessible-Mega-Menu.git",
     "jquery": "^2.2.4",
-    "magnify": "^2.1.0",
+    "magnify": "^2.3.0",
     "normalize.css": "^8.0.0"
   },
   "repository": {
