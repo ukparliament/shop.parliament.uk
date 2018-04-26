@@ -18,6 +18,9 @@
     {% if current_page != 1 %}
       &ndash; {{ 'general.meta.page' | t: page: current_page }}
     {% endif %}
+    {% if search.performed %}
+      &ndash; {{ 'general.search.page_title' | t }}
+    {% endif %}
     {% unless page_title contains shop.name %}
       &ndash; {{ shop.name }}
     {% endunless %}

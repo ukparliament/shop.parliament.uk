@@ -1,4 +1,4 @@
-<div class="pagination">
+<nav aria-label="{{ 'general.pagination.title' | t }}" class="pagination">
   {% unless paginate.previous.is_link %}
     <span class="prev"></span>
   {% endunless %}
@@ -6,4 +6,4 @@
   {% unless paginate.next.is_link %}
     <span class="next"></span>
   {% endunless %}
-</div>
+</nav>
