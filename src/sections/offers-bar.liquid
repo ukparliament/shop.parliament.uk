@@ -10,11 +10,16 @@
             <img src="{{ left-icon | asset_url }}" role="presentation" alt="">
           </div>
           <div class="offers-bar__description">
-            {% if block.settings.left-url %}
-              <strong><a href="{{ block.settings.left-url }}">{{ block.settings.left-title }}</a></strong>
-            {% else %}
-              <strong>{{ block.settings.left-title }}</strong>
-            {% endif %}
+            <strong>
+              {% if block.settings.left-url %}
+                <a href="{{ block.settings.left-url }}">
+                  {{ block.settings.left-title }}
+                  <span class="visually-hidden">{{ block.settings.left-description }}</span>
+                </a>
+              {% else %}
+                {{ block.settings.left-title }}
+              {% endif %}
+            </strong>
             <p>{{ block.settings.left-description }}</p>
           </div>
         </div>
@@ -23,11 +28,16 @@
             <img src="{{ center-icon | asset_url }}" role="presentation" alt="">
           </div>
           <div class="offers-bar__description">
-            {% if block.settings.center-url %}
-              <strong><a href="{{ block.settings.center-url }}">{{ block.settings.center-title }}</a></strong>
-            {% else %}
-              <strong>{{ block.settings.center-title }}</strong>
-            {% endif %}
+            <strong>
+              {% if block.settings.center-url %}
+                <a href="{{ block.settings.center-url }}">
+                  {{ block.settings.center-title }}
+                  <span class="visually-hidden">{{ block.settings.center-description }}</span>
+                </a>
+              {% else %}
+                {{ block.settings.center-title }}
+              {% endif %}
+            </strong>
             <p>{{ block.settings.center-description }}</p>
           </div>
         </div>
@@ -36,11 +46,16 @@
             <img src="{{ right-icon | asset_url }}" role="presentation" alt="">
           </div>
           <div class="offers-bar__description">
-            {% if block.settings.right-url %}
-              <strong><a href="{{ block.settings.right-url }}">{{ block.settings.right-title }}</a></strong>
-            {% else %}
-              <strong>{{ block.settings.right-title }}</strong>
-            {% endif %}
+            <strong>
+              {% if block.settings.right-url %}
+                <a href="{{ block.settings.right-url }}">
+                  {{ block.settings.right-title }}
+                  <span class="visually-hidden">{{ block.settings.right-description }}</span>
+                </a>
+              {% else %}
+                {{ block.settings.right-title }}
+              {% endif %}
+            </strong>
             <p>{{ block.settings.right-description }}</p>
           </div>
         </div>
