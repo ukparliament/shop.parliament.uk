@@ -8,8 +8,8 @@
       <div class="list-collections__collection grid-cell grid-cell-1of1">
         <div class="grid-cell-borders">
           <div class="list-collections__collection__header">
-            <h2><a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}">{{ collection.title }}</a></h2>
-            <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection.title }}" class="list-collections__collection__header__more">{{ 'collections.general.more' | t }} {{ collection.title }} &rsaquo;</a>
+            <h2><a href="{{ collection.url }}">{{ collection.title }}</a></h2>
+            <a href="{{ collection.url }}" class="list-collections__collection__header__more">{{ 'collections.general.more' | t: title: collection.title }} <span aria-hidden="true">&rsaquo;</span></a>
           </div>
           <div class="product-grid">
             <div class="product-grid__products grid">

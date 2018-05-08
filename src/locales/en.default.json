@@ -114,7 +114,7 @@
     "general": {
       "no_matches": "Sorry, there are no products in this collection",
       "link_title": "Browse our {{ title }} collection",
-      "more": "More"
+      "more": "More {{ title }}"
     },
     "all": "All Products",
     "title": "Collections",

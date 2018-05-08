@@ -5,9 +5,9 @@
         {% if template.name == 'index' %}
           <h1 itemscope itemtype="http://schema.org/Organization">
         {% else %}
-          <div class="h1" itemscope itemtype="http://schema.org/Organization">
+          <div itemscope itemtype="http://schema.org/Organization">
         {% endif %}
-            <a href="/" itemprop="url" title="{{ shop.name }}"><img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}"></a>
+            <a href="/" itemprop="url"><img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}"></a>
         {% if template.name == 'index' %}
           </h1>
         {% else %}
@@ -32,7 +32,7 @@
       {%- assign child_list_handle = link.title | handleize -%}
       {% if menus[child_list_handle].links != blank %}
         <li class="site-navigation__menu__item{% if link.active %} site-navigation__menu__item--active{% endif %}">
-          <a href="{{ link.url }}" title="{{ link.title }}">
+          <a href="{{ link.url }}">
             {{ link.title }}
             <span class="site-navigation--caret">{% include 'icon-arrow-down' %}</span>
           </a>
@@ -65,7 +65,7 @@
       {% for link in linklists[section.settings.main_linklist].links %}
         {%- assign child_list_handle = link.title | handleize -%}
           <li>
-            <a href="{{ link.url }}" title="{{ link.title }}" {% if link.active %}class="site-navigation--mobile--active"{% endif %}>
+            <a href="{{ link.url }}"{% if link.active %} class="site-navigation--mobile--active"{% endif %}>
               {{ link.title }}
             </a>
             {% if menus[child_list_handle].links != blank %}
