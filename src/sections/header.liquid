@@ -54,7 +54,7 @@
 <div class="site-navigation--mobile">
   <input type="checkbox" id="menu-toggle" class="site-navigation__menu--toggle">
   <label class="site-navigation--mobile__button" for="menu-toggle">{% include 'icon-hamburger' %}</label>
-  <a href="/cart" class="site-navigation--mobile__button">{% include 'icon-cart' %}</a>
+  <a href="/cart" class="site-navigation--mobile__button"><span class="visually-hidden">{{ 'cart.general.title' | t }}</span> {% include 'icon-cart' %}</a>
   <nav class="site-navigation--mobile__nav">
     <div class="site-navigation--mobile__nav--heading">
       <h3>{{ 'layout.browse' | t }}</h3>
