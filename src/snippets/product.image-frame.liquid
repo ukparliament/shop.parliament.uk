@@ -1,7 +1,7 @@
-<a href="{{ product.url | within: collection }}" class="product-image-frame">
+<a href="{{ product.url | within: collection }}" class="product-image-frame" aria-hidden="true" tabindex="-1">
   {% if product.featured_image %}
-    <img src="{{ product.featured_image.src | img_url: 'x150', scale: 2 }}" alt="{{ product.featured_image.alt | escape }}">
+    <img src="{{ product.featured_image.src | img_url: 'x150', scale: 2 }}" alt="">
   {% else %}
-    <img src="{{ item | img_url: 'x300' }}" alt="{{ item.title | escape }}">
+    <img src="{{ item | img_url: 'x300' }}" alt="">
   {% endif %}
 </a>
