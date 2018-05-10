@@ -23,7 +23,6 @@
             {% include 'product.image-frame', product: item %}
             <div class="product-grid__description">
               <a href="{{ item.url | within: collection }}" class="product-grid__title">{{ item.title }}</a>
-
               <p class="product-grid__price">
                 {% if on_sale == true %}
                   <span class="badge">{{ 'products.product.on_sale' | t }}</span>
@@ -63,7 +62,6 @@
                   {{ 'products.product.sold_out' | t }}
                 {% endunless %}
               </p>
-
               <p>{{ item.description | strip_html | truncate: 150 }}</p>
             </div>
           </div>
@@ -76,7 +74,7 @@
         {% unless item.object_type == 'product' %}
           <li>
               {% if item.featured_image %}
-                <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
+                <a href="{{ item.url | within: collection }}" tabindex="-1" aria-hidden="true">
                   {{ item.featured_image.src | img_url: '240x240' | img_tag: item.featured_image.alt }}
                 </a>
               {% endif %}
