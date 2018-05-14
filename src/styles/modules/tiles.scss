@@ -29,6 +29,12 @@
     color: $white;
     font-weight: 500;
     padding: $base-spacing-unit-tiny;
+    margin: 0;
+    line-height: 1;
+    @include fontsize(16);
+    @include media($medium) {
+      @include fontsize(18);
+    }
     @include media($tiles) {
       bottom: $base-spacing-unit-medium;
       position: absolute;

@@ -264,6 +264,7 @@
   },
   "layout": {
     "browse": "Browse",
+    "featured_collections": "Featured Collections",
     "cart": {
       "title": "Cart",
       "items_count": {

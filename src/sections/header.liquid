@@ -2,17 +2,9 @@
   <div class="container">
     <div class="grid">
       <div class="grid-cell">
-        {% if template.name == 'index' %}
-          <h1 itemscope itemtype="http://schema.org/Organization">
-        {% else %}
-          <div itemscope itemtype="http://schema.org/Organization">
-        {% endif %}
-            <a href="/" itemprop="url"><img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}"></a>
-        {% if template.name == 'index' %}
-          </h1>
-        {% else %}
-          </div>
-        {% endif %}
+        <div itemscope itemtype="http://schema.org/Organization">
+          <a href="/" itemprop="url"><img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}"></a>
+        </div>
       </div>
       <div class="grid-cell grid-cell-1of3">
         <a href="/cart" class="site-header__cart">
@@ -57,7 +49,7 @@
   <a href="/cart" class="site-navigation--mobile__button"><span class="visually-hidden">{{ 'cart.general.title' | t }}</span> {% include 'icon-cart' %}</a>
   <nav class="site-navigation--mobile__nav">
     <div class="site-navigation--mobile__nav--heading">
-      <h3>{{ 'layout.browse' | t }}</h3>
+      {{ 'layout.browse' | t }}
       <label class="menu-toggle" for="menu-toggle">{% include 'icon-close' %}</label>
     </div>
     {% include 'search-bar', type: 'mobile' %}
