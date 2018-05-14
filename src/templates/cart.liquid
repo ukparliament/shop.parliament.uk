@@ -1,31 +1,21 @@
 <h1 class="page-heading">{{ 'cart.general.title' | t }}</h1>
 {% if cart.item_count > 0 %}
   <form action="/cart" method="post" novalidate>
-    <table class="responsive-table cart--table">
-      <thead class="small--hide">
+    <table class="cart__table">
+      <thead>
         <tr>
-          <th>&nbsp;</th> <!-- Empty TH for inlining of product name -->
-          <th>{{ 'cart.label.product' | t }}</th>
-          <th>{{ 'cart.label.price' | t }}</th>
-          <th>{{ 'cart.label.quantity' | t }}</th>
-          <th>{{ 'cart.label.total' | t }}</th>
+          <th scope="col">&nbsp;</th> <!-- Empty TH for inlining of product name -->
+          <th scope="col">{{ 'cart.label.product' | t }}</th>
+          <th scope="col">{{ 'cart.label.price' | t }}</th>
+          <th scope="col">{{ 'cart.label.quantity' | t }}</th>
+          <th scope="col">{{ 'cart.label.total' | t }}</th>
         </tr>
       </thead>
       <tbody>
-
         {% for item in cart.items %}
-
-        {% comment %}
-
-        Cart Item Template
-        =====================
-        The data-label attributes on <td> elements are mobile-friendly
-        helpers used for responsive-table labels
-        {% endcomment %}
-
-          <tr class="responsive-table-row">
-            <td>{% include 'product.image-frame', product: item %}</td>
-            <td class="cart--table__product">
+          <tr>
+            <td scope="row">{% include 'product.image-frame', product: item %}</td>
+            <td>
               <a href="{{ item.url }}" class="product--name">{{ item.product.title }}</a>
 
               {% unless item.variant.title contains 'Default' %}
@@ -49,7 +39,7 @@
                 {% endfor %}
               {% endif %}
 
-              <a class="button button--small button--grey" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{ 'cart.general.remove' | t }} <span>&times;</span></a>
+              <a class="button button--small button--grey" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{ 'cart.general.remove' | t }} <span class="visually-hidden">{{ 'cart.general.remove_from_cart' | t: product_title: item.product.title }}</span> <span>&times;</span></a>
             </td>
             <td data-label="{{ 'cart.label.price' | t }}">
               {% if item.original_line_price != item.line_price %}
@@ -67,13 +57,12 @@
                      id="updates_{{ item.key }}"
                      value="{{ item.quantity }}"
                      min="0"
-                     aria-label="{{ 'cart.general.item_quantity' | t }}">
+                     aria-label="{{ 'cart.general.item_quantity' | t: product_title: item.product.title }}">
             </td>
-            <td data-label="{{ 'cart.label.total' | t }}" class="product--price">
+            <td data-label="{{ 'cart.label.total' | t }}">
               {{ item.line_price | money }}
             </td>
           </tr>
-
         {% endfor %}
       </tbody>
     </table>

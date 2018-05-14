@@ -1,28 +1,75 @@
-.cart--table {
+.cart__table {
   border-bottom: 1px solid $grey-3;
-  border-collapse: separate;
+  border-collapse: collapse;
+  border-spacing: 0;
   width: 100%;
-  margin-bottom: $base-spacing-unit-large;
-  padding-bottom: $base-spacing-unit-small;
-  @include media($medium) {
-    margin-bottom: $base-spacing-unit-extra-large;
-    padding-bottom: $base-spacing-unit-extra-large;
+  margin-bottom: $base-spacing-unit-medium;
+  @include media($small) {
+    border-top: 1px solid $grey-3;
   }
-  thead th {
-    padding: $base-spacing-unit-medium 0;
-    border: 1px solid $grey-3;
-    border-left: 0;
-    border-right: 0;
-    text-align: left;
-    font-weight: 400;
-  }
-  thead th:first-of-type {
-    text-align: center;
-  }
-  tbody tr td {
-    padding: $base-spacing-unit-small 0 0;
+  thead {
+    display: none;
     @include media($small) {
-      padding: $base-spacing-unit-extra-large $base-spacing-unit-medium 0 0;
+      display: table-header-group;
+    }
+    border-bottom: 1px solid $grey-3;
+  }
+  th, td {
+    padding: $base-spacing-unit-tiny 0;
+    text-align: right;
+    font-weight: 400;
+    @include media($small) {
+      padding: $base-spacing-unit-medium;
+      text-align: left;
+    }
+    &:before {
+      content: attr(data-label);
+      float: left;
+      @include media($small) {
+        display: none;
+      }
+    }
+  }
+  tbody {
+    display: flex;
+    flex-direction: column;
+    @include media($small) {
+      display: table-row-group;
+    }
+    tr {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid $grey-3;
+      margin-bottom: $base-spacing-unit-tiny;
+      padding-bottom: $base-spacing-unit-tiny;
+      @include media($small) {
+        display: table-row;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+  tr {
+    td {
+      &:first-child {
+        padding-left: 0;
+      }
+      &:nth-child(2) {
+        text-align: left;
+      }
+    }
+  }
+  .product--name {
+    margin-bottom: $base-spacing-unit-tiny;
+    color: $link;
+    font-weight: 700;
+    display: block;
+    &:hover {
+      color: $link-hover;
     }
   }
   input[type=number] {
@@ -34,27 +81,6 @@
     text-align: right;
     @include media($medium) {
       text-align: left;
-    }
-  }
-  .cart--table__product {
-    text-align: left;
-    .product--name {
-      display: block;
-      margin-bottom: $base-spacing-unit-tiny;
-      color: $link;
-      font-weight: 500;
-      &:hover, &:focus {
-        color: $link-hover;
-      }
-    }
-    .product--price {
-      font-weight: 500;
-      @include media($medium) {
-        font-weight: 400;
-      }
-    }
-    .product--image {
-      text-align: center;
     }
   }
 }
