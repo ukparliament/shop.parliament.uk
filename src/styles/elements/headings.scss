@@ -1,5 +1,5 @@
 // Base Heading Settings
-h1, .h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   color: $deep-purple;
   font-weight: 500;
   margin: $base-spacing-unit-medium 0 $base-spacing-unit;
@@ -9,7 +9,7 @@ h1, .h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h1, .h1 {
+h1 {
   @include fontsize(34);
   line-height: 1.059; // 36px;
   margin: 0 0 $base-spacing-unit-tiny;
