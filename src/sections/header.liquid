@@ -2,17 +2,9 @@
   <div class="container">
     <div class="grid">
       <div class="grid-cell">
-        {% if template.name == 'index' %}
-          <h1 itemscope itemtype="http://schema.org/Organization">
-        {% else %}
-          <div itemscope itemtype="http://schema.org/Organization">
-        {% endif %}
-            <a href="/" itemprop="url"><img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}"></a>
-        {% if template.name == 'index' %}
-          </h1>
-        {% else %}
-          </div>
-        {% endif %}
+        <div itemscope itemtype="http://schema.org/Organization">
+          <a href="/" itemprop="url"><img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}"></a>
+        </div>
       </div>
       <div class="grid-cell grid-cell-1of3">
         <a href="/cart" class="site-header__cart">
