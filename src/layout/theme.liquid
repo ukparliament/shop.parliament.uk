@@ -89,6 +89,9 @@
   {% include 'breadcrumbs' %}
 
   <main id="MainContent" class="container sticky-footer-content" tabindex="-1">
+    {% if template == 'index' %}
+      <h1 class="visually-hidden">{{ shop.name }}</h1>
+    {% endif %}
     {{ content_for_layout }}
   </main>
 

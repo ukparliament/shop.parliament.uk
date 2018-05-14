@@ -132,10 +132,9 @@
       border-bottom: 1px solid $grey-3;
       padding-bottom: $base-spacing-unit-tiny;
       margin-bottom: $base-spacing-unit-tiny;
-      h3 {
-        margin: 0;
-        padding: 0;
-      }
+      font-weight: 500;
+      @include fontsize(24);
+      color: $deep-purple;
     }
 
     .search-bar {
