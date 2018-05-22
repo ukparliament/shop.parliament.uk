@@ -121,6 +121,7 @@
     "title": "Collections",
     "filter_by": "Filter by {{ title }}",
     "sorting": {
+      "button": "Sort",
       "title": "Sort by",
       "featured": "Featured",
       "best_selling": "Best Selling",
