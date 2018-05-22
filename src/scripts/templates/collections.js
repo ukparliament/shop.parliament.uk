@@ -28,21 +28,9 @@ theme.collectionViews = function () {
 theme.collectionSortBy = function() {
   var $sortBy = $('#SortBy');
   if ($sortBy.length) {
-
     if(getParameterByName('sort_by')) {
       $sortBy.val(getParameterByName('sort_by'));
     }
-
-    $sortBy.on('change', function() {
-      var url = document.URL,
-          hasParams = url.indexOf('?') > -1;
-
-      if(hasParams) {
-        window.location = replaceUrlParam(url, 'sort_by', this.value);
-      } else {
-        window.location = url + '?sort_by=' + this.value;
-      }
-    });
   }
 };
 
