@@ -5,3 +5,8 @@
   padding: 0 3px;
   @include fontsize(13);
 }
+
+.badge--sale {
+  background: $red;
+  color: $white;
+}

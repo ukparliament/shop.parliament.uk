@@ -29,12 +29,24 @@
               {% assign bestseller = false %}
               {% assign on_sale = false %}
               {% assign new_product = false %}
+              {% assign signed_copy = false %}
+              {% assign online_exclusive = false %}
+              {% assign limited_edition = false %}
               {% for c in product.collections %}
                 {% if c.handle == "bestsellers" %}
                   {% assign bestseller = true %}
                 {% endif %}
                 {% if c.handle == "new" %}
                   {% assign new_product = true %}
+                {% endif %}
+                {% if c.handle == "signed-copy" %}
+                  {% assign signed_copy = true %}
+                {% endif %}
+                {% if c.handle == "online-exclusive" %}
+                  {% assign online_exclusive = true %}
+                {% endif %}
+                {% if c.handle == "limited-edition" %}
+                  {% assign limited_edition = true %}
                 {% endif %}
               {% endfor %}
               {% if product.compare_at_price > product.price %}
@@ -46,11 +58,17 @@
 
                   <p class="product-grid__price">
                     {% if on_sale == true %}
-                      <span class="badge">{{ 'products.product.on_sale' | t }}</span>
-                    {% elsif bestseller == true %}
-                      <span class="badge">{{ 'products.product.bestseller' | t }}</span>
+                      <span class="badge badge--sale">{{ 'products.product.on_sale' | t }}</span>
+                    {% elsif signed_copy == true %}
+                      <span class="badge">{{ 'products.product.signed_copy' | t }}</span>
+                    {% elsif limited_edition == true %}
+                      <span class="badge">{{ 'products.product.limited_edition' | t }}</span>
                     {% elsif new_product == true %}
                       <span class="badge">{{ 'products.product.new' | t }}</span>
+                    {% elsif bestseller == true %}
+                      <span class="badge">{{ 'products.product.bestseller' | t }}</span>
+                    {% elsif online_exclusive == true %}
+                      <span class="badge">{{ 'products.product.online_exclusive' | t }}</span>
                     {% endif %}
 
                     {% if product.compare_at_price > product.price %}
