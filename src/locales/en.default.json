@@ -302,7 +302,10 @@
       "new": "New",
       "description": "Description",
       "details": "Details",
-      "sku": "SKU"
+      "sku": "SKU",
+      "signed_copy": "Signed copy",
+      "online_exclusive": "Online exclusive",
+      "limited_edition": "Limited edition"
     },
     "images": {
       "multiple_context": "{{ title }} image {{ index }}",
