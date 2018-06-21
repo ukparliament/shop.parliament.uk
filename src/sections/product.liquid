@@ -14,14 +14,14 @@
     <div class="grid-cell grid-cell-1of2-1of1">
       <div class="product-image-frame-container">
         <div class="product-image-frame product-image-frame__featured">
-          <img src="{{ featured_image | img_url: '480x480', scale: 2 }}" class="zoomable" data-magnify-src="{{ featured_image | img_url: '700x700', scale: 2 }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
+          <img src="{{ featured_image | img_url: '480x480', scale: 2 }}" class="zoomable" data-magnify-src="{{ featured_image | img_url: '700x700', scale: 2 }}" alt="{{ 'products.images.featured_context' | t: title: featured_image.alt | escape }}" data-product-featured-image>
         </div>
         {% if product.images.size > 1 %}
           <ul class="product-image-frame__list">
             {% for image in product.images %}
               <li>
                 <a class="product-image-frame" href="{{ image.src | img_url: '480x480', scale: 2 }}" data-magnify-src="{{ image.src | img_url: '700x700', scale: 2 }}" data-product-single-thumbnail>
-                  <img src="{{ image.src | img_url: '80x80' }}" alt="{{ image.alt | escape }}">
+                  <img src="{{ image.src | img_url: '80x80' }}" alt="{{ 'products.images.multiple_context' | t: index: forloop.index, title: image.alt | escape }}">
                 </a>
               </li>
             {% endfor %}
