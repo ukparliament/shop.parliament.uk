@@ -297,6 +297,10 @@
       "add_to_cart": "Add to Cart",
       "bestseller": "Bestseller",
       "new": "New"
+    },
+    "images": {
+      "multiple_context": "{{ title }} image {{ index }}",
+      "featured_context": "{{ title }} featured image"
     }
   },
   "gift_cards": {
