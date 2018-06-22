@@ -1,6 +1,8 @@
 {% if type == 'large' %}
   <form action="/search" method="get" role="search" class="search-bar search-bar__large">
-  {% else %}
+{% elsif type == 'mobile' %}
+  <form action="/search" method="get" role="search" class="search-bar" aria-hidden="true">
+{% else %}
   <form action="/search" method="get" role="search" class="search-bar">
 {% endif %}
 {% if type == 'large' %}
@@ -23,7 +25,11 @@
          {% endif %}
          value="{{ search.terms | escape }}"
          placeholder="{{ 'general.search.placeholder' | t }}">
+{% if type == 'mobile' %}
+  <button type="submit" class="button" tabindex="-1">
+{% else %}
   <button type="submit" class="button">
+{% endif %}
     {% include 'icon-search' %}
     <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
   </button>

@@ -99,6 +99,13 @@
   .site-navigation--mobile__button {
     padding: $base-spacing-unit-tiny $base-spacing-unit-small;
     color: $grey-1;
+    &.hide {
+      display: none;
+    }
+  }
+
+  > .site-navigation--mobile__button {
+    padding: $base-spacing-unit-small;
   }
 
   // Toggles
@@ -131,7 +138,6 @@
       align-items: center;
       border-bottom: 1px solid $grey-3;
       padding-bottom: $base-spacing-unit-tiny;
-      margin-bottom: $base-spacing-unit-tiny;
       font-weight: 500;
       @include fontsize(24);
       color: $deep-purple;
