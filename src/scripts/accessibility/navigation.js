@@ -6,5 +6,6 @@ $('.site-navigation').accessibleMegaMenu({
     panelGroupClass: 'site-navigation__menu__submenu--group',
     hoverClass: 'hover',
     focusClass: 'focus',
-    openClass: 'open'
+    openClass: 'open',
+    openOnMouseover: true
 });
