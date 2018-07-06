@@ -3,6 +3,9 @@
     "accessibility": {
       "skip_to_content": "Skip to content"
     },
+    "menu": {
+      "title": "Menu"
+    },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
       "page": "Page {{ page }}"
@@ -52,7 +55,7 @@
       }
     },
     "search": {
-      "no_results_html": "Your search for \"{{ terms }}\" did not yield any results.",
+      "no_results_html": "Your search for \"{{ terms }}\" did not return any results.",
       "results_for_html": "Your search for \"{{ terms }}\" revealed the following:",
       "title": "Search for products on our site",
       "placeholder": "Search our store",

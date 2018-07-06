@@ -56,3 +56,10 @@ symbol {
   width: 1.5 * $base-font-size * 120 / 35;
   height: 1.5 * $base-font-size;
 }
+
+/*================ Menu icon height ================*/
+.icon-menu {
+  width: 20px;
+  height: 14px;
+  margin-right: $base-spacing-unit;
+}

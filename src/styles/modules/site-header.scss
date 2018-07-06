@@ -1,44 +1,87 @@
 .site-header {
   background: $white;
-  border-bottom: 3px solid $grey-3;
-  padding: $base-spacing-unit-tiny 0 0;
-  @include media($xsmall) {
-    padding: $base-spacing-unit-small 0 0;
-  }
-  .grid-cell-1of3 {
-    display: none;
-    text-align: right;
-    @include media($small) {
-      display: block;
-    }
-  }
-  img {
-    max-width: 385px;
-    height: 61px;
-    width: 100%;
+  border-bottom: 1px solid $grey-3;
+  padding: $base-spacing-unit-small 0 0;
+  .site-header__logo img {
     display: block;
+    max-width: 385px;
+    max-height: 61px;
+    margin: 0;
   }
   .site-header__cart {
-    margin-bottom: $base-spacing-unit;
-    display: block;
-    color: $grey-1;
-    text-decoration: none;
-    @include fontsize(16);
-    &:hover, &:focus {
-      text-decoration: underline;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    @include media($medium) {
+      flex: 0 0 50%;
+      justify-content: flex-end;
     }
-    svg {
-      height: 16px;
-      width: 19px;
-      margin-top: -$base-spacing-unit;
+    a {
+      color: $grey-1;
+      margin: 0 0 0 $base-spacing-unit-extra-large;
+      position: relative;
+      text-decoration: none;
+      .cart__count {
+        @include fontsize(12);
+        position: absolute;
+        background: $link;
+        top: -($base-spacing-unit);
+        left: $base-spacing-unit-tiny;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 100%;
+        color: $white;
+        text-align: center;
+      }
+      .cart__pricing {
+        display: none;
+        margin-left: $base-spacing-unit-tiny;
+        @include media($medium) {
+          display: inline-block;
+        }
+      }
     }
   }
-  h1 {
-    margin-bottom: 0;
-    a {
-      display: block;
-      color: $deep-purple;
-      text-decoration: none;
+  .search-bar {
+    display: none;
+    @include media($medium) {
+      display: flex;
+      flex: 1 1 auto;
     }
+  }
+}
+
+.search__global {
+  .search-bar {
+    display: none;
+  }
+  .icon-close {
+    display: none;
+  }
+  &.open {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .search-bar {
+      display: flex;
+      padding: ($base-spacing-unit-tiny - 1) 0 ($base-spacing-unit-tiny - 1) $base-spacing-unit-small;
+      flex: 1 1 auto;
+    }
+    .icon-search {
+      display: none;
+    }
+    .icon-close {
+      display: block;
+    }
+    button .icon-search {
+      display: block;
+    }
+  }
+  .search__global__toggle {
+    display: block;
+    text-decoration: none;
+    color: $deep-purple;
+    padding: $base-spacing-unit-small;
   }
 }

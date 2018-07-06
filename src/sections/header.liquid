@@ -1,18 +1,21 @@
 <header class="site-header">
   <div class="container">
     <div class="grid">
-      <div class="grid-cell">
+      <div class="grid-cell site-header__logo">
         <div itemscope itemtype="http://schema.org/Organization">
           <a href="/" itemprop="url"><img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}"></a>
         </div>
       </div>
-      <div class="grid-cell grid-cell-1of3">
-        <a href="/cart" class="site-header__cart">
+      <div class="grid-cell site-header__cart">
+        {% unless search.performed or canonical_url contains '/search' %}
+          {% include 'search-bar' %}
+        {% endunless %}
+        <a href="/cart">
           {% include 'icon-cart' %}
-          {{ 'layout.cart.title' | t }}
-          ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }} {{ cart.total_price | money }})
+          <span class="cart__count" tabindex="-1">{{ cart.item_count }}</span>
+          <span class="cart__pricing" tabindex="-1">{{ cart.total_price | money }}</span>
+          <span class="visually-hidden">{{ 'layout.cart.title' | t }} ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }} {{ cart.total_price | money }})</span>
         </a>
-        {% include 'search-bar' %}
       </div>
     </div>
   </div>
@@ -45,14 +48,22 @@
 
 <div class="site-navigation--mobile">
   <input type="checkbox" id="menu-toggle" class="site-navigation__menu--toggle">
-  <label class="site-navigation--mobile__button" for="menu-toggle">{% include 'icon-hamburger' %}</label>
-  <a href="/cart" class="site-navigation--mobile__button"><span class="visually-hidden">{{ 'cart.general.title' | t }}</span> {% include 'icon-cart' %}</a>
+  <label class="site-navigation--mobile__button" for="menu-toggle">{% include 'icon-menu' %} <span>{{ 'general.menu.title' | t }}</span></label>
+  {% unless search.performed or canonical_url contains '/search' %}
+    <div class="search__global">
+      {% include 'search-bar', type: 'mobile' %}
+      <a href="/search" class="search__global__toggle" aria-label="open search">
+        {% include 'icon-search' %}
+        {% include 'icon-close' %}
+      </a>
+    </div>
+  {% endunless %}
+
   <nav class="site-navigation--mobile__nav">
     <div class="site-navigation--mobile__nav--heading">
       {{ 'layout.browse' | t }}
       <label class="menu-toggle" for="menu-toggle">{% include 'icon-close' %}</label>
     </div>
-    {% include 'search-bar', type: 'mobile' %}
     <ul>
       {% for link in linklists[section.settings.main_linklist].links %}
         {%- assign child_list_handle = link.title | handleize -%}

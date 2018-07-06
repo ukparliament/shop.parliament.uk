@@ -21,6 +21,7 @@ window.theme = window.theme || {};
 // =require templates/customers-addresses.js
 // =require templates/customers-login.js
 // =require templates/collections.js
+// =require templates/header.js
 
 /*================ Accessibility ================*/
 // =require accessibility/navigation.js
