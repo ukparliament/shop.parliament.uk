@@ -57,6 +57,16 @@
   opacity: 0.8;
 }
 
+.button--mint {
+  background: $mint;
+  border-color: $mint;
+  color: $deep-purple;
+  &:hover, &:focus {
+    background: $mint--dark;
+    border-color: $mint--dark;
+  }
+}
+
 .button[disabled] {
   background: $grey-4;
   border-color: $grey-4;
