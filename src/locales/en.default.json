@@ -322,5 +322,10 @@
   },
   "date_formats":{
     "month_day_year": "%B %d, %Y"
+  },
+  "email_signup": {
+    "subscribe_to_our_list": "Subscribe to our mailing list",
+    "email": "Email address",
+    "subscribe": "Subscribe"
   }
 }

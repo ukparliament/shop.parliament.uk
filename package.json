@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "The Shopify theme for the Parliamentary shop.",
   "dependencies": {
-    "@shopify/slate": "^0.13.0",
-    "@shopify/slate-tools": "^0.13.0",
-    "@shopify/themekit": "^0.6.12",
+    "@shopify/slate": "^0.14.0",
+    "@shopify/slate-tools": "^0.14.0",
+    "@shopify/themekit": "^1.0.1",
     "accessible-mega-menu": "git+https://github.com/adobe-accessibility/Accessible-Mega-Menu.git",
     "jquery": "^2.2.4",
     "magnify": "^2.3.2",

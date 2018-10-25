@@ -2,6 +2,7 @@
   <div class="container">
     <div class="grid">
       <div class="grid-cell grid-cell-1of3">
+        {% include 'email-signup' %}
         {%- assign footer_left_menu = section.settings.footer_left_menu -%}
         {% if linklists[footer_left_menu].links.size > 0 %}
           <ul class="site-footer__linklist">

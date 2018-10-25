@@ -1,0 +1,17 @@
+.email-form {
+  display: flex;
+  margin-bottom: $base-spacing-unit-small;
+  color: $grey-1;
+  input[type=email] {
+    -webkit-appearance: none;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid $grey-3;
+    border-right: 0;
+    padding: $base-spacing-unit $base-spacing-unit-tiny;
+    width: 100%;
+  }
+  .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
