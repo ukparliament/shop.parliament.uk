@@ -4,10 +4,7 @@
   color: $grey-1;
   input[type=email] {
     -webkit-appearance: none;
-    border-radius: 0;
-    border-right: 0;
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
+    border-radius: 4px 0 0 4px;
     border: 1px solid $grey-3;
     border-right: 0;
     padding: $base-spacing-unit $base-spacing-unit-tiny;
