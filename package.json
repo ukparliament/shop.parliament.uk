@@ -9,7 +9,7 @@
     "accessible-mega-menu": "git+https://github.com/adobe-accessibility/Accessible-Mega-Menu.git",
     "jquery": "^2.2.4",
     "magnify": "^2.3.2",
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.1"
   },
   "repository": {
     "type": "git",
