@@ -12,6 +12,7 @@
         {% include 'product.image-frame', product: product %}
         <a href="{{ product.url }}" class="product-grid__title">{{ product.title }}</a>
         <p class="product-grid__price">{{ product.price | money }}</p>
+        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
       </div>
     {% endfor %}
   </div>

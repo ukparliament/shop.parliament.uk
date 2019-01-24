@@ -117,6 +117,10 @@
     {{ product.description }}
   </div>
 
+  <div id="shopify-product-reviews" data-id="{{product.id}}">
+    {{ product.metafields.spr.reviews }}
+  </div>
+
   {% if section.settings.show_share_buttons %}
     {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
   {% endif %}

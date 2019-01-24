@@ -1,0 +1,13 @@
+/*============================================================================
+  Shopify's product-reviews-override
+  https://help.shopify.com/en/manual/apps/apps-by-shopify/product-reviews/advanced-customization
+==============================================================================*/
+
+.spr-icon,
+.spr-icon.spr-icon-star-empty {
+  color: $vibrant__yellow--dark;
+}
+
+.spr-badge[data-rating="0.0"] {
+  display: none;
+}

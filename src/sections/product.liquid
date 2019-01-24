@@ -1,5 +1,10 @@
 <div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product" class="product">
   <h1 class="page-heading">{{ product.title }}</h1>
+  <div class="grid">
+    <div class="grid-cell grid-cell-1of1">
+      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+    </div>
+  </div>
 
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
@@ -134,6 +139,15 @@
       {% endunless %}
     </div>
   </div>
+
+  <div class="grid">
+    <div class="grid-cell grid-cell-1of1">
+      <div id="shopify-product-reviews" data-id="{{product.id}}">
+        {{ product.metafields.spr.reviews }}
+      </div>
+    </div>
+  </div>
+
 </div>
 {% schema %}
   {
