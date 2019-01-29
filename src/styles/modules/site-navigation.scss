@@ -123,7 +123,7 @@
     height: 100vh;
     border-right: 1px solid $grey-3;
     padding: $base-spacing-unit-medium $base-spacing-unit-small;
-    width: 300px;
+    width: 100vw;
     overflow: auto;
     position: fixed;
     top: 0;
@@ -164,7 +164,8 @@
         a {
           position: relative;
           padding: $base-spacing-unit-tiny 0;
-          display: block;
+          display: flex;
+          flex: 1 1 auto;
           color: $grey-1;
           text-decoration: none;
           &.site-navigation--mobile--active {
