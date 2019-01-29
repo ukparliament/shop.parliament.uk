@@ -1,0 +1,9 @@
+dl {
+  dt {
+    float: left;
+    padding-right: $base-spacing-unit-tiny;
+  }
+  dt:after {
+    content: ":"
+  }
+}

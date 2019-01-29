@@ -18,6 +18,13 @@
             <td>
               <a href="{{ item.url }}" class="product--name">{{ item.product.title }}</a>
 
+              {% if item.sku != blank %}
+                <dl>
+                  <dt>{{ 'products.product.sku' | t }}</dt>
+                  <dd><span class="variant-sku">{{ item.sku }}</span></dd>
+                </dl>
+              {% endif %}
+
               {% unless item.variant.title contains 'Default' %}
               <p>{{ item.variant.title }}</p>
               {% endunless %}
@@ -39,7 +46,6 @@
                 {% endfor %}
               {% endif %}
 
-              <a class="button button--small button--grey" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{ 'cart.general.remove' | t }} <span class="visually-hidden">{{ 'cart.general.remove_from_cart' | t: product_title: item.product.title }}</span> <span>&times;</span></a>
             </td>
             <td data-label="{{ 'cart.label.price' | t }}">
               {% if item.original_line_price != item.line_price %}
@@ -58,6 +64,8 @@
                      value="{{ item.quantity }}"
                      min="0"
                      aria-label="{{ 'cart.general.item_quantity' | t: product_title: item.product.title }}">
+
+              <a class="button button--small button--grey" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">{{ 'cart.general.remove' | t }} <span class="visually-hidden">{{ 'cart.general.remove_from_cart' | t: product_title: item.product.title }}</span> <span>&times;</span></a>
             </td>
             <td data-label="{{ 'cart.label.total' | t }}">
               {{ item.line_price | money }}
