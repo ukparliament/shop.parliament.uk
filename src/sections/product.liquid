@@ -109,8 +109,20 @@
       </div>
 
       <div class="rte product__description">
+        <h2>{{ 'products.product.description' | t }}</h2>
         {{ product.description }}
       </div>
+
+      {% assign current_variant = product.selected_or_first_available_variant %}
+      {% if current_variant.sku != blank %}
+        <div class="product__details">
+          <h2>{{ 'products.product.details' | t }}</h2>
+          <dl>
+            <dt>{{ 'products.product.sku' | t }}</dt>
+            <dd><span class="variant-sku">{{ current_variant.sku }}</span></dd>
+          </dl>
+        </div>
+      {% endif %}
 
       {% comment %}{% if section.settings.show_share_buttons %}
         {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
