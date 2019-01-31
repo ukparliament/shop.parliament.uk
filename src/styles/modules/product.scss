@@ -20,6 +20,10 @@
   border-bottom: 1px solid $grey-3;
   margin: 0 0 $base-spacing-unit-tiny;
   padding: 0 0 $base-spacing-unit-tiny;
+  .badge {
+    @include fontsize(16);
+    padding: 0 $base-spacing-unit;
+  }
 }
 
 .product__price--current {

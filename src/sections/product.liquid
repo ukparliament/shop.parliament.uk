@@ -31,17 +31,20 @@
     </div>
     <div class="grid-cell grid-cell-1of2-1of1">
       <div data-price-wrapper class="product__price">
-        {% if product.compare_at_price_max > product.price %}
-          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-          <span class="product__price--old" data-compare-price>
-            {% if current_variant.compare_at_price > current_variant.price %}
-              {{ current_variant.compare_at_price | money }}
-            {% endif %}
+        <div class="product__price--pricing">
+          {% if product.compare_at_price_max > product.price %}
+            <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+            <span class="product__price--old" data-compare-price>
+              {% if current_variant.compare_at_price > current_variant.price %}
+                {{ current_variant.compare_at_price | money }}
+              {% endif %}
+            </span>
+          {% endif %}
+          <span data-product-price class="product__price--current">
+            {{ current_variant.price | money }}
           </span>
-        {% endif %}
-        <span data-product-price class="product__price--current">
-          {{ current_variant.price | money }}
-        </span>
+        </div>
+        {% include 'badge-resolver', product: product %}
       </div>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
