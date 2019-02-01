@@ -299,7 +299,13 @@
       "quantity": "Quantity",
       "add_to_cart": "Add to Cart",
       "bestseller": "Bestseller",
-      "new": "New"
+      "new": "New",
+      "description": "Description",
+      "details": "Details",
+      "sku": "SKU",
+      "signed_copy": "Signed copy",
+      "online_exclusive": "Online exclusive",
+      "limited_edition": "Limited edition"
     },
     "images": {
       "multiple_context": "{{ title }} image {{ index }}",
@@ -320,7 +326,7 @@
       "add_to_apple_wallet": "Add to Apple Wallet"
     }
   },
-  "date_formats":{
+  "date_formats": {
     "month_day_year": "%B %d, %Y"
   },
   "email_signup": {

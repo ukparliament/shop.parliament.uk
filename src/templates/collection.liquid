@@ -26,30 +26,9 @@
 
             <div class="product-grid__single grid-cell grid-cell-1of3-1of2-1of1">
               {% include 'product.image-frame', product: product %}
-              {% assign bestseller = false %}
-              {% assign on_sale = false %}
-              {% assign new_product = false %}
-              {% for c in product.collections %}
-                {% if c.handle == "bestsellers" %}
-                  {% assign bestseller = true %}
-                {% endif %}
-                {% if c.handle == "new" %}
-                  {% assign new_product = true %}
-                {% endif %}
-              {% endfor %}
-              {% if product.compare_at_price > product.price %}
-                {% assign on_sale = true %}
-              {% endif %}
-
               <a href="{{ product.url | within: collection }}" class="product-grid__title">{{ product.title }}</a>
               <p class="product-grid__price">
-                {% if on_sale == true %}
-                  <span class="badge">{{ 'products.product.on_sale' | t }}</span>
-                {% elsif bestseller == true %}
-                  <span class="badge">{{ 'products.product.bestseller' | t }}</span>
-                {% elsif new_product == true %}
-                  <span class="badge">{{ 'products.product.new' | t }}</span>
-                {% endif %}
+                {% include 'badge-resolver', product: product %}
 
                 {% if product.compare_at_price > product.price %}
 

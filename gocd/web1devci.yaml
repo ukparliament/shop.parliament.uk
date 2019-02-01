@@ -24,6 +24,6 @@ pipelines:
                       - deploy
 
 environments:
-  Web.DEVCI:
+  WebDEVCI:
     pipelines:
       - parliament.uk-shop

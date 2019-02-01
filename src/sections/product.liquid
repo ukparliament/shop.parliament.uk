@@ -31,17 +31,20 @@
     </div>
     <div class="grid-cell grid-cell-1of2-1of1">
       <div data-price-wrapper class="product__price">
-        {% if product.compare_at_price_max > product.price %}
-          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-          <span class="product__price--old" data-compare-price>
-            {% if current_variant.compare_at_price > current_variant.price %}
-              {{ current_variant.compare_at_price | money }}
-            {% endif %}
+        <div class="product__price--pricing">
+          {% if product.compare_at_price_max > product.price %}
+            <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+            <span class="product__price--old" data-compare-price>
+              {% if current_variant.compare_at_price > current_variant.price %}
+                {{ current_variant.compare_at_price | money }}
+              {% endif %}
+            </span>
+          {% endif %}
+          <span data-product-price class="product__price--current">
+            {{ current_variant.price | money }}
           </span>
-        {% endif %}
-        <span data-product-price class="product__price--current">
-          {{ current_variant.price | money }}
-        </span>
+        </div>
+        {% include 'badge-resolver', product: product %}
       </div>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -109,8 +112,20 @@
       </div>
 
       <div class="rte product__description">
+        <h2>{{ 'products.product.description' | t }}</h2>
         {{ product.description }}
       </div>
+
+      {% assign current_variant = product.selected_or_first_available_variant %}
+      {% if current_variant.sku != blank %}
+        <div class="product__details">
+          <h2>{{ 'products.product.details' | t }}</h2>
+          <dl>
+            <dt>{{ 'products.product.sku' | t }}</dt>
+            <dd><span class="variant-sku">{{ current_variant.sku }}</span></dd>
+          </dl>
+        </div>
+      {% endif %}
 
       {% comment %}{% if section.settings.show_share_buttons %}
         {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
