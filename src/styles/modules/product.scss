@@ -42,17 +42,29 @@
 }
 
 .product__description {
-  padding-bottom: $base-spacing-unit-tiny;
+  padding-bottom: $base-spacing-unit-small;
   margin-top: $base-spacing-unit-small;
-  @include media($medium) {
-    border-bottom: 1px solid $grey-3;
-  }
+  border-bottom: 1px solid $grey-3;
   p {
     margin-top: 0;
   }
   ul, ol {
     margin-left: 0;
     padding-left: $base-spacing-unit-small;
+  }
+  :last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+  dl {
+    margin-top: 0;
+  }
+  .product__description--heading {
+    margin: 0 0 $base-spacing-unit;
+    @include fontsize(16);
+    @include media($medium) {
+      @include fontsize(18);
+    }
   }
 }
 
