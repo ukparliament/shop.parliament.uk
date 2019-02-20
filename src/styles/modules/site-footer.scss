@@ -44,4 +44,12 @@
   .site-footer__telephone {
     text-decoration: none;
   }
+  h2 {
+    @include fontsize(16);
+    @include media($small) {
+      @include fontsize(18);
+    }
+    color: $white;
+    margin-top: 0;
+  }
 }
