@@ -1,5 +1,5 @@
 {
-  "name": "shop.parliament.uk",
+  "name": "shop.parliament.uk", 
   "version": "0.0.1",
   "description": "The Shopify theme for the Parliamentary shop.",
   "dependencies": {
